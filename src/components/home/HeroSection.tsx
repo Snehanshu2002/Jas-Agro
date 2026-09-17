@@ -255,12 +255,10 @@ export const HeroSection: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
             className="space-y-3"
           >
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black font-heading tracking-tight leading-[1.03] text-slate-900 dark:text-white drop-shadow-sm dark:drop-shadow-[0_8px_30px_rgba(0,0,0,0.9)]">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading tracking-tight leading-[1.08] text-slate-900 dark:text-white drop-shadow-sm dark:drop-shadow-[0_8px_30px_rgba(0,0,0,0.9)]">
               {isHindi ? (
                 <>
-                  खेती के
-                  <br />
-                  भविष्य को
+                  खेती के भविष्य को
                   <br />
                   <span className="bg-gradient-to-r from-emerald-600 via-teal-500 to-green-600 dark:from-emerald-400 dark:via-teal-300 dark:to-green-300 bg-clip-text text-transparent">
                     नया रूप देना।
@@ -268,9 +266,7 @@ export const HeroSection: React.FC = () => {
                 </>
               ) : (
                 <>
-                  GROWING THE
-                  <br />
-                  FUTURE OF
+                  GROWING THE FUTURE OF
                   <br />
                   <span className="bg-gradient-to-r from-emerald-600 via-teal-500 to-green-600 dark:from-emerald-400 dark:via-teal-300 dark:to-green-300 bg-clip-text text-transparent">
                     FARMING.
@@ -285,7 +281,7 @@ export const HeroSection: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="text-base sm:text-lg lg:text-xl text-slate-700 dark:text-slate-200 font-medium leading-relaxed max-w-2xl mx-auto drop-shadow-sm dark:drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)]"
+            className="text-sm sm:text-base text-slate-700 dark:text-slate-200 font-medium leading-relaxed max-w-2xl mx-auto drop-shadow-sm dark:drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)]"
           >
             {isHindi
               ? "Smart cultivation systems जो organic farming, precision tech और smart automation को जोड़ते हैं।"
@@ -297,22 +293,22 @@ export const HeroSection: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2"
+            className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2"
           >
             <button
               onClick={() => setQuoteModalOpen(true)}
-              className="group w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-emerald-500 via-emerald-600 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-extrabold text-sm sm:text-base tracking-wider uppercase transition-all duration-300 flex items-center justify-center gap-3 shadow-glow-lg border border-emerald-300/40 hover:-translate-y-0.5 cursor-pointer"
+              className="group w-full sm:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-500 via-emerald-600 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-extrabold text-xs sm:text-sm tracking-wider uppercase transition-all duration-300 flex items-center justify-center gap-2.5 shadow-glow-lg border border-emerald-300/40 hover:-translate-y-0.5 cursor-pointer"
             >
               <span>{isHindi ? "अपना Farm बनाएं" : "BUILD YOUR FARM"}</span>
-              <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </button>
 
             <Link
               href="/solutions"
-              className="group w-full sm:w-auto px-8 py-4 rounded-xl bg-white/90 dark:bg-slate-950/70 hover:bg-slate-100 dark:hover:bg-slate-900/90 text-slate-900 dark:text-slate-100 font-bold text-sm sm:text-base tracking-wider uppercase border border-slate-300 dark:border-slate-700/80 hover:border-emerald-500 dark:hover:border-emerald-400/80 shadow-md dark:shadow-glass backdrop-blur-md transition-all duration-300 flex items-center justify-center gap-3 hover:-translate-y-0.5 cursor-pointer"
+              className="group w-full sm:w-auto px-6 py-3 rounded-xl bg-white/90 dark:bg-slate-950/70 hover:bg-slate-100 dark:hover:bg-slate-900/90 text-slate-900 dark:text-slate-100 font-bold text-xs sm:text-sm tracking-wider uppercase border border-slate-300 dark:border-slate-700/80 hover:border-emerald-500 dark:hover:border-emerald-400/80 shadow-md dark:shadow-glass backdrop-blur-md transition-all duration-300 flex items-center justify-center gap-2.5 hover:-translate-y-0.5 cursor-pointer"
             >
               <span>{isHindi ? "Solutions देखें" : "EXPLORE SOLUTIONS"}</span>
-              <Radio className="w-4 h-4 text-emerald-600 dark:text-emerald-400 group-hover:animate-pulse" />
+              <Radio className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 group-hover:animate-pulse" />
             </Link>
           </motion.div>
 

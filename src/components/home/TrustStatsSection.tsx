@@ -29,10 +29,10 @@ export const TrustStatsSection: React.FC = () => {
                 key={idx}
                 className="pt-6 sm:pt-0 sm:px-6 first:px-0 space-y-2 group"
               >
-                <div className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-heading bg-gradient-to-r from-emerald-600 via-teal-500 to-green-600 dark:from-emerald-400 dark:via-teal-300 dark:to-green-300 bg-clip-text text-transparent font-mono tracking-tight group-hover:scale-105 transition-transform duration-300">
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading bg-gradient-to-r from-emerald-600 via-teal-500 to-green-600 dark:from-emerald-400 dark:via-teal-300 dark:to-green-300 bg-clip-text text-transparent font-mono tracking-tight group-hover:scale-105 transition-transform duration-300">
                   {stat.value}
                 </div>
-                <div className="text-xs font-mono font-bold tracking-widest text-slate-600 dark:text-slate-300 uppercase leading-snug">
+                <div className="text-[11px] sm:text-xs font-mono font-bold tracking-widest text-slate-600 dark:text-slate-300 uppercase leading-snug">
                   {label}
                 </div>
               </div>
