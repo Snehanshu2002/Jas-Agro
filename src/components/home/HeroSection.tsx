@@ -163,7 +163,7 @@ export const HeroSection: React.FC = () => {
 
       {/* LAYER 3.5: FLOATING VIDEO PLAYLIST SWITCHER PILLS (Z-50 FOREGROUND) */}
       {!prefersReducedMotion && (
-        <div className="absolute top-20 right-3 sm:right-6 z-50 pointer-events-auto flex items-center gap-1 sm:gap-1.5 bg-slate-950/85 backdrop-blur-xl p-1 rounded-full border border-emerald-500/30 shadow-xl max-w-[92vw] overflow-x-auto">
+        <div className="absolute top-16 sm:top-20 left-1/2 -translate-x-1/2 sm:translate-x-0 sm:left-auto sm:right-6 z-40 pointer-events-auto flex items-center gap-1 sm:gap-1.5 bg-slate-950/90 backdrop-blur-xl p-1 rounded-full border border-emerald-500/30 shadow-xl max-w-[95vw] overflow-x-auto scrollbar-none">
           {HERO_VIDEOS.map((vid, idx) => {
             const isActive = currentVideoIndex === idx;
             return (
