@@ -89,7 +89,7 @@ export const HeroSection: React.FC = () => {
   };
 
   return (
-    <section className="relative w-full flex items-center justify-center pt-20 pb-4 overflow-hidden bg-slate-50 dark:bg-[#0B0F17] text-slate-900 dark:text-white select-none transition-colors duration-300">
+    <section className="relative w-full flex items-center justify-center pt-16 pb-2 overflow-hidden bg-slate-50 dark:bg-[#0B0F17] text-slate-900 dark:text-white select-none transition-colors duration-300">
       
       {/* LAYER 1 & 2: CINEMATIC BACKGROUND & ATMOSPHERIC GRADIENTS */}
       <div className="absolute inset-0 z-0 overflow-hidden">
@@ -234,8 +234,8 @@ export const HeroSection: React.FC = () => {
       )}
 
       {/* LAYER 3: MAIN HERO CONTENT */}
-      <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 relative z-20 text-center flex flex-col items-center justify-center min-h-[68vh]">
-        <div className="max-w-5xl mx-auto space-y-6">
+      <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 relative z-20 text-center flex flex-col items-center justify-center min-h-[52vh]">
+        <div className="max-w-5xl mx-auto space-y-3">
           
           {/* Eyebrow Pill */}
           <motion.div

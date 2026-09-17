@@ -45,19 +45,19 @@ export const Navbar: React.FC = () => {
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           scrolled
-            ? "bg-white/95 dark:bg-slate-950/95 backdrop-blur-xl border-b border-slate-200 dark:border-emerald-500/30 py-3 shadow-md dark:shadow-glow text-slate-900 dark:text-white"
-            : "bg-white/90 dark:bg-slate-950/85 backdrop-blur-md py-4 border-b border-slate-200/80 dark:border-slate-800/80 text-slate-900 dark:text-white"
+            ? "bg-white/95 dark:bg-slate-950/95 backdrop-blur-xl border-b border-slate-200 dark:border-emerald-500/30 py-1.5 shadow-md dark:shadow-glow text-slate-900 dark:text-white"
+            : "bg-white/90 dark:bg-slate-950/85 backdrop-blur-md py-2 border-b border-slate-200/80 dark:border-slate-800/80 text-slate-900 dark:text-white"
         }`}
       >
         <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
           <div className="flex items-center justify-between">
             {/* Brand Logo with Official JAS Agro Logo Image */}
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="relative flex items-center justify-center p-1.5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-emerald-500/40 group-hover:scale-105 transition-transform duration-300 shadow-sm">
+              <div className="relative flex items-center justify-center p-1 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-emerald-500/40 group-hover:scale-105 transition-transform duration-300 shadow-sm">
                 <img
                   src="https://www.jasagro.com/assets/img/JAS-Agro-Logo.png"
                   alt="JAS Agro Logo"
-                  className="h-10 sm:h-11 w-auto object-contain drop-shadow-sm brightness-100 dark:brightness-110"
+                  className="h-7 sm:h-8 w-auto object-contain drop-shadow-sm brightness-100 dark:brightness-110"
                 />
               </div>
               <div className="flex flex-col">

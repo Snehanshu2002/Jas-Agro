@@ -30,7 +30,7 @@ export const MushroomFeature: React.FC = () => {
   const isOptimal = isTempOptimal && isHumidityOptimal && airflow;
 
   return (
-    <section className="py-6 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white relative overflow-hidden transition-colors duration-300">
+    <section className="py-3 bg-slate-50 dark:bg-[#0B0F17] text-slate-900 dark:text-white relative overflow-hidden transition-colors duration-300">
       <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
           {/* Left Column */}

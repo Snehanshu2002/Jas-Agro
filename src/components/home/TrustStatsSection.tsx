@@ -15,7 +15,7 @@ export const TrustStatsSection: React.FC = () => {
   ];
 
   return (
-    <section className="relative py-4 bg-slate-50 dark:bg-[#0B0F17] text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800/80 transition-colors duration-300 overflow-hidden">
+    <section className="relative py-2 bg-slate-50 dark:bg-[#0B0F17] text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800/80 transition-colors duration-300 overflow-hidden">
       {/* Subtle Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[250px] bg-emerald-500/10 blur-[130px] rounded-full pointer-events-none" />
 
