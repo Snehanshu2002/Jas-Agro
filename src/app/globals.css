@@ -16,7 +16,7 @@
 
 /* Theme 1: Fresh Clean White Mode (Default) */
 html.theme-light, html {
-  font-size: 14px;
+  font-size: 13px;
   --bg-darkest: #F8FAFC;
   --bg-dark: #FFFFFF;
   --bg-card: #FFFFFF;
