@@ -295,18 +295,18 @@ export const HeroSection: React.FC = () => {
 
       {/* Bottom-Right Floating Chhatraka Watermark Emblem Logo (Completely covers video watermark) */}
       {HERO_VIDEOS[currentVideoIndex].id === "mushroom" && (
-        <div className="absolute bottom-3 right-3 sm:bottom-5 sm:right-5 lg:bottom-[3.5%] lg:right-[3%] z-30 pointer-events-auto">
+        <div className="absolute bottom-2 right-2 sm:bottom-5 sm:right-5 lg:bottom-[3.5%] lg:right-[3%] z-30 pointer-events-auto">
           <a
             href="https://www.chhatraka.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center justify-center gap-3 px-6 py-3.5 sm:px-8 sm:py-4 rounded-2xl bg-slate-950 border-2 border-amber-500/70 hover:border-amber-400 shadow-[0_10px_40px_rgba(0,0,0,0.85)] transition-all duration-300 hover:scale-[1.03] min-w-[190px] sm:min-w-[240px]"
+            className="group flex items-center justify-center gap-1.5 sm:gap-3 px-2.5 py-1 sm:px-6 sm:py-3.5 rounded-xl sm:rounded-2xl bg-slate-950 border border-amber-500/70 hover:border-amber-400 shadow-[0_10px_30px_rgba(0,0,0,0.85)] transition-all duration-300 hover:scale-[1.03]"
             title="Visit Chhatraka Mushroom Portal"
           >
             <img
               src="https://www.chhatraka.com/logo-chhatraka-lockup.png"
               alt="Chhatraka Logo"
-              className="h-10 sm:h-14 lg:h-16 w-auto object-contain filter drop-shadow-lg group-hover:brightness-110 transition-all"
+              className="h-5 sm:h-12 lg:h-16 w-auto object-contain filter drop-shadow-lg group-hover:brightness-110 transition-all"
             />
           </a>
         </div>
