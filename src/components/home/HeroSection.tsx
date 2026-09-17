@@ -159,52 +159,7 @@ export const HeroSection: React.FC = () => {
         />
       </div>
 
-      {/* LAYER 3: FLOATING GLASS SOLUTION MARKERS (DESKTOP) */}
-      {!prefersReducedMotion && (
-        <div className="hidden lg:block absolute inset-0 z-20 pointer-events-none w-full px-6 sm:px-10 lg:px-16">
-          {/* Marker 1: Oyster Mushroom */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.8 }}
-            className="absolute top-[28%] left-[6%] pointer-events-auto"
-          >
-            <div className="flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/95 dark:bg-slate-950/80 border border-emerald-500/40 dark:border-emerald-500/30 backdrop-blur-xl text-slate-900 dark:text-slate-200 text-xs font-mono shadow-xl shadow-emerald-950/10 dark:shadow-glass hover:border-emerald-600 transition-all duration-300 group cursor-default">
-              <span className="text-sm">🍄</span>
-              <span className="tracking-wide font-extrabold text-emerald-800 dark:text-emerald-300">OYSTER MUSHROOM</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse ml-1" />
-            </div>
-          </motion.div>
 
-          {/* Marker 2: Azolla Fodder */}
-          <motion.div
-            initial={{ opacity: 0, y: -30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 1.0 }}
-            className="absolute top-[36%] right-[6%] pointer-events-auto"
-          >
-            <div className="flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/95 dark:bg-slate-950/80 border border-emerald-500/40 dark:border-emerald-500/30 backdrop-blur-xl text-slate-900 dark:text-slate-200 text-xs font-mono shadow-xl shadow-emerald-950/10 dark:shadow-glass hover:border-emerald-600 transition-all duration-300 group cursor-default">
-              <span className="text-sm">🌿</span>
-              <span className="tracking-wide font-extrabold text-emerald-800 dark:text-emerald-300">AZOLLA FODDER</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse ml-1" />
-            </div>
-          </motion.div>
-
-          {/* Marker 3: IoT Micro-Climate */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 1.2 }}
-            className="absolute bottom-[28%] right-[5%] pointer-events-auto"
-          >
-            <div className="flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/95 dark:bg-slate-950/80 border border-cyan-500/40 dark:border-emerald-500/30 backdrop-blur-xl text-slate-900 dark:text-slate-200 text-xs font-mono shadow-xl shadow-cyan-950/10 dark:shadow-glass hover:border-cyan-600 transition-all duration-300 group cursor-default">
-              <span className="text-sm">📡</span>
-              <span className="tracking-wide font-extrabold text-teal-800 dark:text-emerald-300">IoT MONITORING</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-cyan-500 dark:bg-cyan-400 animate-pulse ml-1" />
-            </div>
-          </motion.div>
-        </div>
-      )}
 
       {/* LAYER 3.5: FLOATING VIDEO PLAYLIST SWITCHER PILLS (Z-50 FOREGROUND) */}
       {!prefersReducedMotion && (
@@ -312,55 +267,7 @@ export const HeroSection: React.FC = () => {
             </Link>
           </motion.div>
 
-          {/* Live AgTech Telemetry Ticker Bar */}
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="mt-6 px-6 py-3 rounded-2xl bg-white/80 dark:bg-slate-900/80 border border-emerald-500/30 backdrop-blur-xl shadow-glass flex items-center justify-center gap-6 sm:gap-10 text-xs font-mono"
-          >
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
-              <span className="text-slate-600 dark:text-slate-400">{isHindi ? "Uptime:" : "Uptime:"}</span>
-              <span className="font-extrabold text-emerald-700 dark:text-emerald-300">99.8%</span>
-            </div>
-            <div className="hidden sm:flex items-center gap-2">
-              <span className="text-slate-600 dark:text-slate-400">{isHindi ? "Farms:" : "Active Farms:"}</span>
-              <span className="font-extrabold text-teal-700 dark:text-teal-300">2,500+</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-slate-600 dark:text-slate-400">{isHindi ? "Carbon Saved:" : "Carbon Saved:"}</span>
-              <span className="font-extrabold text-green-700 dark:text-amber-400">35%</span>
-            </div>
-          </motion.div>
 
-          {/* Metadata Strip (Clean & Verified) */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="pt-4 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs font-mono font-medium tracking-widest text-slate-600 dark:text-slate-300 uppercase"
-          >
-            <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400" />
-              <span>{isHindi ? "CULTIVATE" : "CULTIVATE"}</span>
-            </div>
-            <span className="text-slate-400 dark:text-slate-600">•</span>
-            <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-teal-500 dark:bg-teal-400" />
-              <span>{isHindi ? "MONITOR" : "MONITOR"}</span>
-            </div>
-            <span className="text-slate-400 dark:text-slate-600">•</span>
-            <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-cyan-500 dark:bg-cyan-400" />
-              <span>{isHindi ? "AUTOMATE" : "AUTOMATE"}</span>
-            </div>
-            <span className="text-slate-400 dark:text-slate-600">•</span>
-            <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400" />
-              <span>{isHindi ? "GROW" : "GROW"}</span>
-            </div>
-          </motion.div>
 
         </div>
       </div>
