@@ -1,0 +1,258 @@
+export interface ShopProduct {
+  id: string;
+  page: number; // 1 or 2 matching shop.jasagro.com pagination
+  title: string;
+  titleHi: string;
+  slug: string;
+  category: "Biscuits & Cookies" | "Snacks & Khakhra" | "Oyster Mushrooms" | "Azolla Fodder";
+  categoryHi: string;
+  price: number;
+  originalPrice?: number;
+  unit: string;
+  unitHi: string;
+  img: string;
+  rating?: number;
+  reviewsCount?: number;
+  outOfStock?: boolean;
+  isPopular?: boolean;
+  description: string;
+  descriptionHi: string;
+  shopUrl: string;
+}
+
+export const SHOP_PRODUCTS: ShopProduct[] = [
+  // --- Page 1 Products ---
+  {
+    id: "shop-1",
+    page: 1,
+    title: "Vanilla Chocolate Biscuit 250gm",
+    titleHi: "वैनिला चॉकलेट बिस्किट 250g",
+    slug: "vanilla-chocolate-biscuit-250gm",
+    category: "Biscuits & Cookies",
+    categoryHi: "Biscuits & Cookies",
+    price: 150,
+    originalPrice: 180,
+    unit: "250g pack",
+    unitHi: "250g pack",
+    img: "http://shop.jasagro.com/wp-content/uploads/2023/02/Vanilla-chocolate-Biscuit-300x300.png",
+    rating: 4.8,
+    reviewsCount: 18,
+    outOfStock: false,
+    isPopular: true,
+    description: "Crunchy vanilla and chocolate organic cookies enriched with nutrient-dense oyster mushroom extracts.",
+    descriptionHi: "स्वादिष्ट Vanilla और Chocolate organic cookies, Oyster Mushroom protein से भरपूर।",
+    shopUrl: "http://shop.jasagro.com/product/vanilla-chocolate-biscuit-250gm/"
+  },
+  {
+    id: "shop-2",
+    page: 1,
+    title: "Milk Chocolate Biscuit 250gm",
+    titleHi: "मिल्क चॉकलेट बिस्किट 250g",
+    slug: "milk-chocolate-biscuit-250gm",
+    category: "Biscuits & Cookies",
+    categoryHi: "Biscuits & Cookies",
+    price: 150,
+    originalPrice: 180,
+    unit: "250g pack",
+    unitHi: "250g pack",
+    img: "http://shop.jasagro.com/wp-content/uploads/2023/02/Milk-chocolate5-300x300.jpg",
+    rating: 4.9,
+    reviewsCount: 24,
+    outOfStock: false,
+    isPopular: true,
+    description: "Rich milk chocolate flavor cookies baked with healthy organic ingredients.",
+    descriptionHi: "Premium Milk Chocolate cookies, pure organic ingredients के साथ बनी।",
+    shopUrl: "http://shop.jasagro.com/product/milk-chocolate-biscuit-250gm/"
+  },
+  {
+    id: "shop-3",
+    page: 1,
+    title: "Khakhra – Methi 250gm",
+    titleHi: "खाकरा – मेथी 250g",
+    slug: "khakhra-methi-250gm",
+    category: "Snacks & Khakhra",
+    categoryHi: "Snacks & Khakhra",
+    price: 130,
+    originalPrice: 150,
+    unit: "250g pack",
+    unitHi: "250g pack",
+    img: "http://shop.jasagro.com/wp-content/uploads/2022/09/Khakhra-Methi-300x300.jpg",
+    rating: 4.7,
+    reviewsCount: 15,
+    outOfStock: false,
+    isPopular: false,
+    description: "Crispy roasted whole wheat khakhra infused with fresh methi leaves and aromatic spices.",
+    descriptionHi: "Crispy roasted whole wheat Methi Khakhra, बिना तेल का healthy snack।",
+    shopUrl: "http://shop.jasagro.com/product/khakhra-methi-250gm/"
+  },
+  {
+    id: "shop-4",
+    page: 1,
+    title: "Khakhra – Oyster Mushroom 250gm",
+    titleHi: "खाकरा – ऑयस्टर मशरूम 250g",
+    slug: "khakhra-250gm",
+    category: "Snacks & Khakhra",
+    categoryHi: "Snacks & Khakhra",
+    price: 110,
+    originalPrice: 130,
+    unit: "250g pack",
+    unitHi: "250g pack",
+    img: "http://shop.jasagro.com/wp-content/uploads/2022/09/Khakhra-Oyster-300x300.jpg",
+    rating: 4.9,
+    reviewsCount: 32,
+    outOfStock: false,
+    isPopular: true,
+    description: "High-protein roasted khakhra blended with organic dried oyster mushroom powder.",
+    descriptionHi: "High-protein roasted Khakhra, organic Oyster Mushroom powder से बना।",
+    shopUrl: "http://shop.jasagro.com/product/khakhra-250gm/"
+  },
+  {
+    id: "shop-5",
+    page: 1,
+    title: "Chakri 200gm",
+    titleHi: "चकली / चक्री 200g",
+    slug: "chakri-200gm",
+    category: "Snacks & Khakhra",
+    categoryHi: "Snacks & Khakhra",
+    price: 100,
+    originalPrice: 120,
+    unit: "200g pack",
+    unitHi: "200g pack",
+    img: "http://shop.jasagro.com/wp-content/uploads/2022/09/Chakari2-300x300.jpg",
+    rating: 4.6,
+    reviewsCount: 12,
+    outOfStock: false,
+    isPopular: false,
+    description: "Traditional crispy savory chakri snack baked with whole grains and natural spices.",
+    descriptionHi: "Crispy और tasty Chakri snack, natural मसाले और whole grains के साथ।",
+    shopUrl: "http://shop.jasagro.com/product/chakri-200gm/"
+  },
+  {
+    id: "shop-6",
+    page: 1,
+    title: "Oyster Mushroom Powder – Raw",
+    titleHi: "ऑयस्टर मशरूम पाउडर – Raw",
+    slug: "oyster-mushroom-powder-raw",
+    category: "Oyster Mushrooms",
+    categoryHi: "Oyster Mushrooms",
+    price: 1800,
+    originalPrice: 2000,
+    unit: "1kg pouch",
+    unitHi: "1kg pouch",
+    img: "http://shop.jasagro.com/wp-content/uploads/2022/05/Mushroom-Powder-300x300.jpg",
+    rating: 5.0,
+    reviewsCount: 45,
+    outOfStock: false,
+    isPopular: true,
+    description: "100% pure sun-dried raw oyster mushroom powder. Rich in vitamin D, antioxidants, and dietary protein.",
+    descriptionHi: "100% pure sun-dried Oyster Mushroom powder। Vitamin D, antioxidants और protein से भरपूर।",
+    shopUrl: "http://shop.jasagro.com/product/oyster-mushroom-powder-raw/"
+  },
+  {
+    id: "shop-7",
+    page: 1,
+    title: "Naan khatai 250gm",
+    titleHi: "नानखटाई कुकीज़ 250g",
+    slug: "naan-khatai",
+    category: "Biscuits & Cookies",
+    categoryHi: "Biscuits & Cookies",
+    price: 150,
+    originalPrice: 175,
+    unit: "250g pack",
+    unitHi: "250g pack",
+    img: "http://shop.jasagro.com/wp-content/uploads/2022/05/Biscuit3-300x300.jpg",
+    rating: 4.8,
+    reviewsCount: 19,
+    outOfStock: false,
+    isPopular: false,
+    description: "Traditional melt-in-mouth Indian naan khatai cookies prepared with pure desi ghee and cardamom.",
+    descriptionHi: "Traditional melt-in-mouth Naan Khatai cookies, pure Desi Ghee और इलायची के स्वाद के साथ।",
+    shopUrl: "http://shop.jasagro.com/product/naan-khatai/"
+  },
+  {
+    id: "shop-8",
+    page: 1,
+    title: "Chocolate biscuit 250gm",
+    titleHi: "चॉकलेट काजू बिस्किट 250g",
+    slug: "chocolate-cashew-biscuit",
+    category: "Biscuits & Cookies",
+    categoryHi: "Biscuits & Cookies",
+    price: 150,
+    originalPrice: 180,
+    unit: "250g pack",
+    unitHi: "250g pack",
+    img: "http://shop.jasagro.com/wp-content/uploads/2022/05/Chocolate-Biscuit-300x300.jpg",
+    rating: 4.7,
+    reviewsCount: 22,
+    outOfStock: false,
+    isPopular: false,
+    description: "Rich cocoa biscuits studded with crunchy cashew bits and mushroom fortification.",
+    descriptionHi: "Crunchy Cashew bits और Cocoa से बनी rich Chocolate biscuits।",
+    shopUrl: "http://shop.jasagro.com/product/chocolate-cashew-biscuit/"
+  },
+  {
+    id: "shop-9",
+    page: 1,
+    title: "Butter-biscuit 250gm",
+    titleHi: "बटर बिस्किट 250g",
+    slug: "butter-biscuit",
+    category: "Biscuits & Cookies",
+    categoryHi: "Biscuits & Cookies",
+    price: 150,
+    originalPrice: 175,
+    unit: "250g pack",
+    unitHi: "250g pack",
+    img: "http://shop.jasagro.com/wp-content/uploads/2022/05/Butter-biscuit-300x300.jpg",
+    rating: 4.8,
+    reviewsCount: 16,
+    outOfStock: false,
+    isPopular: false,
+    description: "Crispy golden butter cookies made with farm-fresh butter and organic flour.",
+    descriptionHi: "Crispy golden Butter cookies, fresh butter और organic flour से तैयार।",
+    shopUrl: "http://shop.jasagro.com/product/butter-biscuit/"
+  },
+
+  // --- Page 2 Products ---
+  {
+    id: "shop-10",
+    page: 2,
+    title: "Oyster Mushrooms 1kg",
+    titleHi: "फ्रेश ऑयस्टर मशरूम 1kg",
+    slug: "oyster-mushrooms-1kg",
+    category: "Oyster Mushrooms",
+    categoryHi: "Oyster Mushrooms",
+    price: 200,
+    originalPrice: 240,
+    unit: "1kg pack",
+    unitHi: "1kg pack",
+    img: "http://shop.jasagro.com/wp-content/uploads/2022/04/Mushroom-300x300.png",
+    rating: 4.9,
+    reviewsCount: 38,
+    outOfStock: false,
+    isPopular: true,
+    description: "Freshly harvested organic white Oyster Mushrooms grown in climate-controlled indoor telemetry rooms.",
+    descriptionHi: "Freshly harvested organic Oyster Mushrooms, हाई nutrition और बढ़िया taste के साथ।",
+    shopUrl: "http://shop.jasagro.com/product/oyster-mushrooms-1kg/"
+  },
+  {
+    id: "shop-11",
+    page: 2,
+    title: "Azolla 1 KG",
+    titleHi: "अजोला हरा चारा 1kg",
+    slug: "azolla-5-kg",
+    category: "Azolla Fodder",
+    categoryHi: "Azolla Fodder",
+    price: 120,
+    originalPrice: 150,
+    unit: "1kg live culture",
+    unitHi: "1kg live culture",
+    img: "http://shop.jasagro.com/wp-content/uploads/2022/04/Azolla-300x300.png",
+    rating: 5.0,
+    reviewsCount: 52,
+    outOfStock: false,
+    isPopular: true,
+    description: "High-protein green bio-superfood for cattle, poultry, and fish farming (25-30% crude protein).",
+    descriptionHi: "Cattle, Poultry और Fish farming के लिए 25-30% Protein युक्त live Azolla Fodder।",
+    shopUrl: "http://shop.jasagro.com/product/azolla-5-kg/"
+  }
+];
