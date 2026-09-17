@@ -41,7 +41,7 @@ export const ProductExplorer: React.FC = () => {
               <Sparkles className="w-3.5 h-3.5 text-amber-500 dark:text-amber-400" />
               <span>{language === "hi" ? "SOLUTIONS & CATALOG" : "SOLUTIONS SHOWCASE"}</span>
             </div>
-            <h2 className="text-4xl sm:text-6xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight leading-none">
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight leading-none">
               {language === "hi" ? "हमारे Smart " : "EXPLORE OUR "}
               <span className="bg-gradient-to-r from-emerald-600 via-teal-500 to-green-600 dark:from-emerald-400 dark:via-teal-300 dark:to-green-300 bg-clip-text text-transparent">
                 {language === "hi" ? "Products और Solutions" : "CULTIVATION SYSTEMS."}

@@ -61,7 +61,7 @@ export const InteractiveIoTSimulator: React.FC = () => {
             <span>{language === "hi" ? "लाइव IoT एग्री-टेलीमेट्री सिम्युलेटर" : "Live IoT Telemetry Simulator"}</span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl font-extrabold font-heading text-white tracking-tight">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold font-heading text-white tracking-tight">
             {language === "hi" ? (
               <>
                 स्मार्ट इंडोर <span className="bg-gradient-to-r from-cyan-400 to-teal-300 bg-clip-text text-transparent drop-shadow-sm">माइक्रो-क्लाइमेट</span> कंट्रोल
@@ -95,7 +95,7 @@ export const InteractiveIoTSimulator: React.FC = () => {
                   OPTIMAL
                 </span>
               </div>
-              <div className="text-4xl sm:text-5xl font-extrabold text-white font-mono tracking-tight flex items-baseline gap-2">
+              <div className="text-2xl sm:text-3xl font-extrabold text-white font-mono tracking-tight flex items-baseline gap-2">
                 {temp}<span className="text-xl text-amber-400 font-sans">°C</span>
               </div>
               <div className="w-full h-2.5 bg-slate-950 rounded-full overflow-hidden p-0.5 border border-slate-800">
@@ -118,7 +118,7 @@ export const InteractiveIoTSimulator: React.FC = () => {
                   {foggerActive ? "FOGGER ACTIVE" : "STABLE"}
                 </span>
               </div>
-              <div className="text-4xl sm:text-5xl font-extrabold text-white font-mono tracking-tight flex items-baseline gap-2">
+              <div className="text-2xl sm:text-3xl font-extrabold text-white font-mono tracking-tight flex items-baseline gap-2">
                 {humidity}<span className="text-xl text-cyan-400 font-sans">%</span>
               </div>
               <div className="w-full h-2.5 bg-slate-950 rounded-full overflow-hidden p-0.5 border border-slate-800">
@@ -141,7 +141,7 @@ export const InteractiveIoTSimulator: React.FC = () => {
                   {fanActive ? "VENTILATION" : "ACCUMULATING"}
                 </span>
               </div>
-              <div className="text-4xl sm:text-5xl font-extrabold text-white font-mono tracking-tight flex items-baseline gap-2">
+              <div className="text-2xl sm:text-3xl font-extrabold text-white font-mono tracking-tight flex items-baseline gap-2">
                 {co2} <span className="text-sm text-slate-400 font-sans font-semibold">PPM</span>
               </div>
               <div className="w-full h-2.5 bg-slate-950 rounded-full overflow-hidden p-0.5 border border-slate-800">
@@ -164,7 +164,7 @@ export const InteractiveIoTSimulator: React.FC = () => {
                   IDEAL
                 </span>
               </div>
-              <div className="text-4xl sm:text-5xl font-extrabold text-white font-mono tracking-tight flex items-baseline gap-2">
+              <div className="text-2xl sm:text-3xl font-extrabold text-white font-mono tracking-tight flex items-baseline gap-2">
                 {moisture}<span className="text-xl text-emerald-400 font-sans">%</span>
               </div>
               <div className="w-full h-2.5 bg-slate-950 rounded-full overflow-hidden p-0.5 border border-slate-800">

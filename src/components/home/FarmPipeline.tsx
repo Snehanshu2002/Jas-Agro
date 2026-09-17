@@ -59,7 +59,7 @@ export const FarmPipeline: React.FC = () => {
             <span>{isHindi ? "SYSTEM TRANSFORMATION STAGES" : "SYSTEM TRANSFORMATION STAGES"}</span>
           </div>
 
-          <h2 className="text-4xl sm:text-6xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight leading-none">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight leading-none">
             {isHindi ? "Soil से " : "FROM SOIL "}
             <br className="hidden sm:inline" />
             <span className="bg-gradient-to-r from-emerald-600 via-teal-500 to-cyan-600 dark:from-emerald-400 dark:via-teal-300 dark:to-cyan-400 bg-clip-text text-transparent">

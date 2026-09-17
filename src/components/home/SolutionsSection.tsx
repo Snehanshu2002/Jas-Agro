@@ -73,7 +73,7 @@ export const SolutionsSection: React.FC = () => {
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-600 dark:text-amber-400 text-xs font-bold uppercase tracking-widest">
             {language === "hi" ? "Core Offerings" : "CORE OFFERINGS"}
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-slate-900 dark:text-white">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold font-heading text-slate-900 dark:text-white">
             {language === "hi" ? "Smart Solutions. " : "What We Grow. "}
             <span className="text-emerald-600 dark:text-emerald-400">
               {language === "hi" ? "High Productivity." : "What We Solve."}

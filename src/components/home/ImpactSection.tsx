@@ -50,7 +50,7 @@ export const ImpactSection: React.FC = () => {
             <span>{isHindi ? "MEASURABLE IMPACT" : "MEASURABLE IMPACT"}</span>
           </div>
 
-          <h2 className="text-4xl sm:text-6xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight leading-none">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight leading-none">
             {isHindi ? "Impact जो " : "IMPACT "}
             <span className="bg-gradient-to-r from-emerald-600 via-teal-500 to-green-600 dark:from-emerald-400 dark:via-teal-300 dark:to-green-300 bg-clip-text text-transparent">
               {isHindi ? "हर दिन बढ़ता है" : "THAT GROWS."}
@@ -86,7 +86,7 @@ export const ImpactSection: React.FC = () => {
                   )}
                 </div>
 
-                <div className="text-4xl sm:text-5xl font-extrabold font-mono text-slate-900 dark:text-white tracking-tight group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                <div className="text-2xl sm:text-3xl font-extrabold font-mono text-slate-900 dark:text-white tracking-tight group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
                   {item.value}
                 </div>
 

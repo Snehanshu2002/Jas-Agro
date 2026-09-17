@@ -59,7 +59,7 @@ export const TestimonialSection: React.FC = () => {
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 dark:text-amber-400 text-xs font-bold uppercase tracking-widest">
             {language === "hi" ? "Farmer Feedback & Reviews" : "FARMER & PARTNER FEEDBACK"}
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold font-heading text-slate-900 dark:text-white">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold font-heading text-slate-900 dark:text-white">
             {language === "hi" ? "हमारे Farmers और Partners के " : "What Our "}
             <span className="text-emerald-600 dark:text-amber-400">
               {language === "hi" ? "अनुभव" : "Partners Say"}

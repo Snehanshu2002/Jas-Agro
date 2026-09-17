@@ -57,7 +57,7 @@ export const ProcessSection: React.FC = () => {
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-xs font-bold uppercase tracking-widest">
             {language === "hi" ? "Our Process" : "OUR METHODOLOGY"}
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-slate-900 dark:text-white">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold font-heading text-slate-900 dark:text-white">
             {language === "hi" ? "From Lab to Field. " : "How We Deliver. "}
             <span className="text-emerald-600 dark:text-emerald-400">
               {language === "hi" ? "End-to-End Success." : "End-to-End Success."}
