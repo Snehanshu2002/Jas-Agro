@@ -163,7 +163,7 @@ export const HeroSection: React.FC = () => {
 
       {/* LAYER 3.5: FLOATING VIDEO PLAYLIST SWITCHER PILLS (Z-50 FOREGROUND) */}
       {!prefersReducedMotion && (
-        <div className="absolute top-24 right-4 sm:right-8 z-50 pointer-events-auto flex items-center gap-2 bg-slate-950/85 backdrop-blur-xl p-1.5 rounded-full border border-emerald-500/30 shadow-2xl">
+        <div className="absolute top-20 right-3 sm:right-6 z-50 pointer-events-auto flex items-center gap-1 sm:gap-1.5 bg-slate-950/85 backdrop-blur-xl p-1 rounded-full border border-emerald-500/30 shadow-xl max-w-[92vw] overflow-x-auto">
           {HERO_VIDEOS.map((vid, idx) => {
             const isActive = currentVideoIndex === idx;
             return (
@@ -174,13 +174,13 @@ export const HeroSection: React.FC = () => {
                   e.stopPropagation();
                   setCurrentVideoIndex(idx);
                 }}
-                className={`px-3 py-1.5 rounded-full text-[10px] font-mono font-bold transition-all flex items-center gap-1.5 cursor-pointer pointer-events-auto relative z-50 ${
+                className={`px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[9px] sm:text-[10px] font-mono font-bold transition-all flex items-center gap-1 cursor-pointer pointer-events-auto relative z-50 whitespace-nowrap ${
                   isActive
-                    ? "bg-gradient-to-r from-emerald-500 to-teal-400 text-slate-950 shadow-md scale-[1.05]"
+                    ? "bg-gradient-to-r from-emerald-500 to-teal-400 text-slate-950 shadow-sm scale-[1.02]"
                     : "text-slate-300 hover:text-white hover:bg-white/10"
                 }`}
               >
-                <span className={`w-1.5 h-1.5 rounded-full ${isActive ? "bg-slate-950 animate-ping" : "bg-emerald-400"}`} />
+                <span className={`w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full ${isActive ? "bg-slate-950 animate-ping" : "bg-emerald-400"}`} />
                 {isHindi ? vid.titleHi : vid.titleEn}
               </button>
             );
