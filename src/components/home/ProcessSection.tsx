@@ -57,13 +57,13 @@ export const ProcessSection: React.FC = () => {
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-xs font-bold uppercase tracking-widest">
             {language === "hi" ? "Our Process" : "OUR METHODOLOGY"}
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold font-heading text-slate-900 dark:text-white">
-            {language === "hi" ? "यह कैसे " : "How It "}
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-slate-900 dark:text-white">
+            {language === "hi" ? "From Lab to Field. " : "How We Deliver. "}
             <span className="text-emerald-600 dark:text-emerald-400">
-              {language === "hi" ? "काम करता है?" : "Works"}
+              {language === "hi" ? "End-to-End Success." : "End-to-End Success."}
             </span>
           </h2>
-          <p className="text-slate-600 dark:text-slate-300 text-base">
+          <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base">
             {language === "hi"
               ? "Organic science और modern tech पर आधारित हमारा 5-step smart farming process।"
               : "A proven, 5-stage agricultural framework combining biological science and technology."}

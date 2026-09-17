@@ -79,7 +79,7 @@ export const AboutSection: React.FC = () => {
                 <span>{isHindi ? "Who We Are" : "WHO WE ARE"}</span>
               </div>
 
-              <h2 className="text-4xl sm:text-6xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight leading-none">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight leading-tight">
                 {isHindi ? "Farming, " : "AGRICULTURE, "}
                 <br className="hidden sm:inline" />
                 <span className="bg-gradient-to-r from-emerald-600 via-teal-500 to-green-600 dark:from-emerald-400 dark:via-teal-300 dark:to-green-300 bg-clip-text text-transparent">
@@ -87,7 +87,7 @@ export const AboutSection: React.FC = () => {
                 </span>
               </h2>
 
-              <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg font-normal leading-relaxed">
+              <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base font-normal leading-relaxed">
                 {isHindi
                   ? "JAS Agro का मानना है कि farming का future natural organic processes और digital IoT technology के सही combination में है।"
                   : "At JAS Agro, we believe the future of farming lies at the intersection of natural biological processes and precision digital telemetry."}

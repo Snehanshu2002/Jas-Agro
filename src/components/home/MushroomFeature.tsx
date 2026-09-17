@@ -39,14 +39,14 @@ export const MushroomFeature: React.FC = () => {
               {language === "hi" ? "Smart Mushroom Farming & IoT" : "FEATURED CULTIVATION & IOT"}
             </div>
 
-            <h2 className="text-3xl sm:text-5xl font-extrabold font-heading text-slate-900 dark:text-white leading-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-slate-900 dark:text-white leading-tight">
               {language === "hi" ? "Oyster Mushroom Farming & " : "Oyster Mushroom "}
               <span className="text-amber-600 dark:text-amber-400">
                 {language === "hi" ? "Chhatraka Portal" : "Cultivation & Chhatraka"}
               </span>
             </h2>
 
-            <p className="text-slate-600 dark:text-slate-300 text-base leading-relaxed">
+            <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
               {language === "hi"
                 ? "Oyster Mushrooms के लिए सही Temperature (22–28°C) और Humidity (80–90%) बहुत ज़रूरी है। Arduino, DHT22 sensors और ESP8266 Cloud Automation से फसल की बेहतर yield और सुरक्षा मिलती है।"
                 : "Oyster mushrooms (Pleurotus) require controlled temperature (22–28°C) and relative humidity (80–90%). Using Arduino, soil moisture sensors, DHT22 sensors, and ESP8266 cloud computing, JAS Agro eliminates crop failure risks."}

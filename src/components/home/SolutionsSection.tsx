@@ -73,13 +73,13 @@ export const SolutionsSection: React.FC = () => {
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-600 dark:text-amber-400 text-xs font-bold uppercase tracking-widest">
             {language === "hi" ? "Core Offerings" : "CORE OFFERINGS"}
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold font-heading text-slate-900 dark:text-white">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-slate-900 dark:text-white">
             {language === "hi" ? "Smart Solutions. " : "What We Grow. "}
             <span className="text-emerald-600 dark:text-emerald-400">
               {language === "hi" ? "High Productivity." : "What We Solve."}
             </span>
           </h2>
-          <p className="text-slate-600 dark:text-slate-300 text-base">
+          <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base">
             {language === "hi"
               ? "High yield, livestock feed security और soil health के लिए engineered solutions।"
               : "Engineered agricultural solutions designed for optimal biomass production, livestock security, and ecological sustainability."}
