@@ -273,19 +273,7 @@ export const HeroSection: React.FC = () => {
       </div>
 
       {/* BOTTOM CONTROL BAR & SCROLL INDICATOR */}
-      {/* Live Farm Telemetry Pill (Shifted safely to avoid bottom-left widget overlap) */}
-      <div className="absolute bottom-28 left-8 z-20 hidden md:flex items-center gap-3 px-3.5 py-1.5 rounded-full bg-white/90 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 backdrop-blur-md shadow-md dark:shadow-glass text-[11px] font-mono text-slate-800 dark:text-slate-300">
-        <span className="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-ping" />
-        <span className="text-slate-900 dark:text-slate-200 font-bold">FARM SYSTEM</span>
-        <span className="text-slate-400 dark:text-slate-500">|</span>
-        <span className="text-emerald-600 dark:text-emerald-400">24.6°C</span>
-        <span className="text-slate-400 dark:text-slate-500">•</span>
-        <span className="text-teal-600 dark:text-teal-300">82% RH</span>
-        <span className="text-slate-400 dark:text-slate-500">|</span>
-        <span className="text-amber-700 dark:text-amber-400 font-semibold uppercase text-[9px] px-1.5 py-0.5 rounded bg-amber-100 dark:bg-amber-950/60 border border-amber-300 dark:border-amber-500/30">
-          SIMULATION
-        </span>
-      </div>
+
 
       {/* Scroll Indicator (Bottom Center) */}
       <motion.div
