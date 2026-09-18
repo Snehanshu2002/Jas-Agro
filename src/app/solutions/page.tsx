@@ -27,17 +27,17 @@ export default function SolutionsPage() {
       <section className="relative pt-24 pb-8 overflow-hidden bg-slate-50 dark:bg-[#0B0F17] border-b border-slate-200 dark:border-slate-800/80">
         <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 text-center relative z-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 dark:text-emerald-400 text-xs font-bold uppercase tracking-wider mb-4">
-            {language === "hi" ? "AGRI-TECH SERVICES" : "AGRI-TECH SERVICES"}
+            {language === "hi" ? "कृषि-तकनीक सेवाएं" : "AGRI-TECH SERVICES"}
           </div>
           <h1 className="text-4xl sm:text-6xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight">
-            {language === "hi" ? "हमारे Smart " : "Agriculture & "}
+            {language === "hi" ? "कृषि एवं " : "Agriculture & "}
             <span className="text-emerald-600 dark:text-emerald-400">
-              {language === "hi" ? "Solutions और Services" : "Smart Farming Services"}
+              {language === "hi" ? "स्मार्ट फार्मिंग समाधान" : "Smart Farming Services"}
             </span>
           </h1>
           <p className="text-slate-600 dark:text-slate-300 text-lg max-w-2xl mx-auto mt-4 leading-relaxed">
             {language === "hi"
-              ? "Turnkey farm setup, organic culture supply, farm design और IoT automation।"
+              ? "टर्नकी फार्म सेटअप, जैविक कल्चर आपूर्ति, फार्म डिज़ाइन एवं स्मार्ट IoT ऑटोमेशन।"
               : "Turnkey installation, biological culture supply, layout engineering, and IoT telemetry integration."}
           </p>
         </div>
@@ -68,7 +68,7 @@ export default function SolutionsPage() {
 
                   <div className="space-y-2 pt-2">
                     <h4 className="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">
-                      {language === "hi" ? "Key Highlights & Features:" : "Key Highlights & Features:"}
+                      {language === "hi" ? "मुख्य विशेषताएं एवं खूबियां:" : "Key Highlights & Features:"}
                     </h4>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                       {(language === "hi" && serv.featuresHi ? serv.featuresHi : serv.features).map((feat, fidx) => (
@@ -83,7 +83,7 @@ export default function SolutionsPage() {
 
                 <div className="lg:col-span-5 bg-slate-100 dark:bg-slate-950 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-4">
                   <h4 className="font-heading font-bold text-slate-900 dark:text-white text-sm">
-                    {language === "hi" ? "Project Deliverables:" : "Project Deliverables:"}
+                    {language === "hi" ? "प्रोजेक्ट में क्या-क्या मिलेगा:" : "Project Deliverables:"}
                   </h4>
                   <ul className="space-y-2 text-xs text-slate-600 dark:text-slate-300">
                     {(language === "hi" && serv.deliverablesHi ? serv.deliverablesHi : serv.deliverables).map((del, didx) => (
