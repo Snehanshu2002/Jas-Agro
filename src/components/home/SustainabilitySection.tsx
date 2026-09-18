@@ -11,30 +11,30 @@ export const SustainabilitySection: React.FC = () => {
   const ecoPillars = [
     {
       titleEn: "Bio-Waste Conversion",
-      titleHi: "Bio-Waste Conversion",
+      titleHi: "बायो-वेस्ट कन्वर्जन",
       descEn: "Converting agricultural crop residues into premium vermicompost topsoil.",
-      descHi: "Crop residues और agri waste को organic Vermicompost में बदलना।",
+      descHi: "क्रॉप रेजिड्यूस और एग्री वेस्ट को ऑर्गेनिक वर्मीकंपोस्ट में बदलना।",
       icon: Recycle,
     },
     {
       titleEn: "Water Efficiency",
-      titleHi: "Water Conservation",
+      titleHi: "वाटर कन्जर्वेशन",
       descEn: "Closed-loop hydroponic & misting systems saving up to 70% water.",
-      descHi: "Closed-loop misting systems से 70% तक पानी की बचत।",
+      descHi: "क्लोज्ड-लूप मिस्टिंग सिस्टम्स से 70% तक पानी की बचत।",
       icon: Droplets,
     },
     {
       titleEn: "Soil Health Restoration",
-      titleHi: "Soil Health Restoration",
+      titleHi: "सोइल हेल्थ रेस्टोरेशन",
       descEn: "Replenishing natural organic carbon without synthetic chemical runoff.",
-      descHi: "बिना chemicals के soil organic carbon और fertility में सुधार।",
+      descHi: "बिना केमिकल्स के सोइल ऑर्गेनिक कार्बन और फर्टिलिटी में सुधार।",
       icon: Leaf,
     },
     {
       titleEn: "Clean Energy & Tech",
-      titleHi: "Clean Tech & Energy",
+      titleHi: "क्लीन टेक & एनर्जी",
       descEn: "Solar-ready IoT sensor telemetry nodes for carbon-neutral operations.",
-      descHi: "Solar-ready IoT sensors से eco-friendly smart farming।",
+      descHi: "सोलर-रेडी IoT सेंसर्स से इको-फ्रेंडली स्मार्ट फार्मिंग।",
       icon: Sun,
     },
   ];
@@ -58,11 +58,11 @@ export const SustainabilitySection: React.FC = () => {
             <div className="space-y-4 max-w-2xl">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950/90 border border-emerald-500/50 text-emerald-300 text-xs font-mono font-bold uppercase tracking-widest backdrop-blur-md">
                 <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                <span>{isHindi ? "Sustainable AgTech" : "SUSTAINABLE AGTECH"}</span>
+                <span>{isHindi ? "सस्टेनेबल एग्रीटेक" : "SUSTAINABLE AGTECH"}</span>
               </div>
 
               <h2 className="text-lg sm:text-xl lg:text-2xl font-extrabold font-heading text-white tracking-tight leading-none drop-shadow-lg">
-                {isHindi ? "ज़्यादा Production। " : "GROWING MORE. "}
+                {isHindi ? "ज़्यादा प्रोडक्शन। " : "GROWING MORE. "}
                 <br className="hidden sm:inline" />
                 <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-green-300 bg-clip-text text-transparent">
                   {isHindi ? "शून्य बर्बादी।" : "WASTING LESS."}
@@ -71,7 +71,7 @@ export const SustainabilitySection: React.FC = () => {
 
               <p className="text-slate-200 text-base sm:text-lg font-normal leading-relaxed drop-shadow-md">
                 {isHindi
-                  ? "Natural ecology को नुक़सान पहुँचाए बिना maximum crop yields पाना।"
+                  ? "नेचुरल इकोलॉजी को नुक़सान पहुँचाए बिना मैक्सिमम क्रॉप यील्ड्स पाना।"
                   : "Harvesting maximum agricultural potential while preserving topsoil ecological balance."}
               </p>
             </div>

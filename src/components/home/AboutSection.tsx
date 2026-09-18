@@ -12,30 +12,30 @@ export const AboutSection: React.FC = () => {
   const principles = [
     {
       titleEn: "Sustainable Cultivation",
-      titleHi: "Sustainable Cultivation",
+      titleHi: "सस्टेनेबल कल्टीवेशन",
       descEn: "Restoring soil fertility and reducing synthetic inputs.",
-      descHi: "Soil fertility बेहतर करना और synthetic chemicals की निर्भरता कम करना।",
+      descHi: "सोइल फर्टिलिटी बेहतर करना और सिंथेटिक केमिकल्स की निर्भरता कम करना।",
       icon: Leaf,
     },
     {
       titleEn: "Smart Sensor Telemetry",
-      titleHi: "Smart Sensor Telemetry",
+      titleHi: "स्मार्ट सेंसर टेलीमेट्री",
       descEn: "Precision indoor micro-climate monitoring for gourmet crops.",
-      descHi: "Crops के लिए indoor temperature और humidity automatic control करना।",
+      descHi: "क्रॉप्स के लिए इंडोर टेम्परेचर और ह्यूमिडिटी ऑटोमैटिक कंट्रोल करना।",
       icon: Cpu,
     },
     {
       titleEn: "Farmer-Centric Models",
-      titleHi: "Farmer-Centric Models",
+      titleHi: "फार्मर-सेंट्रिक मॉडल",
       descEn: "Cost-effective, high-return setups for small & commercial growers.",
-      descHi: "Farmers और commercial growers के लिए high-return setups।",
+      descHi: "फार्मर्स और कमर्शियल ग्रोअर्स के लिए हाई-रिटर्न सेटअप्स।",
       icon: HeartHandshake,
     },
     {
       titleEn: "Resource Efficiency",
-      titleHi: "Resource Efficiency",
+      titleHi: "रिसोर्स एफिशिएंसी",
       descEn: "Optimized water & nutrient usage for zero-waste production.",
-      descHi: "Water और nutrients का smart utilization।",
+      descHi: "वाटर और न्यूट्रिएंट्स का स्मार्ट यूटिलाइजेशन।",
       icon: Zap,
     },
   ];
@@ -61,11 +61,11 @@ export const AboutSection: React.FC = () => {
               <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-slate-950/90 border border-emerald-500/40 backdrop-blur-xl">
                 <div className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-widest flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                  {isHindi ? "JAS Agro Farm - Organic & Digital" : "JAS AGRO FARM - BIOLOGICAL & DIGITAL"}
+                  {isHindi ? "JAS एग्रो फार्म - ऑर्गेनिक & डिजिटल" : "JAS AGRO FARM - BIOLOGICAL & DIGITAL"}
                 </div>
                 <div className="text-sm font-semibold text-slate-200 mt-1">
                   {isHindi
-                    ? "Organic processes और digital IoT technology का real farm view।"
+                    ? "ऑर्गेनिक प्रोसेस और डिजिटल IoT टेक्नोलॉजी का रियल फार्म व्यू।"
                     : "Real field action of natural organic processes and digital IoT micro-climate automation."}
                 </div>
               </div>
@@ -76,20 +76,20 @@ export const AboutSection: React.FC = () => {
           <div className="lg:col-span-6 space-y-8 text-left">
             <div className="space-y-4">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100 dark:bg-emerald-950/90 border border-emerald-300 dark:border-emerald-500/50 text-emerald-800 dark:text-emerald-300 text-xs font-mono font-bold uppercase tracking-widest">
-                <span>{isHindi ? "Who We Are" : "WHO WE ARE"}</span>
+                <span>{isHindi ? "अबाउट अस" : "WHO WE ARE"}</span>
               </div>
 
               <h2 className="text-lg sm:text-xl lg:text-2xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight leading-tight">
-                {isHindi ? "Farming, " : "AGRICULTURE, "}
+                {isHindi ? "फार्मिंग, " : "AGRICULTURE, "}
                 <br className="hidden sm:inline" />
                 <span className="bg-gradient-to-r from-emerald-600 via-teal-500 to-green-600 dark:from-emerald-400 dark:via-teal-300 dark:to-green-300 bg-clip-text text-transparent">
-                  {isHindi ? "Reimagined for Tomorrow।" : "REIMAGINED FOR TOMORROW."}
+                  {isHindi ? "रीइमेजिन्ड फॉर टुमॉरो।" : "REIMAGINED FOR TOMORROW."}
                 </span>
               </h2>
 
               <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base font-normal leading-relaxed">
                 {isHindi
-                  ? "JAS Agro का मानना है कि farming का future natural organic processes और digital IoT technology के सही combination में है।"
+                  ? "JAS Agro का मानना है कि फार्मिंग का फ्यूचर नेचुरल ऑर्गेनिक प्रोसेस और डिजिटल IoT टेक्नोलॉजी के सही कॉम्बिनेशन में है।"
                   : "At JAS Agro, we believe the future of farming lies at the intersection of natural biological processes and precision digital telemetry."}
               </p>
             </div>

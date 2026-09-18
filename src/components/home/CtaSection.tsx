@@ -34,7 +34,7 @@ export const CtaSection: React.FC = () => {
           {/* Eyebrow Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100 dark:bg-emerald-950/90 border border-emerald-300 dark:border-emerald-500/50 text-emerald-800 dark:text-emerald-300 text-xs font-mono font-bold uppercase tracking-wider shadow-glow">
             <Sparkles className="w-3.5 h-3.5 text-amber-500 dark:text-amber-400 animate-pulse" />
-            <span>{isHindi ? "Smart Farming की शुरुआत करें" : "START YOUR FARM JOURNEY"}</span>
+            <span>{isHindi ? "स्मार्ट फार्मिंग की शुरुआत करें" : "START YOUR FARM JOURNEY"}</span>
           </div>
 
           {/* Headline */}
@@ -42,14 +42,14 @@ export const CtaSection: React.FC = () => {
             {isHindi ? "क्या आप तैयार हैं " : "READY TO BUILD "}
             <br className="hidden sm:inline" />
             <span className="bg-gradient-to-r from-emerald-600 via-teal-500 to-green-600 dark:from-emerald-400 dark:via-teal-300 dark:to-green-300 bg-clip-text text-transparent">
-              {isHindi ? "Smart Farm बनाने के लिए?" : "A SMARTER FARM?"}
+              {isHindi ? "स्मार्ट फार्म बनाने के लिए?" : "A SMARTER FARM?"}
             </span>
           </h2>
 
           {/* Supporting Text */}
           <p className="text-slate-600 dark:text-slate-300 text-base sm:text-xl font-medium leading-relaxed max-w-2xl mx-auto">
             {isHindi
-              ? "अपनी requirement बताएं, हमारी team सही crop और IoT smart system design करने में आपकी पूरी मदद करेगी।"
+              ? "अपनी जरूरत बताएं, हमारी टीम सही क्रॉप और IoT स्मार्ट सिस्टम डिजाइन करने में आपकी पूरी मदद करेगी।"
               : "Tell us what you're planning. We'll help you design the right cultivation and technology system."}
           </p>
 
@@ -59,7 +59,7 @@ export const CtaSection: React.FC = () => {
               onClick={() => setQuoteModalOpen(true)}
               className="w-full sm:w-auto px-9 py-4 rounded-2xl bg-gradient-to-r from-emerald-500 via-teal-500 to-green-600 hover:from-emerald-400 hover:to-teal-500 text-white font-extrabold text-base shadow-glow-lg border border-emerald-300/40 hover:scale-105 transition-all cursor-pointer flex items-center justify-center gap-2.5"
             >
-              {isHindi ? "Get a Quote" : "Get a Quote"} <ArrowRight className="w-5 h-5" />
+              {isHindi ? "कोटेशन प्राप्त करें" : "Get a Quote"} <ArrowRight className="w-5 h-5" />
             </button>
 
             <a
@@ -67,13 +67,13 @@ export const CtaSection: React.FC = () => {
               className="w-full sm:w-auto px-9 py-4 rounded-2xl bg-slate-100 dark:bg-slate-950 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-900 dark:text-white font-bold text-base border border-slate-300 dark:border-slate-700 shadow-glass transition-all flex items-center justify-center gap-2.5 hover:scale-105"
             >
               <PhoneCall className="w-5 h-5 text-amber-500 dark:text-amber-400" />
-              {isHindi ? "JAS Agro से बात करें" : "Talk to JAS Agro"}
+              {isHindi ? "JAS एग्रो से बात करें" : "Talk to JAS Agro"}
             </a>
           </div>
 
           <div className="pt-4 flex items-center justify-center gap-2 text-xs font-mono text-slate-400">
             <ShieldCheck className="w-4 h-4 text-emerald-400" />
-            <span>Dedicated AgTech Expert Advisory • Zero Obligation Consultation</span>
+            <span>{isHindi ? "समर्पित एग्रीटेक विशेषज्ञ सलाह • मुफ़्त कंसल्टेशन" : "Dedicated AgTech Expert Advisory • Zero Obligation Consultation"}</span>
           </div>
         </div>
       </div>

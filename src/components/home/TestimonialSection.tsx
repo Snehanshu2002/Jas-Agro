@@ -12,43 +12,43 @@ export const TestimonialSection: React.FC = () => {
       quoteEn:
         "The Azolla culture ponds and Super Napier grass slips transformed our dairy feed program. Our daily milk yield increased while commercial feed expenditures dropped by over 25%.",
       quoteHi:
-        "Azolla ponds और Super Napier Grass से हमारे dairy feed का सिस्टम बहुत बढ़िया हो गया। Daily milk yield बढ़ी और feed cost 25% से ज़्यादा कम हो गई।",
+        "अजोला पॉन्ड्स और सुपर नेपियर घास से हमारे डेयरी फीड का सिस्टम बहुत बढ़िया हो गया। डेली मिल्क यील्ड बढ़ी और फीड कॉस्ट 25% से ज़्यादा कम हो गई।",
       authorEn: "Commercial Dairy Farm Partner",
-      authorHi: "Dairy Farm Owner",
+      authorHi: "डेयरी फार्म ओनर",
       locationEn: "Rajasthan, India",
       locationHi: "राजस्थान, भारत",
       solutionEn: "Azolla & Super Napier Fodder",
       solutionHi: "अजोला और सुपर नेपियर चारा",
       badgeEn: "Client Case Study",
-      badgeHi: "Client Review",
+      badgeHi: "क्लाइंट रिव्यू",
     },
     {
       quoteEn:
         "JAS Agro's IoT grow room controller for Oyster Mushrooms provided precise temperature and humidity monitoring. Automated misters eliminated crop drying during hot summer months.",
       quoteHi:
-        "Oyster Mushroom के लिए JAS Agro के IoT controller ने Temperature और Humidity का सटीक control दिया। Automatic misting से गर्मियों में भी crop बिलकुल safe रहती है।",
+        "ऑयस्टर मशरूम के लिए JAS एग्रो के IoT कंट्रोलर ने टेम्परेचर और ह्यूमिडिटी का सटीक कंट्रोल दिया। ऑटोमैटिक मिस्टिंग से गर्मियों में भी क्रॉप बिलकुल सेफ रहती है।",
       authorEn: "Agri-Entrepreneur & Grower",
-      authorHi: "Agri Producer",
+      authorHi: "एग्री प्रोड्यूसर",
       locationEn: "North India",
       locationHi: "उत्तर भारत",
       solutionEn: "Oyster Mushroom + IoT Telemetry",
-      solutionHi: "ऑयस्टर मशरूम + IoT सेट-अप",
+      solutionHi: "ऑयस्टर मशरूम + IoT सेटअप",
       badgeEn: "Grower Case Study",
-      badgeHi: "Grower Story",
+      badgeHi: "ग्रोअर स्टोरी",
     },
     {
       quoteEn:
         "Transitioning to bio-active vermicompost restored topsoil health across our horticulture orchards. Tree root vigor and moisture retention improved significantly within one season.",
       quoteHi:
-        "Organic Vermicompost use करने से हमारी soil quality बहुत बेहतर हो गई। एक ही season में roots की मजबूती और moisture holding capacity काफ़ी बढ़ गई।",
+        "ऑर्गेनिक वर्मीकंपोस्ट यूज़ करने से हमारी सोइल क्वालिटी बहुत बेहतर हो गई। एक ही सीजन में रूट्स की मजबूती और मॉइस्चर होल्डिंग कैपेसिटी काफ़ी बढ़ गई।",
       authorEn: "Horticulture Orchard Manager",
-      authorHi: "Farm Manager",
+      authorHi: "फार्म मैनेजर",
       locationEn: "Central India",
       locationHi: "मध्य भारत",
       solutionEn: "Organic Vermicompost",
       solutionHi: "जैविक वर्मीकंपोस्ट खाद",
       badgeEn: "Orchard Case Study",
-      badgeHi: "Farm Review",
+      badgeHi: "फार्म रिव्यू",
     },
   ];
 
@@ -57,17 +57,17 @@ export const TestimonialSection: React.FC = () => {
       <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-4 space-y-3">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 dark:text-amber-400 text-xs font-bold uppercase tracking-widest">
-            {language === "hi" ? "Farmer Feedback & Reviews" : "FARMER & PARTNER FEEDBACK"}
+            {language === "hi" ? "फार्मर फीडबैक & रिव्यू" : "FARMER & PARTNER FEEDBACK"}
           </div>
           <h2 className="text-lg sm:text-xl lg:text-2xl font-extrabold font-heading text-slate-900 dark:text-white">
-            {language === "hi" ? "हमारे Farmers और Partners के " : "What Our "}
+            {language === "hi" ? "हमारे फार्मर्स और पार्टनर्स के " : "What Our "}
             <span className="text-emerald-600 dark:text-amber-400">
               {language === "hi" ? "अनुभव" : "Partners Say"}
             </span>
           </h2>
           <p className="text-slate-600 dark:text-slate-300 text-base">
             {language === "hi"
-              ? "हमारे Farmers और Dairy Partners के real experience और results।"
+              ? "हमारे फार्मर्स और डेयरी पार्टनर्स के रियल एक्सपीरियंस और रिजल्ट्स।"
               : "Sample client experiences demonstrating real-world agricultural outcomes and fodder feed security."}
           </p>
         </div>

@@ -59,26 +59,26 @@ export const IotSimulationDashboard: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-100 dark:bg-cyan-950/90 border border-cyan-300 dark:border-cyan-500/50 text-cyan-800 dark:text-cyan-300 text-xs font-mono font-bold uppercase tracking-wider shadow-glow">
             <Cpu className="w-4 h-4 text-cyan-600 dark:text-cyan-400 animate-pulse" />
-            <span>{isHindi ? "Interactive IoT Simulator" : "INTERACTIVE IOT FARM TELEMETRY"}</span>
+            <span>{isHindi ? "इंटरएक्टिव IoT सिमुलेटर" : "INTERACTIVE IOT FARM TELEMETRY"}</span>
           </div>
 
           <h2 className="text-lg sm:text-xl lg:text-2xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight leading-none">
-            {isHindi ? "आपका Farm, " : "YOUR FARM. "}
+            {isHindi ? "आपका फार्म, " : "YOUR FARM. "}
             <span className="bg-gradient-to-r from-cyan-600 via-teal-500 to-emerald-600 dark:from-cyan-400 dark:via-teal-300 dark:to-emerald-400 bg-clip-text text-transparent">
-              {isHindi ? "Smartly Connected।" : "CONNECTED."}
+              {isHindi ? "स्मार्टली कनेक्टेड।" : "CONNECTED."}
             </span>
           </h2>
 
           <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 font-normal leading-relaxed">
             {isHindi
-              ? "JAS Agro IoT Sensors के साथ micro-climate control। नीचे दिए switches on/off करके live response देखें।"
+              ? "JAS एग्रो IoT सेंसर्स के साथ माइक्रो-क्लाइमेट कंट्रोल। नीचे दिए स्विच ऑन/ऑफ करके लाइव रिस्पॉन्स देखें।"
               : "Experience automated micro-climate control. Toggle simulation actuators below to observe real-time telemetry adjustments."}
           </p>
 
           {/* Mandatory Explicit Simulation Label */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-100 dark:bg-amber-950/80 border border-amber-300 dark:border-amber-500/40 text-amber-800 dark:text-amber-300 text-xs font-mono font-bold shadow-sm">
             <Radio className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400 animate-pulse" />
-            <span>Interactive Simulation (Demo Environment)</span>
+            <span>{isHindi ? "इंटरएक्टिव सिमुलेशन (डेमो एनवायरनमेंट)" : "Interactive Simulation (Demo Environment)"}</span>
           </div>
         </div>
 
@@ -91,10 +91,10 @@ export const IotSimulationDashboard: React.FC = () => {
               <div className="flex items-center justify-between">
                 <span className="text-xs font-mono font-bold uppercase text-slate-600 dark:text-slate-400 flex items-center gap-2">
                   <Thermometer className="w-4 h-4 text-amber-500 dark:text-amber-400" />
-                  {isHindi ? "Temperature" : "Temperature"}
+                  {isHindi ? "टेम्परेचर" : "Temperature"}
                 </span>
                 <span className="px-2.5 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 border border-emerald-300 dark:border-emerald-500/40 text-emerald-800 dark:text-emerald-400 text-[10px] font-mono font-bold">
-                  OPTIMAL
+                  {isHindi ? "ऑप्टिमल" : "OPTIMAL"}
                 </span>
               </div>
               <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-mono tracking-tight flex items-baseline gap-2">
@@ -114,10 +114,10 @@ export const IotSimulationDashboard: React.FC = () => {
               <div className="flex items-center justify-between">
                 <span className="text-xs font-mono font-bold uppercase text-slate-600 dark:text-slate-400 flex items-center gap-2">
                   <Droplets className="w-4 h-4 text-cyan-500 dark:text-cyan-400" />
-                  {isHindi ? "Humidity (नमी)" : "Humidity"}
+                  {isHindi ? "ह्यूमिडिटी (नमी)" : "Humidity"}
                 </span>
                 <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold ${foggerActive ? "bg-cyan-100 dark:bg-cyan-950 border border-cyan-300 dark:border-cyan-500/50 text-cyan-800 dark:text-cyan-300 animate-pulse" : "bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400"}`}>
-                  {foggerActive ? "FOGGER ACTIVE" : "STABLE"}
+                  {foggerActive ? (isHindi ? "फॉगर एक्टिव" : "FOGGER ACTIVE") : (isHindi ? "स्टेबल" : "STABLE")}
                 </span>
               </div>
               <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-mono tracking-tight flex items-baseline gap-2">
@@ -137,10 +137,10 @@ export const IotSimulationDashboard: React.FC = () => {
               <div className="flex items-center justify-between">
                 <span className="text-xs font-mono font-bold uppercase text-slate-600 dark:text-slate-400 flex items-center gap-2">
                   <Wind className="w-4 h-4 text-teal-500 dark:text-teal-400" />
-                  {isHindi ? "CO2 Level" : "CO2 Level"}
+                  {isHindi ? "CO2 लेवल" : "CO2 Level"}
                 </span>
                 <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold ${fanActive ? "bg-emerald-100 dark:bg-emerald-950 border border-emerald-300 dark:border-emerald-500/40 text-emerald-800 dark:text-emerald-400" : "bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300"}`}>
-                  {fanActive ? "VENTILATION" : "ACCUMULATING"}
+                  {fanActive ? (isHindi ? "वेंटिलेशन" : "VENTILATION") : (isHindi ? "एक्यूमुलेटिंग" : "ACCUMULATING")}
                 </span>
               </div>
               <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-mono tracking-tight flex items-baseline gap-2">
@@ -160,10 +160,10 @@ export const IotSimulationDashboard: React.FC = () => {
               <div className="flex items-center justify-between">
                 <span className="text-xs font-mono font-bold uppercase text-slate-600 dark:text-slate-400 flex items-center gap-2">
                   <Activity className="w-4 h-4 text-emerald-500 dark:text-emerald-400" />
-                  {isHindi ? "Substrate Moisture" : "Substrate Moisture"}
+                  {isHindi ? "सबस्ट्रेट मॉइस्चर" : "Substrate Moisture"}
                 </span>
                 <span className="px-2.5 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 border border-emerald-300 dark:border-emerald-500/40 text-emerald-800 dark:text-emerald-400 text-[10px] font-mono font-bold">
-                  IDEAL
+                  {isHindi ? "आइडियल" : "IDEAL"}
                 </span>
               </div>
               <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-mono tracking-tight flex items-baseline gap-2">
@@ -185,11 +185,11 @@ export const IotSimulationDashboard: React.FC = () => {
               <div className="flex items-center gap-2.5">
                 <Zap className="w-5 h-5 text-amber-500 dark:text-amber-400" />
                 <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white font-heading">
-                  {isHindi ? "Automation Actuator Board" : "Automation Actuator Board"}
+                  {isHindi ? "ऑटोमेशन एक्ट्यूएटर बोर्ड" : "Automation Actuator Board"}
                 </h3>
               </div>
               <span className="flex items-center gap-1.5 text-[11px] font-mono font-bold text-emerald-700 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-950/90 px-3 py-1 rounded-full border border-emerald-300 dark:border-emerald-500/40 shadow-glow">
-                <Radio className="w-3.5 h-3.5 animate-pulse text-emerald-600 dark:text-emerald-400" /> SIMULATION
+                <Radio className="w-3.5 h-3.5 animate-pulse text-emerald-600 dark:text-emerald-400" /> {isHindi ? "सिमुलेशन" : "SIMULATION"}
               </span>
             </div>
 
@@ -198,10 +198,10 @@ export const IotSimulationDashboard: React.FC = () => {
               <div className="space-y-0.5">
                 <div className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
                   <Droplets className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
-                  {isHindi ? "Ultrasonic Fogger (मिस्टर)" : "Ultrasonic Fogger"}
+                  {isHindi ? "अल्ट्रासोनिक फॉगर (मिस्टर)" : "Ultrasonic Fogger"}
                 </div>
                 <p className="text-xs text-slate-600 dark:text-slate-400">
-                  {isHindi ? "Humidity 80%+ बनाए रखने के लिए" : "Maintains relative humidity target (>80%)"}
+                  {isHindi ? "ह्यूमिडिटी 80%+ बनाए रखने के लिए" : "Maintains relative humidity target (>80%)"}
                 </p>
               </div>
 
@@ -220,10 +220,10 @@ export const IotSimulationDashboard: React.FC = () => {
               <div className="space-y-0.5">
                 <div className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
                   <Wind className="w-4 h-4 text-teal-600 dark:text-teal-400" />
-                  {isHindi ? "Exhaust Air Fan" : "Exhaust Air Circulator"}
+                  {isHindi ? "एग्जॉस्ट एयर फैन" : "Exhaust Air Circulator"}
                 </div>
                 <p className="text-xs text-slate-600 dark:text-slate-400">
-                  {isHindi ? "CO2 level को 800 PPM से नीचे रखता है" : "Flushes CO2 build-up for mushroom pinning"}
+                  {isHindi ? "CO2 लेवल को 800 PPM से नीचे रखता है" : "Flushes CO2 build-up for mushroom pinning"}
                 </p>
               </div>
 
@@ -242,10 +242,10 @@ export const IotSimulationDashboard: React.FC = () => {
               <div className="space-y-0.5">
                 <div className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
                   <Sun className="w-4 h-4 text-amber-500 dark:text-amber-400" />
-                  {isHindi ? "Spectrum LED Grow Light" : "Spectrum LED Grow Light"}
+                  {isHindi ? "स्पेक्ट्रम LED ग्रो लाइट" : "Spectrum LED Grow Light"}
                 </div>
                 <p className="text-xs text-slate-600 dark:text-slate-400">
-                  {isHindi ? "Fruiting के लिए 1200 Lux light cycle" : "Provides timed 1200 Lux grow light cycle"}
+                  {isHindi ? "फ्रूटिंग के लिए 1200 Lux लाइट साइकिल" : "Provides timed 1200 Lux grow light cycle"}
                 </p>
               </div>
 
@@ -264,7 +264,7 @@ export const IotSimulationDashboard: React.FC = () => {
               <ShieldAlert className="w-5 h-5 text-cyan-600 dark:text-cyan-400 flex-shrink-0" />
               <span>
                 {isHindi
-                  ? "JAS Agro IoT Node Kit Wi-Fi/GSM connectivity और solar backup के साथ आती है।"
+                  ? "JAS एग्रो IoT नोड किट Wi-Fi/GSM कनेक्टिविटी और सोलर बैकअप के साथ आती है।"
                   : "JAS Agro IoT Node Kit features Wi-Fi / GSM cellular modules and optional solar backup."}
               </span>
             </div>

@@ -12,40 +12,40 @@ export const CaseStudiesShowcase: React.FC = () => {
     {
       id: "commercial-mushroom-estate",
       titleEn: "Commercial Gourmet Mushroom Estate",
-      titleHi: "Commercial Oyster Mushroom Farm",
+      titleHi: "कमर्शियल ऑयस्टर मशरूम फार्म",
       locationEn: "Gorakhpur, Uttar Pradesh",
       locationHi: "गोरखपुर, उत्तर प्रदेश",
       farmSize: "2,500 sq ft Indoor Shed",
       solution: "Oyster Mushroom Spawn + IoT Climate Node",
       image: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1200&q=80",
       outcomeEn: "Achieved 380 kg/month harvest with 98% humidity precision.",
-      outcomeHi: "98% Humidity precision के साथ 380 kg/month harvest हासिल की।",
+      outcomeHi: "98% ह्यूमिडिटी प्रिसिजन के साथ 380 किग्रा/महीना हार्वेस्ट हासिल की।",
       metric: "380 kg / Mo",
     },
     {
       id: "dairy-feed-azolla-unit",
       titleEn: "High-Protein Azolla Dairy Unit",
-      titleHi: "High-Protein Azolla Dairy Unit",
+      titleHi: "हाई-प्रोटीन अजोला डेयरी यूनिट",
       locationEn: "Karnal, Haryana",
       locationHi: "करनाल, हरियाणा",
       farmSize: "1,200 sq ft Pond Network",
       solution: "Azolla Micro-Aquatic Super-Fodder Culture",
       image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80",
       outcomeEn: "Reduced cattle feed costs by 28% and boosted milk yield by 14%.",
-      outcomeHi: "Cattle feed cost 28% घटाई और milk yield 14% बढ़ाया।",
+      outcomeHi: "कैटल फीड कॉस्ट 28% घटाई और मिल्क यील्ड 14% बढ़ाया।",
       metric: "-28% Feed Cost",
     },
     {
       id: "hybrid-napier-greenhouse",
       titleEn: "Super Napier High-Biomass Estate",
-      titleHi: "Super Napier High-Yield Farm",
+      titleHi: "सुपर नेपियर हाई-यील्ड फार्म",
       locationEn: "Patna, Bihar",
       locationHi: "पटना, बिहार",
       farmSize: "5 Acres Perennial Farmland",
       solution: "Hybrid Napier Grass Stem Cuttings",
       image: "https://images.unsplash.com/photo-1595974482597-4b8da8879bc5?auto=format&fit=crop&w=1200&q=80",
       outcomeEn: "Harvested 180 Tons/Acre/Year for continuous commercial dairy forage.",
-      outcomeHi: "Dairy feed के लिए 180 Tons/Acre/Year production प्राप्त की।",
+      outcomeHi: "डेयरी फीड के लिए 180 टन/एकड़/साल प्रोडक्शन प्राप्त की।",
       metric: "180 Tons / Acre",
     },
   ];
@@ -60,19 +60,19 @@ export const CaseStudiesShowcase: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100 dark:bg-emerald-950/90 border border-emerald-300 dark:border-emerald-500/50 text-emerald-800 dark:text-emerald-300 text-xs font-mono font-bold uppercase tracking-wider shadow-glow">
             <Building2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-            <span>{isHindi ? "REAL FARM PROJECTS" : "PROJECT SHOWCASE"}</span>
+            <span>{isHindi ? "रियल फार्म प्रोजेक्ट्स" : "PROJECT SHOWCASE"}</span>
           </div>
 
           <h2 className="text-lg sm:text-xl lg:text-2xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight leading-none">
-            {isHindi ? "Real World " : "BUILT FOR THE "}
+            {isHindi ? "रियल वर्ल्ड " : "BUILT FOR THE "}
             <span className="bg-gradient-to-r from-emerald-600 via-teal-500 to-green-600 dark:from-emerald-400 dark:via-teal-300 dark:to-green-300 bg-clip-text text-transparent">
-              {isHindi ? "के लिए Success Stories" : "REAL WORLD."}
+              {isHindi ? "के लिए सक्सेस स्टोरीज" : "REAL WORLD."}
             </span>
           </h2>
 
           <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 font-normal leading-relaxed">
             {isHindi
-              ? "JAS Agro smart tech और organic models द्वारा सफल farm projects के real results।"
+              ? "JAS एग्रो स्मार्ट टेक और ऑर्गेनिक मॉडल्स द्वारा सफल फार्म प्रोजेक्ट्स के रियल रिजल्ट्स।"
               : "Explore how JAS Agro smart farming models and precision technology deliver tangible farm outcomes."}
           </p>
         </div>

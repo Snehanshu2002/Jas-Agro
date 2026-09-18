@@ -11,41 +11,41 @@ export const ProcessSection: React.FC = () => {
     {
       num: "01",
       titleEn: "Understand",
-      titleHi: "Analysis",
+      titleHi: "एनालिसिस",
       descEn: "We analyze your specific land, climate, water availability, and livestock feed requirements.",
-      descHi: "आपकी land, climate, water और cattle feed requirements का analysis।",
+      descHi: "आपकी लैंड, क्लाइमेट, वाटर और कैटल फीड रिक्वायरमेंट्स का एनालिसिस।",
       icon: Search,
     },
     {
       num: "02",
       titleEn: "Plan",
-      titleHi: "Planning",
+      titleHi: "प्लानिंग",
       descEn: "Design custom cultivation layouts, select optimal crop species, and plan grow chambers.",
-      descHi: "Farm layout design करना और बेस्ट varieties select करना।",
+      descHi: "फार्म लेआउट डिजाइन करना और बेस्ट वैरायटीज सेलेक्ट करना।",
       icon: Compass,
     },
     {
       num: "03",
       titleEn: "Cultivate",
-      titleHi: "Cultivation",
+      titleHi: "कल्टीवेशन",
       descEn: "Deploy high-purity spawn, rooted fodder slips, or organic vermicompost with bio-safe protocols.",
-      descHi: "Pure Mushroom Spawn, Fodder slips और Organic Vermicompost की बुआई।",
+      descHi: "प्योर मशरूम स्पॉन, फॉडर स्लिप्स और ऑर्गेनिक वर्मीकंपोस्ट की बुआई।",
       icon: Sprout,
     },
     {
       num: "04",
       titleEn: "Monitor",
-      titleHi: "Monitoring",
+      titleHi: "मॉनिटरिंग",
       descEn: "Install optional ESP32 microcontrollers and sensor probes for continuous telemetry.",
-      descHi: "IoT sensors और automation से 24/7 continuous monitoring।",
+      descHi: "IoT सेंसर्स और ऑटोमेशन से 24/7 कंटीन्यूअस मॉनिटरिंग।",
       icon: Radio,
     },
     {
       num: "05",
       titleEn: "Grow",
-      titleHi: "Growth & Profit",
+      titleHi: "ग्रोथ & प्रॉफिट",
       descEn: "Achieve higher crop yields, reduce feed expenditures, and maintain long-term soil health.",
-      descHi: "High crop yield, feed cost में बचत और बेहतर soil health।",
+      descHi: "हाई क्रॉप यील्ड, फीड कॉस्ट में बचत और बेहतर सोइल हेल्थ।",
       icon: TrendingUp,
     },
   ];
@@ -55,17 +55,17 @@ export const ProcessSection: React.FC = () => {
       <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-4 space-y-3">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-xs font-bold uppercase tracking-widest">
-            {language === "hi" ? "Our Process" : "OUR METHODOLOGY"}
+            {language === "hi" ? "हमारा प्रोसेस" : "OUR METHODOLOGY"}
           </div>
           <h2 className="text-lg sm:text-xl lg:text-2xl font-extrabold font-heading text-slate-900 dark:text-white">
-            {language === "hi" ? "From Lab to Field. " : "How We Deliver. "}
+            {language === "hi" ? "लैब से खेत तक। " : "How We Deliver. "}
             <span className="text-emerald-600 dark:text-emerald-400">
-              {language === "hi" ? "End-to-End Success." : "End-to-End Success."}
+              {language === "hi" ? "एंड-टू-एंड सफलता।" : "End-to-End Success."}
             </span>
           </h2>
           <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base">
             {language === "hi"
-              ? "Organic science और modern tech पर आधारित हमारा 5-step smart farming process।"
+              ? "ऑर्गेनिक साइंस और मॉडर्न टेक पर आधारित हमारा 5-स्टेप स्मार्ट फार्मिंग प्रोसेस।"
               : "A proven, 5-stage agricultural framework combining biological science and technology."}
           </p>
         </div>

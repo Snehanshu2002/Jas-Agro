@@ -36,19 +36,19 @@ export const MushroomFeature: React.FC = () => {
           {/* Left Column */}
           <div className="lg:col-span-6 flex flex-col justify-between space-y-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-700 dark:text-amber-400 text-xs font-bold uppercase tracking-wider">
-              {language === "hi" ? "Smart Mushroom Farming & IoT" : "FEATURED CULTIVATION & IOT"}
+              {language === "hi" ? "स्मार्ट मशरूम फार्मिंग & IoT" : "FEATURED CULTIVATION & IOT"}
             </div>
 
             <h2 className="text-lg sm:text-xl lg:text-2xl font-extrabold font-heading text-slate-900 dark:text-white leading-tight">
-              {language === "hi" ? "Oyster Mushroom Farming & " : "Oyster Mushroom "}
+              {language === "hi" ? "ऑयस्टर मशरूम फार्मिंग & " : "Oyster Mushroom "}
               <span className="text-amber-600 dark:text-amber-400">
-                {language === "hi" ? "Chhatraka Portal" : "Cultivation & Chhatraka"}
+                {language === "hi" ? "छत्रक पोर्टल" : "Cultivation & Chhatraka"}
               </span>
             </h2>
 
             <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
               {language === "hi"
-                ? "Oyster Mushrooms के लिए सही Temperature (22–28°C) और Humidity (80–90%) बहुत ज़रूरी है। Arduino, DHT22 sensors और ESP8266 Cloud Automation से फसल की बेहतर yield और सुरक्षा मिलती है।"
+                ? "ऑयस्टर मशरूम के लिए सही टेम्परेचर (22–28°C) और ह्यूमिडिटी (80–90%) बहुत ज़रूरी है। Arduino, DHT22 सेंसर्स और ESP8266 क्लाउड ऑटोमेशन से फसल की बेहतर यील्ड और सुरक्षा मिलती है।"
                 : "Oyster mushrooms (Pleurotus) require controlled temperature (22–28°C) and relative humidity (80–90%). Using Arduino, soil moisture sensors, DHT22 sensors, and ESP8266 cloud computing, JAS Agro eliminates crop failure risks."}
             </p>
 
@@ -58,7 +58,7 @@ export const MushroomFeature: React.FC = () => {
                 <div className="flex items-center gap-2">
                   <Activity className="w-4 h-4 text-amber-500 animate-pulse" />
                   <span className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-200">
-                    {language === "hi" ? "Smart IoT Architecture Diagram" : "System Architecture Diagram"}
+                    {language === "hi" ? "स्मार्ट IoT आर्किटेक्चर डायग्राम" : "System Architecture Diagram"}
                   </span>
                 </div>
                 <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 font-semibold">
@@ -74,7 +74,7 @@ export const MushroomFeature: React.FC = () => {
                     <Thermometer className="w-5 h-5" />
                   </div>
                   <h5 className="text-xs font-bold text-slate-900 dark:text-white">
-                    {language === "hi" ? "Sensors" : "Sensors"}
+                    {language === "hi" ? "सेंसर्स" : "Sensors"}
                   </h5>
                   <p className="text-[10px] text-slate-500 dark:text-slate-400 mt-0.5">
                     DHT22 & Moisture
@@ -87,7 +87,7 @@ export const MushroomFeature: React.FC = () => {
                     <Cpu className="w-5 h-5" />
                   </div>
                   <h5 className="text-xs font-bold text-slate-900 dark:text-white">
-                    {language === "hi" ? "Microcontroller" : "Micro-Controller"}
+                    {language === "hi" ? "माइक्रोकंट्रोलर" : "Micro-Controller"}
                   </h5>
                   <p className="text-[10px] text-slate-500 dark:text-slate-400 mt-0.5">
                     Arduino / ESP8266
@@ -100,7 +100,7 @@ export const MushroomFeature: React.FC = () => {
                     <Wifi className="w-5 h-5" />
                   </div>
                   <h5 className="text-xs font-bold text-slate-900 dark:text-white">
-                    {language === "hi" ? "Wi-Fi Cloud" : "Wi-Fi Cloud"}
+                    {language === "hi" ? "वाई-फाई क्लाउड" : "Wi-Fi Cloud"}
                   </h5>
                   <p className="text-[10px] text-slate-500 dark:text-slate-400 mt-0.5">
                     Wireless Telemetry
@@ -113,7 +113,7 @@ export const MushroomFeature: React.FC = () => {
                     <Server className="w-5 h-5" />
                   </div>
                   <h5 className="text-xs font-bold text-slate-900 dark:text-white">
-                    {language === "hi" ? "Control System" : "Control System"}
+                    {language === "hi" ? "कंट्रोल सिस्टम" : "Control System"}
                   </h5>
                   <p className="text-[10px] text-slate-500 dark:text-slate-400 mt-0.5">
                     Relays & Chhatraka
@@ -123,7 +123,7 @@ export const MushroomFeature: React.FC = () => {
 
               <div className="mt-3.5 text-center text-[11px] text-slate-600 dark:text-slate-300 font-semibold flex items-center justify-center gap-1.5">
                 <Zap className="w-3.5 h-3.5 text-amber-500" />
-                Official JAS Agro Smart IoT Mushroom System Architecture
+                {language === "hi" ? "JAS एग्रो स्मार्ट IoT मशरूम सिस्टम आर्किटेक्चर" : "Official JAS Agro Smart IoT Mushroom System Architecture"}
               </div>
             </div>
 
@@ -134,10 +134,10 @@ export const MushroomFeature: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900 dark:text-white text-sm">
-                    {language === "hi" ? "Arduino & ESP8266 Microcontrollers" : "Arduino & ESP8266 Microcontrollers"}
+                    {language === "hi" ? "Arduino & ESP8266 माइक्रोकंट्रोलर्स" : "Arduino & ESP8266 Microcontrollers"}
                   </h4>
                   <p className="text-xs text-slate-600 dark:text-slate-400">
-                    {language === "hi" ? "Cloud server पर live telemetry transmission." : "Transmits live telemetry to cloud servers & dashboards."}
+                    {language === "hi" ? "क्लाउड सर्वर पर लाइव टेलीमेट्री ट्रांसमिशन।" : "Transmits live telemetry to cloud servers & dashboards."}
                   </p>
                 </div>
               </div>
@@ -148,10 +148,10 @@ export const MushroomFeature: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900 dark:text-white text-sm">
-                    {language === "hi" ? "DHT22 & Moisture Sensors" : "DHT22 & Moisture Sensors"}
+                    {language === "hi" ? "DHT22 & मॉइस्चर सेंसर्स" : "DHT22 & Moisture Sensors"}
                   </h4>
                   <p className="text-xs text-slate-600 dark:text-slate-400">
-                    {language === "hi" ? "Growing media के Temperature और Humidity की 24x7 monitoring." : "Monitors growing media to prevent fungus drying."}
+                    {language === "hi" ? "ग्रोइंग मीडिया के टेम्परेचर और ह्यूमिडिटी की 24x7 मॉनिटरिंग।" : "Monitors growing media to prevent fungus drying."}
                   </p>
                 </div>
               </div>

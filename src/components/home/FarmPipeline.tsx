@@ -12,36 +12,36 @@ export const FarmPipeline: React.FC = () => {
     {
       num: "01",
       titleEn: "SOIL & CLIMATE AUDIT",
-      titleHi: "Soil & Climate Audit",
+      titleHi: "सोइल & क्लाइमेट ऑडिट",
       descEn: "Analyzing land area, water quality, and livestock feed requirements for optimal crop selection.",
-      descHi: "Land, water quality और cattle feed requirement का सटीक audit।",
+      descHi: "लैंड, वाटर क्वालिटी और कैटल फीड रिक्वायरमेंट का सटीक ऑडिट।",
       icon: Search,
       badgeColor: "border-emerald-500/40 text-emerald-400 bg-emerald-950/80",
     },
     {
       num: "02",
       titleEn: "IoT SENSOR INSTALLATION",
-      titleHi: "IoT Sensor Setup",
+      titleHi: "IoT सेंसर सेटअप",
       descEn: "Deploying ESP32 telemetry nodes, automated fogger misters, and exhaust air circulators.",
-      descHi: "ESP32 sensors, automatic fogger misters और fans की installation।",
+      descHi: "ESP32 सेंसर्स, ऑटोमैटic फॉगर मिस्टर्स और फैंस की इंस्टॉल।",
       icon: Cpu,
       badgeColor: "border-cyan-500/40 text-cyan-400 bg-cyan-950/80",
     },
     {
       num: "03",
       titleEn: "ORGANIC CULTIVATION",
-      titleHi: "Organic Cultivation",
+      titleHi: "ऑर्गेनिक कल्टीवेशन",
       descEn: "Supplying pure Oyster Mushroom spawn, Azolla aquatic culture, and vermicompost topsoil.",
-      descHi: "High-quality Oyster Mushroom Spawn, Azolla culture और Vermicompost की शुरुआत।",
+      descHi: "हाई-क्वालिटी ऑयस्टर मशरुम स्पॉन, अजोला कल्चर और वर्मीकंपोस्ट की शुरुआत।",
       icon: Sprout,
       badgeColor: "border-teal-500/40 text-teal-400 bg-teal-950/80",
     },
     {
       num: "04",
       titleEn: "HARVEST & MARKET LINKAGE",
-      titleHi: "Harvest & Market Linkage",
+      titleHi: "हार्वेस्ट & मार्केट लिंकेज",
       descEn: "Continuous high-yield harvest guidance, quality control, and direct commercial buyback support.",
-      descHi: "Harvest guidance, quality check और commercial buyback support।",
+      descHi: "हार्वेस्ट गाइडेंस, क्वालिटी चेक और कमर्शियल बायबैक सपोर्ट।",
       icon: Award,
       badgeColor: "border-amber-500/40 text-amber-400 bg-amber-950/80",
     },
@@ -56,20 +56,20 @@ export const FarmPipeline: React.FC = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100 dark:bg-emerald-950/90 border border-emerald-300 dark:border-emerald-500/50 text-emerald-800 dark:text-emerald-300 text-xs font-mono font-bold uppercase tracking-wider shadow-glow">
-            <span>{isHindi ? "SYSTEM TRANSFORMATION STAGES" : "SYSTEM TRANSFORMATION STAGES"}</span>
+            <span>{isHindi ? "सिस्टम ट्रांसफॉर्मेशन स्टेजेस" : "SYSTEM TRANSFORMATION STAGES"}</span>
           </div>
 
           <h2 className="text-lg sm:text-xl lg:text-2xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight leading-none">
-            {isHindi ? "Soil से " : "FROM SOIL "}
+            {isHindi ? "सोइल से " : "FROM SOIL "}
             <br className="hidden sm:inline" />
             <span className="bg-gradient-to-r from-emerald-600 via-teal-500 to-cyan-600 dark:from-emerald-400 dark:via-teal-300 dark:to-cyan-400 bg-clip-text text-transparent">
-              {isHindi ? "Smart System तक" : "TO SMART SYSTEMS."}
+              {isHindi ? "स्मार्ट सिस्टम तक" : "TO SMART SYSTEMS."}
             </span>
           </h2>
 
           <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 font-normal leading-relaxed">
             {isHindi
-              ? "Traditional farming को 4 easy steps में high-yield smart agri-farm में बदलें।"
+              ? "ट्रेडिशनल फार्मिंग को 4 ईजी स्टेप्स में हाई-यील्ड स्मार्ट एग्री-फार्म में बदलें।"
               : "Transform traditional agriculture into a high-yielding, digital agtech farm through four structured phases."}
           </p>
         </div>

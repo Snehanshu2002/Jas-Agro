@@ -96,11 +96,11 @@ export const SmartFarmEstimator: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-4 space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100 dark:bg-emerald-950/90 border border-emerald-300 dark:border-emerald-500/50 text-emerald-800 dark:text-emerald-300 text-xs font-mono font-bold uppercase tracking-wider shadow-glow">
             <Calculator className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-            <span>{isHindi ? "Smart Farm Estimator" : "SMART FARM ESTIMATOR"}</span>
+            <span>{isHindi ? "स्मार्ट फार्म एस्टिमेटर" : "SMART FARM ESTIMATOR"}</span>
           </div>
 
           <h2 className="text-lg sm:text-xl lg:text-2xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight leading-none">
-            {isHindi ? "Farm Size और " : "PROJECT "}
+            {isHindi ? "फार्म साइज और " : "PROJECT "}
             <span className="bg-gradient-to-r from-emerald-600 via-teal-500 to-green-600 dark:from-emerald-400 dark:via-teal-300 dark:to-green-300 bg-clip-text text-transparent">
               {isHindi ? "कमाई का अनुमान लगाएं" : "ESTIMATION ENGINE"}
             </span>
@@ -108,7 +108,7 @@ export const SmartFarmEstimator: React.FC = () => {
 
           <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 font-normal leading-relaxed">
             {isHindi
-              ? "Crop model और available space चुनें — तुरंत setup budget, monthly yield और timeline का सही अंदाज़ा पाएं।"
+              ? "क्रॉप मॉडल और उपलब्ध स्पेस चुनें — तुरंत सेटअप बजट, मंथली यील्ड और टाइमलाइन का सही अंदाज़ा पाएं।"
               : "Select your farming solution and available area to calculate indicative setup budgets, monthly yield capacity, and timeline."}
           </p>
         </div>
@@ -203,7 +203,7 @@ export const SmartFarmEstimator: React.FC = () => {
               <div className="flex items-center justify-between border-b border-emerald-500/20 pb-4">
                 <span className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-300 flex items-center gap-2">
                   <Sparkles className="w-4 h-4 text-amber-400" />
-                  {isHindi ? "अनुमानित परिणाम (Indicative Metrics)" : "Indicative Project Outcome"}
+                  {isHindi ? "अनुमानित परिणाम (इंडिकेटिव मेट्रिक्स)" : "Indicative Project Outcome"}
                 </span>
 
                 <span className="px-3 py-1 rounded-full bg-slate-950 border border-emerald-500/40 text-emerald-400 text-xs font-mono font-bold">
@@ -214,7 +214,7 @@ export const SmartFarmEstimator: React.FC = () => {
               {/* Metric 1: Setup Cost Range */}
               <div className="space-y-1">
                 <span className="text-xs font-semibold text-emerald-200/90">
-                  {isHindi ? "अनुमानित सेटअप बजट सीमा (Estimated Setup Range):" : "Estimated Setup Range:"}
+                  {isHindi ? "अनुमानित सेटअप बजट सीमा (एस्टिमेटेड सेटअप रेंज):" : "Estimated Setup Range:"}
                 </span>
                 <div className="text-xl sm:text-2xl font-extrabold text-amber-300 tracking-tight font-mono">
                   ₹{estSetupMin.toLocaleString("en-IN")} – ₹{estSetupMax.toLocaleString("en-IN")}
@@ -225,10 +225,10 @@ export const SmartFarmEstimator: React.FC = () => {
               {active.monthlyYieldPerSqFt > 0 && (
                 <div className="space-y-1">
                   <span className="text-xs font-semibold text-emerald-200/90">
-                    {isHindi ? "अनुमानित मासिक उत्पादन (Monthly Yield):" : "Estimated Monthly Yield:"}
+                    {isHindi ? "अनुमानित मासिक उत्पादन (मंथली यील्ड):" : "Estimated Monthly Yield:"}
                   </span>
                   <div className="text-xl sm:text-2xl font-extrabold text-white tracking-tight font-mono">
-                    {estMonthlyYield.toLocaleString("en-IN")} <span className="text-lg font-sans text-emerald-400">kg / month</span>
+                    {estMonthlyYield.toLocaleString("en-IN")} <span className="text-lg font-sans text-emerald-400">{isHindi ? "किग्रा / महीना" : "kg / month"}</span>
                   </div>
                 </div>
               )}
@@ -237,18 +237,20 @@ export const SmartFarmEstimator: React.FC = () => {
               <div className="p-4 rounded-2xl bg-slate-950/80 border border-slate-800 space-y-2">
                 <div className="flex items-center gap-1.5 text-xs font-mono font-bold text-slate-300">
                   <Layers className="w-3.5 h-3.5 text-cyan-400" />
-                  <span>Key Operating Considerations:</span>
+                  <span>{isHindi ? "मुख्य ऑपरेटिंग पॉइंट्स:" : "Key Operating Considerations:"}</span>
                 </div>
                 <ul className="text-[11px] text-slate-400 space-y-1 list-disc list-inside">
-                  <li>Indoor humidity & ventilation node requirements</li>
-                  <li>Pure organic spawn / culture sourcing</li>
-                  <li>Power backup & automated mist schedule</li>
+                  <li>{isHindi ? "इन्डोर ह्यूमिडिटी और वेंटिलेशन रिक्वायरमेंट" : "Indoor humidity & ventilation node requirements"}</li>
+                  <li>{isHindi ? "प्योर ऑर्गेनिक स्पॉन / कल्चर सोर्सिंग" : "Pure organic spawn / culture sourcing"}</li>
+                  <li>{isHindi ? "पावर बैकअप और ऑटोमैटिक मिस्ट शेड्यूल" : "Power backup & automated mist schedule"}</li>
                 </ul>
               </div>
 
               {/* Mandatory Disclaimer Tag */}
               <p className="text-[10px] text-slate-400 font-mono leading-normal pt-1">
-                ⚠️ *Indicative estimate — actual results vary by crop, location, market price, operating conditions and farm management.
+                {isHindi
+                  ? "⚠️ *अनुमानित एस्टिमेट — वास्तविक परिणाम फसल, स्थान, बाजार मूल्य और फार्म प्रबंधन के आधार पर भिन्न हो सकते हैं।"
+                  : "⚠️ *Indicative estimate — actual results vary by crop, location, market price, operating conditions and farm management."}
               </p>
             </div>
 
@@ -265,7 +267,7 @@ export const SmartFarmEstimator: React.FC = () => {
 
               <div className="flex items-center justify-center gap-1.5 text-[11px] text-slate-400">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                <span>Verified by JAS Agro AgTech Benchmarking</span>
+                <span>{isHindi ? "JAS एग्रो एग्रीटेक बेंचमार्किंग द्वारा सत्यापित" : "Verified by JAS Agro AgTech Benchmarking"}</span>
               </div>
             </div>
           </div>

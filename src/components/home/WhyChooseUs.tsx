@@ -10,44 +10,44 @@ export const WhyChooseUs: React.FC = () => {
   const points = [
     {
       titleEn: "Agriculture Expertise",
-      titleHi: "Agri Expertise",
+      titleHi: "एग्री एक्सपर्टाइज",
       descEn: "Deep knowledge in spawn multiplication, aquatic bio-cultures, and fodder crop agronomy.",
-      descHi: "Mushroom cultivation, Azolla fodder और organic farming में ख़ास expertise।",
+      descHi: "मशरूम कल्टीवेशन, अजोला चारा और ऑर्गेनिक फार्मिंग में खास एक्सपर्टाइज।",
       icon: Award,
     },
     {
       titleEn: "Sustainable Approach",
-      titleHi: "Sustainable Approach",
+      titleHi: "सस्टेनेबल अप्रोच",
       descEn: "Zero reliance on harmful chemicals; focus on organic matter restoration and water conservation.",
-      descHi: "Zero chemicals, soil health सुधार और पानी की बचत पर ध्यान।",
+      descHi: "ज़ीरो केमिकल्स, सोइल हेल्थ सुधार और पानी की बचत पर ध्यान।",
       icon: Leaf,
     },
     {
       titleEn: "Innovative Solutions",
-      titleHi: "Innovative Solutions",
+      titleHi: "इनोवेटिव सॉल्यूशंस",
       descEn: "High-yielding crop varieties and compact bio-reactors for max yield per square foot.",
-      descHi: "High-yield fodder crops और smart farming setups।",
+      descHi: "हाई-यील्ड फॉडर क्रॉप्स और स्मार्ट फार्मिंग सेटअप्स।",
       icon: Lightbulb,
     },
     {
       titleEn: "Smart Technology",
-      titleHi: "Smart Tech",
+      titleHi: "स्मार्ट टेक",
       descEn: "Custom ESP32 microcontrollers, DHT22 sensor arrays, and instant mobile cloud telemetry.",
-      descHi: "ESP32 microcontrollers, Sensors और instant mobile alerts।",
+      descHi: "ESP32 माइक्रोकंट्रोलर्स, सेंसर्स और इंस्टेंट मोबाइल अलर्ट्स।",
       icon: Cpu,
     },
     {
       titleEn: "Quality Focus",
-      titleHi: "Quality First",
+      titleHi: "क्वालिटी फर्स्ट",
       descEn: "Rigorously tested pure culture strains, pasteurization protocols, and certified earthworm beds.",
-      descHi: "Tested Mushroom Spawn, pure cultures और certified Vermicompost beds।",
+      descHi: "टेस्टेड मशरूम स्पॉन, प्योर कल्चर और सर्टिफाइड वर्मीकंपोस्ट बेड्स।",
       icon: ShieldCheck,
     },
     {
       titleEn: "Farmer-Centric Thinking",
-      titleHi: "Farmer-Centric",
+      titleHi: "फार्मर-सेंट्रिक",
       descEn: "Practical, cost-effective solutions engineered to maximize profit margins for farm owners.",
-      descHi: "Farmers और Dairy owners की income बढ़ाने वाले cost-effective solutions।",
+      descHi: "फार्मर्स और डेयरी ओनर्स की इनकम बढ़ाने वाले कॉस्ट-इफेक्टिव सॉल्यूशंस।",
       icon: HeartHandshake,
     },
   ];
@@ -60,14 +60,14 @@ export const WhyChooseUs: React.FC = () => {
             {language === "hi" ? "JAS एग्रो क्यों चुनें?" : "THE JAS AGRO ADVANTAGE"}
           </div>
           <h2 className="text-lg sm:text-xl lg:text-2xl font-extrabold font-heading text-slate-900 dark:text-white">
-            {language === "hi" ? "JAS Agro ही " : "Why Choose "}
+            {language === "hi" ? "JAS एग्रो ही " : "Why Choose "}
             <span className="text-amber-600 dark:text-amber-400">
               {language === "hi" ? "क्यों?" : "JAS Agro?"}
             </span>
           </h2>
           <p className="text-slate-600 dark:text-slate-300 text-base">
             {language === "hi"
-              ? "हम Traditional farming experience और Modern Smart AgTech का बेहतरीन संगम देते हैं।"
+              ? "हम ट्रेडिशनल फार्मिंग एक्सपीरियंस और मॉडर्न स्मार्ट एग्रीटेक का बेहतरीन संगम देते हैं।"
               : "We bridge the gap between traditional agricultural wisdom and modern precision agri-tech."}
           </p>
         </div>

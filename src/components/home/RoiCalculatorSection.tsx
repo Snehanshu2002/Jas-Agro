@@ -94,13 +94,13 @@ export const RoiCalculatorSection: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-4 space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100 dark:bg-emerald-950/90 border border-emerald-300 dark:border-emerald-500/50 text-emerald-800 dark:text-emerald-300 text-xs font-mono font-bold uppercase tracking-wider shadow-glow">
             <Calculator className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-            <span>{isHindi ? "Smart ROI Calculator" : "ROI FINANCIAL MODEL"}</span>
+            <span>{isHindi ? "स्मार्ट ROI कैलकुलेटर" : "ROI FINANCIAL MODEL"}</span>
           </div>
 
           <h2 className="text-lg sm:text-xl lg:text-2xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight leading-none">
             {isHindi ? "संभावित " : "ESTIMATED "}
             <span className="bg-gradient-to-r from-emerald-600 via-teal-500 to-green-600 dark:from-emerald-400 dark:via-teal-300 dark:to-green-300 bg-clip-text text-transparent">
-              {isHindi ? "मुनाफा और Payback Period" : "FARM PROFITABILITY & ROI"}
+              {isHindi ? "मुनाफा और पेबैक पीरियड" : "FARM PROFITABILITY & ROI"}
             </span>
           </h2>
 
@@ -190,7 +190,7 @@ export const RoiCalculatorSection: React.FC = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
               <div className="space-y-2">
                 <label className="text-xs font-mono font-bold text-slate-600 dark:text-slate-400">
-                  Estimated Selling Price (₹/kg):
+                  {isHindi ? "अनुमानित बिक्री मूल्य (₹/किग्रा):" : "Estimated Selling Price (₹/kg):"}
                 </label>
                 <input
                   type="number"
@@ -202,7 +202,7 @@ export const RoiCalculatorSection: React.FC = () => {
 
               <div className="space-y-2">
                 <label className="text-xs font-mono font-bold text-slate-600 dark:text-slate-400">
-                  Est. Operating Expense (%):
+                  {isHindi ? "अनुमानित ऑपरेटिंग खर्च (%):" : "Est. Operating Expense (%):"}
                 </label>
                 <input
                   type="number"
@@ -221,33 +221,33 @@ export const RoiCalculatorSection: React.FC = () => {
               <div className="flex items-center justify-between border-b border-emerald-500/20 pb-4">
                 <span className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-300 flex items-center gap-2">
                   <Sparkles className="w-4 h-4 text-amber-400" />
-                  {isHindi ? "Financial Breakdown" : "Projected ROI Breakdown"}
+                  {isHindi ? "फाइनेंशियल ब्रेकडाउन" : "Projected ROI Breakdown"}
                 </span>
 
                 <span className="px-3 py-1 rounded-full bg-amber-400/20 border border-amber-400/40 text-amber-300 text-xs font-mono font-bold shadow-glow-gold">
-                  ⚡ Payback ~{estimatedPaybackMonths} {isHindi ? "Months" : "Months"}
+                  ⚡ Payback ~{estimatedPaybackMonths} {isHindi ? "महीने" : "Months"}
                 </span>
               </div>
 
               {/* Breakdown Grid */}
               <div className="space-y-3 font-mono text-xs">
                 <div className="flex justify-between items-center p-3 rounded-xl bg-slate-950/80 border border-slate-800">
-                  <span className="text-slate-400">Initial Setup Cost:</span>
+                  <span className="text-slate-400">{isHindi ? "शुरुआती सेटअप कॉस्ट:" : "Initial Setup Cost:"}</span>
                   <span className="font-bold text-white">₹{initialSetupCost.toLocaleString("en-IN")}</span>
                 </div>
 
                 <div className="flex justify-between items-center p-3 rounded-xl bg-slate-950/80 border border-slate-800">
-                  <span className="text-slate-400">Monthly Revenue:</span>
+                  <span className="text-slate-400">{isHindi ? "मासिक रेवेन्यू:" : "Monthly Revenue:"}</span>
                   <span className="font-bold text-amber-300">₹{estimatedMonthlyRevenue.toLocaleString("en-IN")}</span>
                 </div>
 
                 <div className="flex justify-between items-center p-3 rounded-xl bg-slate-950/80 border border-slate-800">
-                  <span className="text-slate-400">Monthly Operating Cost:</span>
+                  <span className="text-slate-400">{isHindi ? "मासिक ऑपरेटिंग कॉस्ट:" : "Monthly Operating Cost:"}</span>
                   <span className="font-bold text-red-400">-₹{estimatedMonthlyOpCost.toLocaleString("en-IN")}</span>
                 </div>
 
                 <div className="flex justify-between items-center p-3.5 rounded-xl bg-emerald-950/90 border border-emerald-500/50 shadow-glow">
-                  <span className="text-emerald-300 font-bold">Est. Monthly Gross Margin:</span>
+                  <span className="text-emerald-300 font-bold">{isHindi ? "अनुमानित मासिक नेट मार्जिन:" : "Est. Monthly Gross Margin:"}</span>
                   <span className="font-extrabold text-white text-base">₹{estimatedGrossMargin.toLocaleString("en-IN")}</span>
                 </div>
               </div>
@@ -256,7 +256,9 @@ export const RoiCalculatorSection: React.FC = () => {
               <div className="p-3 rounded-xl bg-slate-950/70 border border-slate-800 text-[10px] text-slate-400 font-mono flex items-start gap-2">
                 <AlertCircle className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
                 <span>
-                  Illustrative estimate — actual results vary by crop, location, market price, operating conditions and farm management.
+                  {isHindi
+                    ? "अनुमानित एस्टिमेट — वास्तविक परिणाम फसल, स्थान, बाजार मूल्य और फार्म प्रबंधन के आधार पर भिन्न हो सकते हैं।"
+                    : "Illustrative estimate — actual results vary by crop, location, market price, operating conditions and farm management."}
                 </span>
               </div>
             </div>
@@ -268,13 +270,13 @@ export const RoiCalculatorSection: React.FC = () => {
                 className="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-extrabold text-sm shadow-glow-gold hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer"
               >
                 <Download className="w-4 h-4 text-slate-950" />
-                {isHindi ? "Custom ROI Model पाएं" : "Request Custom ROI Model"}
+                {isHindi ? "कस्टम ROI मॉडल पाएं" : "Request Custom ROI Model"}
                 <ArrowRight className="w-4 h-4 text-slate-950" />
               </button>
 
               <div className="flex items-center justify-center gap-1.5 text-[11px] text-slate-400">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                <span>Based on JAS Agro verified yield benchmarks</span>
+                <span>{isHindi ? "JAS एग्रो सत्यापित यील्ड बेंचमार्क पर आधारित" : "Based on JAS Agro verified yield benchmarks"}</span>
               </div>
             </div>
           </div>

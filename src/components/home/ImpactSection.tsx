@@ -12,27 +12,27 @@ export const ImpactSection: React.FC = () => {
     {
       value: "2,500+",
       labelEn: "FARMERS & DAIRIES ASSISTED",
-      labelHi: "Farmers & Dairies Connected",
+      labelHi: "फार्मर्स & डेयरी जुड़े",
       icon: HeartHandshake,
     },
     {
       value: "450+",
       unit: "TONS",
       labelEn: "ORGANIC FODDER HARVESTED",
-      labelHi: "Azolla & Napier Yield",
+      labelHi: "अजोला & नेपियर पैदावार",
       icon: TrendingUp,
     },
     {
       value: "120+",
       unit: "TONS",
       labelEn: "GOURMET MUSHROOMS PRODUCED",
-      labelHi: "Oyster Mushroom Yield",
+      labelHi: "ऑयस्टर मशरूम पैदावार",
       icon: Award,
     },
     {
       value: "100%",
       labelEn: "ORGANIC TOP SOIL CERTIFIED",
-      labelHi: "Organic Soil Certified",
+      labelHi: "ऑर्गेनिक सोइल सर्टिफाइड",
       icon: ShieldCheck,
     },
   ];
@@ -47,11 +47,11 @@ export const ImpactSection: React.FC = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100 dark:bg-emerald-950/90 border border-emerald-300 dark:border-emerald-500/50 text-emerald-800 dark:text-emerald-300 text-xs font-mono font-bold uppercase tracking-widest shadow-glow">
-            <span>{isHindi ? "MEASURABLE IMPACT" : "MEASURABLE IMPACT"}</span>
+            <span>{isHindi ? "मेज़रेबल इम्पैक्ट" : "MEASURABLE IMPACT"}</span>
           </div>
 
           <h2 className="text-lg sm:text-xl lg:text-2xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight leading-none">
-            {isHindi ? "Impact जो " : "IMPACT "}
+            {isHindi ? "इम्पैक्ट जो " : "IMPACT "}
             <span className="bg-gradient-to-r from-emerald-600 via-teal-500 to-green-600 dark:from-emerald-400 dark:via-teal-300 dark:to-green-300 bg-clip-text text-transparent">
               {isHindi ? "हर दिन बढ़ता है" : "THAT GROWS."}
             </span>
@@ -59,7 +59,7 @@ export const ImpactSection: React.FC = () => {
 
           <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 font-normal leading-relaxed">
             {isHindi
-              ? "JAS Agro precision technology और organic models से हासिल किए गए real results।"
+              ? "JAS एग्रो प्रिसिजन टेक्नोलॉजी और ऑर्गेनिक मॉडल्स से हासिल किए गए रियल रिजल्ट्स।"
               : "Verifiable agriculture metrics achieved through JAS Agro precision technology and organic cultivation."}
           </p>
         </div>

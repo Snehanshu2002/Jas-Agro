@@ -8,10 +8,10 @@ export const TrustStatsSection: React.FC = () => {
   const isHindi = language === "hi";
 
   const stats = [
-    { value: "2,500+", labelEn: "FARMERS & DAIRIES EMPOWERED", labelHi: "Farmers & Dairy Farms जुड़े" },
-    { value: "450+", unit: "TONNES", labelEn: "OF AZOLLA & NAPIER HARVESTED", labelHi: "Azolla & Napier Green Fodder" },
-    { value: "120+", unit: "TONNES", labelEn: "OF GOURMET MUSHROOMS PRODUCED", labelHi: "Oyster Mushrooms Yield" },
-    { value: "35%", labelEn: "CARBON & ECO FOOTPRINT SAVED", labelHi: "Eco Footprint & Carbon Savings" },
+    { value: "2,500+", labelEn: "FARMERS & DAIRIES EMPOWERED", labelHi: "फार्मर्स & डेयरी फार्म्स जुड़े" },
+    { value: "450+", unit: "TONNES", labelEn: "OF AZOLLA & NAPIER HARVESTED", labelHi: "अजोला & नेपियर ग्रीन फॉडर" },
+    { value: "120+", unit: "TONNES", labelEn: "OF GOURMET MUSHROOMS PRODUCED", labelHi: "ऑयस्टर मशरुम्स यील्ड" },
+    { value: "35%", labelEn: "CARBON & ECO FOOTPRINT SAVED", labelHi: "इको फुटप्रिंट & कार्बन सेविंग्स" },
   ];
 
   return (

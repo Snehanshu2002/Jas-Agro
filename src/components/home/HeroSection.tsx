@@ -22,35 +22,35 @@ export const HeroSection: React.FC = () => {
     {
       id: "warehouse",
       titleEn: "Warehouse & Spawn Lab",
-      titleHi: "1. Warehouse & Lab",
+      titleHi: "1. वेयरहाउस & लैब",
       type: "video",
       src: "/media/hero/warehouse-drone-shot.mp4",
     },
     {
       id: "mushroom",
       titleEn: "Oyster Mushroom",
-      titleHi: "2. Oyster Mushroom",
+      titleHi: "2. ऑयस्टर मशरूम",
       type: "video",
       src: "/media/hero/oyster-mushroom.mp4",
     },
     {
       id: "napier",
       titleEn: "Hybrid Napier Grass",
-      titleHi: "3. Napier Grass",
+      titleHi: "3. नेपियर घास",
       type: "video",
       src: "/media/hero/napier-grass-video.mp4",
     },
     {
       id: "azolla",
       titleEn: "Azolla Aquatic Fodder",
-      titleHi: "4. Azolla Fodder",
+      titleHi: "4. अजोला चारा",
       type: "video",
       src: "/media/hero/azolla-fodder-video.mp4",
     },
     {
       id: "vermicompost",
       titleEn: "Vermicompost Manure",
-      titleHi: "5. Vermicompost",
+      titleHi: "5. वर्मीकंपोस्ट",
       type: "image",
       src: "/media/hero/vermicompost-manure-visual.jpg",
     },
@@ -200,7 +200,7 @@ export const HeroSection: React.FC = () => {
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100 dark:bg-emerald-950/70 border border-emerald-300 dark:border-emerald-500/40 text-emerald-800 dark:text-emerald-300 text-xs font-mono font-semibold tracking-widest uppercase shadow-sm dark:shadow-glow backdrop-blur-md"
           >
             <Sprout className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
-            <span>{isHindi ? "Smart • Sustainable • Connected" : "SMART • SUSTAINABLE • CONNECTED"}</span>
+            <span>{isHindi ? "स्मार्ट • सस्टेनेबल • कनेक्टेड" : "SMART • SUSTAINABLE • CONNECTED"}</span>
           </motion.div>
 
           {/* Oversized Editorial Headline */}
@@ -239,7 +239,7 @@ export const HeroSection: React.FC = () => {
             className="text-sm sm:text-base text-slate-700 dark:text-slate-200 font-medium leading-relaxed max-w-2xl mx-auto drop-shadow-sm dark:drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)]"
           >
             {isHindi
-              ? "Smart cultivation systems जो organic farming, precision tech और smart automation को जोड़ते हैं।"
+              ? "स्मार्ट कल्टीवेशन सिस्टम्स जो ऑर्गेनिक फार्मिंग, प्रिसिजन टेक और स्मार्ट ऑटोमेशन को जोड़ते हैं।"
               : "Smart cultivation systems that combine sustainable farming, precision technology and intelligent automation."}
           </motion.p>
 
@@ -254,7 +254,7 @@ export const HeroSection: React.FC = () => {
               onClick={() => setQuoteModalOpen(true)}
               className="group w-full sm:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-500 via-emerald-600 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-extrabold text-xs sm:text-sm tracking-wider uppercase transition-all duration-300 flex items-center justify-center gap-2.5 shadow-glow-lg border border-emerald-300/40 hover:-translate-y-0.5 cursor-pointer"
             >
-              <span>{isHindi ? "अपना Farm बनाएं" : "BUILD YOUR FARM"}</span>
+              <span>{isHindi ? "अपना फार्म बनाएं" : "BUILD YOUR FARM"}</span>
               <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </button>
 
@@ -262,7 +262,7 @@ export const HeroSection: React.FC = () => {
               href="/solutions"
               className="group w-full sm:w-auto px-6 py-3 rounded-xl bg-white/90 dark:bg-slate-950/70 hover:bg-slate-100 dark:hover:bg-slate-900/90 text-slate-900 dark:text-slate-100 font-bold text-xs sm:text-sm tracking-wider uppercase border border-slate-300 dark:border-slate-700/80 hover:border-emerald-500 dark:hover:border-emerald-400/80 shadow-md dark:shadow-glass backdrop-blur-md transition-all duration-300 flex items-center justify-center gap-2.5 hover:-translate-y-0.5 cursor-pointer"
             >
-              <span>{isHindi ? "Solutions देखें" : "EXPLORE SOLUTIONS"}</span>
+              <span>{isHindi ? "सॉल्यूशंस देखें" : "EXPLORE SOLUTIONS"}</span>
               <Radio className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 group-hover:animate-pulse" />
             </Link>
           </motion.div>

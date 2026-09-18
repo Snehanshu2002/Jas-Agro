@@ -16,12 +16,12 @@ export const SolutionsSection: React.FC = () => {
       titleHi: "ऑयस्टर मशरूम (Oyster Mushroom)",
       slug: "oyster-mushroom",
       categoryEn: "Indoor Smart Farming",
-      categoryHi: "Indoor Smart Farming",
+      categoryHi: "इन्डोर स्मार्ट फार्मिंग",
       descriptionEn: "Oyster mushroom (Pleurotus) is a gourmet species grown using pasteurized substrate and climate-controlled grow rooms.",
-      descriptionHi: "Pasteurized substrate और climate-controlled grow rooms से तैयार high-quality gourmet mushroom।",
+      descriptionHi: "पाश्चराइज्ड सबस्ट्रेट और क्लाइमेट-कंट्रोल्ड ग्रो रूम्स से तैयार हाई-क्वालिटी ऑयस्टर मशरूम।",
       image: "https://www.jasagro.com/assets/img/blog/Masroom.png",
       badgeEn: "High Efficiency",
-      badgeHi: "High Efficiency",
+      badgeHi: "हाई एफिशिएंसी",
       icon: Sprout,
       externalLink: "https://www.chhatraka.com/",
     },
@@ -30,12 +30,12 @@ export const SolutionsSection: React.FC = () => {
       titleHi: "अजोला सुपर-चारा (Azolla Fodder)",
       slug: "azolla",
       categoryEn: "Livestock Nutrition",
-      categoryHi: "Livestock Feed & Nutrition",
+      categoryHi: "लाइवस्टॉक फीड & न्यूट्रिशन",
       descriptionEn: "Considered one of the planet's super-foods. Fast-growing aquatic biomass with 25-30% crude protein.",
-      descriptionHi: "25-30% protein से भरपूर fast-growing aquatic super-food जो dairy feed cost कम करता है।",
+      descriptionHi: "25-30% प्रोटीन से भरपूर फास्ट-ग्रोइंग एक्वाटिक सुपर-फूड जो डेयरी फीड कॉस्ट कम करता है।",
       image: "https://www.jasagro.com/assets/img/blog/Azolla.png",
       badgeEn: "25-30% Protein",
-      badgeHi: "25-30% Protein",
+      badgeHi: "25-30% प्रोटीन",
       icon: Waves,
     },
     {
@@ -43,12 +43,12 @@ export const SolutionsSection: React.FC = () => {
       titleHi: "हाइब्रिड नेपियर घास (Napier Grass)",
       slug: "napier-grass",
       categoryEn: "Perennial Green Fodder",
-      categoryHi: "Perennial Green Fodder",
+      categoryHi: "पेरेनियल ग्रीन फॉडर",
       descriptionEn: "High-biomass green forage crop producing green grass for cattle & livestock year-round.",
-      descriptionHi: "Dairy पशुओं के लिए साल भर भरपूर हरा चारा देने वाली high-biomass फसल।",
+      descriptionHi: "डेयरी पशुओं के लिए साल भर भरपूर हरा चारा देने वाली हाई-बायोमास फसल।",
       image: "https://www.jasagro.com/assets/img/blog/Napior.png",
       badgeEn: "180+ Tons/Acre",
-      badgeHi: "180+ Tons/Acre",
+      badgeHi: "180+ टन/एकड़",
       icon: Sparkles,
     },
     {
@@ -56,12 +56,12 @@ export const SolutionsSection: React.FC = () => {
       titleHi: "ऑर्गेनिक वर्मीकंपोस्ट (Vermicompost)",
       slug: "vermicompost",
       categoryEn: "Soil Health & Fertilizer",
-      categoryHi: "Soil Fertility & Manure",
+      categoryHi: "सोइल फर्टिलिटी & खाद",
       descriptionEn: "Organic biological process using earthworms to convert organic matter into nutrient-rich soil manure.",
-      descriptionHi: "केंचुओं द्वारा तैयार 100% organic compost जो मिट्टी की organic carbon और moisture सुधारता है।",
+      descriptionHi: "केंचुओं द्वारा तैयार 100% ऑर्गेनिक कंपोस्ट जो मिट्टी की ऑर्गेनिक कार्बन और मॉइस्चर सुधारता है।",
       image: "https://www.jasagro.com/assets/img/blog/Vermicompost.png",
       badgeEn: "100% Organic",
-      badgeHi: "100% Organic",
+      badgeHi: "100% ऑर्गेनिक",
       icon: Recycle,
     },
   ];
@@ -71,17 +71,17 @@ export const SolutionsSection: React.FC = () => {
       <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-4 space-y-3">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-600 dark:text-amber-400 text-xs font-bold uppercase tracking-widest">
-            {language === "hi" ? "Core Offerings" : "CORE OFFERINGS"}
+            {language === "hi" ? "कोर ऑफरिंग्स" : "CORE OFFERINGS"}
           </div>
           <h2 className="text-lg sm:text-xl lg:text-2xl font-extrabold font-heading text-slate-900 dark:text-white">
-            {language === "hi" ? "Smart Solutions. " : "What We Grow. "}
+            {language === "hi" ? "स्मार्ट सॉल्यूशंस। " : "What We Grow. "}
             <span className="text-emerald-600 dark:text-emerald-400">
-              {language === "hi" ? "High Productivity." : "What We Solve."}
+              {language === "hi" ? "हाई प्रोडक्टिविटी।" : "What We Solve."}
             </span>
           </h2>
           <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base">
             {language === "hi"
-              ? "High yield, livestock feed security और soil health के लिए engineered solutions।"
+              ? "हाई यील्ड, लाइवस्टॉक फीड सिक्योरिटी और सोइल हेल्थ के लिए इंजीनियर्ड सॉल्यूशंस।"
               : "Engineered agricultural solutions designed for optimal biomass production, livestock security, and ecological sustainability."}
           </p>
         </div>
