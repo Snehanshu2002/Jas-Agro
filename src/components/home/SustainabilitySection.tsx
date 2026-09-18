@@ -61,7 +61,7 @@ export const SustainabilitySection: React.FC = () => {
                 <span>{isHindi ? "Sustainable AgTech" : "SUSTAINABLE AGTECH"}</span>
               </div>
 
-              <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold font-heading text-white tracking-tight leading-none drop-shadow-lg">
+              <h2 className="text-lg sm:text-xl lg:text-2xl font-extrabold font-heading text-white tracking-tight leading-none drop-shadow-lg">
                 {isHindi ? "ज़्यादा Production। " : "GROWING MORE. "}
                 <br className="hidden sm:inline" />
                 <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-green-300 bg-clip-text text-transparent">

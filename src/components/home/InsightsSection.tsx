@@ -18,7 +18,7 @@ export const InsightsSection: React.FC = () => {
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 dark:text-emerald-400 text-xs font-bold uppercase tracking-widest">
               {language === "hi" ? "Blogs & Guides" : "KNOWLEDGE & RESEARCH"}
             </div>
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold font-heading text-slate-900 dark:text-white">
+            <h2 className="text-lg sm:text-xl lg:text-2xl font-extrabold font-heading text-slate-900 dark:text-white">
               {language === "hi" ? "Agri " : "Agricultural "}
               <span className="text-emerald-600 dark:text-emerald-400">
                 {language === "hi" ? "Insights & Blogs" : "Insights"}

@@ -210,7 +210,7 @@ export const HeroSection: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
             className="space-y-3"
           >
-            <h1 className="text-xl sm:text-2xl lg:text-3xl font-extrabold font-heading tracking-tight leading-[1.08] text-slate-900 dark:text-white drop-shadow-sm dark:drop-shadow-[0_8px_30px_rgba(0,0,0,0.9)]">
+            <h1 className="text-lg sm:text-xl lg:text-2xl font-extrabold font-heading tracking-tight leading-[1.08] text-slate-900 dark:text-white drop-shadow-sm dark:drop-shadow-[0_8px_30px_rgba(0,0,0,0.9)]">
               {isHindi ? (
                 <>
                   खेती के भविष्य को

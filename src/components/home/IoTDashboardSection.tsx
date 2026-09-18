@@ -92,7 +92,7 @@ export const IoTDashboardSection: React.FC = () => {
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-600 dark:text-cyan-400 text-xs font-bold uppercase tracking-widest">
             <Radio className="w-3.5 h-3.5 animate-pulse" /> {language === "hi" ? "स्मार्ट एग्री-टेक IoT ऑटोमेशन" : "PRECISION AGRI-TECH TELEMETRY"}
           </div>
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold font-heading text-slate-900 dark:text-white">
+          <h2 className="text-lg sm:text-xl lg:text-2xl font-extrabold font-heading text-slate-900 dark:text-white">
             {language === "hi" ? "जहाँ कृषि और " : "Where Agriculture Meets "}
             <span className="text-cyan-600 dark:text-cyan-400">
               {language === "hi" ? "तकनीक मिलती है" : "Intelligence"}

@@ -39,7 +39,7 @@ export const MushroomFeature: React.FC = () => {
               {language === "hi" ? "Smart Mushroom Farming & IoT" : "FEATURED CULTIVATION & IOT"}
             </div>
 
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold font-heading text-slate-900 dark:text-white leading-tight">
+            <h2 className="text-lg sm:text-xl lg:text-2xl font-extrabold font-heading text-slate-900 dark:text-white leading-tight">
               {language === "hi" ? "Oyster Mushroom Farming & " : "Oyster Mushroom "}
               <span className="text-amber-600 dark:text-amber-400">
                 {language === "hi" ? "Chhatraka Portal" : "Cultivation & Chhatraka"}

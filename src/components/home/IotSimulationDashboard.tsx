@@ -62,7 +62,7 @@ export const IotSimulationDashboard: React.FC = () => {
             <span>{isHindi ? "Interactive IoT Simulator" : "INTERACTIVE IOT FARM TELEMETRY"}</span>
           </div>
 
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight leading-none">
+          <h2 className="text-lg sm:text-xl lg:text-2xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight leading-none">
             {isHindi ? "आपका Farm, " : "YOUR FARM. "}
             <span className="bg-gradient-to-r from-cyan-600 via-teal-500 to-emerald-600 dark:from-cyan-400 dark:via-teal-300 dark:to-emerald-400 bg-clip-text text-transparent">
               {isHindi ? "Smartly Connected।" : "CONNECTED."}

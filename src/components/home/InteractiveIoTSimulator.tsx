@@ -61,7 +61,7 @@ export const InteractiveIoTSimulator: React.FC = () => {
             <span>{language === "hi" ? "लाइव IoT एग्री-टेलीमेट्री सिम्युलेटर" : "Live IoT Telemetry Simulator"}</span>
           </div>
 
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold font-heading text-white tracking-tight">
+          <h2 className="text-lg sm:text-xl lg:text-2xl font-extrabold font-heading text-white tracking-tight">
             {language === "hi" ? (
               <>
                 स्मार्ट इंडोर <span className="bg-gradient-to-r from-cyan-400 to-teal-300 bg-clip-text text-transparent drop-shadow-sm">माइक्रो-क्लाइमेट</span> कंट्रोल

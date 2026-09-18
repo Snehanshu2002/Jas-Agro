@@ -59,7 +59,7 @@ export const WhyChooseUs: React.FC = () => {
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-600 dark:text-amber-400 text-xs font-bold uppercase tracking-widest">
             {language === "hi" ? "JAS एग्रो क्यों चुनें?" : "THE JAS AGRO ADVANTAGE"}
           </div>
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold font-heading text-slate-900 dark:text-white">
+          <h2 className="text-lg sm:text-xl lg:text-2xl font-extrabold font-heading text-slate-900 dark:text-white">
             {language === "hi" ? "JAS Agro ही " : "Why Choose "}
             <span className="text-amber-600 dark:text-amber-400">
               {language === "hi" ? "क्यों?" : "JAS Agro?"}

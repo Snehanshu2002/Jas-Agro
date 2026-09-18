@@ -20,7 +20,7 @@ export default function SustainabilityPage() {
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 dark:text-emerald-400 text-xs font-bold uppercase tracking-wider mb-4">
             {language === "hi" ? "ECO-FRIENDLY AGRICULTURE" : "ECO-FRIENDLY AGRICULTURE"}
           </div>
-          <h1 className="text-4xl sm:text-6xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight">
+          <h1 className="text-xl sm:text-2xl lg:text-3xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight">
             {language === "hi" ? "Sustainability at " : "Sustainability at "}
             <span className="text-emerald-600 dark:text-emerald-400">
               {language === "hi" ? "JAS Agro" : "JAS Agro"}

@@ -258,7 +258,7 @@ export default function ShopPage() {
             {isHindi ? "JAS AGRO OFFICIAL ONLINE STORE" : "OFFICIAL JAS AGRO STORE"}
           </div>
 
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight">
+          <h1 className="text-xl sm:text-2xl lg:text-3xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight">
             Bringing Growth to <span className="text-amber-600 dark:text-amber-400">Agriculture</span>
           </h1>
 

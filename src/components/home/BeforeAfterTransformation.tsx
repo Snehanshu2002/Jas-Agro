@@ -40,7 +40,7 @@ export const BeforeAfterTransformation: React.FC = () => {
             <span>{language === "hi" ? "जैविक रूपांतरण परिणाम" : "Bio-Transformation Impact"}</span>
           </div>
 
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight">
+          <h2 className="text-lg sm:text-xl lg:text-2xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight">
             {language === "hi" ? (
               <>
                 पारंपरिक रसायन बनाम <span className="text-emerald-600 dark:text-emerald-400">JAS Agro जैविक क्रांति</span>
