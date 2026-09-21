@@ -28,10 +28,10 @@ export const HeroSection: React.FC = () => {
     },
     {
       id: "mushroom",
-      titleEn: "Oyster Mushroom",
-      titleHi: "2. ऑयस्टर मशरूम",
+      titleEn: "Mushrooms",
+      titleHi: "2. मशरूम",
       type: "video",
-      src: "/media/hero/oyster-mushroom.mp4",
+      src: "/media/hero/chhatraka-mushroom-training.mp4",
     },
     {
       id: "napier",
@@ -124,7 +124,7 @@ export const HeroSection: React.FC = () => {
                   e.currentTarget.play().catch(() => {});
                 }}
                 onError={() => setVideoError(true)}
-                className="absolute inset-0 w-full h-full object-cover object-center filter opacity-95 dark:opacity-95 brightness-100 dark:brightness-[0.95] contrast-[1.05] saturate-[1.1] transition-all duration-500 z-0"
+                className="absolute top-14 sm:top-16 left-0 w-full h-[calc(100%-3.5rem)] sm:h-[calc(100%-4rem)] object-cover object-top filter opacity-95 dark:opacity-95 brightness-100 dark:brightness-[0.95] contrast-[1.05] saturate-[1.1] transition-all duration-500 z-0"
               />
             ) : (
               <motion.img
@@ -134,14 +134,14 @@ export const HeroSection: React.FC = () => {
                 initial={{ scale: 1.08, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 1.2, ease: "easeOut" }}
-                className="absolute inset-0 w-full h-full object-cover object-center filter opacity-95 dark:opacity-95 brightness-100 dark:brightness-[0.95] contrast-[1.05] saturate-[1.1] transition-all duration-500 z-0"
+                className="absolute top-14 sm:top-16 left-0 w-full h-[calc(100%-3.5rem)] sm:h-[calc(100%-4rem)] object-cover object-top filter opacity-95 dark:opacity-95 brightness-100 dark:brightness-[0.95] contrast-[1.05] saturate-[1.1] transition-all duration-500 z-0"
               />
             )
           )}
         </motion.div>
 
         {/* Atmospheric Vignette Overlay (Sleek Horizon protection without over-dimming video) */}
-        <div className="absolute inset-0 z-10 bg-gradient-to-t from-slate-50/70 via-transparent to-slate-900/20 dark:from-[#0B0F17]/75 dark:via-transparent dark:to-[#0B0F17]/25" />
+        <div className="absolute inset-0 z-10 bg-gradient-to-t from-slate-50/70 via-transparent to-transparent dark:from-[#0B0F17]/75 dark:via-transparent dark:to-transparent" />
         
         {/* Soft Radial Ambient Glow */}
         <div 
