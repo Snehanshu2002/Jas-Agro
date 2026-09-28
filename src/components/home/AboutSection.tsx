@@ -162,10 +162,10 @@ export const AboutSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-12 sm:py-16 lg:py-24 bg-[#FAFBF7] dark:bg-[#0B0F17] text-slate-900 dark:text-white relative overflow-hidden border-b border-emerald-950/10 dark:border-slate-800/80 transition-colors duration-300">
+    <section className="py-12 sm:py-16 lg:py-24 bg-[#FAFAF5] dark:bg-[#0D230E] text-[#111811] dark:text-[#FAFAF5] relative overflow-hidden border-b border-[#123B13]/10 dark:border-[#B8F21B]/15 transition-colors duration-300">
       {/* Background Soft Lighting */}
-      <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-emerald-500/5 blur-[160px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-10 left-0 w-[400px] h-[400px] bg-lime-500/5 blur-[140px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-[#B8F21B]/8 blur-[160px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-10 left-0 w-[400px] h-[400px] bg-[#4F9D1F]/8 blur-[140px] rounded-full pointer-events-none" />
 
       <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 relative z-10 max-w-[1440px] mx-auto">
         
@@ -177,8 +177,8 @@ export const AboutSection: React.FC = () => {
           transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
           className="mb-4"
         >
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100/90 dark:bg-emerald-950/90 border border-emerald-300/80 dark:border-emerald-500/50 text-emerald-900 dark:text-emerald-300 text-xs font-mono font-bold uppercase tracking-widest shadow-sm">
-            <Sparkles className="w-3.5 h-3.5 text-amber-500 dark:text-amber-400" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EAF5D8] dark:bg-[#123B13] border border-[#2F7D16]/30 dark:border-[#B8F21B]/30 text-[#123B13] dark:text-[#B8F21B] text-xs font-mono font-bold uppercase tracking-widest shadow-xs">
+            <Sparkles className="w-3.5 h-3.5 text-[#2F7D16] dark:text-[#B8F21B]" />
             <span>{isHindi ? "JAS एग्रो क्यों चुनें?" : "THE JAS AGRO ADVANTAGE"}</span>
           </div>
         </motion.div>
@@ -193,18 +193,18 @@ export const AboutSection: React.FC = () => {
         >
           {/* Left: Large Editorial Heading */}
           <div className="lg:col-span-7 space-y-2">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight leading-[1.12]">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold font-heading text-[#111811] dark:text-[#FAFAF5] tracking-tight leading-[1.12]">
               {isHindi ? (
                 <>
                   स्मार्ट एग्रीकल्चर की शुरुआत{" "}
-                  <span className="bg-gradient-to-r from-emerald-700 via-teal-600 to-green-700 dark:from-emerald-400 dark:via-teal-300 dark:to-green-300 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-[#123B13] via-[#2F7D16] to-[#4F9D1F] dark:from-[#B8F21B] dark:via-[#4F9D1F] dark:to-[#EAF5D8] bg-clip-text text-transparent">
                     बेहतर सिस्टम्स से होती है
                   </span>
                 </>
               ) : (
                 <>
                   Why Smart Agriculture Starts With{" "}
-                  <span className="bg-gradient-to-r from-emerald-700 via-teal-600 to-green-700 dark:from-emerald-400 dark:via-teal-300 dark:to-green-300 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-[#123B13] via-[#2F7D16] to-[#4F9D1F] dark:from-[#B8F21B] dark:via-[#4F9D1F] dark:to-[#EAF5D8] bg-clip-text text-transparent">
                     Better Systems
                   </span>
                 </>
@@ -214,7 +214,7 @@ export const AboutSection: React.FC = () => {
 
           {/* Right: Supporting Paragraph */}
           <div className="lg:col-span-5 space-y-4">
-            <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg leading-relaxed font-normal">
+            <p className="text-[#5A6E59] dark:text-[#A3C2A1] text-base sm:text-lg leading-relaxed font-normal">
               {isHindi
                 ? "JAS Agro कृषि ज्ञान, उच्च-प्रोटीन जैविक संवर्धन और व्यावहारिक IoT तकनीक को मिलाकर किसानों और उद्यमों के लिए बेहतर पैदावार और स्थिरता सुनिश्चित करता है।"
                 : "Discover how JAS Agro combines deep agronomic expertise, high-protein biological cultures, and practical IoT micro-climate automation to maximize yield, resource security, and ecological sustainability."}
@@ -233,7 +233,7 @@ export const AboutSection: React.FC = () => {
           {EDITORIAL_IMAGES.map((img, idx) => (
             <div
               key={idx}
-              className="group relative rounded-3xl overflow-hidden bg-slate-900 border border-emerald-950/10 dark:border-slate-800 shadow-md aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5] flex flex-col justify-end"
+              className="group relative rounded-3xl overflow-hidden bg-slate-900 border border-[#123B13]/10 dark:border-[#1B4D1C] shadow-md aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5] flex flex-col justify-end"
             >
               <img
                 src={img.src}
@@ -243,11 +243,11 @@ export const AboutSection: React.FC = () => {
               />
               
               {/* Subtle Gradient Veil */}
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/25 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0D230E]/90 via-[#0D230E]/30 to-transparent pointer-events-none" />
 
               {/* Minimal Bottom Label */}
               <div className="relative z-10 p-5 sm:p-6 space-y-1.5">
-                <span className="inline-block px-3 py-1 rounded-full bg-white/95 text-emerald-950 dark:bg-slate-900/90 dark:text-emerald-400 text-[11px] font-mono font-bold backdrop-blur-md shadow-xs border border-emerald-300/60 dark:border-emerald-500/30">
+                <span className="inline-block px-3 py-1 rounded-full bg-white/95 text-[#123B13] dark:bg-[#123B13]/90 dark:text-[#B8F21B] text-[11px] font-mono font-bold backdrop-blur-md shadow-xs border border-[#2F7D16]/30 dark:border-[#B8F21B]/30">
                   {isHindi ? img.categoryHi : img.categoryEn}
                 </span>
                 <h3 className="text-white font-heading font-bold text-base sm:text-lg leading-snug">
@@ -275,10 +275,10 @@ export const AboutSection: React.FC = () => {
                 tabIndex={0}
                 role="button"
                 aria-pressed={isActive}
-                className={`group relative rounded-2xl sm:rounded-3xl p-5 sm:p-7 lg:p-8 transition-all duration-300 cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 ${
+                className={`group relative rounded-2xl sm:rounded-3xl p-5 sm:p-7 lg:p-8 transition-all duration-300 cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-[#2F7D16] ${
                   isActive
-                    ? "bg-[#C4F135] text-slate-950 shadow-xl border border-lime-400/80 scale-[1.008] z-20"
-                    : "bg-[#F7F9F1] dark:bg-slate-900/80 hover:bg-[#EEF4E3] dark:hover:bg-slate-800/90 text-slate-900 dark:text-white border border-emerald-950/10 dark:border-slate-800/80 hover:border-emerald-500/30 shadow-xs"
+                    ? "bg-[#B8F21B] text-[#123B13] shadow-xl border border-[#B8F21B] scale-[1.008] z-20"
+                    : "bg-[#F4F8EC] dark:bg-[#123B13]/50 hover:bg-[#EAF5D8] dark:hover:bg-[#123B13]/90 text-[#111811] dark:text-[#FAFAF5] border border-[#123B13]/10 dark:border-[#1B4D1C] hover:border-[#2F7D16]/30 shadow-xs"
                 }`}
               >
                 <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 lg:gap-8">

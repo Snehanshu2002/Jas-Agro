@@ -38,26 +38,26 @@ export const ImpactSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-6 bg-[#F2F6EC] dark:bg-[#0B0F17] text-slate-900 dark:text-white relative overflow-hidden border-b border-emerald-950/10 dark:border-slate-800/80 transition-colors duration-300">
+    <section className="py-12 sm:py-16 bg-[#F4F8EC] dark:bg-[#0D230E] text-[#111811] dark:text-[#FAFAF5] relative overflow-hidden border-b border-[#123B13]/10 dark:border-[#B8F21B]/15 transition-colors duration-300">
       {/* Background Lighting */}
-      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-96 h-96 bg-emerald-500/10 blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-96 h-96 bg-[#B8F21B]/10 blur-[150px] rounded-full pointer-events-none" />
 
       <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100/90 dark:bg-emerald-950/90 border border-emerald-300/80 dark:border-emerald-500/50 text-emerald-900 dark:text-emerald-300 text-xs font-mono font-bold uppercase tracking-widest shadow-sm">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#EAF5D8] dark:bg-[#123B13] border border-[#2F7D16]/30 dark:border-[#B8F21B]/30 text-[#123B13] dark:text-[#B8F21B] text-xs font-mono font-bold uppercase tracking-widest shadow-xs">
             <span>{isHindi ? "मेज़रेबल इम्पैक्ट" : "MEASURABLE IMPACT"}</span>
           </div>
 
-          <h2 className="text-lg sm:text-xl lg:text-2xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight leading-none">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-[#111811] dark:text-[#FAFAF5] tracking-tight leading-none">
             {isHindi ? "इम्पैक्ट जो " : "IMPACT "}
-            <span className="bg-gradient-to-r from-emerald-700 via-teal-600 to-green-700 dark:from-emerald-400 dark:via-teal-300 dark:to-green-300 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#123B13] via-[#2F7D16] to-[#4F9D1F] dark:from-[#B8F21B] dark:via-[#4F9D1F] dark:to-[#EAF5D8] bg-clip-text text-transparent">
               {isHindi ? "हर दिन बढ़ता है" : "THAT GROWS."}
             </span>
           </h2>
 
-          <p className="text-base sm:text-lg text-slate-700 dark:text-slate-300 font-normal leading-relaxed">
+          <p className="text-base sm:text-lg text-[#5A6E59] dark:text-[#A3C2A1] font-normal leading-relaxed">
             {isHindi
               ? "JAS एग्रो प्रिसिजन टेक्नोलॉजी और ऑर्गेनिक मॉडल्स से हासिल किए गए रियल रिजल्ट्स।"
               : "Verifiable agriculture metrics achieved through JAS Agro precision technology and organic cultivation."}
@@ -73,24 +73,24 @@ export const ImpactSection: React.FC = () => {
             return (
               <div
                 key={idx}
-                className="bg-white dark:bg-slate-900/80 backdrop-blur-xl border border-emerald-950/10 dark:border-slate-800 hover:border-emerald-500/50 rounded-3xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 space-y-3 group hover:-translate-y-1.5"
+                className="bg-white dark:bg-[#123B13]/80 backdrop-blur-xl border border-[#123B13]/10 dark:border-[#1B4D1C] hover:border-[#2F7D16]/50 rounded-3xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 space-y-3 group hover:-translate-y-1.5"
               >
                 <div className="flex items-center justify-between">
-                  <div className="p-2.5 rounded-2xl bg-emerald-100 dark:bg-emerald-950 border border-emerald-300 dark:border-emerald-500/40 text-emerald-800 dark:text-emerald-400">
+                  <div className="p-2.5 rounded-2xl bg-[#EAF5D8] dark:bg-[#0D230E] border border-[#2F7D16]/30 dark:border-[#B8F21B]/30 text-[#123B13] dark:text-[#B8F21B]">
                     <IconComp className="w-5 h-5" />
                   </div>
                   {item.unit && (
-                    <span className="text-[10px] font-mono font-bold text-amber-900 dark:text-amber-400 bg-amber-100 dark:bg-amber-950/80 px-2 py-0.5 rounded-full border border-amber-300 dark:border-amber-500/40">
+                    <span className="text-[10px] font-mono font-bold text-[#123B13] dark:text-[#B8F21B] bg-[#B8F21B] dark:bg-[#B8F21B]/20 px-2 py-0.5 rounded-full border border-[#B8F21B]/50">
                       {item.unit}
                     </span>
                   )}
                 </div>
 
-                <div className="text-2xl sm:text-3xl font-extrabold font-mono text-slate-900 dark:text-white tracking-tight group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
+                <div className="text-2xl sm:text-3xl font-extrabold font-mono text-[#111811] dark:text-[#FAFAF5] tracking-tight group-hover:text-[#2F7D16] dark:group-hover:text-[#B8F21B] transition-colors">
                   {item.value}
                 </div>
 
-                <div className="text-xs font-mono font-bold text-slate-700 dark:text-slate-400 tracking-wider uppercase leading-snug">
+                <div className="text-xs font-mono font-bold text-[#5A6E59] dark:text-[#A3C2A1] tracking-wider uppercase leading-snug">
                   {label}
                 </div>
               </div>

@@ -46,16 +46,16 @@ export const PremiumCta: React.FC<PremiumCtaProps> = ({
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 bg-[#FAFBF7] dark:bg-[#0B0F17] text-slate-900 dark:text-white relative overflow-hidden border-b border-emerald-950/10 dark:border-slate-800/80 transition-colors duration-300">
+    <section className="py-12 sm:py-16 lg:py-20 bg-[#FAFAF5] dark:bg-[#0D230E] text-[#111811] dark:text-[#FAFAF5] relative overflow-hidden border-b border-[#2F7D16]/10 dark:border-[#1B4D1C] transition-colors duration-300">
       {/* Background Lighting */}
-      <div className="absolute inset-0 bg-gradient-to-r from-emerald-100/60 via-[#edf3e8]/70 to-[#FAFBF7] dark:from-emerald-950/40 dark:via-teal-950/30 dark:to-slate-950 pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-emerald-500/15 blur-[160px] rounded-full pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#EAF5D8]/60 via-[#F4F8EC]/70 to-[#FAFAF5] dark:from-[#0D230E] dark:via-[#123B13] dark:to-[#0D230E] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[#B8F21B]/15 blur-[160px] rounded-full pointer-events-none" />
 
       {/* Subtle Pattern Grid */}
       <div
         className="absolute inset-0 opacity-15 pointer-events-none"
         style={{
-          backgroundImage: `radial-gradient(rgba(16, 185, 129, 0.4) 1px, transparent 1px)`,
+          backgroundImage: `radial-gradient(rgba(47, 125, 22, 0.4) 1px, transparent 1px)`,
           backgroundSize: "36px 36px",
         }}
       />
@@ -66,28 +66,28 @@ export const PremiumCta: React.FC<PremiumCtaProps> = ({
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="bg-white dark:bg-slate-900/90 backdrop-blur-2xl border border-emerald-900/10 dark:border-emerald-500/40 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-xl space-y-8 relative overflow-hidden"
+          className="bg-[#123B13] dark:bg-[#123B13] text-white border border-[#2F7D16]/50 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-2xl space-y-8 relative overflow-hidden"
         >
           {/* Ambient Top Beam */}
-          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 via-teal-400 to-green-500" />
+          <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#2F7D16] via-[#B8F21B] to-[#4F9D1F]" />
 
           {/* Eyebrow Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100/90 dark:bg-emerald-950/90 border border-emerald-300/80 dark:border-emerald-500/50 text-emerald-900 dark:text-emerald-300 text-xs font-mono font-bold uppercase tracking-wider shadow-sm">
-            <Sparkles className="w-3.5 h-3.5 text-amber-500 dark:text-amber-400 animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-[#B8F21B] text-xs font-mono font-bold uppercase tracking-wider shadow-sm">
+            <Sparkles className="w-3.5 h-3.5 text-[#B8F21B] animate-pulse" />
             <span>{isHindi ? badgeTextHi : badgeTextEn}</span>
           </div>
 
           {/* Headline */}
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-white tracking-tight leading-tight">
             {isHindi ? titleHi : titleEn}
             <br className="hidden sm:inline" />
-            <span className="bg-gradient-to-r from-emerald-700 via-teal-600 to-green-700 dark:from-emerald-400 dark:via-teal-300 dark:to-green-300 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#B8F21B] via-[#C8F93B] to-[#A3DB14] bg-clip-text text-transparent">
               {isHindi ? titleHighlightHi : titleHighlightEn}
             </span>
           </h2>
 
           {/* Supporting Text */}
-          <p className="text-slate-700 dark:text-slate-300 text-base sm:text-lg font-medium leading-relaxed max-w-2xl mx-auto">
+          <p className="text-[#EAF5D8] text-base sm:text-lg font-medium leading-relaxed max-w-2xl mx-auto">
             {isHindi ? descriptionHi : descriptionEn}
           </p>
 
@@ -96,7 +96,7 @@ export const PremiumCta: React.FC<PremiumCtaProps> = ({
             <button
               type="button"
               onClick={() => setQuoteModalOpen(true)}
-              className="btn-reveal-primary w-full sm:w-auto px-9 py-4 rounded-2xl bg-gradient-to-r from-emerald-500 via-teal-500 to-green-600 text-white font-extrabold text-base shadow-glow-lg border border-emerald-300/40 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer flex items-center justify-center gap-2.5 focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:outline-none"
+              className="btn-reveal-lime w-full sm:w-auto px-9 py-4 rounded-2xl bg-[#B8F21B] hover:bg-[#C8F93B] text-[#123B13] font-extrabold text-base shadow-xl border border-[#A6E015] hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer flex items-center justify-center gap-2.5 focus-visible:ring-2 focus-visible:ring-[#B8F21B] focus-visible:outline-none"
             >
               <span>{isHindi ? primaryBtnTextHi : primaryBtnTextEn}</span>
               <ArrowRight className="w-5 h-5" />
@@ -104,15 +104,15 @@ export const PremiumCta: React.FC<PremiumCtaProps> = ({
 
             <a
               href={`tel:${phone.replace(/\s+/g, "")}`}
-              className="btn-reveal-secondary w-full sm:w-auto px-9 py-4 rounded-2xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-950 dark:hover:bg-slate-900 text-slate-900 dark:text-white font-bold text-base border border-slate-200 dark:border-slate-700 shadow-sm transition-all flex items-center justify-center gap-2.5 hover:scale-[1.02] active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:outline-none"
+              className="btn-reveal-secondary w-full sm:w-auto px-9 py-4 rounded-2xl bg-white/10 hover:bg-white/20 text-white font-bold text-base border border-white/25 shadow-sm transition-all flex items-center justify-center gap-2.5 hover:scale-[1.02] active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-[#B8F21B] focus-visible:outline-none"
             >
-              <PhoneCall className="w-5 h-5 text-amber-600 dark:text-amber-400" />
+              <PhoneCall className="w-5 h-5 text-[#B8F21B]" />
               <span>{isHindi ? secondaryBtnTextHi : secondaryBtnTextEn}</span>
             </a>
           </div>
 
-          <div className="pt-2 flex items-center justify-center gap-2 text-xs font-mono text-slate-600 dark:text-slate-400">
-            <ShieldCheck className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+          <div className="pt-2 flex items-center justify-center gap-2 text-xs font-mono text-[#A3C2A1]">
+            <ShieldCheck className="w-4 h-4 text-[#B8F21B]" />
             <span>
               {isHindi
                 ? "समर्पित एग्रीटेक विशेषज्ञ सलाह • मुफ़्त कंसल्टेशन"

@@ -53,19 +53,19 @@ export const TestimonialSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-6 bg-[#F1F5EB] dark:bg-slate-950 text-slate-900 dark:text-white relative overflow-hidden transition-colors duration-300 border-t border-emerald-950/10 dark:border-slate-800">
+    <section className="py-12 sm:py-16 bg-[#F4F8EC] dark:bg-[#0D230E] text-[#111811] dark:text-[#FAFAF5] relative overflow-hidden transition-colors duration-300 border-t border-[#123B13]/10 dark:border-[#B8F21B]/15">
       <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-4 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-100/90 dark:bg-emerald-500/10 border border-emerald-300/80 dark:border-emerald-500/30 text-emerald-900 dark:text-amber-400 text-xs font-bold uppercase tracking-widest">
+        <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EAF5D8] dark:bg-[#123B13] border border-[#2F7D16]/30 dark:border-[#B8F21B]/30 text-[#123B13] dark:text-[#B8F21B] text-xs font-mono font-bold uppercase tracking-widest">
             {language === "hi" ? "फार्मर फीडबैक & रिव्यू" : "FARMER & PARTNER FEEDBACK"}
           </div>
-          <h2 className="text-lg sm:text-xl lg:text-2xl font-extrabold font-heading text-slate-900 dark:text-white">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-[#111811] dark:text-[#FAFAF5]">
             {language === "hi" ? "हमारे फार्मर्स और पार्टनर्स के " : "What Our "}
-            <span className="text-emerald-700 dark:text-amber-400">
+            <span className="bg-gradient-to-r from-[#123B13] via-[#2F7D16] to-[#4F9D1F] dark:from-[#B8F21B] dark:via-[#4F9D1F] dark:to-[#EAF5D8] bg-clip-text text-transparent">
               {language === "hi" ? "अनुभव" : "Partners Say"}
             </span>
           </h2>
-          <p className="text-slate-700 dark:text-slate-300 text-base">
+          <p className="text-[#5A6E59] dark:text-[#A3C2A1] text-base">
             {language === "hi"
               ? "हमारे फार्मर्स और डेयरी पार्टनर्स के रियल एक्सपीरियंस और रिजल्ट्स।"
               : "Sample client experiences demonstrating real-world agricultural outcomes and fodder feed security."}
@@ -83,34 +83,34 @@ export const TestimonialSection: React.FC = () => {
             return (
               <div
                 key={idx}
-                className="bg-white dark:bg-slate-900/80 p-8 rounded-3xl border border-emerald-950/10 dark:border-white/10 hover:border-emerald-500/50 transition-all flex flex-col justify-between space-y-6 relative shadow-sm hover:shadow-xl"
+                className="bg-white dark:bg-[#123B13]/70 p-8 rounded-3xl border border-[#123B13]/10 dark:border-[#1B4D1C] hover:border-[#2F7D16]/50 transition-all flex flex-col justify-between space-y-6 relative shadow-xs hover:shadow-xl"
               >
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <div className="flex gap-1 text-amber-500">
+                    <div className="flex gap-1 text-[#4F9D1F] dark:text-[#B8F21B]">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                        <Star key={i} className="w-4 h-4 fill-current text-current" />
                       ))}
                     </div>
-                    <span className="text-[10px] uppercase font-mono px-2.5 py-1 rounded-full bg-emerald-50 dark:bg-white/5 border border-emerald-200 dark:border-white/10 text-emerald-900 dark:text-slate-400 font-bold">
+                    <span className="text-[10px] uppercase font-mono px-2.5 py-1 rounded-full bg-[#EAF5D8] dark:bg-[#0D230E] border border-[#2F7D16]/30 dark:border-[#B8F21B]/30 text-[#123B13] dark:text-[#B8F21B] font-bold">
                       {badge}
                     </span>
                   </div>
 
-                  <Quote className="w-8 h-8 text-emerald-600/40 dark:text-amber-400/40" />
+                  <Quote className="w-8 h-8 text-[#2F7D16]/30 dark:text-[#B8F21B]/30" />
 
-                  <p className="text-slate-800 dark:text-slate-200 text-sm italic leading-relaxed font-normal">
+                  <p className="text-[#111811]/90 dark:text-[#FAFAF5]/90 text-sm italic leading-relaxed font-normal">
                     "{quote}"
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-emerald-950/10 dark:border-white/10 flex items-center justify-between">
+                <div className="pt-4 border-t border-[#123B13]/10 dark:border-[#1B4D1C] flex items-center justify-between">
                   <div>
-                    <h4 className="font-heading font-bold text-slate-900 dark:text-white text-sm">{author}</h4>
-                    <p className="text-xs text-slate-600 dark:text-slate-400">{location}</p>
+                    <h4 className="font-heading font-bold text-[#111811] dark:text-[#FAFAF5] text-sm">{author}</h4>
+                    <p className="text-xs text-[#5A6E59] dark:text-[#A3C2A1]">{location}</p>
                   </div>
                   <div className="text-right">
-                    <span className="text-[11px] font-bold text-emerald-800 dark:text-emerald-400 block">
+                    <span className="text-[11px] font-bold text-[#2F7D16] dark:text-[#B8F21B] block">
                       {solution}
                     </span>
                   </div>

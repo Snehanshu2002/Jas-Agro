@@ -50,21 +50,21 @@ export default function TechnologyPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-[#FAFBF7] text-slate-900 dark:bg-[#0B0F17] dark:text-slate-100 transition-colors duration-300 overflow-x-hidden">
+    <main className="min-h-screen bg-[#FAFAF5] text-[#111811] dark:bg-[#0D230E] dark:text-[#FAFAF5] transition-colors duration-300 overflow-x-hidden">
       <Navbar />
 
-      <section className="relative pt-28 pb-12 overflow-hidden bg-[#FAFBF7] dark:bg-[#0B0F17] border-b border-emerald-950/10 dark:border-slate-800/80">
+      <section className="relative pt-28 pb-12 overflow-hidden bg-[#FAFAF5] dark:bg-[#0D230E] border-b border-[#123B13]/10 dark:border-[#B8F21B]/15">
         <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 relative z-10 text-center max-w-4xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-100/90 dark:bg-cyan-950/80 border border-cyan-300/80 dark:border-cyan-500/40 text-cyan-900 dark:text-cyan-300 text-xs font-mono font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EAF5D8] dark:bg-[#123B13] border border-[#2F7D16]/30 dark:border-[#B8F21B]/30 text-[#123B13] dark:text-[#B8F21B] text-xs font-mono font-bold uppercase tracking-wider">
             <span>{language === "hi" ? "SMART AGRI-TECH IOT" : "SMART FARM TELEMETRY"}</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight leading-tight">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-[#111811] dark:text-[#FAFAF5] tracking-tight leading-tight">
             {language === "hi" ? "Smart Tech for " : "Technology That "}
-            <span className="bg-gradient-to-r from-teal-700 via-cyan-600 to-emerald-700 dark:from-cyan-400 dark:via-teal-300 dark:to-emerald-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#123B13] via-[#2F7D16] to-[#4F9D1F] dark:from-[#B8F21B] dark:via-[#4F9D1F] dark:to-[#EAF5D8] bg-clip-text text-transparent">
               {language === "hi" ? "Precision Farming" : "Works With Nature"}
             </span>
           </h1>
-          <p className="text-slate-700 dark:text-slate-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="text-[#5A6E59] dark:text-[#A3C2A1] text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-normal">
             {language === "hi"
               ? "Sensor network और automation द्वारा climate risks को ख़त्म करना।"
               : "Eliminating climate risk in agriculture with micro-controller telemetry and sensor nodes."}
@@ -74,13 +74,13 @@ export default function TechnologyPage() {
 
       <IoTDashboardSection />
 
-      <section className="py-16 bg-[#FAFBF7] dark:bg-[#0B0F17] border-t border-emerald-950/10 dark:border-slate-800/80">
+      <section className="py-16 bg-[#F4F8EC] dark:bg-[#0B170C] border-t border-[#123B13]/10 dark:border-[#B8F21B]/15">
         <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 max-w-6xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
-            <h2 className="text-2xl sm:text-3xl font-bold font-heading text-slate-900 dark:text-white">
+            <h2 className="text-2xl sm:text-3xl font-bold font-heading text-[#111811] dark:text-[#FAFAF5]">
               {language === "hi" ? "Hardware & Controller Specifications" : "Hardware & Controller Specifications"}
             </h2>
-            <p className="text-slate-700 dark:text-slate-300 text-sm font-normal">
+            <p className="text-[#5A6E59] dark:text-[#A3C2A1] text-sm font-normal">
               {language === "hi" ? "High humidity grow rooms और outdoor farm environments के लिए बने industrial grade components।" : "Industrial-grade components built for high-humidity grow rooms and outdoor farm environments."}
             </p>
           </div>
@@ -93,12 +93,12 @@ export default function TechnologyPage() {
               return (
                 <div
                   key={idx}
-                  className="bg-white dark:bg-slate-900/90 p-6 rounded-3xl border border-emerald-950/10 dark:border-slate-800 space-y-2 shadow-sm hover:shadow-md transition-shadow"
+                  className="bg-white dark:bg-[#123B13]/80 p-6 rounded-3xl border border-[#123B13]/10 dark:border-[#1B4D1C] space-y-2 shadow-xs hover:shadow-md transition-shadow"
                 >
-                  <div className="text-xs font-mono font-bold uppercase tracking-wider text-teal-800 dark:text-cyan-400">
+                  <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#2F7D16] dark:text-[#B8F21B]">
                     {label}
                   </div>
-                  <div className="text-sm font-bold text-slate-900 dark:text-white">{value}</div>
+                  <div className="text-sm font-bold text-[#111811] dark:text-[#FAFAF5]">{value}</div>
                 </div>
               );
             })}

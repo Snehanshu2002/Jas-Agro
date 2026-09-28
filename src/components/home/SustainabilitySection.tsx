@@ -42,7 +42,7 @@ export const SustainabilitySection: React.FC = () => {
   ];
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 bg-[#FAFBF7] dark:bg-[#0B0F17] text-slate-900 dark:text-white relative overflow-hidden border-b border-emerald-950/10 dark:border-slate-800/80 transition-colors duration-300">
+    <section className="py-12 sm:py-16 lg:py-20 bg-[#FAFAF5] dark:bg-[#0D230E] text-[#111811] dark:text-[#FAFAF5] relative overflow-hidden border-b border-[#123B13]/10 dark:border-[#B8F21B]/15 transition-colors duration-300">
       <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 relative z-10">
         
         {/* Full-Bleed Editorial Visual Box */}
@@ -51,33 +51,33 @@ export const SustainabilitySection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="relative rounded-3xl overflow-hidden border border-emerald-500/30 shadow-glass"
+          className="relative rounded-3xl overflow-hidden border border-[#2F7D16]/40 shadow-glass"
         >
           <img
             src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2000&q=80"
             alt="JAS Agro Sustainable Agriculture & Bio-Farming"
             className="w-full h-[540px] object-cover filter brightness-[0.75] contrast-[1.10]"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F17] via-[#0B0F17]/60 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0B0F17]/80 via-transparent to-[#0B0F17]/80" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0D230E] via-[#0D230E]/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0D230E]/80 via-transparent to-[#0D230E]/80" />
 
           {/* Editorial Content Overlay */}
           <div className="absolute inset-0 p-8 sm:p-14 flex flex-col justify-between text-left">
             <div className="space-y-4 max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950/90 border border-emerald-500/50 text-emerald-300 text-xs font-mono font-bold uppercase tracking-widest backdrop-blur-md">
-                <ShieldCheck className="w-4 h-4 text-emerald-400" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#123B13]/90 border border-[#B8F21B]/40 text-[#B8F21B] text-xs font-mono font-bold uppercase tracking-widest backdrop-blur-md">
+                <ShieldCheck className="w-4 h-4 text-[#B8F21B]" />
                 <span>{isHindi ? "सस्टेनेबल एग्रीटेक" : "SUSTAINABLE AGTECH"}</span>
               </div>
 
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-white tracking-tight leading-tight drop-shadow-lg">
                 {isHindi ? "ज़्यादा प्रोडक्शन। " : "GROWING MORE. "}
                 <br className="hidden sm:inline" />
-                <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-green-300 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#B8F21B] via-[#4F9D1F] to-[#EAF5D8] bg-clip-text text-transparent">
                   {isHindi ? "शून्य बर्बादी।" : "WASTING LESS."}
                 </span>
               </h2>
 
-              <p className="text-slate-200 text-base sm:text-lg font-normal leading-relaxed drop-shadow-md">
+              <p className="text-[#EAF5D8] text-base sm:text-lg font-normal leading-relaxed drop-shadow-md">
                 {isHindi
                   ? "नेचुरल इकोलॉजी को नुक़सान पहुँचाए बिना मैक्सिमम क्रॉप यील्ड्स पाना।"
                   : "Harvesting maximum agricultural potential while preserving topsoil ecological balance."}

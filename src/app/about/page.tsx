@@ -49,22 +49,22 @@ export default function AboutPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-[#FAFBF7] text-slate-900 dark:bg-[#0B0F17] dark:text-slate-100 transition-colors duration-300 overflow-x-hidden">
+    <main className="min-h-screen bg-[#FAFAF5] text-[#111811] dark:bg-[#0D230E] dark:text-[#FAFAF5] transition-colors duration-300 overflow-x-hidden">
       <Navbar />
 
       {/* Hero Header */}
-      <section className="relative pt-28 pb-12 overflow-hidden bg-[#FAFBF7] dark:bg-[#0B0F17] border-b border-emerald-950/10 dark:border-slate-800/80">
+      <section className="relative pt-28 pb-12 overflow-hidden bg-[#FAFAF5] dark:bg-[#0D230E] border-b border-[#123B13]/10 dark:border-[#B8F21B]/15">
         <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 relative z-10 text-center max-w-4xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-100/90 dark:bg-emerald-950/80 border border-emerald-300/80 dark:border-emerald-500/40 text-emerald-900 dark:text-emerald-300 text-xs font-mono font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EAF5D8] dark:bg-[#123B13] border border-[#2F7D16]/30 dark:border-[#B8F21B]/30 text-[#123B13] dark:text-[#B8F21B] text-xs font-mono font-bold uppercase tracking-wider">
             <span>{language === "hi" ? "हमारे बारे में" : "WHO WE ARE"}</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight leading-tight">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-[#111811] dark:text-[#FAFAF5] tracking-tight leading-tight">
             {language === "hi" ? "हमारी कहानी, लक्ष्य एवं " : "Our Story, Vision & "}
-            <span className="bg-gradient-to-r from-emerald-700 via-teal-600 to-green-700 dark:from-emerald-400 dark:via-teal-300 dark:to-green-300 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#123B13] via-[#2F7D16] to-[#4F9D1F] dark:from-[#B8F21B] dark:via-[#4F9D1F] dark:to-[#EAF5D8] bg-clip-text text-transparent">
               {language === "hi" ? "दर्शन" : "Philosophy"}
             </span>
           </h1>
-          <p className="text-slate-700 dark:text-slate-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="text-[#5A6E59] dark:text-[#A3C2A1] text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-normal">
             {language === "hi"
               ? "टिकाऊ कृषि पद्धतियां, उच्च प्रोटीन पशु चारा और स्मार्ट IoT पर्यावरण निगरानी तकनीक।"
               : "Pioneering sustainable farming methodologies, high-biomass livestock fodder, and smart IoT environmental monitoring."}
@@ -73,31 +73,31 @@ export default function AboutPage() {
       </section>
 
       {/* Vision & Mission Split */}
-      <section className="py-14 bg-[#FAFBF7] dark:bg-[#0B0F17] border-b border-emerald-950/10 dark:border-slate-800/80">
+      <section className="py-14 bg-[#F4F8EC] dark:bg-[#0B170C] border-b border-[#123B13]/10 dark:border-[#B8F21B]/15">
         <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <div className="bg-white dark:bg-slate-900/90 p-8 rounded-3xl border border-emerald-950/10 dark:border-slate-800 space-y-4 shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 rounded-2xl bg-emerald-100 dark:bg-emerald-500/20 text-emerald-800 dark:text-emerald-400 flex items-center justify-center font-bold">
+            <div className="bg-white dark:bg-[#123B13]/80 p-8 rounded-3xl border border-[#123B13]/10 dark:border-[#1B4D1C] space-y-4 shadow-xs hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 rounded-2xl bg-[#EAF5D8] dark:bg-[#0D230E] text-[#123B13] dark:text-[#B8F21B] flex items-center justify-center font-bold border border-[#2F7D16]/30 dark:border-[#B8F21B]/30">
                 <Target className="w-6 h-6" />
               </div>
-              <h2 className="text-xl sm:text-2xl font-bold font-heading text-slate-900 dark:text-white">
+              <h2 className="text-xl sm:text-2xl font-bold font-heading text-[#111811] dark:text-[#FAFAF5]">
                 {language === "hi" ? "हमारा लक्ष्य (Mission)" : "Our Mission"}
               </h2>
-              <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed font-normal">
+              <p className="text-[#5A6E59] dark:text-[#A3C2A1] text-sm leading-relaxed font-normal">
                 {language === "hi"
                   ? "किसानों और डेयरी फार्मों को उच्च गुणवत्ता वाले जैविक उत्पाद, उच्च प्रोटीन पशु आहार और सटीक IoT तकनीक प्रदान करना जिससे उत्पादकता बढ़े और पर्यावरण सुरक्षित रहे।"
                   : "To equip farmers, dairies, and agricultural enterprises with high-efficiency organic solutions, high-protein livestock feeds, and precision micro-climate technology."}
               </p>
             </div>
 
-            <div className="bg-white dark:bg-slate-900/90 p-8 rounded-3xl border border-emerald-950/10 dark:border-slate-800 space-y-4 shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 rounded-2xl bg-amber-100 dark:bg-amber-500/20 text-amber-800 dark:text-amber-400 flex items-center justify-center font-bold">
+            <div className="bg-white dark:bg-[#123B13]/80 p-8 rounded-3xl border border-[#123B13]/10 dark:border-[#1B4D1C] space-y-4 shadow-xs hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 rounded-2xl bg-[#EAF5D8] dark:bg-[#0D230E] text-[#123B13] dark:text-[#B8F21B] flex items-center justify-center font-bold border border-[#2F7D16]/30 dark:border-[#B8F21B]/30">
                 <Eye className="w-6 h-6" />
               </div>
-              <h2 className="text-xl sm:text-2xl font-bold font-heading text-slate-900 dark:text-white">
+              <h2 className="text-xl sm:text-2xl font-bold font-heading text-[#111811] dark:text-[#FAFAF5]">
                 {language === "hi" ? "हमारी दृष्टि (Vision)" : "Our Vision"}
               </h2>
-              <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed font-normal">
+              <p className="text-[#5A6E59] dark:text-[#A3C2A1] text-sm leading-relaxed font-normal">
                 {language === "hi"
                   ? "रसायन-मुक्त कृषि की दिशा में क्रांति लाना जहाँ जैविक विज्ञान और स्मार्ट तकनीक मिलकर खाद्य सुरक्षा और पारिस्थितिक समृद्धि सुनिश्चित करें।"
                   : "To lead the transformation toward intelligent, zero-chemical agriculture where micro-controllers and biological science work seamlessly together."}
@@ -108,21 +108,21 @@ export default function AboutPage() {
       </section>
 
       {/* Timeline Storytelling */}
-      <section className="py-12 bg-slate-50 dark:bg-[#0B0F17] relative overflow-hidden">
+      <section className="py-14 bg-[#FAFAF5] dark:bg-[#0D230E] relative overflow-hidden">
         <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
-          <div className="text-center max-w-2xl mx-auto mb-8 space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-xs font-bold uppercase tracking-wider">
+          <div className="text-center max-w-2xl mx-auto mb-10 space-y-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EAF5D8] dark:bg-[#123B13] border border-[#2F7D16]/30 dark:border-[#B8F21B]/30 text-[#123B13] dark:text-[#B8F21B] text-xs font-mono font-bold uppercase tracking-wider">
               {language === "hi" ? "उपलब्धियां एवं सफर" : "JOURNEY & MILESTONES"}
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 dark:text-white">
+            <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-[#111811] dark:text-[#FAFAF5]">
               {language === "hi" ? "JAS एग्रो का " : "The Evolution of "}
-              <span className="text-emerald-600 dark:text-emerald-400">
+              <span className="bg-gradient-to-r from-[#123B13] via-[#2F7D16] to-[#4F9D1F] dark:from-[#B8F21B] dark:via-[#4F9D1F] dark:to-[#EAF5D8] bg-clip-text text-transparent">
                 {language === "hi" ? "विकास सफर" : "JAS Agro"}
               </span>
             </h2>
           </div>
 
-          <div className="space-y-8 max-w-4xl mx-auto relative before:absolute before:left-4 sm:before:left-1/2 before:top-0 before:bottom-0 before:w-0.5 before:bg-emerald-500/30">
+          <div className="space-y-8 max-w-4xl mx-auto relative before:absolute before:left-4 sm:before:left-1/2 before:top-0 before:bottom-0 before:w-0.5 before:bg-[#2F7D16]/30 dark:before:bg-[#B8F21B]/30">
             {milestones.map((m, idx) => {
               const title = language === "hi" ? m.titleHi : m.titleEn;
               const desc = language === "hi" ? m.descHi : m.descEn;
@@ -134,16 +134,16 @@ export default function AboutPage() {
                     idx % 2 === 0 ? "sm:flex-row-reverse" : ""
                   } gap-6 sm:gap-12`}
                 >
-                  <div className="absolute left-4 sm:left-1/2 -translate-x-1/2 top-1.5 w-8 h-8 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-xs shadow-md z-10">
+                  <div className="absolute left-4 sm:left-1/2 -translate-x-1/2 top-1.5 w-8 h-8 rounded-full bg-[#2F7D16] text-[#B8F21B] font-bold flex items-center justify-center text-xs shadow-md z-10 border border-[#B8F21B]/40">
                     <Calendar className="w-3.5 h-3.5" />
                   </div>
 
-                  <div className="ml-12 sm:ml-0 sm:w-1/2 bg-white dark:bg-slate-950 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-2 shadow-sm">
-                    <span className="text-xs font-mono font-bold text-amber-600 dark:text-amber-400 px-2.5 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/20">
+                  <div className="ml-12 sm:ml-0 sm:w-1/2 bg-white dark:bg-[#123B13]/90 p-6 rounded-2xl border border-[#123B13]/10 dark:border-[#1B4D1C] space-y-2 shadow-xs">
+                    <span className="text-xs font-mono font-bold text-[#123B13] dark:text-[#B8F21B] px-2.5 py-0.5 rounded-full bg-[#EAF5D8] dark:bg-[#0D230E] border border-[#2F7D16]/30 dark:border-[#B8F21B]/30">
                       {m.year}
                     </span>
-                    <h3 className="font-heading font-bold text-slate-900 dark:text-white text-lg">{title}</h3>
-                    <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">{desc}</p>
+                    <h3 className="font-heading font-bold text-[#111811] dark:text-[#FAFAF5] text-lg">{title}</h3>
+                    <p className="text-xs text-[#5A6E59] dark:text-[#A3C2A1] leading-relaxed">{desc}</p>
                   </div>
                 </div>
               );

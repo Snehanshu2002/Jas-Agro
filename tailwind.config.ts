@@ -12,21 +12,28 @@ const config: Config = {
     extend: {
       colors: {
         agro: {
-          darkest: "#0B0F17", // Neutral Deep Slate Charcoal (Replaces heavy green wash)
-          dark: "#111827",    // Sleek Dark Charcoal
-          deep: "#1F2937",    // Deep Slate Card
-          card: "#1F2937",
-          primary: "#10B981",
-          emerald: "#10B981",
-          bright: "#34D399",
-          accent: "#84CC16",
+          forest: "#123B13",     // Deep Forest Green
+          darkest: "#0D230E",    // Deep Forest Dark
+          dark: "#123B13",       // Forest Green
+          deep: "#1B4D1C",       // Deep Moss
+          card: "#FFFFFF",
+          primary: "#2F7D16",    // Rich Natural Agricultural Green
+          emerald: "#2F7D16",    // Natural Green
+          natural: "#4F9D1F",    // Fresh Medium Green
+          bright: "#4F9D1F",
+          lime: "#B8F21B",       // Bright Green-Yellow / Lime Accent
+          accent: "#B8F21B",
+          softGreen: "#EAF5D8",  // Soft Pale Green
+          paleGreen: "#F4F8EC",  // Pale Green
+          warmWhite: "#FAFAF5",  // Warm Off-White
+          darkText: "#111811",   // Near-black/Dark Green Typography
+          muted: "#5A6E59",      // Natural Sage Muted Body
+          light: "#FAFAF5",
           amber: "#D97706",
-          gold: "#F59E0B",
-          goldLight: "#FBBF24",
-          sky: "#0284C7",
-          cyan: "#06B6D4",
-          muted: "#94A3B8",
-          light: "#F8FAFC",
+          gold: "#B8F21B",       // Gold redirected to Lime
+          goldLight: "#C8F93B",
+          sky: "#2F7D16",
+          cyan: "#4F9D1F",
         },
       },
       fontFamily: {
@@ -36,12 +43,15 @@ const config: Config = {
       boxShadow: {
         "2xs": "0 1px 1px 0 rgba(0, 0, 0, 0.03)",
         xs: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
-        glow: "0 0 25px -5px rgba(16, 185, 129, 0.35)",
-        "glow-lg": "0 0 50px -10px rgba(16, 185, 129, 0.45)",
-        "glow-gold": "0 0 25px -5px rgba(245, 158, 11, 0.35)",
-        "glow-cyan": "0 0 25px -5px rgba(6, 182, 212, 0.35)",
+        glow: "0 0 25px -5px rgba(184, 242, 27, 0.45)",
+        "glow-lg": "0 0 50px -10px rgba(184, 242, 27, 0.55)",
+        "glow-lime": "0 0 30px -5px rgba(184, 242, 27, 0.6)",
+        "glow-forest": "0 0 30px -5px rgba(18, 59, 19, 0.4)",
+        "glow-gold": "0 0 25px -5px rgba(184, 242, 27, 0.45)",
+        "glow-cyan": "0 0 25px -5px rgba(79, 157, 31, 0.35)",
         glass: "0 8px 32px 0 rgba(0, 0, 0, 0.37)",
-        "glass-emerald": "0 8px 32px 0 rgba(16, 185, 129, 0.15)",
+        "glass-emerald": "0 8px 32px 0 rgba(47, 125, 22, 0.15)",
+        "glass-lime": "0 8px 32px 0 rgba(184, 242, 27, 0.2)",
       },
       backdropBlur: {
         "2xs": "2px",
@@ -54,11 +64,13 @@ const config: Config = {
         "4.5": "1.125rem",
       },
       backgroundImage: {
-        "hero-gradient": "linear-gradient(to bottom, rgba(11, 15, 23, 0.85), rgba(11, 15, 23, 0.98))",
-        "card-gradient": "linear-gradient(135deg, rgba(31, 41, 55, 0.8) 0%, rgba(17, 24, 39, 0.9) 100%)",
-        "gold-gradient": "linear-gradient(135deg, #F59E0B 0%, #D97706 100%)",
-        "cyan-gradient": "linear-gradient(135deg, #06B6D4 0%, #0284C7 100%)",
-        "emerald-radial": "radial-gradient(circle at 50% 30%, rgba(16, 185, 129, 0.15) 0%, rgba(11, 15, 23, 0) 70%)",
+        "hero-gradient": "linear-gradient(to bottom, rgba(18, 59, 19, 0.88), rgba(13, 35, 14, 0.98))",
+        "card-gradient": "linear-gradient(135deg, rgba(27, 77, 28, 0.8) 0%, rgba(18, 59, 19, 0.95) 100%)",
+        "lime-gradient": "linear-gradient(135deg, #B8F21B 0%, #9DD814 100%)",
+        "forest-gradient": "linear-gradient(135deg, #123B13 0%, #1B4D1C 100%)",
+        "gold-gradient": "linear-gradient(135deg, #B8F21B 0%, #9DD814 100%)",
+        "cyan-gradient": "linear-gradient(135deg, #4F9D1F 0%, #2F7D16 100%)",
+        "emerald-radial": "radial-gradient(circle at 50% 30%, rgba(184, 242, 27, 0.15) 0%, rgba(13, 35, 14, 0) 70%)",
       },
       animation: {
         "float-slow": "float 6s ease-in-out infinite",

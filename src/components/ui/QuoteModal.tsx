@@ -101,12 +101,12 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fadeIn">
-      <div className="relative w-full max-w-2xl overflow-hidden bg-white dark:bg-slate-900 border border-emerald-500/30 rounded-2xl shadow-2xl p-6 sm:p-8 text-slate-900 dark:text-white transition-colors duration-300">
-        <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-emerald-500 via-amber-500 to-cyan-500" />
+      <div className="relative w-full max-w-2xl overflow-hidden bg-white dark:bg-[#123B13] border border-[#2F7D16]/30 dark:border-[#1B4D1C] rounded-2xl shadow-2xl p-6 sm:p-8 text-[#111811] dark:text-[#FAFAF5] transition-colors duration-300">
+        <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#2F7D16] via-[#B8F21B] to-[#4F9D1F]" />
 
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 p-2 text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white rounded-full bg-slate-100 hover:bg-slate-200 dark:bg-white/5 dark:hover:bg-white/10 transition-colors"
+          className="absolute top-5 right-5 p-2 text-slate-500 hover:text-[#111811] dark:text-slate-400 dark:hover:text-white rounded-full bg-[#F4F8EC] hover:bg-[#EAF5D8] dark:bg-white/5 dark:hover:bg-white/10 transition-colors"
           aria-label="Close quote modal"
         >
           <X className="w-5 h-5" />
@@ -114,16 +114,16 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
 
         {submitted ? (
           <div className="py-8 text-center space-y-5">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500 text-emerald-600 dark:text-emerald-400 animate-bounce">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#EAF5D8] dark:bg-[#1B4D1C] border border-[#2F7D16] dark:border-[#B8F21B] text-[#2F7D16] dark:text-[#B8F21B] animate-bounce">
               <CheckCircle2 className="w-8 h-8" />
             </div>
-            <h3 className="text-2xl font-bold font-heading text-emerald-600 dark:text-emerald-400">
+            <h3 className="text-2xl font-bold font-heading text-[#2F7D16] dark:text-[#B8F21B]">
               {t("quoteTitle")}
             </h3>
-            <p className="max-w-md mx-auto text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
-              Thank you, <span className="font-semibold text-slate-900 dark:text-white">{formData.name}</span>. Your commercial inquiry for{" "}
-              <span className="text-amber-600 dark:text-amber-400 font-medium">{formData.product}</span> has been logged with reference{" "}
-              <span className="font-mono font-bold text-emerald-600 dark:text-emerald-400">
+            <p className="max-w-md mx-auto text-[#5A6E59] dark:text-[#EAF5D8] text-sm leading-relaxed">
+              Thank you, <span className="font-semibold text-[#111811] dark:text-white">{formData.name}</span>. Your commercial inquiry for{" "}
+              <span className="text-[#2F7D16] dark:text-[#B8F21B] font-bold">{formData.product}</span> has been logged with reference{" "}
+              <span className="font-mono font-bold text-[#2F7D16] dark:text-[#B8F21B]">
                 {submittedData.referenceId || "JAS-AGRO"}
               </span>.
             </p>
@@ -134,9 +134,9 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                   href={submittedData.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-md transition-all"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#2F7D16] hover:bg-[#1B4D1C] text-white text-xs font-bold shadow-md transition-all"
                 >
-                  <MessageCircle className="w-4 h-4" />
+                  <MessageCircle className="w-4 h-4 text-[#B8F21B]" />
                   <span>Escalate on WhatsApp Now</span>
                 </a>
               </div>
@@ -145,7 +145,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
             <div className="pt-2">
               <button
                 onClick={handleReset}
-                className="px-6 py-2.5 rounded-xl bg-slate-200 hover:bg-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-900 dark:text-white font-semibold transition-all text-xs"
+                className="px-6 py-2.5 rounded-xl bg-[#F4F8EC] hover:bg-[#EAF5D8] dark:bg-[#1B4D1C] dark:hover:bg-[#123B13] text-[#111811] dark:text-white font-semibold transition-all text-xs"
               >
                 {t("close")}
               </button>
@@ -154,13 +154,13 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
         ) : (
           <div>
             <div className="mb-6 space-y-1">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 dark:text-emerald-400 text-xs font-semibold uppercase tracking-wider">
-                <Sparkles className="w-3.5 h-3.5" /> JAS Agro Quotation
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EAF5D8] dark:bg-[#1B4D1C] border border-[#2F7D16]/30 dark:border-[#B8F21B]/40 text-[#123B13] dark:text-[#B8F21B] text-xs font-semibold uppercase tracking-wider">
+                <Sparkles className="w-3.5 h-3.5 text-[#2F7D16] dark:text-[#B8F21B]" /> JAS Agro Quotation
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold font-heading text-slate-900 dark:text-white">
+              <h2 className="text-2xl sm:text-3xl font-bold font-heading text-[#111811] dark:text-white">
                 {t("quoteTitle")}
               </h2>
-              <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm">
+              <p className="text-[#5A6E59] dark:text-[#A3C2A1] text-xs sm:text-sm">
                 {t("quoteSubtitle")}
               </p>
             </div>
@@ -186,7 +186,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-medium text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-medium text-[#111811] dark:text-[#EAF5D8] mb-1">
                     {t("fullName")} *
                   </label>
                   <input
@@ -195,12 +195,12 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                     placeholder="e.g. Ramesh Kumar"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 text-sm focus:outline-none focus:border-emerald-500"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#FAFAF5] dark:bg-[#0D230E] border border-[#2F7D16]/20 dark:border-[#1B4D1C] text-[#111811] dark:text-white placeholder-slate-400 text-sm focus:outline-none focus:border-[#2F7D16]"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-medium text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-medium text-[#111811] dark:text-[#EAF5D8] mb-1">
                     {t("phoneNumber")} *
                   </label>
                   <input
@@ -209,14 +209,14 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                     placeholder="+91 98765 43210"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 text-sm focus:outline-none focus:border-emerald-500"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#FAFAF5] dark:bg-[#0D230E] border border-[#2F7D16]/20 dark:border-[#1B4D1C] text-[#111811] dark:text-white placeholder-slate-400 text-sm focus:outline-none focus:border-[#2F7D16]"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-medium text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-medium text-[#111811] dark:text-[#EAF5D8] mb-1">
                     {t("emailAddress")} *
                   </label>
                   <input
@@ -225,18 +225,18 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                     placeholder="ramesh@farmcorp.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 text-sm focus:outline-none focus:border-emerald-500"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#FAFAF5] dark:bg-[#0D230E] border border-[#2F7D16]/20 dark:border-[#1B4D1C] text-[#111811] dark:text-white placeholder-slate-400 text-sm focus:outline-none focus:border-[#2F7D16]"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-medium text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-medium text-[#111811] dark:text-[#EAF5D8] mb-1">
                     {t("selectProduct")} *
                   </label>
                   <select
                     value={formData.product}
                     onChange={(e) => setFormData({ ...formData, product: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:border-emerald-500"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#FAFAF5] dark:bg-[#0D230E] border border-[#2F7D16]/20 dark:border-[#1B4D1C] text-[#111811] dark:text-white text-sm focus:outline-none focus:border-[#2F7D16]"
                   >
                     <option value="Oyster Mushroom">Oyster Mushroom Cultivation</option>
                     <option value="Azolla Fodder">Azolla Aquatic Fodder</option>
@@ -250,7 +250,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
               </div>
 
               <div>
-                <label className="block text-xs font-medium text-slate-700 dark:text-slate-300 mb-1">
+                <label className="block text-xs font-medium text-[#111811] dark:text-[#EAF5D8] mb-1">
                   {t("message")}
                 </label>
                 <textarea
@@ -258,20 +258,20 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                   placeholder="Tell us about your current farm setup or requirement..."
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 text-sm focus:outline-none focus:border-emerald-500 resize-none"
+                  className="w-full px-3.5 py-2.5 rounded-xl bg-[#FAFAF5] dark:bg-[#0D230E] border border-[#2F7D16]/20 dark:border-[#1B4D1C] text-[#111811] dark:text-white placeholder-slate-400 text-sm focus:outline-none focus:border-[#2F7D16] resize-none"
                 />
               </div>
 
               <div className="flex items-center justify-between pt-2">
-                <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
-                  <ShieldCheck className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+                <div className="flex items-center gap-2 text-xs text-[#5A6E59] dark:text-[#A3C2A1]">
+                  <ShieldCheck className="w-4 h-4 text-[#2F7D16] dark:text-[#B8F21B]" />
                   Private & secure request
                 </div>
 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="btn-reveal-primary inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-600 dark:bg-emerald-500 text-white font-semibold transition-all disabled:opacity-50 text-sm shadow-md cursor-pointer"
+                  className="btn-reveal-lime inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#B8F21B] hover:bg-[#C8F93B] text-[#123B13] font-bold transition-all disabled:opacity-50 text-sm shadow-md border border-[#A6E015] cursor-pointer"
                 >
                   {isSubmitting ? (
                     <span>Processing...</span>

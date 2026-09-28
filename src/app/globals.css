@@ -5,58 +5,66 @@
 :root {
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-heading: 'Outfit', system-ui, -apple-system, sans-serif;
-  --bg-darkest: #F8FAFC;
-  --bg-dark: #FFFFFF;
+  --bg-darkest: #FAFAF5;
+  --bg-dark: #F4F8EC;
   --bg-card: #FFFFFF;
-  --text-main: #0F172A;
-  --text-muted: #475569;
-  --accent-emerald: #059669;
-  --accent-gold: #D97706;
+  --text-main: #111811;
+  --text-muted: #5A6E59;
+  --accent-emerald: #2F7D16;
+  --accent-lime: #B8F21B;
+  --accent-forest: #123B13;
+  --accent-gold: #B8F21B;
 }
 
-/* Theme 1: Fresh Clean White Mode (Default) */
+/* Theme 1: Fresh Clean Natural Green Mode (Default) */
 html.theme-light, html {
   font-size: 14px;
-  --bg-darkest: #F8FAFC;
-  --bg-dark: #FFFFFF;
+  --bg-darkest: #FAFAF5;
+  --bg-dark: #F4F8EC;
   --bg-card: #FFFFFF;
-  --text-main: #0F172A;
-  --text-muted: #475569;
-  --accent-emerald: #059669;
-  --accent-gold: #D97706;
+  --text-main: #111811;
+  --text-muted: #5A6E59;
+  --accent-emerald: #2F7D16;
+  --accent-lime: #B8F21B;
+  --accent-forest: #123B13;
+  --accent-gold: #B8F21B;
 }
 
-/* Theme 2: Dark Emerald */
-html.theme-emerald {
-  --bg-darkest: #0B0F17;
-  --bg-dark: #111827;
-  --bg-card: #1F2937;
-  --text-main: #F8FAFC;
-  --text-muted: #94A3B8;
-  --accent-emerald: #10B981;
-  --accent-gold: #F59E0B;
+/* Theme 2: Deep Forest Emerald */
+html.theme-emerald, html.dark, .dark {
+  --bg-darkest: #0D230E;
+  --bg-dark: #123B13;
+  --bg-card: #1B4D1C;
+  --text-main: #FAFAF5;
+  --text-muted: #A3C2A1;
+  --accent-emerald: #4F9D1F;
+  --accent-lime: #B8F21B;
+  --accent-forest: #123B13;
+  --accent-gold: #B8F21B;
 }
 
-/* Theme 3: Cyber Agri-Tech (Cyan & Navy) */
+/* Theme 3: Cyber Agri-Tech (Natural Green & Forest) */
 html.theme-cyan {
-  --bg-darkest: #030712;
-  --bg-dark: #0F172A;
-  --bg-card: #1E293B;
-  --text-main: #F8FAFC;
-  --text-muted: #94A3B8;
-  --accent-emerald: #06B6D4;
-  --accent-gold: #38BDF8;
+  --bg-darkest: #071508;
+  --bg-dark: #0D230E;
+  --bg-card: #123B13;
+  --text-main: #FAFAF5;
+  --text-muted: #A3C2A1;
+  --accent-emerald: #4F9D1F;
+  --accent-lime: #B8F21B;
+  --accent-gold: #B8F21B;
 }
 
-/* Theme 4: Harvest Amber (Warm Terracotta & Charcoal) */
+/* Theme 4: Harvest Natural (Forest & Lime) */
 html.theme-harvest {
-  --bg-darkest: #0F0D0B;
-  --bg-dark: #1C1815;
-  --bg-card: #2E2620;
-  --text-main: #F8FAFC;
-  --text-muted: #A8A29E;
-  --accent-emerald: #F59E0B;
-  --accent-gold: #EA580C;
+  --bg-darkest: #0A1C0B;
+  --bg-dark: #123B13;
+  --bg-card: #1B4D1C;
+  --text-main: #FAFAF5;
+  --text-muted: #CBDDCB;
+  --accent-emerald: #2F7D16;
+  --accent-lime: #B8F21B;
+  --accent-gold: #B8F21B;
 }
 
 body {
@@ -177,105 +185,127 @@ html.dark .shop-scrollbar-x::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid #E2E8F0;
-  color: #0F172A;
-  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(47, 125, 22, 0.12);
+  color: #111811;
+  box-shadow: 0 4px 20px -2px rgba(18, 59, 19, 0.04);
 }
 
 .theme-emerald .glass-panel,
 .theme-cyan .glass-panel,
-.theme-harvest .glass-panel {
-  background: rgba(31, 41, 55, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #F8FAFC;
+.theme-harvest .glass-panel,
+.dark .glass-panel {
+  background: rgba(18, 59, 19, 0.75);
+  border: 1px solid rgba(184, 242, 27, 0.2);
+  color: #FAFAF5;
 }
 
-.glass-panel-gold {
-  background: #FFFBEB;
+.glass-panel-gold,
+.glass-panel-lime {
+  background: #F4F8EC;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid #FDE68A;
-  color: #78350F;
+  border: 1px solid rgba(184, 242, 27, 0.6);
+  color: #123B13;
 }
 
 .theme-emerald .glass-panel-gold,
 .theme-cyan .glass-panel-gold,
-.theme-harvest .glass-panel-gold {
-  background: rgba(28, 24, 21, 0.7);
-  border: 1px solid rgba(245, 158, 11, 0.3);
-  color: #F8FAFC;
+.theme-harvest .glass-panel-gold,
+.dark .glass-panel-gold {
+  background: rgba(18, 59, 19, 0.85);
+  border: 1px solid rgba(184, 242, 27, 0.4);
+  color: #B8F21B;
 }
 
 .glass-panel-dark {
   background: #FFFFFF;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid #E2E8F0;
-  color: #0F172A;
-  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(47, 125, 22, 0.12);
+  color: #111811;
+  box-shadow: 0 10px 30px -5px rgba(18, 59, 19, 0.06);
 }
 
 .theme-emerald .glass-panel-dark,
 .theme-cyan .glass-panel-dark,
-.theme-harvest .glass-panel-dark {
-  background: rgba(17, 24, 39, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #F8FAFC;
+.theme-harvest .glass-panel-dark,
+.dark .glass-panel-dark {
+  background: rgba(13, 35, 14, 0.9);
+  border: 1px solid rgba(184, 242, 27, 0.2);
+  color: #FAFAF5;
 }
 
 .glass-input {
   background: #FFFFFF;
-  border: 1px solid #CBD5E1;
-  color: #0F172A;
+  border: 1px solid rgba(47, 125, 22, 0.2);
+  color: #111811;
 }
 .glass-input:focus {
   outline: none;
-  border-color: var(--accent-emerald);
-  box-shadow: 0 0 15px rgba(5, 150, 105, 0.2);
+  border-color: #2F7D16;
+  box-shadow: 0 0 15px rgba(184, 242, 27, 0.3);
 }
 
 .theme-emerald .glass-input,
 .theme-cyan .glass-input,
-.theme-harvest .glass-input {
-  background: rgba(11, 15, 23, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #F8FAFC;
+.theme-harvest .glass-input,
+.dark .glass-input {
+  background: rgba(13, 35, 14, 0.85);
+  border: 1px solid rgba(184, 242, 27, 0.25);
+  color: #FAFAF5;
 }
 
 /* Text Gradients */
-.text-gradient-emerald {
-  background: linear-gradient(135deg, #059669 0%, #10B981 50%, #047857 100%);
+.text-gradient-emerald,
+.text-gradient-forest {
+  background: linear-gradient(135deg, #123B13 0%, #2F7D16 50%, #4F9D1F 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.text-gradient-gold {
-  background: linear-gradient(135deg, #D97706 0%, #F59E0B 50%, #B45309 100%);
+.dark .text-gradient-emerald,
+.dark .text-gradient-forest {
+  background: linear-gradient(135deg, #B8F21B 0%, #4F9D1F 50%, #B8F21B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-gold,
+.text-gradient-lime {
+  background: linear-gradient(135deg, #2F7D16 0%, #4F9D1F 50%, #B8F21B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark .text-gradient-gold,
+.dark .text-gradient-lime {
+  background: linear-gradient(135deg, #B8F21B 0%, #C8F93B 50%, #9DD814 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-cyan {
-  background: linear-gradient(135deg, #0284C7 0%, #06B6D4 50%, #0369A1 100%);
+  background: linear-gradient(135deg, #2F7D16 0%, #4F9D1F 50%, #B8F21B 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 /* Background Glow Blurs */
-.glow-blur-emerald {
+.glow-blur-emerald,
+.glow-blur-lime {
   position: absolute;
   width: 350px;
   height: 350px;
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, rgba(248, 250, 252, 0) 70%);
+  background: radial-gradient(circle, rgba(184, 242, 27, 0.18) 0%, rgba(250, 250, 245, 0) 70%);
   filter: blur(50px);
   pointer-events: none;
 }
 
-.glow-blur-gold {
+.glow-blur-forest {
   position: absolute;
   width: 350px;
   height: 350px;
-  background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, rgba(248, 250, 252, 0) 70%);
+  background: radial-gradient(circle, rgba(18, 59, 19, 0.25) 0%, rgba(250, 250, 245, 0) 70%);
   filter: blur(50px);
   pointer-events: none;
 }
@@ -287,7 +317,8 @@ html.dark .shop-scrollbar-x::-webkit-scrollbar-thumb:hover {
 .btn-cursor-reveal,
 .btn-reveal-primary,
 .btn-reveal-secondary,
-.btn-reveal-gold {
+.btn-reveal-gold,
+.btn-reveal-lime {
   position: relative;
   overflow: hidden;
   isolation: isolate;
@@ -297,7 +328,8 @@ html.dark .shop-scrollbar-x::-webkit-scrollbar-thumb:hover {
 .btn-cursor-reveal > *,
 .btn-reveal-primary > *,
 .btn-reveal-secondary > *,
-.btn-reveal-gold > * {
+.btn-reveal-gold > *,
+.btn-reveal-lime > * {
   position: relative;
   z-index: 2;
   transition: color 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -308,7 +340,8 @@ html.dark .shop-scrollbar-x::-webkit-scrollbar-thumb:hover {
 .btn-cursor-reveal::before,
 .btn-reveal-primary::before,
 .btn-reveal-secondary::before,
-.btn-reveal-gold::before {
+.btn-reveal-gold::before,
+.btn-reveal-lime::before {
   content: "";
   position: absolute;
   top: var(--mouse-y, 50%);
@@ -326,73 +359,91 @@ html.dark .shop-scrollbar-x::-webkit-scrollbar-thumb:hover {
 .btn-cursor-reveal:hover::before,
 .btn-reveal-primary:hover::before,
 .btn-reveal-secondary:hover::before,
-.btn-reveal-gold:hover::before {
+.btn-reveal-gold:hover::before,
+.btn-reveal-lime:hover::before {
   width: 420%;
   height: 420%;
   opacity: 1;
 }
 
-/* 1. Primary Green Buttons: Clean Light Contrast Reveal */
+/* 1. Primary Green / Lime Buttons: Clean High-Contrast Reveal */
 .btn-reveal-primary::before {
-  background: #FFFFFF;
+  background: #123B13;
 }
 html.dark .btn-reveal-primary::before,
 .dark .btn-reveal-primary::before {
-  background: #FFFFFF;
+  background: #B8F21B;
 }
 
 .btn-reveal-primary:hover {
-  color: #064E3B !important;
-  border-color: rgba(16, 185, 129, 0.5) !important;
-  box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.35), 0 0 18px rgba(255, 255, 255, 0.15);
+  color: #FFFFFF !important;
+  border-color: rgba(184, 242, 27, 0.8) !important;
+  box-shadow: 0 10px 25px -5px rgba(18, 59, 19, 0.35), 0 0 18px rgba(184, 242, 27, 0.3);
+}
+.dark .btn-reveal-primary:hover {
+  color: #123B13 !important;
+  border-color: #B8F21B !important;
+  box-shadow: 0 10px 25px -5px rgba(184, 242, 27, 0.45);
 }
 .btn-reveal-primary:hover > * {
-  color: #064E3B !important;
+  color: #FFFFFF !important;
+}
+.dark .btn-reveal-primary:hover > * {
+  color: #123B13 !important;
 }
 .btn-reveal-primary:hover svg {
-  color: #059669 !important;
+  color: #B8F21B !important;
+}
+.dark .btn-reveal-primary:hover svg {
+  color: #123B13 !important;
 }
 
-/* 2. Secondary Outline / Light/Dark Buttons: Rich Emerald Gradient Reveal */
+/* 2. Secondary Outline / Light/Dark Buttons: Rich Natural Green Gradient Reveal */
 .btn-reveal-secondary::before {
-  background: linear-gradient(135deg, #059669 0%, #047857 50%, #065F46 100%);
+  background: linear-gradient(135deg, #123B13 0%, #2F7D16 50%, #4F9D1F 100%);
 }
 html.dark .btn-reveal-secondary::before,
 .dark .btn-reveal-secondary::before {
-  background: linear-gradient(135deg, #10B981 0%, #059669 50%, #047857 100%);
+  background: linear-gradient(135deg, #2F7D16 0%, #4F9D1F 50%, #B8F21B 100%);
 }
 
 .btn-reveal-secondary:hover {
   color: #FFFFFF !important;
-  border-color: rgba(16, 185, 129, 0.9) !important;
-  box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.35);
+  border-color: rgba(47, 125, 22, 0.9) !important;
+  box-shadow: 0 10px 25px -5px rgba(18, 59, 19, 0.35);
 }
 .btn-reveal-secondary:hover > * {
   color: #FFFFFF !important;
 }
 .btn-reveal-secondary:hover svg {
-  color: #FFFFFF !important;
+  color: #B8F21B !important;
 }
 
-/* 3. Gold / Amber CTA Reveal */
-.btn-reveal-gold::before {
-  background: #FFFFFF;
+/* 3. Gold / Lime CTA Reveal */
+.btn-reveal-gold::before,
+.btn-reveal-lime::before {
+  background: #123B13;
 }
 html.dark .btn-reveal-gold::before,
-.dark .btn-reveal-gold::before {
+.dark .btn-reveal-gold::before,
+html.dark .btn-reveal-lime::before,
+.dark .btn-reveal-lime::before {
   background: #FFFFFF;
 }
 
-.btn-reveal-gold:hover {
-  color: #78350F !important;
-  border-color: rgba(245, 158, 11, 0.6) !important;
-  box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.35);
+.btn-reveal-gold:hover,
+.btn-reveal-lime:hover {
+  color: #FFFFFF !important;
+  border-color: rgba(184, 242, 27, 0.8) !important;
+  box-shadow: 0 10px 25px -5px rgba(184, 242, 27, 0.35);
 }
-.btn-reveal-gold:hover > * {
-  color: #78350F !important;
+.btn-reveal-gold:hover > *,
+.btn-reveal-lime:hover > * {
+  color: #FFFFFF !important;
 }
-.btn-reveal-gold:hover svg {
-  color: #D97706 !important;
+.btn-reveal-gold:hover svg,
+.btn-reveal-lime:hover svg {
+  color: #B8F21B !important;
 }
 
 /* Touch & Reduced Motion Disabling */
@@ -400,7 +451,8 @@ html.dark .btn-reveal-gold::before,
   .btn-cursor-reveal::before,
   .btn-reveal-primary::before,
   .btn-reveal-secondary::before,
-  .btn-reveal-gold::before {
+  .btn-reveal-gold::before,
+  .btn-reveal-lime::before {
     display: none !important;
   }
   .cursor-follower-root {
@@ -409,57 +461,57 @@ html.dark .btn-reveal-gold::before,
 }
 
 /* ==========================================================================
-   JAS AGRO UNIFIED DESIGN SYSTEM TOKENS (STARBUCKS + NVIDIA + MINTLIFY + SHOPIFY)
+   JAS AGRO UNIFIED DESIGN SYSTEM TOKENS (NATURAL GREEN + LIME PALETTE)
    ========================================================================== */
 
-/* 1. Starbucks Earthy Light Surfaces & Natural Green Hierarchy */
+/* 1. Natural Green Earthy Light Surfaces */
 .jas-canvas {
-  background-color: #FAFBF7;
+  background-color: #FAFAF5;
 }
 .dark .jas-canvas {
-  background-color: #0B0F17;
+  background-color: #0D230E;
 }
 
 .jas-surface-card {
   background-color: #FFFFFF;
-  border: 1px solid rgba(6, 78, 59, 0.08);
-  box-shadow: 0 4px 20px -2px rgba(11, 59, 44, 0.04);
+  border: 1px solid rgba(47, 125, 22, 0.1);
+  box-shadow: 0 4px 20px -2px rgba(18, 59, 19, 0.04);
 }
 .dark .jas-surface-card {
-  background-color: #101726;
-  border: 1px solid rgba(16, 185, 129, 0.15);
+  background-color: #123B13;
+  border: 1px solid rgba(184, 242, 27, 0.15);
   box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
 }
 
 .jas-surface-sage {
-  background-color: #EEF4EC;
-  border: 1px solid rgba(6, 78, 59, 0.08);
+  background-color: #EAF5D8;
+  border: 1px solid rgba(47, 125, 22, 0.12);
 }
 .dark .jas-surface-sage {
-  background-color: #131E2E;
-  border: 1px solid rgba(16, 185, 129, 0.2);
+  background-color: #1B4D1C;
+  border: 1px solid rgba(184, 242, 27, 0.2);
 }
 
-/* 2. NVIDIA Technical Telemetry & Dark Chapters */
+/* 2. Precision Telemetry & Deep Forest Chapters */
 .jas-tech-chapter {
-  background: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.07) 0%, transparent 70%), #080C14;
-  color: #F8FAFC;
+  background: radial-gradient(circle at 50% 0%, rgba(184, 242, 27, 0.08) 0%, transparent 70%), #0D230E;
+  color: #FAFAF5;
 }
 
 .jas-tech-grid {
-  background-image: radial-gradient(rgba(16, 185, 129, 0.15) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(184, 242, 27, 0.2) 1px, transparent 1px);
   background-size: 32px 32px;
 }
 
 .jas-telemetry-panel {
-  background-color: rgba(16, 23, 38, 0.85);
+  background-color: rgba(18, 59, 19, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(16, 185, 129, 0.25);
+  border: 1px solid rgba(184, 242, 27, 0.25);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
-/* 3. Mintlify Eyebrow Pills & Information Architecture */
+/* 3. Mintlify / Editorial Eyebrow Pills */
 .jas-eyebrow {
   display: inline-flex;
   align-items: center;
@@ -471,25 +523,25 @@ html.dark .btn-reveal-gold::before,
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  background-color: #EEF4EC;
-  color: #064E3B;
-  border: 1px solid rgba(6, 78, 59, 0.15);
+  background-color: #EAF5D8;
+  color: #123B13;
+  border: 1px solid rgba(47, 125, 22, 0.2);
 }
 .dark .jas-eyebrow {
-  background-color: rgba(6, 78, 59, 0.4);
-  color: #34D399;
-  border: 1px solid rgba(52, 211, 153, 0.3);
+  background-color: rgba(18, 59, 19, 0.6);
+  color: #B8F21B;
+  border: 1px solid rgba(184, 242, 27, 0.3);
 }
 
-/* 4. Shopify Clean Product & Framing Treatment */
+/* 4. Photo Framing Treatment */
 .jas-photo-frame {
   position: relative;
   overflow: hidden;
   border-radius: 1.25rem;
-  background-color: #EBF3E8;
+  background-color: #EAF5D8;
 }
 .dark .jas-photo-frame {
-  background-color: #101726;
+  background-color: #123B13;
 }
 
 

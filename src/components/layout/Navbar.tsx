@@ -81,8 +81,8 @@ export const Navbar: React.FC = () => {
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           scrolled
-            ? "bg-white/95 dark:bg-slate-950/95 backdrop-blur-xl border-b border-slate-200 dark:border-emerald-500/30 py-2 shadow-md dark:shadow-glow text-slate-900 dark:text-white"
-            : "bg-white/90 dark:bg-slate-950/85 backdrop-blur-md py-2.5 border-b border-slate-200/80 dark:border-slate-800/80 text-slate-900 dark:text-white"
+            ? "bg-[#FAFAF5]/95 dark:bg-[#0D230E]/95 backdrop-blur-xl border-b border-[#EAF5D8] dark:border-[#1B4D1C] py-2 shadow-md text-[#111811] dark:text-[#FAFAF5]"
+            : "bg-[#FAFAF5]/90 dark:bg-[#0D230E]/85 backdrop-blur-md py-2.5 border-b border-[#EAF5D8]/80 dark:border-[#1B4D1C]/80 text-[#111811] dark:text-[#FAFAF5]"
         }`}
       >
         <div className="w-full max-w-[1680px] mx-auto px-4 sm:px-8 lg:px-10 xl:px-14">
@@ -104,17 +104,17 @@ export const Navbar: React.FC = () => {
             </Link>
 
             {/* Desktop Navigation (HOME ABOUT SOLUTIONS PRODUCTS TECHNOLOGY MORE ▾) */}
-            <nav className="hidden lg:flex items-center gap-1.5 xl:gap-2.5 2xl:gap-3 bg-white/95 dark:bg-slate-900/90 border border-slate-200/90 dark:border-slate-800 rounded-full px-3.5 xl:px-5 py-1.5 backdrop-blur-xl shadow-sm dark:shadow-glass">
+            <nav className="hidden lg:flex items-center gap-1.5 xl:gap-2.5 2xl:gap-3 bg-white dark:bg-[#123B13]/90 border border-[#EAF5D8] dark:border-[#1B4D1C] rounded-full px-3.5 xl:px-5 py-1.5 backdrop-blur-xl shadow-sm">
               {mainNavLinks.map((link) => {
                 const isActive = isLinkActive(link.href);
                 return (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`px-3 xl:px-4 py-1.5 text-xs xl:text-sm font-bold rounded-full transition-all duration-200 whitespace-nowrap ${
+                    className={`px-3.5 xl:px-4 py-1.5 text-xs xl:text-sm font-bold rounded-full transition-all duration-200 whitespace-nowrap ${
                       isActive
-                        ? "bg-gradient-to-r from-emerald-600 to-teal-600 dark:from-emerald-500 dark:to-teal-600 text-white shadow-md shadow-emerald-600/20 font-extrabold"
-                        : "text-slate-700 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-emerald-50/80 dark:hover:bg-slate-800/80"
+                        ? "bg-[#123B13] dark:bg-[#B8F21B] text-[#B8F21B] dark:text-[#123B13] shadow-md font-extrabold"
+                        : "text-[#111811] dark:text-[#EAF5D8] hover:text-[#2F7D16] dark:hover:text-[#B8F21B] hover:bg-[#EAF5D8]/70 dark:hover:bg-[#1B4D1C]/70"
                     }`}
                   >
                     {link.name}
@@ -135,10 +135,10 @@ export const Navbar: React.FC = () => {
                   onClick={() => setMoreDropdownOpen((prev) => !prev)}
                   aria-expanded={moreDropdownOpen}
                   aria-haspopup="menu"
-                  className={`px-3 xl:px-4 py-1.5 text-xs xl:text-sm font-bold rounded-full transition-all duration-200 flex items-center gap-1 cursor-pointer whitespace-nowrap ${
+                  className={`px-3.5 xl:px-4 py-1.5 text-xs xl:text-sm font-bold rounded-full transition-all duration-200 flex items-center gap-1 cursor-pointer whitespace-nowrap ${
                     isMoreActive || moreDropdownOpen
-                      ? "bg-gradient-to-r from-emerald-600 to-teal-600 dark:from-emerald-500 dark:to-teal-600 text-white shadow-md shadow-emerald-600/20"
-                      : "text-slate-700 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-emerald-50/80 dark:hover:bg-slate-800/80"
+                      ? "bg-[#123B13] dark:bg-[#B8F21B] text-[#B8F21B] dark:text-[#123B13] shadow-md font-extrabold"
+                      : "text-[#111811] dark:text-[#EAF5D8] hover:text-[#2F7D16] dark:hover:text-[#B8F21B] hover:bg-[#EAF5D8]/70 dark:hover:bg-[#1B4D1C]/70"
                   }`}
                 >
                   <span>{t("navMore")}</span>
@@ -157,7 +157,7 @@ export const Navbar: React.FC = () => {
                       : "opacity-0 invisible -translate-y-1 pointer-events-none"
                   }`}
                 >
-                  <div className="bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 rounded-2xl shadow-xl py-1.5 overflow-hidden backdrop-blur-xl">
+                  <div className="bg-white dark:bg-[#123B13] border border-[#EAF5D8] dark:border-[#1B4D1C] rounded-2xl shadow-xl py-1.5 overflow-hidden backdrop-blur-xl">
                     {moreNavLinks.map((subLink) => {
                       const isSubActive = isLinkActive(subLink.href);
                       return (
@@ -167,8 +167,8 @@ export const Navbar: React.FC = () => {
                           onClick={() => setMoreDropdownOpen(false)}
                           className={`flex items-center justify-between px-4 py-2.5 text-xs xl:text-sm font-bold tracking-wide transition-colors ${
                             isSubActive
-                              ? "bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 border-l-2 border-emerald-500"
-                              : "text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800/80 hover:text-emerald-600 dark:hover:text-emerald-400"
+                              ? "bg-[#EAF5D8] dark:bg-[#1B4D1C] text-[#123B13] dark:text-[#B8F21B] border-l-2 border-[#2F7D16]"
+                              : "text-[#111811] dark:text-[#FAFAF5] hover:bg-[#F4F8EC] dark:hover:bg-[#1B4D1C]/80 hover:text-[#2F7D16] dark:hover:text-[#B8F21B]"
                           }`}
                         >
                           <span>{subLink.name}</span>
@@ -183,13 +183,13 @@ export const Navbar: React.FC = () => {
             {/* Right Action CTAs & Controls */}
             <div className="flex items-center gap-2 sm:gap-3 xl:gap-4 shrink-0">
               {/* Language Switcher Explicit Dual Button */}
-              <div className="flex items-center rounded-full bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 p-0.5 shadow-sm text-xs font-bold">
+              <div className="flex items-center rounded-full bg-white dark:bg-[#123B13] border border-[#EAF5D8] dark:border-[#1B4D1C] p-0.5 shadow-sm text-xs font-bold">
                 <button
                   onClick={() => setLanguage("en")}
                   className={`px-2.5 xl:px-3 py-1.5 rounded-full transition-all cursor-pointer ${
                     language === "en"
-                      ? "bg-emerald-600 text-white shadow-sm font-extrabold"
-                      : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
+                      ? "bg-[#2F7D16] text-white shadow-sm font-extrabold"
+                      : "text-[#5A6E59] dark:text-[#A3C2A1] hover:text-[#111811] dark:hover:text-white"
                   }`}
                   title="Switch to English"
                 >
@@ -199,8 +199,8 @@ export const Navbar: React.FC = () => {
                   onClick={() => setLanguage("hi")}
                   className={`px-2.5 xl:px-3 py-1.5 rounded-full transition-all cursor-pointer ${
                     language === "hi"
-                      ? "bg-emerald-600 text-white shadow-sm font-extrabold"
-                      : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
+                      ? "bg-[#2F7D16] text-white shadow-sm font-extrabold"
+                      : "text-[#5A6E59] dark:text-[#A3C2A1] hover:text-[#111811] dark:hover:text-white"
                   }`}
                   title="हिंदी में बदलें"
                 >
@@ -211,31 +211,31 @@ export const Navbar: React.FC = () => {
               {/* 1-Click Dark/Light Mode Switcher */}
               <button
                 onClick={toggleDarkMode}
-                className="p-2 xl:p-2.5 rounded-full bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 text-amber-500 dark:text-amber-400 hover:bg-emerald-50 dark:hover:bg-slate-800 transition-colors shadow-sm cursor-pointer"
+                className="p-2 xl:p-2.5 rounded-full bg-white dark:bg-[#123B13] border border-[#EAF5D8] dark:border-[#1B4D1C] text-[#2F7D16] dark:text-[#B8F21B] hover:bg-[#EAF5D8] dark:hover:bg-[#1B4D1C] transition-colors shadow-sm cursor-pointer"
                 title={isDark ? t("lightMode") : t("darkMode")}
                 aria-label="Toggle Theme Mode"
               >
-                {isDark ? <Sun className="w-4.5 h-4.5 text-amber-400" /> : <Moon className="w-4.5 h-4.5 text-slate-700" />}
+                {isDark ? <Sun className="w-4.5 h-4.5 text-[#B8F21B]" /> : <Moon className="w-4.5 h-4.5 text-[#123B13]" />}
               </button>
 
               {/* Shop Link */}
               <Link
                 href="/shop"
-                className="hidden xl:inline-flex items-center gap-1.5 px-3.5 xl:px-4 py-2 rounded-full bg-emerald-50 dark:bg-slate-800 border border-emerald-200 dark:border-emerald-500/30 text-xs xl:text-sm font-bold text-emerald-700 dark:text-emerald-400 hover:bg-emerald-100 dark:hover:bg-slate-700 transition-colors shadow-sm relative"
+                className="hidden xl:inline-flex items-center gap-1.5 px-3.5 xl:px-4 py-2 rounded-full bg-[#EAF5D8] dark:bg-[#123B13] border border-[#2F7D16]/20 dark:border-[#B8F21B]/30 text-xs xl:text-sm font-bold text-[#123B13] dark:text-[#B8F21B] hover:bg-[#DDF0C5] dark:hover:bg-[#1B4D1C] transition-colors shadow-sm relative"
               >
-                <ShoppingBag className="w-4 h-4 text-amber-500 dark:text-amber-400" />
+                <ShoppingBag className="w-4 h-4 text-[#2F7D16] dark:text-[#B8F21B]" />
                 <span>{t("navShop")}</span>
                 {totalCartCount > 0 && (
-                  <span className="px-1.5 py-0.5 rounded-full bg-[#3f7010] text-white text-[10px] font-extrabold font-mono leading-none">
+                  <span className="px-1.5 py-0.5 rounded-full bg-[#2F7D16] text-white text-[10px] font-extrabold font-mono leading-none">
                     {totalCartCount}
                   </span>
                 )}
               </Link>
 
-              {/* Get Quote CTA */}
+              {/* Get Quote CTA (Lime Button as in Reference) */}
               <button
                 onClick={() => setQuoteModalOpen(true)}
-                className="btn-reveal-primary hidden md:inline-flex items-center gap-2 px-4 sm:px-5 xl:px-6 py-2.5 xl:py-3 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-green-600 text-white font-extrabold text-xs sm:text-sm shadow-glow hover:scale-[1.02] active:scale-95 transition-all cursor-pointer border border-emerald-300/30"
+                className="btn-reveal-lime hidden md:inline-flex items-center gap-2 px-5 sm:px-6 xl:px-7 py-2.5 xl:py-3 rounded-full bg-[#B8F21B] hover:bg-[#C8F93B] text-[#123B13] font-extrabold text-xs sm:text-sm shadow-md hover:scale-[1.02] active:scale-95 transition-all cursor-pointer border border-[#A6E015]"
               >
                 <span>{t("getQuote")}</span> <ArrowRight className="w-4 h-4" />
               </button>
@@ -243,7 +243,7 @@ export const Navbar: React.FC = () => {
               {/* Mobile Hamburger Menu Button */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors"
+                className="lg:hidden p-2.5 rounded-xl bg-[#EAF5D8] dark:bg-[#123B13] border border-[#2F7D16]/20 dark:border-[#1B4D1C] text-[#123B13] dark:text-[#FAFAF5] hover:bg-[#DDF0C5] dark:hover:bg-[#1B4D1C] transition-colors"
                 aria-label="Toggle Navigation Menu"
               >
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -255,8 +255,8 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Slide-Over Drawer */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-50 lg:hidden bg-slate-950/98 backdrop-blur-2xl flex flex-col justify-between p-6 overflow-y-auto text-white">
-          <div className="flex items-center justify-between border-b border-slate-800 pb-5">
+        <div className="fixed inset-0 z-50 lg:hidden bg-[#0D230E]/98 backdrop-blur-2xl flex flex-col justify-between p-6 overflow-y-auto text-white">
+          <div className="flex items-center justify-between border-b border-[#1B4D1C] pb-5">
             <Link
               href="/"
               onClick={() => setMobileMenuOpen(false)}
@@ -272,13 +272,13 @@ export const Navbar: React.FC = () => {
             <div className="flex items-center gap-2">
               <button
                 onClick={toggleDarkMode}
-                className="p-2 rounded-xl bg-slate-900 border border-slate-800 text-amber-400"
+                className="p-2 rounded-xl bg-[#123B13] border border-[#1B4D1C] text-[#B8F21B]"
               >
-                {isDark ? <Sun className="w-5 h-5 text-amber-400" /> : <Moon className="w-5 h-5 text-slate-300" />}
+                {isDark ? <Sun className="w-5 h-5 text-[#B8F21B]" /> : <Moon className="w-5 h-5 text-slate-300" />}
               </button>
               <button
                 onClick={() => setMobileMenuOpen(false)}
-                className="p-2 text-slate-400 hover:text-white rounded-lg bg-slate-900"
+                className="p-2 text-slate-400 hover:text-white rounded-lg bg-[#123B13]"
               >
                 <X className="w-6 h-6" />
               </button>
@@ -287,15 +287,15 @@ export const Navbar: React.FC = () => {
 
           <div className="py-6 flex flex-col gap-2">
             {/* Language switch inside mobile menu */}
-            <div className="flex items-center justify-between p-3 rounded-xl bg-slate-900 border border-slate-800 mb-2">
+            <div className="flex items-center justify-between p-3 rounded-xl bg-[#123B13] border border-[#1B4D1C] mb-2">
               <span className="text-xs font-bold text-slate-300 flex items-center gap-2">
-                <Languages className="w-4 h-4 text-emerald-400" /> Select Language / भाषा
+                <Languages className="w-4 h-4 text-[#B8F21B]" /> Select Language / भाषा
               </span>
               <div className="flex items-center gap-1">
                 <button
                   onClick={() => setLanguage("en")}
                   className={`px-3 py-1 rounded-lg text-xs font-bold ${
-                    language === "en" ? "bg-emerald-600 text-white" : "bg-slate-800 text-slate-300"
+                    language === "en" ? "bg-[#2F7D16] text-white" : "bg-[#0D230E] text-slate-300"
                   }`}
                 >
                   English
@@ -303,7 +303,7 @@ export const Navbar: React.FC = () => {
                 <button
                   onClick={() => setLanguage("hi")}
                   className={`px-3 py-1 rounded-lg text-xs font-bold ${
-                    language === "hi" ? "bg-emerald-600 text-white" : "bg-slate-800 text-slate-300"
+                    language === "hi" ? "bg-[#2F7D16] text-white" : "bg-[#0D230E] text-slate-300"
                   }`}
                 >
                   हिंदी
@@ -320,8 +320,8 @@ export const Navbar: React.FC = () => {
                   onClick={() => setMobileMenuOpen(false)}
                   className={`px-4 py-3 text-lg font-heading rounded-xl transition-all flex items-center justify-between ${
                     isActive
-                      ? "bg-emerald-600 text-white font-bold"
-                      : "text-slate-300 hover:bg-slate-900 hover:text-white"
+                      ? "bg-[#B8F21B] text-[#123B13] font-bold"
+                      : "text-[#FAFAF5] hover:bg-[#123B13] hover:text-[#B8F21B]"
                   }`}
                 >
                   <span>{link.name}</span>
@@ -335,8 +335,8 @@ export const Navbar: React.FC = () => {
                 onClick={() => setMobileMoreOpen(!mobileMoreOpen)}
                 className={`w-full px-4 py-3 text-lg font-heading rounded-xl transition-all flex items-center justify-between cursor-pointer ${
                   isMoreActive
-                    ? "bg-emerald-600 text-white font-bold"
-                    : "text-slate-300 hover:bg-slate-900 hover:text-white"
+                    ? "bg-[#B8F21B] text-[#123B13] font-bold"
+                    : "text-[#FAFAF5] hover:bg-[#123B13] hover:text-[#B8F21B]"
                 }`}
               >
                 <span>{t("navMore")}</span>
@@ -358,8 +358,8 @@ export const Navbar: React.FC = () => {
                         onClick={() => setMobileMenuOpen(false)}
                         className={`block px-4 py-2.5 text-base font-heading rounded-xl transition-all ${
                           isSubActive
-                            ? "bg-emerald-600/30 text-emerald-400 font-bold border-l-2 border-emerald-500"
-                            : "text-slate-400 hover:bg-slate-900 hover:text-white"
+                            ? "bg-[#1B4D1C] text-[#B8F21B] font-bold border-l-2 border-[#B8F21B]"
+                            : "text-[#A3C2A1] hover:bg-[#123B13] hover:text-white"
                         }`}
                       >
                         {subLink.name}
@@ -371,13 +371,13 @@ export const Navbar: React.FC = () => {
             </div>
           </div>
 
-          <div className="border-t border-slate-800 pt-6 space-y-3">
+          <div className="border-t border-[#1B4D1C] pt-6 space-y-3">
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
                 setQuoteModalOpen(true);
               }}
-              className="w-full py-3.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold text-center shadow-glow"
+              className="w-full py-3.5 rounded-xl bg-[#B8F21B] hover:bg-[#C8F93B] text-[#123B13] font-extrabold text-center shadow-md border border-[#A6E015]"
             >
               {t("getQuote")}
             </button>
@@ -385,12 +385,12 @@ export const Navbar: React.FC = () => {
             <Link
               href="/shop"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full py-3 rounded-xl bg-slate-900 text-center text-slate-200 text-sm font-semibold flex items-center justify-center gap-2 border border-slate-800"
+              className="w-full py-3 rounded-xl bg-[#123B13] text-center text-slate-200 text-sm font-semibold flex items-center justify-center gap-2 border border-[#1B4D1C]"
             >
-              <ShoppingBag className="w-4 h-4 text-amber-400" />
+              <ShoppingBag className="w-4 h-4 text-[#B8F21B]" />
               <span>{t("navShop")}</span>
               {totalCartCount > 0 && (
-                <span className="px-2 py-0.5 rounded-full bg-[#3f7010] text-white text-xs font-bold font-mono">
+                <span className="px-2 py-0.5 rounded-full bg-[#2F7D16] text-white text-xs font-bold font-mono">
                   {totalCartCount}
                 </span>
               )}

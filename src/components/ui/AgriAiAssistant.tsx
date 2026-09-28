@@ -128,17 +128,17 @@ export const AgriAiAssistant: React.FC = () => {
       <div className="fixed bottom-6 right-6 z-50">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="group relative flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-green-600 text-white shadow-glow-lg border border-emerald-300/40 hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer"
+          className="group relative flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-r from-[#123B13] via-[#2F7D16] to-[#4F9D1F] text-[#B8F21B] shadow-glow-lime border border-[#B8F21B]/40 hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer"
           aria-label="Ask JAS Agro AI"
         >
-          <span className="absolute inset-0 rounded-full bg-emerald-400 opacity-40 animate-ping" />
+          <span className="absolute inset-0 rounded-full bg-[#B8F21B] opacity-30 animate-ping" />
           <div className="relative flex items-center justify-center">
             {isOpen ? (
               <X className="w-6 h-6 text-white" />
             ) : (
               <div className="relative">
-                <Bot className="w-7 h-7 text-white group-hover:rotate-12 transition-transform" />
-                <Sparkles className="w-4 h-4 text-amber-300 absolute -top-1.5 -right-2 animate-pulse" />
+                <Bot className="w-7 h-7 text-[#B8F21B] group-hover:rotate-12 transition-transform" />
+                <Sparkles className="w-4 h-4 text-[#B8F21B] absolute -top-1.5 -right-2 animate-pulse" />
               </div>
             )}
           </div>
@@ -147,26 +147,26 @@ export const AgriAiAssistant: React.FC = () => {
 
       {/* Chat Conversational Drawer */}
       {isOpen && (
-        <div className="fixed bottom-24 right-4 sm:right-6 z-50 w-[calc(100vw-2rem)] sm:w-[420px] max-h-[580px] h-[80vh] flex flex-col rounded-3xl bg-[#0B0F17]/95 border border-emerald-500/40 shadow-2xl backdrop-blur-2xl text-slate-100 overflow-hidden">
+        <div className="fixed bottom-24 right-4 sm:right-6 z-50 w-[calc(100vw-2rem)] sm:w-[420px] max-h-[580px] h-[80vh] flex flex-col rounded-3xl bg-[#0D230E]/95 border border-[#B8F21B]/30 shadow-2xl backdrop-blur-2xl text-slate-100 overflow-hidden">
           
           {/* Header */}
-          <div className="flex items-center justify-between px-5 py-4 bg-slate-900 border-b border-emerald-500/20">
+          <div className="flex items-center justify-between px-5 py-4 bg-[#123B13] border-b border-[#B8F21B]/20">
             <div className="flex items-center gap-3">
-              <div className="p-2.5 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-700 shadow-glow">
-                <Cpu className="w-5 h-5 text-white" />
+              <div className="p-2.5 rounded-2xl bg-[#0D230E] border border-[#B8F21B]/40 text-[#B8F21B] shadow-glow">
+                <Cpu className="w-5 h-5" />
               </div>
               <div>
                 <h3 className="font-heading font-extrabold text-white text-base flex items-center gap-2">
-                  Ask JAS Agro AI <Sparkles className="w-4 h-4 text-amber-400" />
+                  Ask JAS Agro AI <Sparkles className="w-4 h-4 text-[#B8F21B]" />
                 </h3>
-                <p className="text-[11px] font-mono text-emerald-400 font-medium">
+                <p className="text-[11px] font-mono text-[#B8F21B] font-medium">
                   • {isHindi ? "ऑनलाइन • स्मार्ट एग्री सलाहकार" : "Online • Smart AgTech Assistant"}
                 </p>
               </div>
             </div>
             <button
               onClick={() => setIsOpen(false)}
-              className="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+              className="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-white/10 transition-colors"
             >
               <X className="w-5 h-5" />
             </button>
@@ -184,28 +184,28 @@ export const AgriAiAssistant: React.FC = () => {
                 <div
                   className={`max-w-[85%] p-3.5 rounded-2xl leading-relaxed shadow-lg ${
                     msg.sender === "user"
-                      ? "bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-br-none border border-emerald-400/30"
-                      : "bg-slate-900 text-slate-100 border border-slate-800 rounded-bl-none shadow-glass"
+                      ? "bg-gradient-to-r from-[#2F7D16] to-[#4F9D1F] text-white rounded-br-none border border-[#B8F21B]/30"
+                      : "bg-[#123B13]/90 text-slate-100 border border-[#1B4D1C] rounded-bl-none shadow-glass"
                   }`}
                 >
                   <p className="whitespace-pre-line">{msg.text}</p>
                 </div>
-                <span className="text-[10px] text-slate-500 mt-1 px-1 font-mono">{msg.timestamp}</span>
+                <span className="text-[10px] text-[#A3C2A1] mt-1 px-1 font-mono">{msg.timestamp}</span>
               </div>
             ))}
 
             {isTyping && (
-              <div className="flex items-center gap-2 p-3.5 rounded-2xl bg-slate-900 border border-slate-800 w-fit">
-                <RefreshCw className="w-4 h-4 text-emerald-400 animate-spin" />
-                <span className="text-xs text-slate-400 font-mono">Analyzing query...</span>
+              <div className="flex items-center gap-2 p-3.5 rounded-2xl bg-[#123B13] border border-[#1B4D1C] w-fit">
+                <RefreshCw className="w-4 h-4 text-[#B8F21B] animate-spin" />
+                <span className="text-xs text-[#A3C2A1] font-mono">Analyzing query...</span>
               </div>
             )}
             <div ref={messagesEndRef} />
           </div>
 
           {/* Quick Prompts */}
-          <div className="p-3 bg-slate-950/90 border-t border-slate-800 space-y-2">
-            <p className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-wider px-1">
+          <div className="p-3 bg-[#0D230E] border-t border-[#1B4D1C] space-y-2">
+            <p className="text-[10px] font-mono font-bold text-[#A3C2A1] uppercase tracking-wider px-1">
               {isHindi ? "सुझाए गए प्रश्न:" : "Suggested AgTech Questions:"}
             </p>
             <div className="flex flex-wrap gap-1.5 max-h-24 overflow-y-auto scrollbar-none">
@@ -213,29 +213,29 @@ export const AgriAiAssistant: React.FC = () => {
                 <button
                   key={idx}
                   onClick={() => handleSend(prompt)}
-                  className="text-xs px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-emerald-950/80 text-emerald-300 border border-emerald-500/30 transition-all text-left flex items-center justify-between gap-1.5 cursor-pointer group"
+                  className="text-xs px-3 py-1.5 rounded-xl bg-[#123B13] hover:bg-[#1B4D1C] text-[#EAF5D8] border border-[#2F7D16]/40 transition-all text-left flex items-center justify-between gap-1.5 cursor-pointer group"
                 >
                   <span className="line-clamp-1">{prompt}</span>
-                  <ChevronRight className="w-3.5 h-3.5 opacity-60 group-hover:translate-x-0.5 transition-transform" />
+                  <ChevronRight className="w-3.5 h-3.5 opacity-60 group-hover:translate-x-0.5 transition-transform text-[#B8F21B]" />
                 </button>
               ))}
             </div>
           </div>
 
           {/* Input Footer */}
-          <div className="p-3 bg-slate-950 border-t border-slate-800 flex items-center gap-2">
+          <div className="p-3 bg-[#0D230E] border-t border-[#1B4D1C] flex items-center gap-2">
             <input
               type="text"
               value={inputMsg}
               onChange={(e) => setInputMsg(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && handleSend()}
               placeholder={isHindi ? "मशरूम, अजोला या IoT ऑटोमेशन पूछें..." : "Ask JAS Agro AI..."}
-              className="flex-1 bg-slate-900 border border-slate-800 focus:border-emerald-500 rounded-2xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none transition-all font-mono"
+              className="flex-1 bg-[#123B13] border border-[#1B4D1C] focus:border-[#B8F21B] rounded-2xl px-4 py-2.5 text-xs text-white placeholder-[#5A6E59] focus:outline-none transition-all font-mono"
             />
             <button
               onClick={() => handleSend()}
               disabled={!inputMsg.trim()}
-              className="p-2.5 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white disabled:opacity-40 shadow-glow transition-all cursor-pointer"
+              className="p-2.5 rounded-2xl bg-[#B8F21B] hover:bg-[#C8F93B] text-[#123B13] font-bold disabled:opacity-40 shadow-glow-lime transition-all cursor-pointer"
               aria-label="Send Query"
             >
               <Send className="w-4 h-4" />

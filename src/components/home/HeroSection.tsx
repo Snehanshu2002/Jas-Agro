@@ -163,7 +163,7 @@ export const HeroSection: React.FC = () => {
 
       {/* LAYER 3.5: FLOATING VIDEO PLAYLIST SWITCHER PILLS (Z-50 FOREGROUND - HIDDEN ON MOBILE) */}
       {!prefersReducedMotion && (
-        <div className="absolute top-20 right-6 z-40 pointer-events-auto hidden md:flex items-center gap-1.5 bg-slate-950/90 backdrop-blur-xl p-1 rounded-full border border-emerald-500/30 shadow-xl overflow-x-auto scrollbar-none">
+        <div className="absolute top-20 right-6 z-40 pointer-events-auto hidden md:flex items-center gap-1.5 bg-[#0D230E]/90 backdrop-blur-xl p-1 rounded-full border border-[#1B4D1C] shadow-xl overflow-x-auto scrollbar-none">
           {HERO_VIDEOS.map((vid, idx) => {
             const isActive = currentVideoIndex === idx;
             return (
@@ -174,13 +174,13 @@ export const HeroSection: React.FC = () => {
                   e.stopPropagation();
                   setCurrentVideoIndex(idx);
                 }}
-                className={`px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[9px] sm:text-[10px] font-mono font-bold transition-all flex items-center gap-1 cursor-pointer pointer-events-auto relative z-50 whitespace-nowrap ${
+                className={`px-2.5 py-1 rounded-full text-[9px] sm:text-[10px] font-mono font-bold transition-all flex items-center gap-1 cursor-pointer pointer-events-auto relative z-50 whitespace-nowrap ${
                   isActive
-                    ? "bg-gradient-to-r from-emerald-500 to-teal-400 text-slate-950 shadow-sm scale-[1.02]"
-                    : "text-slate-300 hover:text-white hover:bg-white/10"
+                    ? "bg-[#B8F21B] text-[#123B13] shadow-sm scale-[1.02]"
+                    : "text-[#A3C2A1] hover:text-white hover:bg-white/10"
                 }`}
               >
-                <span className={`w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full ${isActive ? "bg-slate-950 animate-ping" : "bg-emerald-400"}`} />
+                <span className={`w-1.5 h-1.5 rounded-full ${isActive ? "bg-[#123B13] animate-ping" : "bg-[#B8F21B]"}`} />
                 {isHindi ? vid.titleHi : vid.titleEn}
               </button>
             );
@@ -197,9 +197,9 @@ export const HeroSection: React.FC = () => {
             initial={{ opacity: 0, y: -15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100 dark:bg-emerald-950/70 border border-emerald-300 dark:border-emerald-500/40 text-emerald-800 dark:text-emerald-300 text-xs font-mono font-semibold tracking-widest uppercase shadow-sm dark:shadow-glow backdrop-blur-md"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#EAF5D8] dark:bg-[#123B13]/90 border border-[#2F7D16]/30 dark:border-[#B8F21B]/40 text-[#123B13] dark:text-[#B8F21B] text-xs font-mono font-bold tracking-widest uppercase shadow-sm backdrop-blur-md"
           >
-            <Sprout className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
+            <Sprout className="w-3.5 h-3.5 text-[#2F7D16] dark:text-[#B8F21B]" />
             <span>{isHindi ? "स्मार्ट • सस्टेनेबल • कनेक्टेड" : "SMART • SUSTAINABLE • CONNECTED"}</span>
           </motion.div>
 
@@ -210,12 +210,12 @@ export const HeroSection: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
             className="space-y-3"
           >
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold font-heading tracking-tight leading-[1.08] text-slate-900 dark:text-white drop-shadow-sm dark:drop-shadow-[0_8px_30px_rgba(0,0,0,0.9)]">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold font-heading tracking-tight leading-[1.08] text-[#111811] dark:text-[#FAFAF5] drop-shadow-sm dark:drop-shadow-[0_8px_30px_rgba(0,0,0,0.9)]">
               {isHindi ? (
                 <>
                   खेती के भविष्य को
                   <br />
-                  <span className="bg-gradient-to-r from-emerald-600 via-teal-500 to-green-600 dark:from-emerald-400 dark:via-teal-300 dark:to-green-300 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-[#2F7D16] via-[#4F9D1F] to-[#B8F21B] dark:from-[#B8F21B] dark:via-[#C8F93B] dark:to-[#4F9D1F] bg-clip-text text-transparent">
                     नया रूप देना।
                   </span>
                 </>
@@ -223,7 +223,7 @@ export const HeroSection: React.FC = () => {
                 <>
                   GROWING THE FUTURE OF
                   <br />
-                  <span className="bg-gradient-to-r from-emerald-600 via-teal-500 to-green-600 dark:from-emerald-400 dark:via-teal-300 dark:to-green-300 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-[#2F7D16] via-[#4F9D1F] to-[#B8F21B] dark:from-[#B8F21B] dark:via-[#C8F93B] dark:to-[#4F9D1F] bg-clip-text text-transparent">
                     FARMING.
                   </span>
                 </>
@@ -236,7 +236,7 @@ export const HeroSection: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="text-base sm:text-lg lg:text-xl text-slate-700 dark:text-slate-200 font-medium leading-relaxed max-w-2xl mx-auto drop-shadow-sm dark:drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)]"
+            className="text-base sm:text-lg lg:text-xl text-slate-700 dark:text-[#EAF5D8] font-medium leading-relaxed max-w-2xl mx-auto drop-shadow-sm dark:drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)]"
           >
             {isHindi
               ? "स्मार्ट कल्टीवेशन सिस्टम्स जो ऑर्गेनिक फार्मिंग, प्रिसिजन टेक और स्मार्ट ऑटोमेशन को जोड़ते हैं।"
@@ -252,7 +252,7 @@ export const HeroSection: React.FC = () => {
           >
             <button
               onClick={() => setQuoteModalOpen(true)}
-              className="btn-reveal-primary group w-full sm:w-auto px-8 py-3.5 rounded-2xl bg-gradient-to-r from-emerald-500 via-emerald-600 to-teal-600 text-white font-extrabold text-sm tracking-wider uppercase transition-all duration-200 flex items-center justify-center gap-2.5 shadow-glow-lg border border-emerald-300/40 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+              className="btn-reveal-lime group w-full sm:w-auto px-8 py-3.5 rounded-2xl bg-[#B8F21B] hover:bg-[#C8F93B] text-[#123B13] font-extrabold text-sm tracking-wider uppercase transition-all duration-200 flex items-center justify-center gap-2.5 shadow-[0_0_35px_rgba(184,242,27,0.45)] border border-[#A6E015] hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
             >
               <span>{isHindi ? "अपना फार्म बनाएं" : "BUILD YOUR FARM"}</span>
               <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
@@ -260,14 +260,12 @@ export const HeroSection: React.FC = () => {
 
             <Link
               href="/solutions"
-              className="btn-reveal-secondary group w-full sm:w-auto px-8 py-3.5 rounded-2xl bg-white/90 dark:bg-slate-950/70 text-slate-900 dark:text-slate-100 font-bold text-sm tracking-wider uppercase border border-slate-300 dark:border-slate-700/80 shadow-md dark:shadow-glass backdrop-blur-md transition-all duration-200 flex items-center justify-center gap-2.5 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+              className="btn-reveal-secondary group w-full sm:w-auto px-8 py-3.5 rounded-2xl bg-[#FAFAF5]/90 dark:bg-[#0D230E]/85 text-[#111811] dark:text-[#FAFAF5] font-bold text-sm tracking-wider uppercase border border-[#2F7D16]/20 dark:border-[#1B4D1C] shadow-md backdrop-blur-md transition-all duration-200 flex items-center justify-center gap-2.5 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
             >
               <span>{isHindi ? "सॉल्यूशंस देखें" : "EXPLORE SOLUTIONS"}</span>
-              <Radio className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 group-hover:animate-pulse" />
+              <Radio className="w-3.5 h-3.5 text-[#2F7D16] dark:text-[#B8F21B] group-hover:animate-pulse" />
             </Link>
           </motion.div>
-
-
 
         </div>
       </div>
