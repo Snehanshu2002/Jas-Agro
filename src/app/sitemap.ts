@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { PRODUCTS } from "@/data/products";
+import { SHOP_PRODUCTS } from "@/data/shopProducts";
 import { BLOG_POSTS } from "@/data/insights";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -15,15 +16,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/insights",
     "/contact",
     "/shop",
+    "/shop/favourites",
+    "/privacy",
+    "/terms",
+    "/sitemap",
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,
-    priority: route === "" ? 1.0 : 0.8,
+    priority: route === "" ? 1.0 : route === "/shop" ? 0.9 : 0.8,
   }));
 
-  const productRoutes = PRODUCTS.map((prod) => ({
+  const b2bProductRoutes = PRODUCTS.map((prod) => ({
     url: `${baseUrl}/products/${prod.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.9,
+  }));
+
+  const shopProductRoutes = SHOP_PRODUCTS.map((prod) => ({
+    url: `${baseUrl}/shop/product/${prod.slug}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,
     priority: 0.9,
@@ -36,5 +48,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...productRoutes, ...blogRoutes];
+  return [...staticRoutes, ...b2bProductRoutes, ...shopProductRoutes, ...blogRoutes];
 }

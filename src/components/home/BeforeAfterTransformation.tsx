@@ -31,11 +31,11 @@ export const BeforeAfterTransformation: React.FC = () => {
   };
 
   return (
-    <section className="py-6 bg-slate-100 dark:bg-slate-950 text-slate-900 dark:text-white relative overflow-hidden border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
+    <section className="py-6 bg-[#FAFBF7] dark:bg-slate-950 text-slate-900 dark:text-white relative overflow-hidden border-b border-emerald-950/10 dark:border-slate-800 transition-colors duration-300">
       <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 relative z-10">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-4 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100 dark:bg-emerald-950/80 border border-emerald-300 dark:border-emerald-500/40 text-emerald-800 dark:text-emerald-300 text-xs font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100/90 dark:bg-emerald-950/80 border border-emerald-300/80 dark:border-emerald-500/40 text-emerald-900 dark:text-emerald-300 text-xs font-bold uppercase tracking-wider">
             <Sparkles className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
             <span>{language === "hi" ? "जैविक रूपांतरण परिणाम" : "Bio-Transformation Impact"}</span>
           </div>
@@ -43,16 +43,16 @@ export const BeforeAfterTransformation: React.FC = () => {
           <h2 className="text-lg sm:text-xl lg:text-2xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight">
             {language === "hi" ? (
               <>
-                पारंपरिक रसायन बनाम <span className="text-emerald-600 dark:text-emerald-400">JAS Agro जैविक क्रांति</span>
+                पारंपरिक रसायन बनाम <span className="text-emerald-700 dark:text-emerald-400">JAS Agro जैविक क्रांति</span>
               </>
             ) : (
               <>
-                Chemical Degradation vs. <span className="text-emerald-600 dark:text-emerald-400">Bio-Active Restoration</span>
+                Chemical Degradation vs. <span className="text-emerald-700 dark:text-emerald-400">Bio-Active Restoration</span>
               </>
             )}
           </h2>
 
-          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300">
+          <p className="text-base sm:text-lg text-slate-700 dark:text-slate-300 font-normal">
             {language === "hi"
               ? "नीचे दिए गए विज़ुअल स्लाइडर को बाएं-दाएं ड्रैग करके देखें कि कैसे वर्मीकंपोस्ट और सुपर-चारा भूमि और मवेशी स्वास्थ्य को बदलते हैं।"
               : "Drag the interactive slider below to compare soil topsoil vitality and fodder productivity outcomes."}
@@ -68,7 +68,7 @@ export const BeforeAfterTransformation: React.FC = () => {
             onMouseLeave={() => setIsDragging(false)}
             onMouseMove={handleMouseMove}
             onTouchMove={handleTouchMove}
-            className="relative h-[400px] sm:h-[480px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white dark:border-slate-800 select-none cursor-ew-resize"
+            className="relative h-[400px] sm:h-[480px] rounded-3xl overflow-hidden shadow-xl border-4 border-white dark:border-slate-800 select-none cursor-ew-resize"
           >
             {/* AFTER Image (Background - JAS Agro Bio-Active) */}
             <div className="absolute inset-0">
@@ -123,24 +123,24 @@ export const BeforeAfterTransformation: React.FC = () => {
 
           {/* Key Comparison Grid Below */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
-            <div className="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-md space-y-2">
-              <h4 className="text-sm font-bold text-red-600 dark:text-red-400 flex items-center gap-2">
+            <div className="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-red-200/90 dark:border-slate-800 shadow-sm space-y-2">
+              <h4 className="text-sm font-bold text-red-700 dark:text-red-400 flex items-center gap-2">
                 <XCircle className="w-4 h-4" />
                 {language === "hi" ? "रासायनिक उर्वरक के नुकसान:" : "Impact of Chemical Fertilizers:"}
               </h4>
-              <ul className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 space-y-1.5 list-disc list-inside font-medium">
+              <ul className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 space-y-1.5 list-disc list-inside font-normal">
                 <li>{language === "hi" ? "मिट्टी के मित्र जीवाणुओं और केंचुआ जीवन का विनाश" : "Destruction of earthworms and beneficial soil micro-biome"}</li>
                 <li>{language === "hi" ? "पशु आहार लागत में 35-40% तक की भारी वृद्धि" : "High commercial feed expenses cutting livestock margins"}</li>
                 <li>{language === "hi" ? "जमीन की जल-धारण क्षमता (Water Retention) में गिरावट" : "Poor topsoil moisture retention during summer dry spells"}</li>
               </ul>
             </div>
 
-            <div className="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-emerald-500/30 shadow-md space-y-2">
-              <h4 className="text-sm font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-2">
+            <div className="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-emerald-300/80 dark:border-emerald-500/30 shadow-sm space-y-2">
+              <h4 className="text-sm font-bold text-emerald-800 dark:text-emerald-400 flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4" />
                 {language === "hi" ? "JAS Agro जैविक समाधान के लाभ:" : "Benefits of JAS Agro Bio-Restoration:"}
               </h4>
-              <ul className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 space-y-1.5 list-disc list-inside font-medium">
+              <ul className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 space-y-1.5 list-disc list-inside font-normal">
                 <li>{language === "hi" ? "100% शुद्ध जीवित ह्यूमस द्वारा मिट्टी का पुनर्जीवन" : "Living earthworm humus restoring organic carbon balance"}</li>
                 <li>{language === "hi" ? "अजोला चारे से दूध उत्पादन में 15-20% की वृद्धि" : "15-20% boost in daily dairy milk yield via Azolla feed"}</li>
                 <li>{language === "hi" ? "कम पानी और शून्य रासायनिक दवाइयों से शुद्ध पैदावार" : "Zero synthetic growth agents or pesticide residues"}</li>

@@ -53,19 +53,19 @@ export const TestimonialSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-6 bg-white dark:bg-slate-950 text-slate-900 dark:text-white relative overflow-hidden transition-colors duration-300 border-t border-slate-200 dark:border-slate-800">
+    <section className="py-6 bg-[#F1F5EB] dark:bg-slate-950 text-slate-900 dark:text-white relative overflow-hidden transition-colors duration-300 border-t border-emerald-950/10 dark:border-slate-800">
       <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-4 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 dark:text-amber-400 text-xs font-bold uppercase tracking-widest">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-100/90 dark:bg-emerald-500/10 border border-emerald-300/80 dark:border-emerald-500/30 text-emerald-900 dark:text-amber-400 text-xs font-bold uppercase tracking-widest">
             {language === "hi" ? "फार्मर फीडबैक & रिव्यू" : "FARMER & PARTNER FEEDBACK"}
           </div>
           <h2 className="text-lg sm:text-xl lg:text-2xl font-extrabold font-heading text-slate-900 dark:text-white">
             {language === "hi" ? "हमारे फार्मर्स और पार्टनर्स के " : "What Our "}
-            <span className="text-emerald-600 dark:text-amber-400">
+            <span className="text-emerald-700 dark:text-amber-400">
               {language === "hi" ? "अनुभव" : "Partners Say"}
             </span>
           </h2>
-          <p className="text-slate-600 dark:text-slate-300 text-base">
+          <p className="text-slate-700 dark:text-slate-300 text-base">
             {language === "hi"
               ? "हमारे फार्मर्स और डेयरी पार्टनर्स के रियल एक्सपीरियंस और रिजल्ट्स।"
               : "Sample client experiences demonstrating real-world agricultural outcomes and fodder feed security."}
@@ -83,7 +83,7 @@ export const TestimonialSection: React.FC = () => {
             return (
               <div
                 key={idx}
-                className="bg-slate-50 dark:bg-slate-900/80 p-8 rounded-3xl border border-slate-200 dark:border-white/10 hover:border-emerald-500/50 transition-all flex flex-col justify-between space-y-6 relative shadow-sm hover:shadow-md"
+                className="bg-white dark:bg-slate-900/80 p-8 rounded-3xl border border-emerald-950/10 dark:border-white/10 hover:border-emerald-500/50 transition-all flex flex-col justify-between space-y-6 relative shadow-sm hover:shadow-xl"
               >
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
@@ -92,25 +92,25 @@ export const TestimonialSection: React.FC = () => {
                         <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
                       ))}
                     </div>
-                    <span className="text-[10px] uppercase font-mono px-2.5 py-1 rounded-full bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-400">
+                    <span className="text-[10px] uppercase font-mono px-2.5 py-1 rounded-full bg-emerald-50 dark:bg-white/5 border border-emerald-200 dark:border-white/10 text-emerald-900 dark:text-slate-400 font-bold">
                       {badge}
                     </span>
                   </div>
 
                   <Quote className="w-8 h-8 text-emerald-600/40 dark:text-amber-400/40" />
 
-                  <p className="text-slate-700 dark:text-slate-200 text-sm italic leading-relaxed">
+                  <p className="text-slate-800 dark:text-slate-200 text-sm italic leading-relaxed font-normal">
                     "{quote}"
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-slate-200 dark:border-white/10 flex items-center justify-between">
+                <div className="pt-4 border-t border-emerald-950/10 dark:border-white/10 flex items-center justify-between">
                   <div>
                     <h4 className="font-heading font-bold text-slate-900 dark:text-white text-sm">{author}</h4>
-                    <p className="text-xs text-slate-500 dark:text-slate-400">{location}</p>
+                    <p className="text-xs text-slate-600 dark:text-slate-400">{location}</p>
                   </div>
                   <div className="text-right">
-                    <span className="text-[11px] font-semibold text-emerald-700 dark:text-emerald-400 block">
+                    <span className="text-[11px] font-bold text-emerald-800 dark:text-emerald-400 block">
                       {solution}
                     </span>
                   </div>

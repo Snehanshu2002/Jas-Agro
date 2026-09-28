@@ -3,6 +3,7 @@ import type { Config } from "tailwindcss";
 const config: Config = {
   darkMode: "class",
   content: [
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
@@ -33,12 +34,24 @@ const config: Config = {
         heading: ["var(--font-heading)", "Outfit", "sans-serif"],
       },
       boxShadow: {
+        "2xs": "0 1px 1px 0 rgba(0, 0, 0, 0.03)",
+        xs: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
         glow: "0 0 25px -5px rgba(16, 185, 129, 0.35)",
         "glow-lg": "0 0 50px -10px rgba(16, 185, 129, 0.45)",
         "glow-gold": "0 0 25px -5px rgba(245, 158, 11, 0.35)",
         "glow-cyan": "0 0 25px -5px rgba(6, 182, 212, 0.35)",
         glass: "0 8px 32px 0 rgba(0, 0, 0, 0.37)",
         "glass-emerald": "0 8px 32px 0 rgba(16, 185, 129, 0.15)",
+      },
+      backdropBlur: {
+        "2xs": "2px",
+        xs: "4px",
+      },
+      scale: {
+        "98": "0.98",
+      },
+      spacing: {
+        "4.5": "1.125rem",
       },
       backgroundImage: {
         "hero-gradient": "linear-gradient(to bottom, rgba(11, 15, 23, 0.85), rgba(11, 15, 23, 0.98))",

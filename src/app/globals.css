@@ -70,6 +70,7 @@ body {
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
+  height: 5px;
 }
 ::-webkit-scrollbar-track {
   background: var(--bg-darkest);
@@ -81,6 +82,94 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-emerald);
+}
+
+/* Horizontal Scrollbars (Thin, Glassmorphism Track, JAS Agro Green Pill Thumb) */
+::-webkit-scrollbar:horizontal {
+  height: 5px;
+}
+
+::-webkit-scrollbar-track:horizontal {
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: 9999px;
+  margin: 0 4px;
+}
+
+.dark ::-webkit-scrollbar-track:horizontal,
+html.dark ::-webkit-scrollbar-track:horizontal {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  background: rgba(63, 112, 16, 0.5);
+  border-radius: 9999px;
+  border: none;
+  transition: background-color 0.2s ease;
+}
+
+.dark ::-webkit-scrollbar-thumb:horizontal,
+html.dark ::-webkit-scrollbar-thumb:horizontal {
+  background: rgba(82, 145, 22, 0.65);
+}
+
+::-webkit-scrollbar-thumb:horizontal:hover {
+  background: #3f7010;
+}
+
+.dark ::-webkit-scrollbar-thumb:horizontal:hover,
+html.dark ::-webkit-scrollbar-thumb:horizontal:hover {
+  background: #529116;
+}
+
+/* Shop Horizontal Scrollbar Dedicated Utility */
+.shop-scrollbar-x {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(63, 112, 16, 0.5) rgba(0, 0, 0, 0.03);
+}
+
+.dark .shop-scrollbar-x,
+html.dark .shop-scrollbar-x {
+  scrollbar-color: rgba(82, 145, 22, 0.65) rgba(255, 255, 255, 0.04);
+}
+
+.shop-scrollbar-x::-webkit-scrollbar {
+  height: 5px;
+}
+
+.shop-scrollbar-x::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: 9999px;
+  margin: 0 4px;
+}
+
+.dark .shop-scrollbar-x::-webkit-scrollbar-track,
+html.dark .shop-scrollbar-x::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.shop-scrollbar-x::-webkit-scrollbar-thumb {
+  background: rgba(63, 112, 16, 0.5);
+  border-radius: 9999px;
+  border: none;
+  transition: background-color 0.2s ease;
+}
+
+.dark .shop-scrollbar-x::-webkit-scrollbar-thumb,
+html.dark .shop-scrollbar-x::-webkit-scrollbar-thumb {
+  background: rgba(82, 145, 22, 0.65);
+}
+
+.shop-scrollbar-x::-webkit-scrollbar-thumb:hover {
+  background: #3f7010;
+}
+
+.dark .shop-scrollbar-x::-webkit-scrollbar-thumb:hover,
+html.dark .shop-scrollbar-x::-webkit-scrollbar-thumb:hover {
+  background: #529116;
 }
 
 /* Glassmorphism Utility with Crisp White Light Support */
@@ -190,3 +279,217 @@ body {
   filter: blur(50px);
   pointer-events: none;
 }
+
+/* ==========================================================================
+   JAS AGRO CURSOR-DRIVEN RADIAL BUTTON REVEAL (EXCLUDING SHOP PORTAL)
+   ========================================================================== */
+
+.btn-cursor-reveal,
+.btn-reveal-primary,
+.btn-reveal-secondary,
+.btn-reveal-gold {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Keep inner content, typography, icons elevated above the reveal surface */
+.btn-cursor-reveal > *,
+.btn-reveal-primary > *,
+.btn-reveal-secondary > *,
+.btn-reveal-gold > * {
+  position: relative;
+  z-index: 2;
+  transition: color 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  pointer-events: none;
+}
+
+/* Smooth organic radial reveal expanding from cursor position */
+.btn-cursor-reveal::before,
+.btn-reveal-primary::before,
+.btn-reveal-secondary::before,
+.btn-reveal-gold::before {
+  content: "";
+  position: absolute;
+  top: var(--mouse-y, 50%);
+  left: var(--mouse-x, 50%);
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.55s cubic-bezier(0.2, 0.85, 0.2, 1), height 0.55s cubic-bezier(0.2, 0.85, 0.2, 1), opacity 0.35s ease;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+}
+
+.btn-cursor-reveal:hover::before,
+.btn-reveal-primary:hover::before,
+.btn-reveal-secondary:hover::before,
+.btn-reveal-gold:hover::before {
+  width: 420%;
+  height: 420%;
+  opacity: 1;
+}
+
+/* 1. Primary Green Buttons: Clean Light Contrast Reveal */
+.btn-reveal-primary::before {
+  background: #FFFFFF;
+}
+html.dark .btn-reveal-primary::before,
+.dark .btn-reveal-primary::before {
+  background: #FFFFFF;
+}
+
+.btn-reveal-primary:hover {
+  color: #064E3B !important;
+  border-color: rgba(16, 185, 129, 0.5) !important;
+  box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.35), 0 0 18px rgba(255, 255, 255, 0.15);
+}
+.btn-reveal-primary:hover > * {
+  color: #064E3B !important;
+}
+.btn-reveal-primary:hover svg {
+  color: #059669 !important;
+}
+
+/* 2. Secondary Outline / Light/Dark Buttons: Rich Emerald Gradient Reveal */
+.btn-reveal-secondary::before {
+  background: linear-gradient(135deg, #059669 0%, #047857 50%, #065F46 100%);
+}
+html.dark .btn-reveal-secondary::before,
+.dark .btn-reveal-secondary::before {
+  background: linear-gradient(135deg, #10B981 0%, #059669 50%, #047857 100%);
+}
+
+.btn-reveal-secondary:hover {
+  color: #FFFFFF !important;
+  border-color: rgba(16, 185, 129, 0.9) !important;
+  box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.35);
+}
+.btn-reveal-secondary:hover > * {
+  color: #FFFFFF !important;
+}
+.btn-reveal-secondary:hover svg {
+  color: #FFFFFF !important;
+}
+
+/* 3. Gold / Amber CTA Reveal */
+.btn-reveal-gold::before {
+  background: #FFFFFF;
+}
+html.dark .btn-reveal-gold::before,
+.dark .btn-reveal-gold::before {
+  background: #FFFFFF;
+}
+
+.btn-reveal-gold:hover {
+  color: #78350F !important;
+  border-color: rgba(245, 158, 11, 0.6) !important;
+  box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.35);
+}
+.btn-reveal-gold:hover > * {
+  color: #78350F !important;
+}
+.btn-reveal-gold:hover svg {
+  color: #D97706 !important;
+}
+
+/* Touch & Reduced Motion Disabling */
+@media (prefers-reduced-motion: reduce), (pointer: coarse) {
+  .btn-cursor-reveal::before,
+  .btn-reveal-primary::before,
+  .btn-reveal-secondary::before,
+  .btn-reveal-gold::before {
+    display: none !important;
+  }
+  .cursor-follower-root {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   JAS AGRO UNIFIED DESIGN SYSTEM TOKENS (STARBUCKS + NVIDIA + MINTLIFY + SHOPIFY)
+   ========================================================================== */
+
+/* 1. Starbucks Earthy Light Surfaces & Natural Green Hierarchy */
+.jas-canvas {
+  background-color: #FAFBF7;
+}
+.dark .jas-canvas {
+  background-color: #0B0F17;
+}
+
+.jas-surface-card {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(6, 78, 59, 0.08);
+  box-shadow: 0 4px 20px -2px rgba(11, 59, 44, 0.04);
+}
+.dark .jas-surface-card {
+  background-color: #101726;
+  border: 1px solid rgba(16, 185, 129, 0.15);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
+}
+
+.jas-surface-sage {
+  background-color: #EEF4EC;
+  border: 1px solid rgba(6, 78, 59, 0.08);
+}
+.dark .jas-surface-sage {
+  background-color: #131E2E;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+/* 2. NVIDIA Technical Telemetry & Dark Chapters */
+.jas-tech-chapter {
+  background: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.07) 0%, transparent 70%), #080C14;
+  color: #F8FAFC;
+}
+
+.jas-tech-grid {
+  background-image: radial-gradient(rgba(16, 185, 129, 0.15) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.jas-telemetry-panel {
+  background-color: rgba(16, 23, 38, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* 3. Mintlify Eyebrow Pills & Information Architecture */
+.jas-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background-color: #EEF4EC;
+  color: #064E3B;
+  border: 1px solid rgba(6, 78, 59, 0.15);
+}
+.dark .jas-eyebrow {
+  background-color: rgba(6, 78, 59, 0.4);
+  color: #34D399;
+  border: 1px solid rgba(52, 211, 153, 0.3);
+}
+
+/* 4. Shopify Clean Product & Framing Treatment */
+.jas-photo-frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  background-color: #EBF3E8;
+}
+.dark .jas-photo-frame {
+  background-color: #101726;
+}
+
+

@@ -40,7 +40,7 @@ export const IotSimulationDashboard: React.FC = () => {
   }, [foggerActive, fanActive]);
 
   return (
-    <section className="py-6 bg-slate-50 dark:bg-[#0B0F17] text-slate-900 dark:text-white relative overflow-hidden border-b border-slate-200 dark:border-slate-800/80 transition-colors duration-300">
+    <section className="py-6 bg-[#EDF3E8] dark:bg-[#0B0F17] text-slate-900 dark:text-white relative overflow-hidden border-b border-emerald-950/10 dark:border-slate-800/80 transition-colors duration-300">
       {/* Background Lighting */}
       <div className="absolute top-10 right-10 w-96 h-96 bg-cyan-500/10 blur-[140px] rounded-full pointer-events-none" />
       <div className="absolute bottom-10 left-10 w-96 h-96 bg-emerald-500/10 blur-[140px] rounded-full pointer-events-none" />
@@ -57,26 +57,26 @@ export const IotSimulationDashboard: React.FC = () => {
       <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-100 dark:bg-cyan-950/90 border border-cyan-300 dark:border-cyan-500/50 text-cyan-800 dark:text-cyan-300 text-xs font-mono font-bold uppercase tracking-wider shadow-glow">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-100/90 dark:bg-cyan-950/90 border border-cyan-300/80 dark:border-cyan-500/50 text-cyan-900 dark:text-cyan-300 text-xs font-mono font-bold uppercase tracking-wider shadow-sm">
             <Cpu className="w-4 h-4 text-cyan-600 dark:text-cyan-400 animate-pulse" />
             <span>{isHindi ? "इंटरएक्टिव IoT सिमुलेटर" : "INTERACTIVE IOT FARM TELEMETRY"}</span>
           </div>
 
           <h2 className="text-lg sm:text-xl lg:text-2xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight leading-none">
             {isHindi ? "आपका फार्म, " : "YOUR FARM. "}
-            <span className="bg-gradient-to-r from-cyan-600 via-teal-500 to-emerald-600 dark:from-cyan-400 dark:via-teal-300 dark:to-emerald-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-emerald-700 via-teal-600 to-cyan-700 dark:from-cyan-400 dark:via-teal-300 dark:to-emerald-400 bg-clip-text text-transparent">
               {isHindi ? "स्मार्टली कनेक्टेड।" : "CONNECTED."}
             </span>
           </h2>
 
-          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 font-normal leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-700 dark:text-slate-300 font-normal leading-relaxed">
             {isHindi
               ? "JAS एग्रो IoT सेंसर्स के साथ माइक्रो-क्लाइमेट कंट्रोल। नीचे दिए स्विच ऑन/ऑफ करके लाइव रिस्पॉन्स देखें।"
               : "Experience automated micro-climate control. Toggle simulation actuators below to observe real-time telemetry adjustments."}
           </p>
 
           {/* Mandatory Explicit Simulation Label */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-100 dark:bg-amber-950/80 border border-amber-300 dark:border-amber-500/40 text-amber-800 dark:text-amber-300 text-xs font-mono font-bold shadow-sm">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-100/90 dark:bg-amber-950/80 border border-amber-300/80 dark:border-amber-500/40 text-amber-900 dark:text-amber-300 text-xs font-mono font-bold shadow-sm">
             <Radio className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400 animate-pulse" />
             <span>{isHindi ? "इंटरएक्टिव सिमुलेशन (डेमो एनवायरनमेंट)" : "Interactive Simulation (Demo Environment)"}</span>
           </div>
@@ -87,114 +87,114 @@ export const IotSimulationDashboard: React.FC = () => {
           {/* Left 4 Live Sensor Dials */}
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-5 h-full">
             {/* Sensor 1: Temperature */}
-            <div className="bg-white dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200 dark:border-slate-800 hover:border-amber-500/50 rounded-3xl p-6 shadow-glass hover:shadow-glow-gold transition-all duration-300 space-y-4 relative overflow-hidden group">
+            <div className="bg-white dark:bg-slate-900/80 backdrop-blur-xl border border-emerald-950/10 dark:border-slate-800 hover:border-amber-500/50 rounded-3xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 space-y-4 relative overflow-hidden group">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-mono font-bold uppercase text-slate-600 dark:text-slate-400 flex items-center gap-2">
-                  <Thermometer className="w-4 h-4 text-amber-500 dark:text-amber-400" />
+                <span className="text-xs font-mono font-bold uppercase text-slate-700 dark:text-slate-400 flex items-center gap-2">
+                  <Thermometer className="w-4 h-4 text-amber-600 dark:text-amber-400" />
                   {isHindi ? "टेम्परेचर" : "Temperature"}
                 </span>
-                <span className="px-2.5 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 border border-emerald-300 dark:border-emerald-500/40 text-emerald-800 dark:text-emerald-400 text-[10px] font-mono font-bold">
+                <span className="px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-950 border border-emerald-300 dark:border-emerald-500/40 dark:text-emerald-400 text-[10px] font-mono font-bold">
                   {isHindi ? "ऑप्टिमल" : "OPTIMAL"}
                 </span>
               </div>
               <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-mono tracking-tight flex items-baseline gap-2">
-                {temp}<span className="text-xl text-amber-500 dark:text-amber-400 font-sans">°C</span>
+                {temp}<span className="text-xl text-amber-600 dark:text-amber-400 font-sans">°C</span>
               </div>
               <div className="w-full h-2.5 bg-slate-200 dark:bg-slate-950 rounded-full overflow-hidden p-0.5 border border-slate-300 dark:border-slate-800">
                 <div className="h-full bg-gradient-to-r from-amber-500 to-amber-300 rounded-full transition-all duration-500 shadow-glow" style={{ width: `${(temp / 40) * 100}%` }} />
               </div>
-              <div className="flex justify-between text-[11px] text-slate-500 dark:text-slate-400 font-mono">
+              <div className="flex justify-between text-[11px] text-slate-600 dark:text-slate-400 font-mono">
                 <span>Target: 22.0-26.0°C</span>
-                <span className="text-emerald-600 dark:text-emerald-400">ESP32 Probe • OK</span>
+                <span className="text-emerald-700 dark:text-emerald-400">ESP32 Probe • OK</span>
               </div>
             </div>
 
             {/* Sensor 2: Relative Humidity */}
-            <div className="bg-white dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200 dark:border-slate-800 hover:border-cyan-500/50 rounded-3xl p-6 shadow-glass hover:shadow-glow-cyan transition-all duration-300 space-y-4 relative overflow-hidden group">
+            <div className="bg-white dark:bg-slate-900/80 backdrop-blur-xl border border-emerald-950/10 dark:border-slate-800 hover:border-cyan-500/50 rounded-3xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 space-y-4 relative overflow-hidden group">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-mono font-bold uppercase text-slate-600 dark:text-slate-400 flex items-center gap-2">
-                  <Droplets className="w-4 h-4 text-cyan-500 dark:text-cyan-400" />
+                <span className="text-xs font-mono font-bold uppercase text-slate-700 dark:text-slate-400 flex items-center gap-2">
+                  <Droplets className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
                   {isHindi ? "ह्यूमिडिटी (नमी)" : "Humidity"}
                 </span>
-                <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold ${foggerActive ? "bg-cyan-100 dark:bg-cyan-950 border border-cyan-300 dark:border-cyan-500/50 text-cyan-800 dark:text-cyan-300 animate-pulse" : "bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400"}`}>
+                <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold ${foggerActive ? "bg-cyan-100 dark:bg-cyan-950 border border-cyan-300 dark:border-cyan-500/50 text-cyan-900 dark:text-cyan-300 animate-pulse" : "bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-400"}`}>
                   {foggerActive ? (isHindi ? "फॉगर एक्टिव" : "FOGGER ACTIVE") : (isHindi ? "स्टेबल" : "STABLE")}
                 </span>
               </div>
               <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-mono tracking-tight flex items-baseline gap-2">
-                {humidity}<span className="text-xl text-cyan-500 dark:text-cyan-400 font-sans">%</span>
+                {humidity}<span className="text-xl text-cyan-600 dark:text-cyan-400 font-sans">%</span>
               </div>
               <div className="w-full h-2.5 bg-slate-200 dark:bg-slate-950 rounded-full overflow-hidden p-0.5 border border-slate-300 dark:border-slate-800">
                 <div className="h-full bg-gradient-to-r from-cyan-500 to-teal-300 rounded-full transition-all duration-500 shadow-glow" style={{ width: `${humidity}%` }} />
               </div>
-              <div className="flex justify-between text-[11px] text-slate-500 dark:text-slate-400 font-mono">
+              <div className="flex justify-between text-[11px] text-slate-600 dark:text-slate-400 font-mono">
                 <span>Target: 80.0-90.0%</span>
-                <span className="text-cyan-600 dark:text-cyan-400">DHT22 Sensor • OK</span>
+                <span className="text-cyan-700 dark:text-cyan-400">DHT22 Sensor • OK</span>
               </div>
             </div>
 
             {/* Sensor 3: CO2 Level */}
-            <div className="bg-white dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200 dark:border-slate-800 hover:border-teal-500/50 rounded-3xl p-6 shadow-glass hover:shadow-glow-emerald transition-all duration-300 space-y-4 relative overflow-hidden group">
+            <div className="bg-white dark:bg-slate-900/80 backdrop-blur-xl border border-emerald-950/10 dark:border-slate-800 hover:border-teal-500/50 rounded-3xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 space-y-4 relative overflow-hidden group">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-mono font-bold uppercase text-slate-600 dark:text-slate-400 flex items-center gap-2">
-                  <Wind className="w-4 h-4 text-teal-500 dark:text-teal-400" />
+                <span className="text-xs font-mono font-bold uppercase text-slate-700 dark:text-slate-400 flex items-center gap-2">
+                  <Wind className="w-4 h-4 text-teal-600 dark:text-teal-400" />
                   {isHindi ? "CO2 लेवल" : "CO2 Level"}
                 </span>
-                <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold ${fanActive ? "bg-emerald-100 dark:bg-emerald-950 border border-emerald-300 dark:border-emerald-500/40 text-emerald-800 dark:text-emerald-400" : "bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300"}`}>
+                <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold ${fanActive ? "bg-emerald-100 text-emerald-800 dark:bg-emerald-950 border border-emerald-300 dark:border-emerald-500/40 dark:text-emerald-400" : "bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300"}`}>
                   {fanActive ? (isHindi ? "वेंटिलेशन" : "VENTILATION") : (isHindi ? "एक्यूमुलेटिंग" : "ACCUMULATING")}
                 </span>
               </div>
               <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-mono tracking-tight flex items-baseline gap-2">
-                {co2} <span className="text-sm text-slate-500 dark:text-slate-400 font-sans font-semibold">PPM</span>
+                {co2} <span className="text-sm text-slate-600 dark:text-slate-400 font-sans font-semibold">PPM</span>
               </div>
               <div className="w-full h-2.5 bg-slate-200 dark:bg-slate-950 rounded-full overflow-hidden p-0.5 border border-slate-300 dark:border-slate-800">
                 <div className="h-full bg-gradient-to-r from-teal-500 to-emerald-400 rounded-full transition-all duration-500 shadow-glow" style={{ width: `${(co2 / 1200) * 100}%` }} />
               </div>
-              <div className="flex justify-between text-[11px] text-slate-500 dark:text-slate-400 font-mono">
+              <div className="flex justify-between text-[11px] text-slate-600 dark:text-slate-400 font-mono">
                 <span>Target: &lt; 800 PPM</span>
-                <span className="text-teal-600 dark:text-teal-400">NDIR Sensor • OK</span>
+                <span className="text-teal-700 dark:text-teal-400">NDIR Sensor • OK</span>
               </div>
             </div>
 
             {/* Sensor 4: Soil/Substrate Moisture */}
-            <div className="bg-white dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200 dark:border-slate-800 hover:border-emerald-500/50 rounded-3xl p-6 shadow-glass hover:shadow-glow-emerald transition-all duration-300 space-y-4 relative overflow-hidden group">
+            <div className="bg-white dark:bg-slate-900/80 backdrop-blur-xl border border-emerald-950/10 dark:border-slate-800 hover:border-emerald-500/50 rounded-3xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 space-y-4 relative overflow-hidden group">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-mono font-bold uppercase text-slate-600 dark:text-slate-400 flex items-center gap-2">
-                  <Activity className="w-4 h-4 text-emerald-500 dark:text-emerald-400" />
+                <span className="text-xs font-mono font-bold uppercase text-slate-700 dark:text-slate-400 flex items-center gap-2">
+                  <Activity className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
                   {isHindi ? "सबस्ट्रेट मॉइस्चर" : "Substrate Moisture"}
                 </span>
-                <span className="px-2.5 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 border border-emerald-300 dark:border-emerald-500/40 text-emerald-800 dark:text-emerald-400 text-[10px] font-mono font-bold">
+                <span className="px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-950 border border-emerald-300 dark:border-emerald-500/40 dark:text-emerald-400 text-[10px] font-mono font-bold">
                   {isHindi ? "आइडियल" : "IDEAL"}
                 </span>
               </div>
               <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-mono tracking-tight flex items-baseline gap-2">
-                {moisture}<span className="text-xl text-emerald-500 dark:text-emerald-400 font-sans">%</span>
+                {moisture}<span className="text-xl text-emerald-600 dark:text-emerald-400 font-sans">%</span>
               </div>
               <div className="w-full h-2.5 bg-slate-200 dark:bg-slate-950 rounded-full overflow-hidden p-0.5 border border-slate-300 dark:border-slate-800">
                 <div className="h-full bg-gradient-to-r from-emerald-500 to-green-300 rounded-full transition-all duration-500 shadow-glow" style={{ width: `${moisture}%` }} />
               </div>
-              <div className="flex justify-between text-[11px] text-slate-500 dark:text-slate-400 font-mono">
+              <div className="flex justify-between text-[11px] text-slate-600 dark:text-slate-400 font-mono">
                 <span>Target: 65.0-75.0%</span>
-                <span className="text-emerald-600 dark:text-emerald-400">Capacitive • OK</span>
+                <span className="text-emerald-700 dark:text-emerald-400">Capacitive • OK</span>
               </div>
             </div>
           </div>
 
           {/* Right Control Switches Panel */}
-          <div className="lg:col-span-5 bg-white dark:bg-slate-900/90 backdrop-blur-2xl border border-slate-200 dark:border-emerald-500/30 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6 relative overflow-hidden h-full flex flex-col justify-between">
-            <div className="flex items-center justify-between border-b border-slate-800 pb-4">
+          <div className="lg:col-span-5 bg-white dark:bg-slate-900/90 backdrop-blur-2xl border border-emerald-950/10 dark:border-emerald-500/30 rounded-3xl p-6 sm:p-8 shadow-sm space-y-6 relative overflow-hidden h-full flex flex-col justify-between">
+            <div className="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-4">
               <div className="flex items-center gap-2.5">
-                <Zap className="w-5 h-5 text-amber-500 dark:text-amber-400" />
+                <Zap className="w-5 h-5 text-amber-600 dark:text-amber-400" />
                 <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white font-heading">
                   {isHindi ? "ऑटोमेशन एक्ट्यूएटर बोर्ड" : "Automation Actuator Board"}
                 </h3>
               </div>
-              <span className="flex items-center gap-1.5 text-[11px] font-mono font-bold text-emerald-700 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-950/90 px-3 py-1 rounded-full border border-emerald-300 dark:border-emerald-500/40 shadow-glow">
+              <span className="flex items-center gap-1.5 text-[11px] font-mono font-bold text-emerald-800 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-950/90 px-3 py-1 rounded-full border border-emerald-300 dark:border-emerald-500/40 shadow-sm">
                 <Radio className="w-3.5 h-3.5 animate-pulse text-emerald-600 dark:text-emerald-400" /> {isHindi ? "सिमुलेशन" : "SIMULATION"}
               </span>
             </div>
 
             {/* Switch 1: Ultrasonic Fogger */}
-            <div className="flex items-center justify-between p-4 rounded-2xl bg-slate-100 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/40 transition-all">
+            <div className="flex items-center justify-between p-4 rounded-2xl bg-slate-50 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/40 transition-all">
               <div className="space-y-0.5">
                 <div className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
                   <Droplets className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
@@ -208,7 +208,7 @@ export const IotSimulationDashboard: React.FC = () => {
               <button
                 onClick={() => setFoggerActive(!foggerActive)}
                 className={`w-14 h-8 flex items-center rounded-full p-1 transition-colors cursor-pointer ${
-                  foggerActive ? "bg-gradient-to-r from-cyan-500 to-teal-500 justify-end shadow-glow-cyan" : "bg-slate-300 dark:bg-slate-800 justify-start"
+                  foggerActive ? "bg-gradient-to-r from-cyan-600 to-teal-600 justify-end shadow-sm" : "bg-slate-300 dark:bg-slate-800 justify-start"
                 }`}
               >
                 <div className="w-6 h-6 rounded-full bg-white shadow-md transition-transform" />
@@ -216,7 +216,7 @@ export const IotSimulationDashboard: React.FC = () => {
             </div>
 
             {/* Switch 2: Exhaust Air Circulator */}
-            <div className="flex items-center justify-between p-4 rounded-2xl bg-slate-100 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 hover:border-emerald-500/40 transition-all">
+            <div className="flex items-center justify-between p-4 rounded-2xl bg-slate-50 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 hover:border-emerald-500/40 transition-all">
               <div className="space-y-0.5">
                 <div className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
                   <Wind className="w-4 h-4 text-teal-600 dark:text-teal-400" />
@@ -230,7 +230,7 @@ export const IotSimulationDashboard: React.FC = () => {
               <button
                 onClick={() => setFanActive(!fanActive)}
                 className={`w-14 h-8 flex items-center rounded-full p-1 transition-colors cursor-pointer ${
-                  fanActive ? "bg-gradient-to-r from-emerald-500 to-green-500 justify-end shadow-glow-emerald" : "bg-slate-300 dark:bg-slate-800 justify-start"
+                  fanActive ? "bg-gradient-to-r from-emerald-600 to-green-600 justify-end shadow-sm" : "bg-slate-300 dark:bg-slate-800 justify-start"
                 }`}
               >
                 <div className="w-6 h-6 rounded-full bg-white shadow-md transition-transform" />
@@ -238,10 +238,10 @@ export const IotSimulationDashboard: React.FC = () => {
             </div>
 
             {/* Switch 3: Spectrum LED Grow Light */}
-            <div className="flex items-center justify-between p-4 rounded-2xl bg-slate-100 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 hover:border-amber-500/40 transition-all">
+            <div className="flex items-center justify-between p-4 rounded-2xl bg-slate-50 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 hover:border-amber-500/40 transition-all">
               <div className="space-y-0.5">
                 <div className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                  <Sun className="w-4 h-4 text-amber-500 dark:text-amber-400" />
+                  <Sun className="w-4 h-4 text-amber-600 dark:text-amber-400" />
                   {isHindi ? "स्पेक्ट्रम LED ग्रो लाइट" : "Spectrum LED Grow Light"}
                 </div>
                 <p className="text-xs text-slate-600 dark:text-slate-400">
@@ -252,7 +252,7 @@ export const IotSimulationDashboard: React.FC = () => {
               <button
                 onClick={() => setLightActive(!lightActive)}
                 className={`w-14 h-8 flex items-center rounded-full p-1 transition-colors cursor-pointer ${
-                  lightActive ? "bg-gradient-to-r from-amber-500 to-amber-400 justify-end shadow-glow-gold" : "bg-slate-300 dark:bg-slate-800 justify-start"
+                  lightActive ? "bg-gradient-to-r from-amber-500 to-amber-400 justify-end shadow-sm" : "bg-slate-300 dark:bg-slate-800 justify-start"
                 }`}
               >
                 <div className="w-6 h-6 rounded-full bg-white shadow-md transition-transform" />
@@ -260,7 +260,7 @@ export const IotSimulationDashboard: React.FC = () => {
             </div>
 
             {/* Hardware Notice */}
-            <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-950/70 border border-slate-200 dark:border-slate-800 text-xs text-slate-700 dark:text-slate-300 flex items-center gap-3">
+            <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-950/70 border border-slate-200 dark:border-slate-800 text-xs text-slate-700 dark:text-slate-300 flex items-center gap-3">
               <ShieldAlert className="w-5 h-5 text-cyan-600 dark:text-cyan-400 flex-shrink-0" />
               <span>
                 {isHindi

@@ -49,22 +49,22 @@ export default function AboutPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-slate-50 text-slate-900 dark:bg-[#0B0F17] dark:text-slate-100 transition-colors duration-300 overflow-x-hidden">
+    <main className="min-h-screen bg-[#FAFBF7] text-slate-900 dark:bg-[#0B0F17] dark:text-slate-100 transition-colors duration-300 overflow-x-hidden">
       <Navbar />
 
       {/* Hero Header */}
-      <section className="relative pt-24 pb-8 overflow-hidden bg-slate-50 dark:bg-[#0B0F17] border-b border-slate-200 dark:border-slate-800/80">
-        <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 relative z-10 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 dark:text-emerald-400 text-xs font-bold uppercase tracking-wider mb-4">
-            {language === "hi" ? "हमारे बारे में" : "WHO WE ARE"}
+      <section className="relative pt-28 pb-12 overflow-hidden bg-[#FAFBF7] dark:bg-[#0B0F17] border-b border-emerald-950/10 dark:border-slate-800/80">
+        <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 relative z-10 text-center max-w-4xl mx-auto space-y-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-100/90 dark:bg-emerald-950/80 border border-emerald-300/80 dark:border-emerald-500/40 text-emerald-900 dark:text-emerald-300 text-xs font-mono font-bold uppercase tracking-wider">
+            <span>{language === "hi" ? "हमारे बारे में" : "WHO WE ARE"}</span>
           </div>
-          <h1 className="text-xl sm:text-2xl lg:text-3xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight leading-tight">
             {language === "hi" ? "हमारी कहानी, लक्ष्य एवं " : "Our Story, Vision & "}
-            <span className="text-emerald-600 dark:text-emerald-400">
+            <span className="bg-gradient-to-r from-emerald-700 via-teal-600 to-green-700 dark:from-emerald-400 dark:via-teal-300 dark:to-green-300 bg-clip-text text-transparent">
               {language === "hi" ? "दर्शन" : "Philosophy"}
             </span>
           </h1>
-          <p className="text-slate-600 dark:text-slate-300 text-lg max-w-2xl mx-auto mt-4 leading-relaxed">
+          <p className="text-slate-700 dark:text-slate-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-normal">
             {language === "hi"
               ? "टिकाऊ कृषि पद्धतियां, उच्च प्रोटीन पशु चारा और स्मार्ट IoT पर्यावरण निगरानी तकनीक।"
               : "Pioneering sustainable farming methodologies, high-biomass livestock fodder, and smart IoT environmental monitoring."}
@@ -73,31 +73,31 @@ export default function AboutPage() {
       </section>
 
       {/* Vision & Mission Split */}
-      <section className="py-10 bg-slate-50 dark:bg-[#0B0F17] border-b border-slate-200 dark:border-slate-800/80">
+      <section className="py-14 bg-[#FAFBF7] dark:bg-[#0B0F17] border-b border-emerald-950/10 dark:border-slate-800/80">
         <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 space-y-4 shadow-sm">
-              <div className="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div className="bg-white dark:bg-slate-900/90 p-8 rounded-3xl border border-emerald-950/10 dark:border-slate-800 space-y-4 shadow-sm hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 rounded-2xl bg-emerald-100 dark:bg-emerald-500/20 text-emerald-800 dark:text-emerald-400 flex items-center justify-center font-bold">
                 <Target className="w-6 h-6" />
               </div>
-              <h2 className="text-2xl font-bold font-heading text-slate-900 dark:text-white">
+              <h2 className="text-xl sm:text-2xl font-bold font-heading text-slate-900 dark:text-white">
                 {language === "hi" ? "हमारा लक्ष्य (Mission)" : "Our Mission"}
               </h2>
-              <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+              <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed font-normal">
                 {language === "hi"
                   ? "किसानों और डेयरी फार्मों को उच्च गुणवत्ता वाले जैविक उत्पाद, उच्च प्रोटीन पशु आहार और सटीक IoT तकनीक प्रदान करना जिससे उत्पादकता बढ़े और पर्यावरण सुरक्षित रहे।"
                   : "To equip farmers, dairies, and agricultural enterprises with high-efficiency organic solutions, high-protein livestock feeds, and precision micro-climate technology."}
               </p>
             </div>
 
-            <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 space-y-4 shadow-sm">
-              <div className="w-12 h-12 rounded-2xl bg-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center font-bold">
+            <div className="bg-white dark:bg-slate-900/90 p-8 rounded-3xl border border-emerald-950/10 dark:border-slate-800 space-y-4 shadow-sm hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 rounded-2xl bg-amber-100 dark:bg-amber-500/20 text-amber-800 dark:text-amber-400 flex items-center justify-center font-bold">
                 <Eye className="w-6 h-6" />
               </div>
-              <h2 className="text-2xl font-bold font-heading text-slate-900 dark:text-white">
+              <h2 className="text-xl sm:text-2xl font-bold font-heading text-slate-900 dark:text-white">
                 {language === "hi" ? "हमारी दृष्टि (Vision)" : "Our Vision"}
               </h2>
-              <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+              <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed font-normal">
                 {language === "hi"
                   ? "रसायन-मुक्त कृषि की दिशा में क्रांति लाना जहाँ जैविक विज्ञान और स्मार्ट तकनीक मिलकर खाद्य सुरक्षा और पारिस्थितिक समृद्धि सुनिश्चित करें।"
                   : "To lead the transformation toward intelligent, zero-chemical agriculture where micro-controllers and biological science work seamlessly together."}

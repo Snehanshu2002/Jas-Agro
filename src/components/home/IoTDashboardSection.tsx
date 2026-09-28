@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { motion, useReducedMotion } from "framer-motion";
 import {
   Cpu,
   Radio,
@@ -20,6 +21,7 @@ import { useLanguage } from "@/context/LanguageContext";
 
 export const IoTDashboardSection: React.FC = () => {
   const { language, t } = useLanguage();
+  const shouldReduceMotion = useReducedMotion();
   const [sensors, setSensors] = useState({
     temp: 24.5,
     humidity: 86,
@@ -86,13 +88,19 @@ export const IoTDashboardSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-6 bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white relative overflow-hidden transition-colors duration-300">
+    <section className="py-12 sm:py-16 lg:py-20 bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white relative overflow-hidden transition-colors duration-300">
       <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <motion.div
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+          className="text-center max-w-3xl mx-auto mb-16 space-y-3"
+        >
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-600 dark:text-cyan-400 text-xs font-bold uppercase tracking-widest">
             <Radio className="w-3.5 h-3.5 animate-pulse" /> {language === "hi" ? "स्मार्ट एग्री-टेक IoT ऑटोमेशन" : "PRECISION AGRI-TECH TELEMETRY"}
           </div>
-          <h2 className="text-lg sm:text-xl lg:text-2xl font-extrabold font-heading text-slate-900 dark:text-white">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight leading-tight">
             {language === "hi" ? "जहाँ कृषि और " : "Where Agriculture Meets "}
             <span className="text-cyan-600 dark:text-cyan-400">
               {language === "hi" ? "तकनीक मिलती है" : "Intelligence"}
@@ -103,10 +111,16 @@ export const IoTDashboardSection: React.FC = () => {
               ? "JAS एग्रो फ़ार्मों को सेंसर नेटवर्क से जोड़ता है। तापमान और नमी के सटीक आँकड़ों से स्वचालित सिंचाई नियंत्रण।"
               : "JAS Agro connects physical crops to real-time micro-controller networks. Sensor data enables automated misting, fogging, and irrigation."}
           </p>
-        </div>
+        </motion.div>
 
         {/* Live Telemetry Dashboard */}
-        <div className="mb-16 bg-white dark:bg-slate-900 border border-cyan-500/30 rounded-3xl p-6 sm:p-10 shadow-xl space-y-8 text-slate-900 dark:text-white transition-colors duration-300">
+        <motion.div
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          className="mb-16 bg-white dark:bg-slate-900 border border-cyan-500/30 rounded-3xl p-6 sm:p-10 shadow-xl space-y-8 text-slate-900 dark:text-white transition-colors duration-300"
+        >
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-slate-200 dark:border-white/10 pb-6">
             <div className="flex items-center gap-3">
               <div className="p-3 rounded-2xl bg-cyan-500/10 dark:bg-cyan-500/20 text-cyan-600 dark:text-cyan-400 border border-cyan-500/30 dark:border-cyan-500/40">
@@ -165,10 +179,16 @@ export const IoTDashboardSection: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Pipeline Diagram */}
-        <div className="space-y-6">
+        <motion.div
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+          className="space-y-6"
+        >
           <h3 className="text-center font-heading font-bold text-xl text-slate-900 dark:text-white">
             {language === "hi" ? "IoT आर्किटेक्चर एवं डेटा प्रवाह" : "Architecture Data Pipeline"}
           </h3>
@@ -182,7 +202,7 @@ export const IoTDashboardSection: React.FC = () => {
               return (
                 <div
                   key={idx}
-                  className="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-cyan-500/50 transition-all text-center shadow-sm"
+                  className="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-cyan-500/50 transition-all duration-300 text-center shadow-sm hover:-translate-y-1"
                 >
                   <div className="w-8 h-8 rounded-full bg-cyan-500/20 border border-cyan-500 text-cyan-600 dark:text-cyan-400 font-bold font-mono text-xs flex items-center justify-center mx-auto mb-3">
                     {step.step}
@@ -196,7 +216,7 @@ export const IoTDashboardSection: React.FC = () => {
               );
             })}
           </div>
-        </div>
+        </motion.div>
 
         <div className="mt-12 text-center">
           <Link

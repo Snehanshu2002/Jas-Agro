@@ -16,13 +16,27 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [theme, setThemeState] = useState<ThemeType>("light");
 
+  const applyThemeClass = (targetTheme: ThemeType) => {
+    if (typeof document === "undefined") return;
+    const root = document.documentElement;
+    root.classList.remove("theme-emerald", "theme-cyan", "theme-light", "theme-harvest", "dark");
+    root.classList.add(`theme-${targetTheme}`);
+    if (targetTheme !== "light") {
+      root.classList.add("dark");
+    }
+  };
+
   useEffect(() => {
-    const savedTheme = localStorage.getItem("jas_agro_theme") as ThemeType;
-    if (savedTheme && ["light", "emerald", "cyan", "harvest"].includes(savedTheme)) {
-      setThemeState(savedTheme);
-      applyThemeClass(savedTheme);
-    } else {
-      // Default theme is Fresh Clean White Light Mode!
+    try {
+      const savedTheme = localStorage.getItem("jas_agro_theme") as ThemeType;
+      if (savedTheme && ["light", "emerald", "cyan", "harvest"].includes(savedTheme)) {
+        setThemeState(savedTheme);
+        applyThemeClass(savedTheme);
+      } else {
+        setThemeState("light");
+        applyThemeClass("light");
+      }
+    } catch {
       setThemeState("light");
       applyThemeClass("light");
     }
@@ -30,7 +44,11 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
   const setTheme = (newTheme: ThemeType) => {
     setThemeState(newTheme);
-    localStorage.setItem("jas_agro_theme", newTheme);
+    try {
+      localStorage.setItem("jas_agro_theme", newTheme);
+    } catch {
+      // safe fallback
+    }
     applyThemeClass(newTheme);
   };
 
@@ -39,15 +57,6 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       setTheme("emerald");
     } else {
       setTheme("light");
-    }
-  };
-
-  const applyThemeClass = (targetTheme: ThemeType) => {
-    const root = document.documentElement;
-    root.classList.remove("theme-emerald", "theme-cyan", "theme-light", "theme-harvest", "dark");
-    root.classList.add(`theme-${targetTheme}`);
-    if (targetTheme !== "light") {
-      root.classList.add("dark");
     }
   };
 
@@ -67,4 +76,3 @@ export const useTheme = () => {
   }
   return context;
 };
-

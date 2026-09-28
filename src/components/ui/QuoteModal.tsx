@@ -1,9 +1,10 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { X, CheckCircle2, Send, ShieldCheck, Sparkles } from "lucide-react";
+import { X, CheckCircle2, Send, ShieldCheck, Sparkles, MessageCircle, AlertCircle } from "lucide-react";
 import confetti from "canvas-confetti";
 import { useLanguage } from "@/context/LanguageContext";
+import { submitEnquiry } from "@/lib/api/enquiryService";
 
 interface QuoteModalProps {
   isOpen: boolean;
@@ -25,10 +26,16 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
     quantity: "",
     location: "",
     message: "",
+    botField: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [submittedData, setSubmittedData] = useState<{
+    referenceId?: string;
+    whatsappUrl?: string;
+  }>({});
 
   useEffect(() => {
     if (defaultProduct) {
@@ -38,24 +45,47 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setErrorMessage(null);
     setIsSubmitting(true);
 
-    setTimeout(() => {
-      setIsSubmitting(false);
+    const res = await submitEnquiry({
+      name: formData.name,
+      phone: formData.phone,
+      email: formData.email,
+      product: formData.product,
+      quantity: formData.quantity,
+      location: formData.location,
+      message: formData.message,
+      source: "Quote Modal",
+      botField: formData.botField,
+    });
+
+    setIsSubmitting(false);
+
+    if (res.success) {
       setSubmitted(true);
+      if (res.data) {
+        setSubmittedData({
+          referenceId: res.data.referenceId,
+          whatsappUrl: res.data.whatsappUrl,
+        });
+      }
       confetti({
         particleCount: 80,
         spread: 70,
         origin: { y: 0.6 },
         colors: ["#10B981", "#F59E0B", "#22C55E"],
       });
-    }, 1200);
+    } else {
+      setErrorMessage(res.error || "Failed to submit enquiry. Please try again.");
+    }
   };
 
   const handleReset = () => {
     setSubmitted(false);
+    setErrorMessage(null);
     setFormData({
       name: "",
       phone: "",
@@ -64,6 +94,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
       quantity: "",
       location: "",
       message: "",
+      botField: "",
     });
     onClose();
   };
@@ -82,21 +113,39 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
         </button>
 
         {submitted ? (
-          <div className="py-12 text-center space-y-5">
-            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-emerald-500/20 border border-emerald-500 text-emerald-600 dark:text-emerald-400 animate-bounce">
-              <CheckCircle2 className="w-10 h-10" />
+          <div className="py-8 text-center space-y-5">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500 text-emerald-600 dark:text-emerald-400 animate-bounce">
+              <CheckCircle2 className="w-8 h-8" />
             </div>
             <h3 className="text-2xl font-bold font-heading text-emerald-600 dark:text-emerald-400">
               {t("quoteTitle")}
             </h3>
             <p className="max-w-md mx-auto text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
-              Thank you, <span className="font-semibold text-slate-900 dark:text-white">{formData.name}</span>. Our agricultural specialist team will contact you soon regarding{" "}
-              <span className="text-amber-600 dark:text-amber-400 font-medium">{formData.product}</span>.
+              Thank you, <span className="font-semibold text-slate-900 dark:text-white">{formData.name}</span>. Your commercial inquiry for{" "}
+              <span className="text-amber-600 dark:text-amber-400 font-medium">{formData.product}</span> has been logged with reference{" "}
+              <span className="font-mono font-bold text-emerald-600 dark:text-emerald-400">
+                {submittedData.referenceId || "JAS-AGRO"}
+              </span>.
             </p>
-            <div className="pt-4">
+
+            {submittedData.whatsappUrl && (
+              <div className="pt-2">
+                <a
+                  href={submittedData.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-md transition-all"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  <span>Escalate on WhatsApp Now</span>
+                </a>
+              </div>
+            )}
+
+            <div className="pt-2">
               <button
                 onClick={handleReset}
-                className="px-6 py-2.5 rounded-xl bg-emerald-600 dark:bg-emerald-500 text-white dark:text-slate-950 font-semibold hover:bg-emerald-700 dark:hover:bg-emerald-400 transition-all shadow-md"
+                className="px-6 py-2.5 rounded-xl bg-slate-200 hover:bg-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-900 dark:text-white font-semibold transition-all text-xs"
               >
                 {t("close")}
               </button>
@@ -116,7 +165,25 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
               </p>
             </div>
 
+            {errorMessage && (
+              <div className="mb-4 p-3 rounded-xl bg-rose-50 dark:bg-rose-950/40 border border-rose-300 dark:border-rose-800 text-rose-700 dark:text-rose-300 text-xs flex items-center gap-2">
+                <AlertCircle className="w-4 h-4 flex-shrink-0" />
+                <span>{errorMessage}</span>
+              </div>
+            )}
+
             <form onSubmit={handleSubmit} className="space-y-4">
+              {/* Invisible Honeypot */}
+              <input
+                type="text"
+                name="botField"
+                value={formData.botField}
+                onChange={(e) => setFormData({ ...formData, botField: e.target.value })}
+                className="hidden"
+                tabIndex={-1}
+                autoComplete="off"
+              />
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-medium text-slate-700 dark:text-slate-300 mb-1">
@@ -188,7 +255,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                 </label>
                 <textarea
                   rows={3}
-                  placeholder="Tell us about your current farm setup..."
+                  placeholder="Tell us about your current farm setup or requirement..."
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 text-sm focus:outline-none focus:border-emerald-500 resize-none"
@@ -204,13 +271,13 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-600 dark:bg-gradient-to-r dark:from-emerald-500 dark:to-emerald-600 text-white dark:text-slate-950 font-semibold hover:bg-emerald-700 dark:hover:bg-emerald-400 transition-all disabled:opacity-50 text-sm shadow-md"
+                  className="btn-reveal-primary inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-600 dark:bg-emerald-500 text-white font-semibold transition-all disabled:opacity-50 text-sm shadow-md cursor-pointer"
                 >
                   {isSubmitting ? (
-                    <>Processing...</>
+                    <span>Processing...</span>
                   ) : (
                     <>
-                      {t("sendRequest")} <Send className="w-4 h-4" />
+                      <span>{t("sendRequest")}</span> <Send className="w-4 h-4" />
                     </>
                   )}
                 </button>
@@ -222,3 +289,4 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
     </div>
   );
 };
+

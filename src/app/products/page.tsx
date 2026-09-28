@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function ProductsPage() {
   return (
-    <main className="min-h-screen bg-slate-50 text-slate-900 dark:bg-[#0B0F17] dark:text-slate-100 transition-colors duration-300 overflow-x-hidden">
+    <main className="min-h-screen bg-[#FAFBF7] text-slate-900 dark:bg-[#0B0F17] dark:text-slate-100 transition-colors duration-300 overflow-x-hidden">
       <Navbar />
       <div className="pt-20">
         <ProductExplorer />

@@ -51,26 +51,26 @@ export const CaseStudiesShowcase: React.FC = () => {
   ];
 
   return (
-    <section className="py-6 bg-slate-50 dark:bg-[#0B0F17] text-slate-900 dark:text-white relative overflow-hidden border-b border-slate-200 dark:border-slate-800/80 transition-colors duration-300">
+    <section className="py-6 bg-[#FAFBF7] dark:bg-[#0B0F17] text-slate-900 dark:text-white relative overflow-hidden border-b border-emerald-950/10 dark:border-slate-800/80 transition-colors duration-300">
       {/* Background Glow */}
       <div className="absolute top-1/3 right-10 w-96 h-96 bg-emerald-500/10 blur-[150px] rounded-full pointer-events-none" />
 
       <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100 dark:bg-emerald-950/90 border border-emerald-300 dark:border-emerald-500/50 text-emerald-800 dark:text-emerald-300 text-xs font-mono font-bold uppercase tracking-wider shadow-glow">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100/90 dark:bg-emerald-950/90 border border-emerald-300/80 dark:border-emerald-500/50 text-emerald-900 dark:text-emerald-300 text-xs font-mono font-bold uppercase tracking-wider shadow-sm">
             <Building2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
             <span>{isHindi ? "रियल फार्म प्रोजेक्ट्स" : "PROJECT SHOWCASE"}</span>
           </div>
 
           <h2 className="text-lg sm:text-xl lg:text-2xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight leading-none">
             {isHindi ? "रियल वर्ल्ड " : "BUILT FOR THE "}
-            <span className="bg-gradient-to-r from-emerald-600 via-teal-500 to-green-600 dark:from-emerald-400 dark:via-teal-300 dark:to-green-300 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-emerald-700 via-teal-600 to-green-700 dark:from-emerald-400 dark:via-teal-300 dark:to-green-300 bg-clip-text text-transparent">
               {isHindi ? "के लिए सक्सेस स्टोरीज" : "REAL WORLD."}
             </span>
           </h2>
 
-          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 font-normal leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-700 dark:text-slate-300 font-normal leading-relaxed">
             {isHindi
               ? "JAS एग्रो स्मार्ट टेक और ऑर्गेनिक मॉडल्स द्वारा सफल फार्म प्रोजेक्ट्स के रियल रिजल्ट्स।"
               : "Explore how JAS Agro smart farming models and precision technology deliver tangible farm outcomes."}
@@ -87,7 +87,7 @@ export const CaseStudiesShowcase: React.FC = () => {
             return (
               <div
                 key={item.id}
-                className="bg-white dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200 dark:border-slate-800 hover:border-emerald-500/50 rounded-3xl overflow-hidden transition-all duration-500 flex flex-col justify-between group shadow-glass hover:shadow-glow-emerald hover:-translate-y-1.5"
+                className="bg-white dark:bg-slate-900/80 backdrop-blur-xl border border-emerald-950/10 dark:border-slate-800 hover:border-emerald-500/50 rounded-3xl overflow-hidden transition-all duration-500 flex flex-col justify-between group shadow-sm hover:shadow-xl hover:-translate-y-1.5"
               >
                 <div>
                   {/* Image Container */}
@@ -111,11 +111,11 @@ export const CaseStudiesShowcase: React.FC = () => {
 
                   {/* Body Info */}
                   <div className="p-6 space-y-4">
-                    <h3 className="text-xl font-extrabold font-heading text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-300 transition-colors">
+                    <h3 className="text-xl font-extrabold font-heading text-slate-900 dark:text-white group-hover:text-emerald-700 dark:group-hover:text-emerald-300 transition-colors">
                       {title}
                     </h3>
 
-                    <div className="space-y-2 text-xs font-mono text-slate-600 dark:text-slate-400">
+                    <div className="space-y-2 text-xs font-mono text-slate-700 dark:text-slate-400">
                       <div className="flex items-center gap-2">
                         <Cpu className="w-4 h-4 text-cyan-600 dark:text-cyan-400 flex-shrink-0" />
                         <span>Solution: {item.solution}</span>
@@ -126,7 +126,7 @@ export const CaseStudiesShowcase: React.FC = () => {
                       </div>
                     </div>
 
-                    <div className="p-3.5 rounded-2xl bg-emerald-50 dark:bg-slate-950/80 border border-emerald-200 dark:border-emerald-500/30 text-xs text-emerald-900 dark:text-emerald-200 font-medium leading-relaxed">
+                    <div className="p-3.5 rounded-2xl bg-emerald-50/90 dark:bg-slate-950/80 border border-emerald-200 dark:border-emerald-500/30 text-xs text-emerald-950 dark:text-emerald-200 font-medium leading-relaxed">
                       <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 inline mr-1.5" />
                       {outcome}
                     </div>

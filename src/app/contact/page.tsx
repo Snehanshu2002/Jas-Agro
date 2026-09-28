@@ -4,9 +4,10 @@ import React, { useState } from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { COMPANY_INFO } from "@/data/company";
-import { Mail, Phone, MapPin, Clock, Send, CheckCircle2, ExternalLink } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Send, CheckCircle2, ExternalLink, MessageCircle, AlertCircle } from "lucide-react";
 import confetti from "canvas-confetti";
 import { useLanguage } from "@/context/LanguageContext";
+import { submitEnquiry } from "@/lib/api/enquiryService";
 
 export default function ContactPage() {
   const { language, t } = useLanguage();
@@ -17,42 +18,70 @@ export default function ContactPage() {
     company: "",
     interestedIn: "Oyster Mushroom",
     message: "",
+    botField: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [submittedData, setSubmittedData] = useState<{
+    referenceId?: string;
+    whatsappUrl?: string;
+  }>({});
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setErrorMessage(null);
     setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
+
+    const res = await submitEnquiry({
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      company: formData.company,
+      product: formData.interestedIn,
+      message: formData.message,
+      source: "Contact Page",
+      botField: formData.botField,
+    });
+
+    setIsSubmitting(false);
+
+    if (res.success) {
       setSubmitted(true);
+      if (res.data) {
+        setSubmittedData({
+          referenceId: res.data.referenceId,
+          whatsappUrl: res.data.whatsappUrl,
+        });
+      }
       confetti({
         particleCount: 70,
         spread: 60,
         origin: { y: 0.6 },
         colors: ["#10B981", "#F59E0B", "#22C55E"],
       });
-    }, 1200);
+    } else {
+      setErrorMessage(res.error || "Failed to send enquiry. Please try again.");
+    }
   };
 
   return (
-    <main className="min-h-screen bg-slate-50 text-slate-900 dark:bg-[#0B0F17] dark:text-slate-100 transition-colors duration-300 overflow-x-hidden">
+    <main className="min-h-screen bg-[#FAFBF7] text-slate-900 dark:bg-[#0B0F17] dark:text-slate-100 transition-colors duration-300 overflow-x-hidden">
       <Navbar />
 
-      <section className="relative pt-24 pb-8 overflow-hidden bg-slate-50 dark:bg-[#0B0F17] border-b border-slate-200 dark:border-slate-800/80">
-        <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 text-center relative z-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 dark:text-emerald-400 text-xs font-bold uppercase tracking-wider mb-4">
-            {language === "hi" ? "GET IN TOUCH" : "GET IN TOUCH"}
+      <section className="relative pt-28 pb-12 overflow-hidden bg-[#FAFBF7] dark:bg-[#0B0F17] border-b border-emerald-950/10 dark:border-slate-800/80">
+        <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 text-center relative z-10 max-w-4xl mx-auto space-y-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-100/90 dark:bg-emerald-950/80 border border-emerald-300/80 dark:border-emerald-500/40 text-emerald-900 dark:text-emerald-300 text-xs font-mono font-bold uppercase tracking-wider">
+            <span>{language === "hi" ? "GET IN TOUCH" : "GET IN TOUCH"}</span>
           </div>
-          <h1 className="text-xl sm:text-2xl lg:text-3xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight leading-tight">
             {language === "hi" ? "JAS Agro से " : "Contact "}
-            <span className="text-emerald-600 dark:text-emerald-400">
+            <span className="bg-gradient-to-r from-emerald-700 via-teal-600 to-green-700 dark:from-emerald-400 dark:via-teal-300 dark:to-green-300 bg-clip-text text-transparent">
               {language === "hi" ? "Contact करें" : "JAS Agro"}
             </span>
           </h1>
-          <p className="text-slate-600 dark:text-slate-300 text-lg max-w-2xl mx-auto mt-4 leading-relaxed">
+          <p className="text-slate-700 dark:text-slate-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-normal">
             {language === "hi"
               ? "Oyster Mushroom farming, Azolla fodder या IoT setup के बारे में कोई भी सवाल पूछें। हमारे Experts हमेशा आपकी मदद के लिए तैयार हैं।"
               : "Have questions about Oyster Mushroom setup, Azolla fodder ponds, or IoT telemetry? Our agronomists are here to assist."}
@@ -60,7 +89,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="py-10 bg-slate-50 dark:bg-[#0B0F17]">
+      <section className="py-14 bg-[#FAFBF7] dark:bg-[#0B0F17]">
         <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             {/* Contact Details */}
@@ -153,14 +182,37 @@ export default function ContactPage() {
                       {language === "hi" ? "अनुरोध प्राप्त हुआ!" : "Enquiry Received!"}
                     </h3>
                     <p className="text-slate-600 dark:text-slate-300 text-sm max-w-md mx-auto">
-                      Thank you <span className="text-emerald-500 font-semibold">{formData.name}</span>. Our specialist will respond within 24 hours.
+                      Thank you <span className="text-emerald-500 font-semibold">{formData.name}</span>. Your enquiry has been received under reference{" "}
+                      <span className="font-mono font-bold text-emerald-600 dark:text-emerald-400">
+                        {submittedData.referenceId || "JAS-AGRO"}
+                      </span>. Our specialist will respond within 24 hours.
                     </p>
-                    <button
-                      onClick={() => setSubmitted(false)}
-                      className="px-6 py-2.5 rounded-xl bg-emerald-600 text-white font-bold text-xs"
-                    >
-                      {t("close")}
-                    </button>
+
+                    {submittedData.whatsappUrl && (
+                      <div className="pt-2">
+                        <a
+                          href={submittedData.whatsappUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-md transition-all"
+                        >
+                          <MessageCircle className="w-4 h-4" />
+                          <span>Continue Discussion on WhatsApp</span>
+                        </a>
+                      </div>
+                    )}
+
+                    <div className="pt-2">
+                      <button
+                        onClick={() => {
+                          setSubmitted(false);
+                          setErrorMessage(null);
+                        }}
+                        className="px-6 py-2.5 rounded-xl bg-slate-200 hover:bg-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-900 dark:text-white font-bold text-xs"
+                      >
+                        {t("close")}
+                      </button>
+                    </div>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-4">
@@ -172,6 +224,24 @@ export default function ContactPage() {
                         {language === "hi" ? "तकनीकी सहायता या उत्पाद की जानकारी के लिए नीचे फ़ॉर्म भरें।" : "Fill out the form below for technical assistance or product guidance."}
                       </p>
                     </div>
+
+                    {errorMessage && (
+                      <div className="p-3 rounded-xl bg-rose-50 dark:bg-rose-950/40 border border-rose-300 dark:border-rose-800 text-rose-700 dark:text-rose-300 text-xs flex items-center gap-2">
+                        <AlertCircle className="w-4 h-4 flex-shrink-0" />
+                        <span>{errorMessage}</span>
+                      </div>
+                    )}
+
+                    {/* Invisible Honeypot */}
+                    <input
+                      type="text"
+                      name="botField"
+                      value={formData.botField}
+                      onChange={(e) => setFormData({ ...formData, botField: e.target.value })}
+                      className="hidden"
+                      tabIndex={-1}
+                      autoComplete="off"
+                    />
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
@@ -258,9 +328,15 @@ export default function ContactPage() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full py-3.5 rounded-xl bg-emerald-600 dark:bg-emerald-500 text-white dark:text-slate-950 font-bold text-sm hover:bg-emerald-700 transition-all flex items-center justify-center gap-2 shadow-md"
+                      className="btn-reveal-primary w-full py-3.5 rounded-xl bg-emerald-600 dark:bg-emerald-500 text-white font-bold text-sm transition-all flex items-center justify-center gap-2 shadow-md cursor-pointer"
                     >
-                      {isSubmitting ? "Sending..." : <>{t("submit")} <Send className="w-4 h-4" /></>}
+                      {isSubmitting ? (
+                        <span>Sending...</span>
+                      ) : (
+                        <>
+                          <span>{t("submit")}</span> <Send className="w-4 h-4" />
+                        </>
+                      )}
                     </button>
                   </form>
                 )}

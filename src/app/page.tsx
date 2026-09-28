@@ -3,22 +3,13 @@ import { Metadata } from "next";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/home/HeroSection";
-import { TrustStatsSection } from "@/components/home/TrustStatsSection";
 import { AboutSection } from "@/components/home/AboutSection";
-import { FarmPipeline } from "@/components/home/FarmPipeline";
-import { SolutionsSection } from "@/components/home/SolutionsSection";
 import { ProductExplorer } from "@/components/home/ProductExplorer";
-import { SmartFarmEstimator } from "@/components/home/SmartFarmEstimator";
-import { RoiCalculatorSection } from "@/components/home/RoiCalculatorSection";
-import { MushroomFeature } from "@/components/home/MushroomFeature";
-import { IotSimulationDashboard } from "@/components/home/IotSimulationDashboard";
-import { BeforeAfterTransformation } from "@/components/home/BeforeAfterTransformation";
+import { SolutionsSection } from "@/components/home/SolutionsSection";
+import { IoTDashboardSection } from "@/components/home/IoTDashboardSection";
 import { SustainabilitySection } from "@/components/home/SustainabilitySection";
-import { ImpactSection } from "@/components/home/ImpactSection";
-import { CaseStudiesShowcase } from "@/components/home/CaseStudiesShowcase";
-import { WhyChooseUs } from "@/components/home/WhyChooseUs";
+import { FacilitiesSection } from "@/components/home/FacilitiesSection";
 import { InsightsSection } from "@/components/home/InsightsSection";
-import { TestimonialSection } from "@/components/home/TestimonialSection";
 import { CtaSection } from "@/components/home/CtaSection";
 import { AgriAiAssistant } from "@/components/ui/AgriAiAssistant";
 
@@ -40,28 +31,43 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-slate-50 dark:bg-[#0B0F17] text-slate-900 dark:text-slate-100 selection:bg-emerald-500 selection:text-white transition-colors duration-300 overflow-x-hidden">
+    <main className="min-h-screen bg-[#FAFBF7] dark:bg-[#0B0F17] text-slate-900 dark:text-slate-100 selection:bg-emerald-500 selection:text-white transition-colors duration-300">
+      {/* 1. Navbar */}
       <Navbar />
+
+      {/* 2. Hero */}
       <HeroSection />
-      <TrustStatsSection />
+
+      {/* 3. JAS Agro Introduction */}
       <AboutSection />
-      <FarmPipeline />
-      <SolutionsSection />
+
+      {/* 4. Core Products */}
       <ProductExplorer />
-      <SmartFarmEstimator />
-      <RoiCalculatorSection />
-      <MushroomFeature />
-      <IotSimulationDashboard />
-      <BeforeAfterTransformation />
+
+      {/* 5. Agricultural Solutions */}
+      <SolutionsSection />
+
+      {/* 6. Smart Farming / IoT */}
+      <IoTDashboardSection />
+
+      {/* 7. Sustainable Agriculture */}
       <SustainabilitySection />
-      <ImpactSection />
-      <CaseStudiesShowcase />
-      <WhyChooseUs />
+
+      {/* 8. Facilities / Operations */}
+      <FacilitiesSection />
+
+      {/* 9. Insights */}
       <InsightsSection />
-      <TestimonialSection />
+
+      {/* 10. Final CTA */}
       <CtaSection />
+
+      {/* 11. Footer */}
       <Footer />
+
+      {/* Ambient Assistant */}
       <AgriAiAssistant />
     </main>
   );
 }
+

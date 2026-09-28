@@ -1,11 +1,13 @@
 "use client";
 
 import React from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import { Leaf, Droplets, Recycle, Sun, ShieldCheck } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 export const SustainabilitySection: React.FC = () => {
   const { language } = useLanguage();
+  const shouldReduceMotion = useReducedMotion();
   const isHindi = language === "hi";
 
   const ecoPillars = [
@@ -40,11 +42,17 @@ export const SustainabilitySection: React.FC = () => {
   ];
 
   return (
-    <section className="py-6 bg-slate-50 dark:bg-[#0B0F17] text-slate-900 dark:text-white relative overflow-hidden border-b border-slate-200 dark:border-slate-800/80 transition-colors duration-300">
+    <section className="py-12 sm:py-16 lg:py-20 bg-[#FAFBF7] dark:bg-[#0B0F17] text-slate-900 dark:text-white relative overflow-hidden border-b border-emerald-950/10 dark:border-slate-800/80 transition-colors duration-300">
       <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 relative z-10">
         
         {/* Full-Bleed Editorial Visual Box */}
-        <div className="relative rounded-3xl overflow-hidden border border-emerald-500/30 shadow-glass">
+        <motion.div
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          className="relative rounded-3xl overflow-hidden border border-emerald-500/30 shadow-glass"
+        >
           <img
             src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2000&q=80"
             alt="JAS Agro Sustainable Agriculture & Bio-Farming"
@@ -61,7 +69,7 @@ export const SustainabilitySection: React.FC = () => {
                 <span>{isHindi ? "सस्टेनेबल एग्रीटेक" : "SUSTAINABLE AGTECH"}</span>
               </div>
 
-              <h2 className="text-lg sm:text-xl lg:text-2xl font-extrabold font-heading text-white tracking-tight leading-none drop-shadow-lg">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-white tracking-tight leading-tight drop-shadow-lg">
                 {isHindi ? "ज़्यादा प्रोडक्शन। " : "GROWING MORE. "}
                 <br className="hidden sm:inline" />
                 <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-green-300 bg-clip-text text-transparent">
@@ -95,7 +103,7 @@ export const SustainabilitySection: React.FC = () => {
               })}
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

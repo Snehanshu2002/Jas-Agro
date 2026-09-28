@@ -2,11 +2,13 @@
 
 import React from "react";
 import Link from "next/link";
+import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, Leaf, Cpu, HeartHandshake, Zap } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 export const AboutSection: React.FC = () => {
   const { language, t } = useLanguage();
+  const shouldReduceMotion = useReducedMotion();
   const isHindi = language === "hi";
 
   const principles = [
@@ -41,7 +43,7 @@ export const AboutSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-3 bg-slate-50 dark:bg-[#0B0F17] text-slate-900 dark:text-white relative overflow-hidden border-b border-slate-200 dark:border-slate-800/80 transition-colors duration-300">
+    <section className="py-12 sm:py-16 lg:py-20 bg-[#FAFBF7] dark:bg-[#0B0F17] text-slate-900 dark:text-white relative overflow-hidden border-b border-emerald-950/10 dark:border-slate-800/80 transition-colors duration-300">
       {/* Background Ambient Glow */}
       <div className="absolute top-1/2 left-10 w-96 h-96 bg-emerald-500/10 blur-[150px] rounded-full pointer-events-none" />
 
@@ -49,12 +51,18 @@ export const AboutSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           
           {/* Left Column: Full-Height Large Image Visual Showcase */}
-          <div className="lg:col-span-6 relative">
-            <div className="relative rounded-3xl overflow-hidden border border-emerald-500/30 shadow-glass group">
+          <motion.div
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-6 relative"
+          >
+            <div className="relative rounded-3xl overflow-hidden border border-emerald-600/30 shadow-glass group">
               <img
                 src="https://www.jasagro.com/assets/img/blog/Imp-Agri.jpg"
                 alt="JAS Agro Biological & Smart Farming"
-                className="w-full h-[340px] object-cover filter brightness-95 group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-[340px] object-cover filter brightness-95 group-hover:scale-[1.02] transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-80 pointer-events-none" />
 
@@ -70,24 +78,30 @@ export const AboutSection: React.FC = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Column: Editorial Headline & Concise Principles List */}
-          <div className="lg:col-span-6 space-y-8 text-left">
+          <motion.div
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.5, delay: shouldReduceMotion ? 0 : 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-6 space-y-8 text-left"
+          >
             <div className="space-y-4">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100 dark:bg-emerald-950/90 border border-emerald-300 dark:border-emerald-500/50 text-emerald-800 dark:text-emerald-300 text-xs font-mono font-bold uppercase tracking-widest">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100/90 dark:bg-emerald-950/90 border border-emerald-300/80 dark:border-emerald-500/50 text-emerald-900 dark:text-emerald-300 text-xs font-mono font-bold uppercase tracking-widest">
                 <span>{isHindi ? "अबाउट अस" : "WHO WE ARE"}</span>
               </div>
 
-              <h2 className="text-lg sm:text-xl lg:text-2xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight leading-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight leading-tight">
                 {isHindi ? "फार्मिंग, " : "AGRICULTURE, "}
                 <br className="hidden sm:inline" />
-                <span className="bg-gradient-to-r from-emerald-600 via-teal-500 to-green-600 dark:from-emerald-400 dark:via-teal-300 dark:to-green-300 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-emerald-700 via-teal-600 to-green-700 dark:from-emerald-400 dark:via-teal-300 dark:to-green-300 bg-clip-text text-transparent">
                   {isHindi ? "रीइमेजिन्ड फॉर टुमॉरो।" : "REIMAGINED FOR TOMORROW."}
                 </span>
               </h2>
 
-              <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base font-normal leading-relaxed">
+              <p className="text-slate-700 dark:text-slate-300 text-sm sm:text-base font-normal leading-relaxed">
                 {isHindi
                   ? "JAS Agro का मानना है कि फार्मिंग का फ्यूचर नेचुरल ऑर्गेनिक प्रोसेस और डिजिटल IoT टेक्नोलॉजी के सही कॉम्बिनेशन में है।"
                   : "At JAS Agro, we believe the future of farming lies at the intersection of natural biological processes and precision digital telemetry."}
@@ -103,11 +117,11 @@ export const AboutSection: React.FC = () => {
 
                 return (
                   <div key={idx} className="space-y-1.5">
-                    <div className="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-extrabold font-heading text-base">
-                      <IconComp className="w-4 h-4 text-emerald-500 flex-shrink-0" />
+                    <div className="flex items-center gap-2 text-emerald-800 dark:text-emerald-400 font-extrabold font-heading text-base">
+                      <IconComp className="w-4 h-4 text-emerald-600 dark:text-emerald-500 flex-shrink-0" />
                       <span>{title}</span>
                     </div>
-                    <p className="text-xs text-slate-500 dark:text-slate-400 font-normal leading-relaxed">{desc}</p>
+                    <p className="text-xs text-slate-600 dark:text-slate-400 font-normal leading-relaxed">{desc}</p>
                   </div>
                 );
               })}
@@ -116,12 +130,12 @@ export const AboutSection: React.FC = () => {
             <div className="pt-2">
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-extrabold text-sm shadow-glow transition-all"
+                className="btn-reveal-primary inline-flex items-center gap-2.5 px-8 py-3.5 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-extrabold text-sm shadow-glow transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
               >
-                {t("learnMore")} <ArrowRight className="w-4 h-4" />
+                <span>{t("learnMore")}</span> <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

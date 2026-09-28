@@ -87,26 +87,26 @@ export const SmartFarmEstimator: React.FC = () => {
   const estMonthlyYield = Math.round(areaSize * active.monthlyYieldPerSqFt);
 
   return (
-    <section className="py-6 bg-slate-50 dark:bg-[#0B0F17] text-slate-900 dark:text-white transition-colors duration-300 relative overflow-hidden border-b border-slate-200 dark:border-slate-800/80">
+    <section className="py-6 bg-[#FAFBF7] dark:bg-[#0B0F17] text-slate-900 dark:text-white transition-colors duration-300 relative overflow-hidden border-b border-emerald-950/10 dark:border-slate-800/80">
       {/* Decorative Ambient Glow */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-emerald-500/10 blur-[140px] rounded-full pointer-events-none" />
 
       <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-4 space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100 dark:bg-emerald-950/90 border border-emerald-300 dark:border-emerald-500/50 text-emerald-800 dark:text-emerald-300 text-xs font-mono font-bold uppercase tracking-wider shadow-glow">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100/90 dark:bg-emerald-950/90 border border-emerald-300/80 dark:border-emerald-500/50 text-emerald-900 dark:text-emerald-300 text-xs font-mono font-bold uppercase tracking-wider shadow-sm">
             <Calculator className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
             <span>{isHindi ? "स्मार्ट फार्म एस्टिमेटर" : "SMART FARM ESTIMATOR"}</span>
           </div>
 
           <h2 className="text-lg sm:text-xl lg:text-2xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight leading-none">
             {isHindi ? "फार्म साइज और " : "PROJECT "}
-            <span className="bg-gradient-to-r from-emerald-600 via-teal-500 to-green-600 dark:from-emerald-400 dark:via-teal-300 dark:to-green-300 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-emerald-700 via-teal-600 to-green-700 dark:from-emerald-400 dark:via-teal-300 dark:to-green-300 bg-clip-text text-transparent">
               {isHindi ? "कमाई का अनुमान लगाएं" : "ESTIMATION ENGINE"}
             </span>
           </h2>
 
-          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 font-normal leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-700 dark:text-slate-300 font-normal leading-relaxed">
             {isHindi
               ? "क्रॉप मॉडल और उपलब्ध स्पेस चुनें — तुरंत सेटअप बजट, मंथली यील्ड और टाइमलाइन का सही अंदाज़ा पाएं।"
               : "Select your farming solution and available area to calculate indicative setup budgets, monthly yield capacity, and timeline."}
@@ -117,11 +117,11 @@ export const SmartFarmEstimator: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           
           {/* Left Controls Card */}
-          <div className="lg:col-span-7 bg-white dark:bg-slate-900/80 backdrop-blur-2xl border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8 shadow-glass flex flex-col justify-between space-y-8">
+          <div className="lg:col-span-7 bg-white dark:bg-slate-900/80 backdrop-blur-2xl border border-emerald-950/10 dark:border-slate-800 rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col justify-between space-y-8">
             
             {/* 1. Solution Selection */}
             <div className="space-y-4">
-              <label className="text-xs sm:text-sm font-mono font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 flex items-center gap-2">
+              <label className="text-xs sm:text-sm font-mono font-bold uppercase tracking-wider text-slate-700 dark:text-slate-400 flex items-center gap-2">
                 <Sprout className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
                 {isHindi ? "1. समाधान / फसल मॉडल चुनें:" : "1. Select AgTech Solution:"}
               </label>
@@ -139,14 +139,14 @@ export const SmartFarmEstimator: React.FC = () => {
                       }}
                       className={`p-3.5 rounded-2xl text-left border transition-all flex flex-col justify-between space-y-2 cursor-pointer ${
                         isSelected
-                          ? "bg-gradient-to-br from-emerald-600 to-teal-700 text-white border-emerald-400 shadow-glow scale-[1.02]"
-                          : "bg-slate-100 dark:bg-slate-950/80 border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-emerald-500/40"
+                          ? "bg-gradient-to-br from-emerald-600 to-teal-700 text-white border-emerald-500 shadow-sm scale-[1.02]"
+                          : "bg-slate-50 dark:bg-slate-950/80 border-slate-200/90 dark:border-slate-800 text-slate-800 dark:text-slate-300 hover:border-emerald-500/40 hover:bg-slate-100"
                       }`}
                     >
                       <span className="text-xs sm:text-sm font-bold leading-snug">
                         {isHindi ? item.nameHi.split(" ")[0] : item.nameEn.split(" ")[0]}
                       </span>
-                      <span className={`text-[10px] font-mono ${isSelected ? "text-emerald-100" : "text-slate-500"}`}>
+                      <span className={`text-[10px] font-mono ${isSelected ? "text-emerald-100" : "text-slate-600 dark:text-slate-500"}`}>
                         {key === "mushroom"
                           ? "🍄 Gourmet"
                           : key === "azolla"
@@ -164,19 +164,19 @@ export const SmartFarmEstimator: React.FC = () => {
             </div>
 
             {/* Description Info Box */}
-            <div className="p-4 rounded-2xl bg-emerald-950/40 border border-emerald-500/30 text-xs sm:text-sm text-emerald-200 leading-relaxed font-medium">
+            <div className="p-4 rounded-2xl bg-emerald-50/90 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-500/30 text-xs sm:text-sm text-emerald-900 dark:text-emerald-200 leading-relaxed font-medium">
               ✨ {isHindi ? active.descHi : active.descEn}
             </div>
 
             {/* 2. Area Range Slider */}
             <div className="space-y-4">
               <div className="flex items-center justify-between">
-                <label className="text-xs sm:text-sm font-mono font-bold uppercase tracking-wider text-slate-400">
+                <label className="text-xs sm:text-sm font-mono font-bold uppercase tracking-wider text-slate-700 dark:text-slate-400">
                   {isHindi ? "2. उपलब्ध शेड / भूमि का आकार:" : "2. Available Farm / Shed Space:"}
                 </label>
 
-                <div className="px-4 py-2 rounded-2xl bg-slate-950 border border-emerald-500/40 text-emerald-400 font-mono font-extrabold text-base sm:text-lg shadow-glow">
-                  {areaSize.toLocaleString("en-IN")} <span className="text-xs font-sans text-slate-400">{active.unit}</span>
+                <div className="px-4 py-2 rounded-2xl bg-emerald-50 dark:bg-slate-950 border border-emerald-300 dark:border-emerald-500/40 text-emerald-800 dark:text-emerald-400 font-mono font-extrabold text-base sm:text-lg shadow-sm">
+                  {areaSize.toLocaleString("en-IN")} <span className="text-xs font-sans text-slate-600 dark:text-slate-400">{active.unit}</span>
                 </div>
               </div>
 
@@ -187,10 +187,10 @@ export const SmartFarmEstimator: React.FC = () => {
                 step={active.step}
                 value={areaSize}
                 onChange={(e) => setAreaSize(Number(e.target.value))}
-                className="w-full h-3 bg-slate-950 rounded-lg appearance-none cursor-pointer accent-emerald-500 focus:outline-none"
+                className="w-full h-3 bg-slate-200 dark:bg-slate-950 rounded-lg appearance-none cursor-pointer accent-emerald-600 focus:outline-none"
               />
 
-              <div className="flex items-center justify-between text-xs font-mono text-slate-500">
+              <div className="flex items-center justify-between text-xs font-mono text-slate-600 dark:text-slate-500">
                 <span>Min: {active.minArea} {active.unit}</span>
                 <span>Max: {active.maxArea.toLocaleString("en-IN")} {active.unit}</span>
               </div>
@@ -258,10 +258,10 @@ export const SmartFarmEstimator: React.FC = () => {
             <div className="pt-6 relative z-10 space-y-3">
               <button
                 onClick={() => setQuoteModalOpen(true)}
-                className="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-emerald-500 via-teal-500 to-green-600 hover:from-emerald-400 hover:to-teal-500 text-white font-extrabold text-sm shadow-glow hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer"
+                className="btn-reveal-primary w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-emerald-500 via-teal-500 to-green-600 text-white font-extrabold text-sm shadow-glow hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer"
               >
                 <Download className="w-4 h-4 text-white" />
-                {isHindi ? "विस्तृत कोटेशन का अनुरोध करें" : "Request Detailed Quote"}
+                <span>{isHindi ? "विस्तृत कोटेशन का अनुरोध करें" : "Request Detailed Quote"}</span>
                 <ArrowRight className="w-4 h-4 text-white" />
               </button>
 

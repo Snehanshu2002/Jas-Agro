@@ -53,19 +53,19 @@ export const WhyChooseUs: React.FC = () => {
   ];
 
   return (
-    <section className="py-6 bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white relative overflow-hidden transition-colors duration-300">
+    <section className="py-6 bg-[#F3F6EE] dark:bg-slate-950 text-slate-900 dark:text-white relative overflow-hidden border-b border-emerald-950/10 dark:border-slate-800/80 transition-colors duration-300">
       <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-4 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-600 dark:text-amber-400 text-xs font-bold uppercase tracking-widest">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-100/90 dark:bg-amber-500/10 border border-amber-300/80 dark:border-amber-500/30 text-amber-900 dark:text-amber-400 text-xs font-bold uppercase tracking-widest">
             {language === "hi" ? "JAS एग्रो क्यों चुनें?" : "THE JAS AGRO ADVANTAGE"}
           </div>
           <h2 className="text-lg sm:text-xl lg:text-2xl font-extrabold font-heading text-slate-900 dark:text-white">
             {language === "hi" ? "JAS एग्रो ही " : "Why Choose "}
-            <span className="text-amber-600 dark:text-amber-400">
+            <span className="text-amber-700 dark:text-amber-400">
               {language === "hi" ? "क्यों?" : "JAS Agro?"}
             </span>
           </h2>
-          <p className="text-slate-600 dark:text-slate-300 text-base">
+          <p className="text-slate-700 dark:text-slate-300 text-base">
             {language === "hi"
               ? "हम ट्रेडिशनल फार्मिंग एक्सपीरियंस और मॉडर्न स्मार्ट एग्रीटेक का बेहतरीन संगम देते हैं।"
               : "We bridge the gap between traditional agricultural wisdom and modern precision agri-tech."}
@@ -81,13 +81,13 @@ export const WhyChooseUs: React.FC = () => {
             return (
               <div
                 key={idx}
-                className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-amber-500/50 transition-all space-y-4 hover:-translate-y-1 group shadow-sm"
+                className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-emerald-950/10 dark:border-slate-800 hover:border-amber-500/50 transition-all space-y-4 hover:-translate-y-1 group shadow-sm hover:shadow-xl"
               >
-                <div className="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-600 dark:text-amber-400 flex items-center justify-center group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors">
+                <div className="w-12 h-12 rounded-2xl bg-amber-100/80 dark:bg-amber-500/10 border border-amber-300/80 dark:border-amber-500/30 text-amber-800 dark:text-amber-400 flex items-center justify-center group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors">
                   <IconComp className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-bold font-heading text-slate-900 dark:text-white">{title}</h3>
-                <p className="text-slate-600 dark:text-slate-400 text-xs leading-relaxed">{desc}</p>
+                <p className="text-slate-700 dark:text-slate-400 text-xs leading-relaxed font-normal">{desc}</p>
               </div>
             );
           })}
