@@ -19,6 +19,7 @@ import { ShopTrustStrip } from "@/components/shop/ShopTrustStrip";
 import { ShopNewsletter } from "@/components/shop/ShopNewsletter";
 import { ShopFooter } from "@/components/shop/ShopFooter";
 import { DeliveryChecker } from "@/components/shop/DeliveryChecker";
+import { ProductSchema, BreadcrumbSchema } from "@/components/seo/JsonLd";
 import {
   Star,
   Heart,
@@ -345,8 +346,29 @@ function ProductDetailContent() {
       ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
       : 0;
 
+  const shopBreadcrumbs = [
+    { name: "Home", url: "/" },
+    { name: "Shop", url: "/shop" },
+    { name: product.category, url: `/shop?category=${encodeURIComponent(product.category)}` },
+    { name: product.title, url: `/shop/product/${product.slug}` },
+  ];
+
   return (
     <div className="min-h-screen bg-[#f8f9fa] dark:bg-[#0c0c0c] text-slate-900 dark:text-slate-100 flex flex-col justify-between selection:bg-[#3f7010] selection:text-white font-sans antialiased transition-colors duration-200">
+      <ProductSchema
+        name={product.title}
+        description={product.description}
+        image={product.img}
+        sku={product.id}
+        price={product.price}
+        priceCurrency="INR"
+        availability="InStock"
+        ratingValue={product.rating || 4.9}
+        reviewCount={product.reviewsCount || 48}
+        url={`/shop/product/${product.slug}`}
+      />
+      <BreadcrumbSchema items={shopBreadcrumbs} />
+
       {/* Top Shop Header */}
       <ShopHeader
         searchQuery={searchQuery}

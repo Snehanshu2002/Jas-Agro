@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { COMPANY_INFO } from "@/data/company";
-import { Mail, Phone, MapPin, Clock, Send, CheckCircle2, ExternalLink, MessageCircle, AlertCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Send, CheckCircle, ExternalLink, MessageCircle, AlertCircle } from "react-feather";
 import confetti from "canvas-confetti";
 import { useLanguage } from "@/context/LanguageContext";
 import { submitEnquiry } from "@/lib/api/enquiryService";
@@ -177,15 +177,27 @@ export default function ContactPage() {
               <div className="bg-white dark:bg-[#123B13]/90 p-8 sm:p-10 rounded-3xl border border-[#123B13]/10 dark:border-[#1B4D1C] space-y-6 shadow-sm">
                 {submitted ? (
                   <div className="py-12 text-center space-y-4">
-                    <CheckCircle2 className="w-16 h-16 text-[#B8F21B] mx-auto animate-bounce" />
+                    <CheckCircle className="w-16 h-16 text-[#B8F21B] mx-auto animate-bounce" />
                     <h3 className="text-2xl font-bold font-heading text-[#111811] dark:text-[#FAFAF5]">
-                      {language === "hi" ? "अनुरोध प्राप्त हुआ!" : "Enquiry Received!"}
+                      {language === "hi" ? "अनुरोध सफलतापूर्वक प्राप्त हुआ!" : "Enquiry Received!"}
                     </h3>
                     <p className="text-[#5A6E59] dark:text-[#A3C2A1] text-sm max-w-md mx-auto">
-                      Thank you <span className="text-[#2F7D16] dark:text-[#B8F21B] font-semibold">{formData.name}</span>. Your enquiry has been received under reference{" "}
-                      <span className="font-mono font-bold text-[#2F7D16] dark:text-[#B8F21B]">
-                        {submittedData.referenceId || "JAS-AGRO"}
-                      </span>. Our specialist will respond within 24 hours.
+                      {language === "hi" ? (
+                        <>
+                          धन्यवाद <span className="text-[#2F7D16] dark:text-[#B8F21B] font-semibold">{formData.name}</span>। आपका अनुरोध संदर्भ संख्या{" "}
+                          <span className="font-mono font-bold text-[#2F7D16] dark:text-[#B8F21B]">
+                            {submittedData.referenceId || "JAS-AGRO"}
+                          </span>{" "}
+                          के तहत दर्ज कर लिया गया है। हमारे विशेषज्ञ 24 घंटे के भीतर आपसे संपर्क करेंगे।
+                        </>
+                      ) : (
+                        <>
+                          Thank you <span className="text-[#2F7D16] dark:text-[#B8F21B] font-semibold">{formData.name}</span>. Your enquiry has been received under reference{" "}
+                          <span className="font-mono font-bold text-[#2F7D16] dark:text-[#B8F21B]">
+                            {submittedData.referenceId || "JAS-AGRO"}
+                          </span>. Our specialist will respond within 24 hours.
+                        </>
+                      )}
                     </p>
 
                     {submittedData.whatsappUrl && (
@@ -197,7 +209,7 @@ export default function ContactPage() {
                           className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#2F7D16] hover:bg-[#256312] text-white text-xs font-bold shadow-md transition-all"
                         >
                           <MessageCircle className="w-4 h-4" />
-                          <span>Continue Discussion on WhatsApp</span>
+                          <span>{language === "hi" ? "व्हाट्सएप पर बात जारी रखें" : "Continue Discussion on WhatsApp"}</span>
                         </a>
                       </div>
                     )}
@@ -249,7 +261,7 @@ export default function ContactPage() {
                         <input
                           type="text"
                           required
-                          placeholder="e.g. Vikram Singh"
+                          placeholder={language === "hi" ? "उदा. विक्रम सिंह" : "e.g. Vikram Singh"}
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                           className="w-full px-3.5 py-2.5 rounded-xl bg-[#FAFAF5] dark:bg-[#0D230E] border border-[#123B13]/15 dark:border-[#1B4D1C] text-[#111811] dark:text-[#FAFAF5] text-sm focus:outline-none focus:border-[#B8F21B]"
@@ -288,7 +300,7 @@ export default function ContactPage() {
                         </label>
                         <input
                           type="text"
-                          placeholder="e.g. Green Dairy Farms"
+                          placeholder={language === "hi" ? "उदा. ग्रीन डेयरी फार्म्स" : "e.g. Green Dairy Farms"}
                           value={formData.company}
                           onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                           className="w-full px-3.5 py-2.5 rounded-xl bg-[#FAFAF5] dark:bg-[#0D230E] border border-[#123B13]/15 dark:border-[#1B4D1C] text-[#111811] dark:text-[#FAFAF5] text-sm focus:outline-none focus:border-[#B8F21B]"
@@ -303,13 +315,13 @@ export default function ContactPage() {
                         onChange={(e) => setFormData({ ...formData, interestedIn: e.target.value })}
                         className="w-full px-3.5 py-2.5 rounded-xl bg-[#FAFAF5] dark:bg-[#0D230E] border border-[#123B13]/15 dark:border-[#1B4D1C] text-[#111811] dark:text-[#FAFAF5] text-sm focus:outline-none focus:border-[#B8F21B]"
                       >
-                        <option value="Oyster Mushroom">Oyster Mushroom Cultivation</option>
-                        <option value="Azolla">Azolla Aquatic Fodder</option>
-                        <option value="Napier Grass">Hybrid Napier Grass Slips</option>
-                        <option value="Vermicompost">Vermicompost & Organic Manure</option>
-                        <option value="Smart Farming">Smart Farming Consultation</option>
-                        <option value="IoT Solutions">IoT Telemetry Hardware</option>
-                        <option value="Other">Other Query</option>
+                        <option value="Oyster Mushroom">{language === "hi" ? "ऑयस्टर मशरूम फार्मिंग सेट-अप" : "Oyster Mushroom Cultivation"}</option>
+                        <option value="Azolla">{language === "hi" ? "अजोला जलीय सुपर-चारा" : "Azolla Aquatic Fodder"}</option>
+                        <option value="Napier Grass">{language === "hi" ? "हाइब्रिड नेपियर घास स्लिप्स" : "Hybrid Napier Grass Slips"}</option>
+                        <option value="Vermicompost">{language === "hi" ? "जैविक वर्मीकंपोस्ट खाद" : "Vermicompost & Organic Manure"}</option>
+                        <option value="Smart Farming">{language === "hi" ? "स्मार्ट फार्मिंग व परामर्श" : "Smart Farming Consultation"}</option>
+                        <option value="IoT Solutions">{language === "hi" ? "आईओटी टेलीमेट्री हार्डवेयर" : "IoT Telemetry Hardware"}</option>
+                        <option value="Other">{language === "hi" ? "अन्य सामान्य पूछताछ" : "Other Query"}</option>
                       </select>
                     </div>
 
@@ -318,7 +330,7 @@ export default function ContactPage() {
                       <textarea
                         rows={4}
                         required
-                        placeholder="Tell us about your agricultural requirements..."
+                        placeholder={language === "hi" ? "अपनी कृषि अथवा व्यवसाय आवश्यकताओं के बारे में बताएं..." : "Tell us about your agricultural requirements..."}
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         className="w-full px-3.5 py-2.5 rounded-xl bg-[#FAFAF5] dark:bg-[#0D230E] border border-[#123B13]/15 dark:border-[#1B4D1C] text-[#111811] dark:text-[#FAFAF5] text-sm focus:outline-none focus:border-[#B8F21B] resize-none"
@@ -331,7 +343,7 @@ export default function ContactPage() {
                       className="w-full py-3.5 rounded-xl bg-[#B8F21B] hover:bg-[#C8F93B] text-[#123B13] font-bold text-sm transition-all flex items-center justify-center gap-2 shadow-glow-lime cursor-pointer"
                     >
                       {isSubmitting ? (
-                        <span>Sending...</span>
+                        <span>{language === "hi" ? "भेजा जा रहा है..." : "Sending..."}</span>
                       ) : (
                         <>
                           <span>{t("submit")}</span> <Send className="w-4 h-4" />

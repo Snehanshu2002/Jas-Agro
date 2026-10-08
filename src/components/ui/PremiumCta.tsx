@@ -96,18 +96,58 @@ export const PremiumCta: React.FC<PremiumCtaProps> = ({
             <button
               type="button"
               onClick={() => setQuoteModalOpen(true)}
-              className="btn-reveal-lime w-full sm:w-auto px-9 py-4 rounded-2xl bg-[#B8F21B] hover:bg-[#C8F93B] text-[#123B13] font-extrabold text-base shadow-xl border border-[#A6E015] hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer flex items-center justify-center gap-2.5 focus-visible:ring-2 focus-visible:ring-[#B8F21B] focus-visible:outline-none"
+              className="group relative inline-flex items-center justify-between min-w-[195px] sm:min-w-[215px] h-[46px] sm:h-[50px] px-6 sm:px-7 rounded-full bg-[#B8F21B] border border-[#A6E015] overflow-hidden cursor-pointer select-none transition-all duration-300 shadow-xl active:scale-95"
             >
-              <span>{isHindi ? primaryBtnTextHi : primaryBtnTextEn}</span>
-              <ArrowRight className="w-5 h-5" />
+              <span
+                className="absolute inset-0 bg-[#0D230E] origin-right scale-x-0 group-hover:scale-x-100 transition-transform duration-600 ease-[cubic-bezier(0.76,0,0.24,1)] pointer-events-none"
+              />
+              <span className="relative z-10 block pr-2 text-left">
+                <span className="block font-extrabold text-base sm:text-[1.05rem] text-[#123B13] transition-all duration-300 ease-out group-hover:opacity-0 group-hover:-translate-y-2 whitespace-nowrap">
+                  {isHindi ? primaryBtnTextHi : primaryBtnTextEn}
+                </span>
+                <span className="absolute inset-0 block font-extrabold text-base sm:text-[1.05rem] text-[#B8F21B] opacity-0 translate-y-2 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-y-0 whitespace-nowrap">
+                  {isHindi ? primaryBtnTextHi : primaryBtnTextEn}
+                </span>
+              </span>
+              <span className="relative z-10 flex items-center justify-center w-7 h-7 shrink-0 pointer-events-none">
+                <ArrowRight
+                  className="w-4 h-4 text-[#123B13] transition-all duration-300 ease-out group-hover:scale-0 group-hover:opacity-0"
+                  strokeWidth={2.5}
+                />
+                <span
+                  className="absolute inset-0 rounded-full bg-[#B8F21B] text-[#123B13] flex items-center justify-center scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-400 ease-[cubic-bezier(0.76,0,0.24,1)] delay-75 shadow-sm"
+                >
+                  <ArrowRight className="w-3.5 h-3.5 text-[#123B13]" strokeWidth={2.5} />
+                </span>
+              </span>
             </button>
 
             <a
               href={`tel:${phone.replace(/\s+/g, "")}`}
-              className="btn-reveal-secondary w-full sm:w-auto px-9 py-4 rounded-2xl bg-white/10 hover:bg-white/20 text-white font-bold text-base border border-white/25 shadow-sm transition-all flex items-center justify-center gap-2.5 hover:scale-[1.02] active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-[#B8F21B] focus-visible:outline-none"
+              className="group relative inline-flex items-center justify-between min-w-[195px] sm:min-w-[215px] h-[46px] sm:h-[50px] px-6 sm:px-7 rounded-full bg-white/10 border border-white/25 overflow-hidden cursor-pointer select-none transition-all duration-300 shadow-sm active:scale-95"
             >
-              <PhoneCall className="w-5 h-5 text-[#B8F21B]" />
-              <span>{isHindi ? secondaryBtnTextHi : secondaryBtnTextEn}</span>
+              <span
+                className="absolute inset-0 bg-[#B8F21B] origin-right scale-x-0 group-hover:scale-x-100 transition-transform duration-600 ease-[cubic-bezier(0.76,0,0.24,1)] pointer-events-none"
+              />
+              <span className="relative z-10 flex items-center gap-2 pr-2 text-left">
+                <PhoneCall className="w-4.5 h-4.5 text-[#B8F21B] group-hover:text-[#123B13] transition-colors duration-300 shrink-0" />
+                <span className="relative block">
+                  <span className="block font-bold text-base sm:text-[1.05rem] text-white transition-all duration-300 ease-out group-hover:opacity-0 group-hover:-translate-y-2 whitespace-nowrap">
+                    {isHindi ? secondaryBtnTextHi : secondaryBtnTextEn}
+                  </span>
+                  <span className="absolute inset-0 block font-extrabold text-base sm:text-[1.05rem] text-[#123B13] opacity-0 translate-y-2 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-y-0 whitespace-nowrap">
+                    {isHindi ? secondaryBtnTextHi : secondaryBtnTextEn}
+                  </span>
+                </span>
+              </span>
+              <span className="relative z-10 flex items-center justify-center w-6 h-6 shrink-0 pointer-events-none">
+                <span className="w-2 h-2 rounded-full bg-[#B8F21B] transition-all duration-300 ease-out group-hover:scale-0 group-hover:opacity-0" />
+                <span
+                  className="absolute inset-0 rounded-full bg-[#123B13] text-white flex items-center justify-center scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-400 ease-[cubic-bezier(0.76,0,0.24,1)] delay-75 shadow-sm"
+                >
+                  <ArrowRight className="w-3.5 h-3.5 text-white" strokeWidth={2.5} />
+                </span>
+              </span>
             </a>
           </div>
 

@@ -1,97 +1,203 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import {
-  Cpu,
-  Radio,
-  Cloud,
-  LayoutDashboard,
-  Smartphone,
-  Thermometer,
-  Droplets,
-  Sprout,
-  Activity,
   ArrowRight,
-  ShieldCheck,
-  RefreshCw,
 } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { AgriIntelligenceCalculator } from "@/components/home/AgriIntelligenceCalculator";
+import { LiveTelemetryDashboard } from "@/components/home/LiveTelemetryDashboard";
+
+interface PipelineStep {
+  step: string;
+  /** Editorial stage title shown in the timeline */
+  titleEn: string;
+  titleHi: string;
+  /** Hardware / system layer powering the stage */
+  nameEn: string;
+  nameHi: string;
+  descEn: string;
+  descHi: string;
+  buttonEn: string;
+  buttonHi: string;
+  image: string;
+  videoSrc: string;
+  renderIcon: (props: { className?: string }) => React.ReactElement;
+}
 
 export const IoTDashboardSection: React.FC = () => {
   const { language } = useLanguage();
   const shouldReduceMotion = useReducedMotion();
   const isHindi = language === "hi";
 
-  const [sensors, setSensors] = useState({
-    temp: 24.5,
-    humidity: 86,
-    soilMoisture: 72,
-    lightLux: 450,
-  });
+  const [activeStep, setActiveStep] = useState<number>(0);
+  const activeStepRef = useRef<number>(0);
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
-  const [simulating, setSimulating] = useState(false);
-
-  const triggerSimulatedReadings = () => {
-    setSimulating(true);
-    setTimeout(() => {
-      setSensors({
-        temp: Number((23 + Math.random() * 3).toFixed(1)),
-        humidity: Math.floor(82 + Math.random() * 8),
-        soilMoisture: Math.floor(70 + Math.random() * 8),
-        lightLux: Math.floor(400 + Math.random() * 100),
-      });
-      setSimulating(false);
-    }, 800);
-  };
-
-  const pipelineSteps = [
+  // 5 Pipeline Steps mapped to reference UI and real project assets
+  const pipelineSteps: PipelineStep[] = [
     {
       step: "01",
+      titleEn: "Data Collection",
+      titleHi: "डेटा संग्रह",
       nameEn: "Sensors & Probes",
       nameHi: "सेंसर एवं प्रोब",
-      descEn: "DHT22 & Capacitive Probes measure micro-climate data.",
-      descHi: "DHT22 सेंसर तापमान और नमी मापते हैं।",
-      icon: Cpu,
+      descEn: "Soil, moisture and climate readings captured in the field by IoT sensors and probes.",
+      descHi: "खेत में IoT सेंसर और प्रोब द्वारा मिट्टी, नमी और मौसम की जानकारी एकत्र की जाती है।",
+      buttonEn: "View Sensors",
+      buttonHi: "सेंसर देखें",
+      image: "/media/pipeline/clean-step-01-sensors.jpg",
+      videoSrc: "/media/Microchip_and_soil_probe_floating_20260930141745.mp4",
+      renderIcon: ({ className }) => (
+        // Plant sensor with wireless transmission waves
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+          <path d="M7 20h10" />
+          <path d="M10 20c0-5 3-7 3-10" />
+          <path d="M13 10c2-2 4-2 6-1-1 3-3 4-6 3" />
+          <path d="M10 14c-2-1-3-3-2-5 3 0 4 2 5 4" />
+          <path d="M17 4a6 6 0 0 1 4 4" />
+          <path d="M19 2a9 9 0 0 1 5 5" />
+        </svg>
+      ),
     },
     {
       step: "02",
+      titleEn: "Data Transmission",
+      titleHi: "डेटा ट्रांसमिशन",
       nameEn: "IoT Gateway",
       nameHi: "IoT गेटवे",
-      descEn: "ESP32 & Arduino nodes process real-time signals.",
-      descHi: "ESP32 नोड रियल-टाइम सिग्नल प्रोसेस करते हैं।",
-      icon: Radio,
+      descEn: "Field readings are relayed wirelessly through the IoT gateway to the cloud.",
+      descHi: "खेत का डेटा IoT गेटवे के माध्यम से वायरलेस रूप से क्लाउड तक पहुँचता है।",
+      buttonEn: "View Gateway",
+      buttonHi: "गेटवे देखें",
+      image: "/media/pipeline/clean-step-02-gateway.jpg",
+      videoSrc: "/media/ESP32_emitting_radio_waves_20260930141749.mp4",
+      renderIcon: ({ className }) => (
+        // Router / Gateway with dual vertical antennas
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+          <rect x="2" y="14" width="20" height="8" rx="2" />
+          <path d="M6 14V6" />
+          <path d="M18 14V6" />
+          <line x1="6" y1="18" x2="6.01" y2="18" />
+          <line x1="10" y1="18" x2="10.01" y2="18" />
+        </svg>
+      ),
     },
     {
       step: "03",
+      titleEn: "Cloud Processing",
+      titleHi: "क्लाउड प्रोसेसिंग",
       nameEn: "Cloud Server",
       nameHi: "क्लाउड सर्वर",
-      descEn: "Encrypted data transmitted via Wi-Fi / 4G GSM.",
-      descHi: "सुरक्षित डेटा क्लाउड सर्वर पर भेजा जाता है।",
-      icon: Cloud,
+      descEn: "Incoming data is stored, organised and processed on the cloud server.",
+      descHi: "प्राप्त डेटा क्लाउड सर्वर पर संग्रहित, व्यवस्थित और प्रोसेस किया जाता है।",
+      buttonEn: "View Cloud",
+      buttonHi: "क्लाउड देखें",
+      image: "/media/pipeline/clean-step-03-cloud.jpg",
+      videoSrc: "/media/Digital_data_flowing_into_cloud_20260930141752.mp4",
+      renderIcon: ({ className }) => (
+        // Cloud outline
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+          <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
+        </svg>
+      ),
     },
     {
       step: "04",
+      titleEn: "Insights & Analytics",
+      titleHi: "इनसाइट्स और एनालिटिक्स",
       nameEn: "Web Dashboard",
       nameHi: "वेब डैशबोर्ड",
-      descEn: "Analytics engine compiles telemetry trends.",
-      descHi: "डैशबोर्ड टेलीमेट्री डेटा प्रदर्शित करता है।",
-      icon: LayoutDashboard,
+      descEn: "Trends and readings are visualised on the web dashboard for informed decisions.",
+      descHi: "वेब डैशबोर्ड पर रुझान और रीडिंग स्पष्ट रूप से दिखते हैं, जिससे सही निर्णय लेना आसान होता है।",
+      buttonEn: "View Dashboard",
+      buttonHi: "डैशबोर्ड देखें",
+      image: "/media/pipeline/clean-step-04-dashboard.jpg",
+      // URL-encoded ellipsis (%E2%80%A6) for exact on-disk mapping
+      videoSrc: "/media/Neon_holographic_data_charts_rot%E2%80%A6_20260930141822.mp4",
+      renderIcon: ({ className }) => (
+        // Bar charts / telemetry graph
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+          <path d="M3 3v18h18" />
+          <path d="M7 16v-3" />
+          <path d="M11 16V9" />
+          <path d="M15 16v-5" />
+          <path d="M19 16V6" />
+        </svg>
+      ),
     },
     {
       step: "05",
+      titleEn: "Farm Operations",
+      titleHi: "खेत संचालन",
       nameEn: "Farmer Mobile App",
       nameHi: "किसान मोबाइल ऐप",
-      descEn: "Instant notifications & automated misting triggers.",
-      descHi: "अलर्ट और स्वचालित सिंचाई नियंत्रण।",
-      icon: Smartphone,
+      descEn: "Updates reach the farmer mobile app to guide day-to-day work in the field.",
+      descHi: "किसान मोबाइल ऐप पर अपडेट मिलते हैं, जिससे रोज़मर्रा के खेती कार्य आसान होते हैं।",
+      buttonEn: "Open Mobile App",
+      buttonHi: "मोबाइल ऐप खोलें",
+      image: "/media/pipeline/clean-step-05-mobile.jpg",
+      // URL-encoded ellipsis (%E2%80%A6) for exact on-disk mapping
+      videoSrc: "/media/Smartphone_floating_with_neon_no%E2%80%A6_20260930141951.mp4",
+      renderIcon: ({ className }) => (
+        // Smartphone device
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+          <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
+          <path d="M12 18h.01" />
+        </svg>
+      ),
     },
   ];
 
+  // Play the active step's video; pause the others once the crossfade has finished.
+  // With prefers-reduced-motion, videos stay paused on their first frame.
+  useEffect(() => {
+    const active = videoRefs.current[activeStep];
+    if (active) {
+      active.muted = true;
+      active.loop = true;
+      active.playsInline = true;
+      if (shouldReduceMotion) {
+        active.pause();
+      } else {
+        const playPromise = active.play();
+        if (playPromise !== undefined) playPromise.catch(() => {});
+      }
+    }
+
+    const pauseTimer = window.setTimeout(() => {
+      videoRefs.current.forEach((video, idx) => {
+        if (video && idx !== activeStep) {
+          try {
+            video.pause();
+          } catch (_) {}
+        }
+      });
+    }, 750);
+
+    return () => window.clearTimeout(pauseTimer);
+  }, [activeStep, shouldReduceMotion]);
+
+  // Layered CSS crossfade (opacity driven by state) — no white/black flash between steps
+  const handleStepActivate = useCallback((idx: number) => {
+    if (idx === activeStepRef.current) return;
+    activeStepRef.current = idx;
+
+    const nextVideo = videoRefs.current[idx];
+    if (nextVideo) {
+      try {
+        nextVideo.currentTime = 0;
+      } catch (_) {}
+    }
+
+    setActiveStep(idx);
+  }, []);
+
+
   return (
-    <section className="py-12 sm:py-16 lg:py-24 bg-[#FAFAF5] dark:bg-[#0D230E] text-[#111811] dark:text-[#FAFAF5] relative overflow-hidden transition-colors duration-300 border-b border-[#2F7D16]/10 dark:border-[#1B4D1C]">
+    <section className="font-sans py-12 sm:py-16 lg:py-24 bg-[#F6F8EE] dark:bg-[#0D230E] text-[#111811] dark:text-[#FAFAF5] relative overflow-hidden transition-colors duration-300">
       <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 relative z-10 max-w-[1440px] mx-auto">
         
         {/* Section Header */}
@@ -100,26 +206,17 @@ export const IoTDashboardSection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center max-w-3xl mx-auto mb-12 lg:mb-16 space-y-3"
+          className="text-center max-w-5xl mx-auto mb-8 sm:mb-10 lg:mb-12"
         >
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EAF5D8] dark:bg-[#123B13] border border-[#2F7D16]/30 dark:border-[#B8F21B]/40 text-[#123B13] dark:text-[#B8F21B] text-xs font-mono font-bold uppercase tracking-widest shadow-sm">
-            <Radio className="w-3.5 h-3.5 text-[#2F7D16] dark:text-[#B8F21B] animate-pulse" />
-            <span>{isHindi ? "स्मार्ट एग्री-टेक IoT ऑटोमेशन" : "PRECISION AGRI-TECH TELEMETRY"}</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-[#111811] dark:text-[#FAFAF5] tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] xl:text-5xl font-extrabold text-[#111811] dark:text-[#FAFAF5] tracking-tight leading-tight whitespace-normal md:whitespace-nowrap">
             {isHindi ? "जहाँ कृषि और " : "Where Agriculture Meets "}
             <span className="bg-gradient-to-r from-[#2F7D16] via-[#4F9D1F] to-[#B8F21B] dark:from-[#B8F21B] dark:via-[#C8F93B] dark:to-[#4F9D1F] bg-clip-text text-transparent">
               {isHindi ? "तकनीक मिलती है" : "Intelligence"}
             </span>
           </h2>
-          <p className="text-[#5A6E59] dark:text-[#A3C2A1] text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-normal">
-            {isHindi
-              ? "JAS एग्रो फ़ार्मों को सेंसर नेटवर्क से जोड़ता है। तुरंत क्रॉप एस्टिमेशन निकालें और रियल-टाइम माइक्रो-क्लाइमेट डेटा देखें।"
-              : "Connect physical crops to real-time micro-controller networks. Calculate setup requirements and explore real-time telemetry."}
-          </p>
         </motion.div>
 
-        {/* 1. FEATURED INTELLIGENCE CALCULATOR (Split-Panel Editorial) */}
+        {/* 1. FEATURED INTELLIGENCE CALCULATOR */}
         <motion.div
           initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -129,122 +226,265 @@ export const IoTDashboardSection: React.FC = () => {
           <AgriIntelligenceCalculator />
         </motion.div>
 
-        {/* 2. Live Telemetry Dashboard */}
+        {/* 2. Interactive Live Telemetry Dashboard */}
         <motion.div
           initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="my-12 lg:my-16 bg-white dark:bg-[#123B13] border border-[#2F7D16]/15 dark:border-[#1B4D1C] rounded-3xl p-6 sm:p-10 shadow-xl space-y-8 text-[#111811] dark:text-[#FAFAF5] transition-colors duration-300"
         >
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-[#2F7D16]/10 dark:border-[#1B4D1C] pb-6">
-            <div className="flex items-center gap-3">
-              <div className="p-3 rounded-2xl bg-[#EAF5D8] dark:bg-[#1B4D1C] text-[#2F7D16] dark:text-[#B8F21B] border border-[#2F7D16]/30 dark:border-[#B8F21B]/40">
-                <Activity className="w-6 h-6 animate-pulse" />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold font-heading text-[#111811] dark:text-[#FAFAF5] flex items-center gap-2">
-                  Live Farm Telemetry Center <span className="text-xs font-normal text-[#123B13] dark:text-[#B8F21B] font-mono bg-[#EAF5D8] dark:bg-[#1B4D1C] px-2 py-0.5 rounded-full border border-[#2F7D16]/30 dark:border-[#B8F21B]/40">CONNECTED</span>
-                </h3>
-                <p className="text-xs text-[#5A6E59] dark:text-[#A3C2A1] font-mono">
-                  ESP32 Microcontroller Array • Node ID: JAS-IOT-884
-                </p>
-              </div>
-            </div>
-
-            <button
-              onClick={triggerSimulatedReadings}
-              disabled={simulating}
-              className="px-4 py-2.5 rounded-xl bg-[#F4F8EC] hover:bg-[#EAF5D8] dark:bg-[#1B4D1C] dark:hover:bg-[#123B13] text-[#111811] dark:text-[#FAFAF5] text-xs font-semibold flex items-center gap-2 border border-[#2F7D16]/20 dark:border-[#1B4D1C] transition-all shadow-xs cursor-pointer"
-            >
-              <RefreshCw className={`w-3.5 h-3.5 text-[#2F7D16] dark:text-[#B8F21B] ${simulating ? "animate-spin" : ""}`} />
-              <span>Simulate Live Sensor Refresh</span>
-            </button>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="p-4 sm:p-5 rounded-2xl bg-[#F4F8EC] dark:bg-[#0D230E] border border-[#2F7D16]/10 dark:border-[#1B4D1C] text-center shadow-xs">
-              <Thermometer className="w-5 h-5 text-[#2F7D16] dark:text-[#B8F21B] mx-auto mb-1" />
-              <div className="text-xs text-[#5A6E59] dark:text-[#A3C2A1]">Ambient Temp</div>
-              <div className="text-2xl font-extrabold font-mono text-[#111811] dark:text-[#FAFAF5] mt-1">
-                {sensors.temp}°C
-              </div>
-            </div>
-
-            <div className="p-4 sm:p-5 rounded-2xl bg-[#F4F8EC] dark:bg-[#0D230E] border border-[#2F7D16]/10 dark:border-[#1B4D1C] text-center shadow-xs">
-              <Droplets className="w-5 h-5 text-[#2F7D16] dark:text-[#B8F21B] mx-auto mb-1" />
-              <div className="text-xs text-[#5A6E59] dark:text-[#A3C2A1]">Air Humidity</div>
-              <div className="text-2xl font-extrabold font-mono text-[#111811] dark:text-[#FAFAF5] mt-1">
-                {sensors.humidity}%
-              </div>
-            </div>
-
-            <div className="p-4 sm:p-5 rounded-2xl bg-[#F4F8EC] dark:bg-[#0D230E] border border-[#2F7D16]/10 dark:border-[#1B4D1C] text-center shadow-xs">
-              <Sprout className="w-5 h-5 text-[#2F7D16] dark:text-[#B8F21B] mx-auto mb-1" />
-              <div className="text-xs text-[#5A6E59] dark:text-[#A3C2A1]">Soil Moisture</div>
-              <div className="text-2xl font-extrabold font-mono text-[#111811] dark:text-[#FAFAF5] mt-1">
-                {sensors.soilMoisture}%
-              </div>
-            </div>
-
-            <div className="p-4 sm:p-5 rounded-2xl bg-[#F4F8EC] dark:bg-[#0D230E] border border-[#2F7D16]/10 dark:border-[#1B4D1C] text-center shadow-xs">
-              <ShieldCheck className="w-5 h-5 text-[#2F7D16] dark:text-[#B8F21B] mx-auto mb-1" />
-              <div className="text-xs text-[#5A6E59] dark:text-[#A3C2A1]">Status</div>
-              <div className="text-xl font-bold font-heading text-[#2F7D16] dark:text-[#B8F21B] mt-1">
-                OPTIMAL
-              </div>
-            </div>
-          </div>
+          <LiveTelemetryDashboard />
         </motion.div>
 
-        {/* 3. Pipeline Diagram */}
+        {/* 3. ARCHITECTURE DATA PIPELINE — EDITORIAL TIMELINE + IMMERSIVE VISUAL */}
         <motion.div
           initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-          className="space-y-6"
+          className="mt-16 sm:mt-24 lg:mt-28 max-w-[1360px] xl:max-w-[1400px] mx-auto w-full"
         >
-          <h3 className="text-center font-heading font-bold text-xl text-[#111811] dark:text-[#FAFAF5]">
-            {isHindi ? "IoT आर्किटेक्चर एवं डेटा प्रवाह" : "Architecture Data Pipeline"}
-          </h3>
+          {/* Editorial Header */}
+          <div className="mb-10 sm:mb-12 lg:mb-14">
+            <div className="min-w-0">
+              <div className="flex items-center gap-3 text-[11px] sm:text-xs font-bold uppercase tracking-[0.22em] text-[#2F7D16] dark:text-[#72d919] mb-4 sm:mb-5">
+                <span className="w-10 h-px bg-[#2F7D16] dark:bg-[#72d919]" />
+                <span>{isHindi ? "खेत से अंतर्दृष्टि तक" : "FROM FARM TO INSIGHTS"}</span>
+              </div>
+              <h2 className="text-[2rem] sm:text-[2.75rem] lg:text-[3.25rem] xl:text-[3.5rem] font-bold text-[#111811] dark:text-[#FAFAF5] tracking-[-0.03em] leading-[1.05]">
+                <span>{isHindi ? "आर्किटेक्चर " : "Architecture "}</span>
+                <span className="text-[#1B6330] dark:text-[#72d919]">{isHindi ? "डेटा पाइपलाइन" : "Data Pipeline"}</span>
+              </h2>
+            </div>
+          </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4 relative">
-            {pipelineSteps.map((step, idx) => {
-              const StepIcon = step.icon;
-              const name = isHindi ? step.nameHi : step.nameEn;
-              const desc = isHindi ? step.descHi : step.descEn;
+          {/* Main 2-Column Editorial Layout (mobile: visual first, then steps) */}
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)] gap-8 sm:gap-10 lg:gap-12 xl:gap-16 items-start w-full">
 
-              return (
-                <div
-                  key={idx}
-                  className="bg-white dark:bg-[#123B13] p-5 rounded-2xl border border-[#2F7D16]/15 dark:border-[#1B4D1C] hover:border-[#B8F21B]/70 transition-all duration-300 text-center shadow-xs hover:-translate-y-1"
-                >
-                  <div className="w-8 h-8 rounded-full bg-[#EAF5D8] dark:bg-[#1B4D1C] border border-[#2F7D16]/30 dark:border-[#B8F21B]/40 text-[#123B13] dark:text-[#B8F21B] font-bold font-mono text-xs flex items-center justify-center mx-auto mb-3">
-                    {step.step}
-                  </div>
-                  <div className="w-10 h-10 rounded-xl bg-[#F4F8EC] dark:bg-[#0D230E] border border-[#2F7D16]/15 dark:border-[#1B4D1C] text-[#111811] dark:text-white flex items-center justify-center mx-auto mb-2">
-                    <StepIcon className="w-5 h-5 text-[#2F7D16] dark:text-[#B8F21B]" />
-                  </div>
-                  <h4 className="font-heading font-bold text-[#111811] dark:text-[#FAFAF5] text-sm">{name}</h4>
-                  <p className="text-xs text-[#5A6E59] dark:text-[#A3C2A1] mt-1 leading-relaxed">{desc}</p>
+            {/* LEFT COLUMN: 5-step vertical timeline */}
+            <ol className="order-2 lg:order-1 flex flex-col gap-3 sm:gap-4 min-w-0" aria-label={isHindi ? "डेटा पाइपलाइन के चरण" : "Data pipeline stages"}>
+              {pipelineSteps.map((step, idx) => {
+                const StepIcon = step.renderIcon;
+                const isActive = activeStep === idx;
+                const isComplete = idx < activeStep;
+                const isLast = idx === pipelineSteps.length - 1;
+                const title = isHindi ? step.titleHi : step.titleEn;
+                const layer = isHindi ? step.nameHi : step.nameEn;
+                const desc = isHindi ? step.descHi : step.descEn;
+
+                return (
+                  <li
+                    key={step.step}
+                    onMouseEnter={() => handleStepActivate(idx)}
+                    className="relative grid grid-cols-[2rem_minmax(0,1fr)] sm:grid-cols-[2.75rem_minmax(0,1fr)] gap-2.5 sm:gap-5 items-center"
+                  >
+                    {/* Timeline connector to the next node */}
+                    {!isLast && (
+                      <span
+                        aria-hidden="true"
+                        className="absolute left-[1rem] sm:left-[1.375rem] top-1/2 w-px h-[calc(100%+0.75rem)] sm:h-[calc(100%+1rem)] -translate-x-1/2 bg-[#D3E4C2] dark:bg-[#1E4D22] overflow-hidden"
+                      >
+                        <span
+                          className={`absolute inset-0 origin-top bg-[#2F7D16] dark:bg-[#72d919] transition-transform duration-500 ease-out motion-reduce:transition-none ${
+                            isComplete ? "scale-y-100" : "scale-y-0"
+                          }`}
+                        />
+                      </span>
+                    )}
+
+                    {/* Timeline node */}
+                    <span
+                      aria-hidden="true"
+                      className={`relative z-10 mx-auto flex items-center justify-center rounded-full font-mono font-bold tabular-nums transition-all duration-300 motion-reduce:transition-none ${
+                        isActive
+                          ? "w-8 h-8 sm:w-11 sm:h-11 text-xs sm:text-sm bg-[#72d919] text-[#0B2211] ring-4 sm:ring-[6px] ring-[#72d919]/20"
+                          : isComplete
+                            ? "w-7 h-7 sm:w-9 sm:h-9 text-[10px] sm:text-xs bg-[#EAF5D8] dark:bg-[#1A3F22] text-[#1B6330] dark:text-[#72d919] border border-[#2F7D16]/60 dark:border-[#72d919]/50"
+                            : "w-7 h-7 sm:w-9 sm:h-9 text-[10px] sm:text-xs bg-[#F6F8EE] dark:bg-[#0D230E] text-[#5C6B5A] dark:text-[#FAFAF5]/55 border border-[#CFE0BD] dark:border-[#1E4D22]"
+                      }`}
+                    >
+                      {step.step}
+                    </span>
+
+                    {/* Step row */}
+                    <button
+                      type="button"
+                      onClick={() => handleStepActivate(idx)}
+                      onFocus={() => handleStepActivate(idx)}
+                      aria-current={isActive ? "step" : undefined}
+                      aria-label={`${step.step} ${title} — ${layer}. ${isHindi ? step.buttonHi : step.buttonEn}`}
+                      className={`group relative w-full min-w-0 text-left rounded-2xl sm:rounded-[24px] border p-2.5 sm:p-4 flex items-center gap-2.5 sm:gap-4 transition-all duration-300 motion-reduce:transition-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[#72d919] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F6F8EE] dark:focus-visible:ring-offset-[#0D230E] ${
+                        isActive
+                          ? "bg-[#0F2E14] border-[#72d919]/50 shadow-[0_18px_40px_-18px_rgba(15,46,20,0.55)]"
+                          : "bg-white/55 dark:bg-white/[0.03] border-[#1B6330]/10 dark:border-white/[0.06] hover:bg-white dark:hover:bg-white/[0.06] hover:border-[#2F7D16]/30"
+                      }`}
+                    >
+                      {/* Icon */}
+                      <span
+                        className={`w-9 h-9 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl flex items-center justify-center shrink-0 transition-colors duration-300 ${
+                          isActive
+                            ? "bg-[#72d919] text-[#0B2211]"
+                            : "bg-[#EAF5D8] dark:bg-[#1A3F22] text-[#1B6330] dark:text-[#72d919]"
+                        }`}
+                      >
+                        <StepIcon className="w-4 h-4 sm:w-6 sm:h-6" />
+                      </span>
+
+                      {/* Text */}
+                      <span className="flex-1 min-w-0">
+                        <span
+                          className={`block text-[9px] sm:text-[11px] font-bold uppercase tracking-[0.16em] mb-0.5 transition-colors duration-300 ${
+                            isActive ? "text-[#B8F21B]" : "text-[#2F7D16] dark:text-[#72d919]/80"
+                          }`}
+                        >
+                          {layer}
+                        </span>
+                        <span
+                          className={`block text-sm sm:text-lg font-semibold tracking-tight leading-snug transition-colors duration-300 ${
+                            isActive ? "text-white" : "text-[#111811] dark:text-[#FAFAF5]"
+                          }`}
+                        >
+                          {title}
+                        </span>
+                        <span
+                          className={`block mt-0.5 sm:mt-1 text-xs sm:text-sm leading-relaxed transition-colors duration-300 ${
+                            isActive ? "text-white/70" : "text-[#5C6B5A] dark:text-[#FAFAF5]/55"
+                          }`}
+                        >
+                          {desc}
+                        </span>
+                      </span>
+
+                      {/* Thumbnail (tablet/desktop only) */}
+                      <span className="hidden md:block relative w-24 lg:w-28 xl:w-36 h-16 xl:h-[72px] shrink-0 rounded-xl overflow-hidden bg-[#0B2211]/10">
+                        <img
+                          src={step.image}
+                          alt=""
+                          loading="lazy"
+                          className={`w-full h-full object-cover transition-all duration-500 motion-reduce:transition-none group-hover:scale-105 ${
+                            isActive ? "opacity-100" : "opacity-80 saturate-[0.85]"
+                          }`}
+                        />
+                      </span>
+
+                      {/* Arrow indicator */}
+                      <span
+                        aria-hidden="true"
+                        className={`w-7 h-7 sm:w-9 sm:h-9 rounded-full flex items-center justify-center shrink-0 border transition-all duration-300 motion-reduce:transition-none ${
+                          isActive
+                            ? "bg-[#72d919] border-[#72d919] text-[#0B2211]"
+                            : "bg-transparent border-[#1B6330]/15 dark:border-white/10 text-[#1B6330] dark:text-[#72d919] group-hover:border-[#2F7D16]/40 group-hover:translate-x-0.5"
+                        }`}
+                      >
+                        <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" strokeWidth={2.25} />
+                      </span>
+                    </button>
+                  </li>
+                );
+              })}
+            </ol>
+
+            {/* RIGHT COLUMN: Large immersive visual (crossfades with active step) */}
+            <div className="order-1 lg:order-2 w-full min-w-0 lg:sticky lg:top-24">
+              <div className="relative w-full aspect-[4/5] sm:aspect-[16/11] lg:aspect-[4/5] max-h-[760px] rounded-[28px] sm:rounded-[36px] overflow-hidden bg-[#0B2211] border border-black/5 dark:border-white/10 shadow-[0_40px_80px_-40px_rgba(11,34,17,0.55)]">
+
+                {/* Layered step videos */}
+                {pipelineSteps.map((step, idx) => (
+                  <video
+                    key={step.step}
+                    ref={(el) => {
+                      videoRefs.current[idx] = el;
+                    }}
+                    src={step.videoSrc}
+                    muted
+                    loop
+                    playsInline
+                    preload={idx === 0 ? "auto" : "metadata"}
+                    aria-hidden="true"
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-out motion-reduce:duration-200 ${
+                      activeStep === idx ? "opacity-100 z-[2]" : "opacity-0 z-[1]"
+                    }`}
+                  />
+                ))}
+
+                {/* Legibility gradients */}
+                <div aria-hidden="true" className="absolute inset-0 z-[3] pointer-events-none bg-gradient-to-t from-[#06150A]/90 via-[#06150A]/10 to-[#06150A]/35" />
+                <div aria-hidden="true" className="absolute inset-0 z-[3] pointer-events-none bg-[radial-gradient(ellipse_at_top_right,rgba(114,217,25,0.18),transparent_55%)]" />
+
+                {/* Right rail — mirrors the five stages */}
+                <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-[4] flex flex-col items-center">
+                  {pipelineSteps.map((step, idx) => {
+                    const RailIcon = step.renderIcon;
+                    const isActive = activeStep === idx;
+                    return (
+                      <React.Fragment key={step.step}>
+                        {idx > 0 && (
+                          <span
+                            aria-hidden="true"
+                            className={`w-px h-2.5 sm:h-3.5 transition-colors duration-300 ${
+                              idx <= activeStep ? "bg-[#72d919]/80" : "bg-white/25"
+                            }`}
+                          />
+                        )}
+                        <button
+                          type="button"
+                          onClick={() => handleStepActivate(idx)}
+                          aria-label={isHindi ? step.titleHi : step.titleEn}
+                          aria-pressed={isActive}
+                          className={`w-9 h-9 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center border backdrop-blur-md transition-all duration-300 motion-reduce:transition-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B8F21B] ${
+                            isActive
+                              ? "bg-[#72d919] border-[#B8F21B] text-[#0B2211] shadow-[0_0_24px_rgba(114,217,25,0.45)]"
+                              : "bg-white/10 border-white/15 text-white/80 hover:bg-white/20"
+                          }`}
+                        >
+                          <RailIcon className="w-4 h-4 sm:w-[18px] sm:h-[18px]" />
+                        </button>
+                      </React.Fragment>
+                    );
+                  })}
                 </div>
-              );
-            })}
+              </div>
+            </div>
+
           </div>
         </motion.div>
 
-        <div className="mt-12 text-center">
+        {/* Section Bottom CTA */}
+        <div className="mt-12 text-center flex justify-center">
           <Link
             href="/technology"
-            className="btn-reveal-lime inline-flex items-center gap-2 px-8 py-3.5 rounded-2xl bg-[#B8F21B] hover:bg-[#C8F93B] text-[#123B13] font-extrabold text-sm shadow-md border border-[#A6E015] transition-all hover:scale-[1.02] active:scale-95"
+            className="group relative inline-flex items-center justify-between min-w-[220px] sm:min-w-[245px] h-[42px] sm:h-[46px] px-5 sm:px-6 rounded-full bg-[#B8F21B] border border-[#A6E015] overflow-hidden cursor-pointer select-none transition-all duration-300 shadow-md active:scale-95"
           >
-            <span>{isHindi ? "IoT तकनीक के बारे में जानें" : "Explore IoT Architecture"}</span>
-            <ArrowRight className="w-4 h-4" />
+            {/* 1. Dark Sweep Layer from Right */}
+            <span
+              className="absolute inset-0 bg-[#123B13] origin-right scale-x-0 group-hover:scale-x-100 transition-transform duration-600 ease-[cubic-bezier(0.76,0,0.24,1)] pointer-events-none"
+            />
+
+            {/* 2. Text Content (Default Dark vs Hover Bright Lime) */}
+            <span className="relative z-10 block pr-2 text-left">
+              <span className="block font-extrabold text-sm sm:text-base text-[#123B13] transition-all duration-300 ease-out group-hover:opacity-0 group-hover:-translate-y-2 whitespace-nowrap">
+                {isHindi ? "IoT तकनीक के बारे में जानें" : "Explore IoT Architecture"}
+              </span>
+              <span className="absolute inset-0 block font-extrabold text-sm sm:text-base text-[#B8F21B] opacity-0 translate-y-2 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-y-0 whitespace-nowrap">
+                {isHindi ? "IoT तकनीक के बारे में जानें" : "Explore IoT Architecture"}
+              </span>
+            </span>
+
+            {/* 3. Right Element: Resting Arrow vs Hover Expanding Lime Circle Arrow */}
+            <span className="relative z-10 flex items-center justify-center w-6 h-6 sm:w-7 sm:h-7 shrink-0 pointer-events-none">
+              <ArrowRight
+                className="w-4 h-4 text-[#123B13] transition-all duration-300 ease-out group-hover:scale-0 group-hover:opacity-0"
+                strokeWidth={2.5}
+              />
+              <span
+                className="absolute inset-0 rounded-full bg-[#B8F21B] text-[#123B13] flex items-center justify-center scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-400 ease-[cubic-bezier(0.76,0,0.24,1)] delay-75 shadow-sm"
+              >
+                <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#123B13]" strokeWidth={2.5} />
+              </span>
+            </span>
           </Link>
         </div>
       </div>
     </section>
   );
 };
-

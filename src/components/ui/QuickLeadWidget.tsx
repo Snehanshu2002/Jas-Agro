@@ -15,8 +15,8 @@ export const QuickLeadWidget: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [constraints, setConstraints] = useState({ top: -300, bottom: 300, left: -300, right: 10 });
 
-  // Visible ONLY on Home ("/") and Shop main page ("/shop")
-  const isAllowedPage = pathname === "/" || pathname === "/shop" || pathname === "/shop/";
+  // Visible ONLY on Shop Portal ("/shop"), removed completely from Corporate JAS Agro
+  const isAllowedPage = pathname.startsWith("/shop");
 
   useEffect(() => {
     // Reset open popover if navigating to another page

@@ -5,7 +5,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { BLOG_POSTS } from "@/data/insights";
 import Link from "next/link";
-import { ArrowRight, Clock } from "lucide-react";
+import { ArrowRight, Clock } from "react-feather";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function InsightsPage() {

@@ -15,7 +15,7 @@ export const FacilitiesSection: React.FC = () => {
   const { office, warehouse } = COMPANY_INFO.locations;
 
   return (
-    <section className="py-12 lg:py-16 bg-[#F4F8EC] dark:bg-[#0D230E] text-[#111811] dark:text-[#FAFAF5] relative overflow-hidden transition-colors duration-300 border-b border-[#2F7D16]/10 dark:border-[#1B4D1C]">
+    <section className="py-12 lg:py-16 bg-[#F6F8EE] dark:bg-[#0D230E] text-[#111811] dark:text-[#FAFAF5] relative overflow-hidden transition-colors duration-300">
       {/* Subtle Background Glow */}
       <div className="absolute top-1/3 right-10 w-96 h-96 bg-[#B8F21B]/10 blur-[140px] rounded-full pointer-events-none" />
 
@@ -48,10 +48,10 @@ export const FacilitiesSection: React.FC = () => {
 
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 text-sm font-bold text-[#2F7D16] dark:text-[#B8F21B] hover:text-[#123B13] dark:hover:text-white transition-colors group"
+            className="inline-flex items-center gap-1.5 text-sm font-bold text-[#2F7D16] dark:text-[#B8F21B] hover:text-[#123B13] dark:hover:text-white transition-colors group"
           >
-            <span>{isHindi ? "लोकेशन एवं कॉन्टैक्ट डिटेल्स" : "View Location Details"}</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <span className="leading-none">{isHindi ? "लोकेशन एवं कॉन्टैक्ट डिटेल्स" : "View Location Details"}</span>
+            <ArrowRight className="w-4 h-4 shrink-0 group-hover:translate-x-1 transition-transform" />
           </Link>
         </motion.div>
 

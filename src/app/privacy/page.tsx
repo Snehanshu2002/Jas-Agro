@@ -5,7 +5,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { COMPANY_INFO } from "@/data/company";
 import {
-  ShieldCheck,
+  Shield,
   Lock,
   Eye,
   FileText,
@@ -13,13 +13,13 @@ import {
   Mail,
   Phone,
   Clock,
-  CheckCircle2,
+  CheckCircle,
   Database,
   Smartphone,
   CreditCard,
   Truck,
   HelpCircle,
-} from "lucide-react";
+} from "react-feather";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | JAS Agro - Data Protection & Customer Privacy",
@@ -80,7 +80,7 @@ export default function PrivacyPolicyPage() {
 
           <div className="max-w-3xl space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 dark:bg-emerald-950/80 border border-emerald-300 dark:border-emerald-500/40 text-emerald-800 dark:text-emerald-300 text-xs font-mono font-bold tracking-wider">
-              <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
+              <Shield className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
               <span>DPDP ACT 2023 & CONSUMER PROTECTION COMPLIANT</span>
             </div>
 
@@ -259,27 +259,27 @@ export default function PrivacyPolicyPage() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                   <div className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-100 dark:border-slate-800 flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                    <CheckCircle className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
                     <span className="text-xs sm:text-sm font-medium">Order processing, packaging & invoice generation</span>
                   </div>
                   <div className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-100 dark:border-slate-800 flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                    <CheckCircle className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
                     <span className="text-xs sm:text-sm font-medium">Courier handover & real-time delivery tracking</span>
                   </div>
                   <div className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-100 dark:border-slate-800 flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                    <CheckCircle className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
                     <span className="text-xs sm:text-sm font-medium">Postal serviceability verification & shipping calculations</span>
                   </div>
                   <div className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-100 dark:border-slate-800 flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                    <CheckCircle className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
                     <span className="text-xs sm:text-sm font-medium">Customer service, grievance resolution & returns handling</span>
                   </div>
                   <div className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-100 dark:border-slate-800 flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                    <CheckCircle className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
                     <span className="text-xs sm:text-sm font-medium">Fraud detection, payment safety & transaction verification</span>
                   </div>
                   <div className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-100 dark:border-slate-800 flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                    <CheckCircle className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
                     <span className="text-xs sm:text-sm font-medium">Compliance with statutory tax & GST invoicing laws</span>
                   </div>
                 </div>

@@ -15,6 +15,7 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [theme, setThemeState] = useState<ThemeType>("light");
+  const [mounted, setMounted] = useState(false);
 
   const applyThemeClass = (targetTheme: ThemeType) => {
     if (typeof document === "undefined") return;
@@ -27,11 +28,15 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   };
 
   useEffect(() => {
+    setMounted(true);
     try {
       const savedTheme = localStorage.getItem("jas_agro_theme") as ThemeType;
       if (savedTheme && ["light", "emerald", "cyan", "harvest"].includes(savedTheme)) {
         setThemeState(savedTheme);
         applyThemeClass(savedTheme);
+      } else if (document.documentElement.classList.contains("dark")) {
+        setThemeState("emerald");
+        applyThemeClass("emerald");
       } else {
         setThemeState("light");
         applyThemeClass("light");
@@ -60,7 +65,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     }
   };
 
-  const isDark = theme !== "light";
+  const isDark = mounted ? theme !== "light" : false;
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme, isDark, toggleDarkMode }}>

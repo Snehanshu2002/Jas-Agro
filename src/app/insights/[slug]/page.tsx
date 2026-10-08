@@ -5,8 +5,9 @@ import Link from "next/link";
 import { BLOG_POSTS } from "@/data/insights";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { ChevronRight, Clock, ArrowLeft, Tag } from "lucide-react";
+import { ChevronRight, Clock, ArrowLeft, Tag } from "react-feather";
 import { useLanguage } from "@/context/LanguageContext";
+import { BreadcrumbSchema } from "@/components/seo/JsonLd";
 
 interface InsightDetailProps {
   params: {
@@ -43,8 +44,45 @@ export default function InsightDetailPage({ params }: InsightDetailProps) {
   const readTime = language === "hi" ? post.readTimeHi || post.readTime : post.readTime;
   const content = language === "hi" && post.contentHi ? post.contentHi : post.content;
 
+  const articleBreadcrumbs = [
+    { name: "Home", url: "/" },
+    { name: "Insights", url: "/insights" },
+    { name: post.title, url: `/insights/${post.slug}` },
+  ];
+
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt,
+    image: post.image?.startsWith("http") ? post.image : `https://www.jasagro.com${post.image || "/jas-agro-logo.png"}`,
+    datePublished: post.publishedAt || "2026-01-01",
+    author: {
+      "@type": "Organization",
+      name: "JAS Agro Agronomy Team",
+      url: "https://www.jasagro.com",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "JAS Agro",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.jasagro.com/jas-agro-logo.png",
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://www.jasagro.com/insights/${post.slug}`,
+    },
+  };
+
   return (
     <main className="min-h-screen bg-[#FAFBF7] text-slate-900 dark:bg-[#0B0F17] dark:text-slate-100 transition-colors duration-300 overflow-x-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <BreadcrumbSchema items={articleBreadcrumbs} />
       <Navbar />
 
       <div className="pt-28 pb-4 bg-[#FAFBF7] dark:bg-[#0B0F17] border-b border-emerald-950/10 dark:border-slate-800/80">

@@ -6,20 +6,19 @@ import { Footer } from "@/components/layout/Footer";
 import { COMPANY_INFO } from "@/data/company";
 import {
   FileText,
-  Scale,
   ShoppingBag,
   Truck,
   CreditCard,
   RotateCcw,
   AlertTriangle,
-  ShieldCheck,
+  Shield,
   MapPin,
   Mail,
   Phone,
   Clock,
-  CheckCircle2,
+  CheckCircle,
   Package,
-} from "lucide-react";
+} from "react-feather";
 
 export const metadata: Metadata = {
   title: "Terms of Service | JAS Agro E-Commerce & Agricultural Solutions",
@@ -80,7 +79,7 @@ export default function TermsOfServicePage() {
 
           <div className="max-w-3xl space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 dark:bg-emerald-950/80 border border-emerald-300 dark:border-emerald-500/40 text-emerald-800 dark:text-emerald-300 text-xs font-mono font-bold tracking-wider">
-              <Scale className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
+              <Shield className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
               <span>CONSUMER PROTECTION (E-COMMERCE) RULES COMPLIANT</span>
             </div>
 

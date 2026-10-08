@@ -37,8 +37,9 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["var(--font-sans)", "Inter", "sans-serif"],
-        heading: ["var(--font-heading)", "Outfit", "sans-serif"],
+        sans: ["var(--font-jost)", "Jost", "system-ui", "-apple-system", "sans-serif"],
+        heading: ["var(--font-jost)", "Jost", "system-ui", "-apple-system", "sans-serif"],
+        jost: ["var(--font-jost)", "Jost", "system-ui", "-apple-system", "sans-serif"],
       },
       boxShadow: {
         "2xs": "0 1px 1px 0 rgba(0, 0, 0, 0.03)",

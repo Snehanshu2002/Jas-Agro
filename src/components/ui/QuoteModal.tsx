@@ -17,7 +17,8 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
   onClose,
   defaultProduct = "",
 }) => {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
+  const isHindi = language === "hi";
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -79,7 +80,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
         colors: ["#10B981", "#F59E0B", "#22C55E"],
       });
     } else {
-      setErrorMessage(res.error || "Failed to submit enquiry. Please try again.");
+      setErrorMessage(res.error || (isHindi ? "अनुरोध भेजने में विफल। कृपया पुनः प्रयास करें।" : "Failed to submit enquiry. Please try again."));
     }
   };
 
@@ -121,11 +122,24 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
               {t("quoteTitle")}
             </h3>
             <p className="max-w-md mx-auto text-[#5A6E59] dark:text-[#EAF5D8] text-sm leading-relaxed">
-              Thank you, <span className="font-semibold text-[#111811] dark:text-white">{formData.name}</span>. Your commercial inquiry for{" "}
-              <span className="text-[#2F7D16] dark:text-[#B8F21B] font-bold">{formData.product}</span> has been logged with reference{" "}
-              <span className="font-mono font-bold text-[#2F7D16] dark:text-[#B8F21B]">
-                {submittedData.referenceId || "JAS-AGRO"}
-              </span>.
+              {isHindi ? (
+                <>
+                  धन्यवाद, <span className="font-semibold text-[#111811] dark:text-white">{formData.name}</span>।{" "}
+                  <span className="text-[#2F7D16] dark:text-[#B8F21B] font-bold">{formData.product}</span> के लिए आपका व्यावसायिक अनुरोध संदर्भ संख्या{" "}
+                  <span className="font-mono font-bold text-[#2F7D16] dark:text-[#B8F21B]">
+                    {submittedData.referenceId || "JAS-AGRO"}
+                  </span>{" "}
+                  के तहत दर्ज कर लिया गया है।
+                </>
+              ) : (
+                <>
+                  Thank you, <span className="font-semibold text-[#111811] dark:text-white">{formData.name}</span>. Your commercial inquiry for{" "}
+                  <span className="text-[#2F7D16] dark:text-[#B8F21B] font-bold">{formData.product}</span> has been logged with reference{" "}
+                  <span className="font-mono font-bold text-[#2F7D16] dark:text-[#B8F21B]">
+                    {submittedData.referenceId || "JAS-AGRO"}
+                  </span>.
+                </>
+              )}
             </p>
 
             {submittedData.whatsappUrl && (
@@ -137,7 +151,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#2F7D16] hover:bg-[#1B4D1C] text-white text-xs font-bold shadow-md transition-all"
                 >
                   <MessageCircle className="w-4 h-4 text-[#B8F21B]" />
-                  <span>Escalate on WhatsApp Now</span>
+                  <span>{isHindi ? "व्हाट्सएप पर तुरंत बात करें" : "Escalate on WhatsApp Now"}</span>
                 </a>
               </div>
             )}
@@ -155,7 +169,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
           <div>
             <div className="mb-6 space-y-1">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EAF5D8] dark:bg-[#1B4D1C] border border-[#2F7D16]/30 dark:border-[#B8F21B]/40 text-[#123B13] dark:text-[#B8F21B] text-xs font-semibold uppercase tracking-wider">
-                <Sparkles className="w-3.5 h-3.5 text-[#2F7D16] dark:text-[#B8F21B]" /> JAS Agro Quotation
+                <Sparkles className="w-3.5 h-3.5 text-[#2F7D16] dark:text-[#B8F21B]" /> {isHindi ? "JAS एग्रो कोटेशन" : "JAS Agro Quotation"}
               </div>
               <h2 className="text-2xl sm:text-3xl font-bold font-heading text-[#111811] dark:text-white">
                 {t("quoteTitle")}
@@ -192,7 +206,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                   <input
                     type="text"
                     required
-                    placeholder="e.g. Ramesh Kumar"
+                    placeholder={isHindi ? "उदा. रमेश कुमार" : "e.g. Ramesh Kumar"}
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="w-full px-3.5 py-2.5 rounded-xl bg-[#FAFAF5] dark:bg-[#0D230E] border border-[#2F7D16]/20 dark:border-[#1B4D1C] text-[#111811] dark:text-white placeholder-slate-400 text-sm focus:outline-none focus:border-[#2F7D16]"
@@ -238,13 +252,13 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                     onChange={(e) => setFormData({ ...formData, product: e.target.value })}
                     className="w-full px-3.5 py-2.5 rounded-xl bg-[#FAFAF5] dark:bg-[#0D230E] border border-[#2F7D16]/20 dark:border-[#1B4D1C] text-[#111811] dark:text-white text-sm focus:outline-none focus:border-[#2F7D16]"
                   >
-                    <option value="Oyster Mushroom">Oyster Mushroom Cultivation</option>
-                    <option value="Azolla Fodder">Azolla Aquatic Fodder</option>
-                    <option value="Hybrid Napier Grass">Hybrid Napier Grass Slips</option>
-                    <option value="Vermicompost">Vermicompost & Organic Manure</option>
-                    <option value="IoT Smart Farming">IoT Agriculture Controller Kit</option>
-                    <option value="Turnkey Farm Setup">Turnkey Farm Setup Consultation</option>
-                    <option value="Other">Other Custom Inquiry</option>
+                    <option value="Oyster Mushroom">{isHindi ? "ऑयस्टर मशरूम फार्मिंग सेट-अप" : "Oyster Mushroom Cultivation"}</option>
+                    <option value="Azolla Fodder">{isHindi ? "अजोला जलीय सुपर-चारा" : "Azolla Aquatic Fodder"}</option>
+                    <option value="Hybrid Napier Grass">{isHindi ? "हाइब्रिड नेपियर घास स्लिप्स" : "Hybrid Napier Grass Slips"}</option>
+                    <option value="Vermicompost">{isHindi ? "जैविक वर्मीकंपोस्ट खाद" : "Vermicompost & Organic Manure"}</option>
+                    <option value="IoT Smart Farming">{isHindi ? "आईओटी फार्म ऑटोमेशन कंट्रोलर" : "IoT Agriculture Controller Kit"}</option>
+                    <option value="Turnkey Farm Setup">{isHindi ? "टर्नकी फार्म सेटअप परामर्श" : "Turnkey Farm Setup Consultation"}</option>
+                    <option value="Other">{isHindi ? "अन्य कस्टम पूछताछ" : "Other Custom Inquiry"}</option>
                   </select>
                 </div>
               </div>
@@ -255,7 +269,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                 </label>
                 <textarea
                   rows={3}
-                  placeholder="Tell us about your current farm setup or requirement..."
+                  placeholder={isHindi ? "अपने मौजूदा फार्म सेटअप या आवश्यकता के बारे में बताएं..." : "Tell us about your current farm setup or requirement..."}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   className="w-full px-3.5 py-2.5 rounded-xl bg-[#FAFAF5] dark:bg-[#0D230E] border border-[#2F7D16]/20 dark:border-[#1B4D1C] text-[#111811] dark:text-white placeholder-slate-400 text-sm focus:outline-none focus:border-[#2F7D16] resize-none"
@@ -265,7 +279,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
               <div className="flex items-center justify-between pt-2">
                 <div className="flex items-center gap-2 text-xs text-[#5A6E59] dark:text-[#A3C2A1]">
                   <ShieldCheck className="w-4 h-4 text-[#2F7D16] dark:text-[#B8F21B]" />
-                  Private & secure request
+                  {isHindi ? "सुरक्षित एवं गोपनीय अनुरोध" : "Private & secure request"}
                 </div>
 
                 <button
@@ -274,7 +288,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                   className="btn-reveal-lime inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#B8F21B] hover:bg-[#C8F93B] text-[#123B13] font-bold transition-all disabled:opacity-50 text-sm shadow-md border border-[#A6E015] cursor-pointer"
                 >
                   {isSubmitting ? (
-                    <span>Processing...</span>
+                    <span>{isHindi ? "प्रोसेस हो रहा है..." : "Processing..."}</span>
                   ) : (
                     <>
                       <span>{t("sendRequest")}</span> <Send className="w-4 h-4" />

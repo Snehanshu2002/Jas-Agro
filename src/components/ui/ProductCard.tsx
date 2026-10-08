@@ -37,7 +37,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         delay: shouldReduceMotion ? 0 : Math.min(index * 0.06, 0.3),
         ease: [0.16, 1, 0.3, 1],
       }}
-      className="bg-white dark:bg-[#123B13]/90 backdrop-blur-xl border border-[#2F7D16]/15 dark:border-[#1B4D1C] hover:border-[#B8F21B]/70 rounded-3xl overflow-hidden transition-all duration-300 flex flex-col justify-between group shadow-sm hover:shadow-xl hover:-translate-y-1 focus-within:ring-2 focus-within:ring-[#B8F21B]"
+      className="h-full bg-white dark:bg-[#123B13]/90 backdrop-blur-xl border border-[#2F7D16]/15 dark:border-[#1B4D1C] hover:border-[#B8F21B]/70 rounded-3xl overflow-hidden transition-all duration-300 flex flex-col justify-between group shadow-sm hover:shadow-xl hover:-translate-y-1 focus-within:ring-2 focus-within:ring-[#B8F21B]"
     >
       <div>
         {/* Media Frame */}
